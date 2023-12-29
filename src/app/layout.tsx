@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ThemeRegistry>
-          <AppBar position="fixed" sx={{ zIndex: 2000 }}>
+          {/* <AppBar position="fixed" sx={{ zIndex: 2000 }}>
             <Toolbar sx={{ backgroundColor: 'background.paper' }}>
               <DashboardIcon sx={{ color: '#444', mr: 2, transform: 'translateY(-2px)' }} />
               <Typography
@@ -55,14 +55,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ))}
           </Box>
             </Toolbar>
-          </AppBar>
+          </AppBar> */}
           <Box
             component="main"
             sx={{
               flexGrow: 1,
               bgcolor: 'background.default',
-              mt: ['48px', '56px', '64px'],
-              p: 3,
+             
             }}
           >
             {children}
