@@ -3,10 +3,11 @@
 import * as React from "react";
 import HeroSection from "@/utils/HeroSection";
 import Nav from "@/utils/Navbar";
+import QuestionForm from "@/utils/QuestionForm";
+import ConatactUsForm from "@/utils/ContactUsForm";
 import {Container} from "@mui/material";
 import {makeStyles} from "@material-ui/core/styles";
-import ContactAgent from "@/public/assets/images/contact-agent.png";
-
+import ContactAgent from "@/public/assets/contact-agent.png";
 
 const useStyles = makeStyles((theme) => ({
   serviceContainer: {
@@ -27,15 +28,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const props = [
-    {title: "Contact Us", text: "Get In Touch",des:'Lorem ipsum dolor sit amet, consectetur adipisc',image:{ContactAgent}},
-  ];
+  {
+    title: "Contact Us",
+    text: "Get In Touch",
+    des: "Lorem ipsum dolor sit amet, consectetur adipisc",
+    image: {ContactAgent},
+  },
+];
 
-export default function Header() {
+export default function Services() {
   const classes = useStyles();
   return (
     <Container className={classes.serviceContainer}>
       <Nav />
-      <HeroSection items={props[0]} image={ContactAgent}/>
+      <HeroSection items={props[0]} image={ContactAgent} />
+      <ConatactUsForm />
     </Container>
   );
 }

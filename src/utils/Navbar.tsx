@@ -23,7 +23,7 @@ const LINKS = [
   {text: "ContactUs", href: "/contact"},
 ];
 
-const Page = () => {
+const Navbar = () => {
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
@@ -158,4 +158,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Navbar;

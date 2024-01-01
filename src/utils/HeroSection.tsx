@@ -5,21 +5,8 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import {makeStyles, useTheme} from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Image from "next/image";
 
-const useStyles = makeStyles((theme) => ({
-  hero_image: {
-    width: "370px",
-    [theme.breakpoints.down("sm")]: {
-      width: "250px",
-    },
-  },
-  centerTest: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "start",
-  },
-}));
 
 interface HeroSectionProps {
   items: {
@@ -31,12 +18,23 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({items, image}: HeroSectionProps) {
-  const classes = useStyles();
-  const theme = useTheme();
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   return (
-    <Grid container spacing={0}>
-      <Grid item className={classes.centerTest} xs={12} sm={7} md={7}>
+    <Grid container sx={{
+      marginTop:'8rem'
+    }} >
+      <Grid
+        item
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "start",
+          
+        }}
+        xs={12}
+        sm={7}
+        md={7}
+      >
         <Typography
           variant="body1"
           sx={{
@@ -70,13 +68,13 @@ export default function HeroSection({items, image}: HeroSectionProps) {
       </Grid>
 
       <Grid item sx={{textAlign: "center"}} xs={12} sm={5} md={5}>
-        <img
+        <Image
           src={image.src}
           alt="hero-img"
-          className={classes.hero_image}
+          width={300}
+          height={300}
           style={{
-            height: "auto",
-            marginTop: matchesXS ? "20px" : 0,
+            marginTop: "40px",
           }}
         />
       </Grid>
