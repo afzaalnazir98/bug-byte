@@ -3,17 +3,17 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import callSvg from '@/public/assets/images/call.svg';
-import messageSvg from '@/public/assets/images/message.svg';
-
+import callSvg from "@/public/assets/images/call.svg";
+import messageSvg from "@/public/assets/images/message.svg";
 
 export default function ContactForm() {
   return (
     <Box
       sx={{
         maxWidth: "1250px",
-        m: "auto",  
+        m: "auto",
         padding: "5.3rem 0",
+        alignItems: "center",
         backgroundImage: `url("/assets/images/contact-bg-image.png")`,
       }}
     >
@@ -27,7 +27,7 @@ export default function ContactForm() {
       >
         <Box
           sx={{
-            flex: "60%",
+            flex: { xs: "100%", md: "60%" },
             display: "grid",
             gap: "10px",
             alignItems: "center",
@@ -40,7 +40,7 @@ export default function ContactForm() {
                 fontSize: "22px",
                 fontWeight: 400,
                 textTransform: "uppercase",
-                textAlign:'left'
+                textAlign: "left",
               }}
             >
               Have Questions?
@@ -51,7 +51,7 @@ export default function ContactForm() {
                 fontSize: "42px",
                 fontWeight: 700,
                 textTransform: "uppercase",
-                textAlign:'left'
+                textAlign: "left",
               }}
             >
               We'd Love To Hear From You
@@ -69,17 +69,20 @@ export default function ContactForm() {
                 color: "#EAEAEA",
                 fontSize: "18px",
                 fontWeight: 400,
-                textAlign:'left'
+                textAlign: "left",
               }}
             >
               Please fill out the form and let us know about your concerns.We
-              will<br/> try our best to provide optimized solutions.
+              will
+              <br /> try our best to provide optimized solutions.
             </Typography>
-            <Box  sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap:'20px'
-            }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
               <Image src={callSvg} alt="call" />
               <Typography
                 sx={{
@@ -92,11 +95,13 @@ export default function ContactForm() {
               </Typography>
             </Box>
 
-            <Box sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap:'20px'
-            }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
               <Image src={messageSvg} alt="message" />
               <Typography
                 sx={{
@@ -112,7 +117,7 @@ export default function ContactForm() {
         </Box>
         <Box
           sx={{
-            flex: "40%",
+            flex: { xs: "100%", md: "60%" },
           }}
         >
           <Box

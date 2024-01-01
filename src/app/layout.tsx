@@ -1,31 +1,38 @@
-import * as React from 'react';
-import Link from 'next/link';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import HomeIcon from '@mui/icons-material/Home';
-import StarIcon from '@mui/icons-material/Star';
-import ChecklistIcon from '@mui/icons-material/Checklist';
-import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
+import * as React from "react";
+import Link from "next/link";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import HomeIcon from "@mui/icons-material/Home";
+import StarIcon from "@mui/icons-material/Star";
+import ChecklistIcon from "@mui/icons-material/Checklist";
+import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
+import FooterLayout from "@/components/Footer/FooterLayout";
+import Footer from "@/components/Footer/Footer";
+import CopyRight from "@/components/Footer/CopyRight";
 
 export const metadata = {
-  title: 'Next.js App Router + Material UI v5',
-  description: 'Next.js App Router + Material UI v5',
+  title: "Next.js App Router + Material UI v5",
+  description: "Next.js App Router + Material UI v5",
 };
 
 const LINKS = [
-  { text: 'Home', href: '/', icon: HomeIcon },
-  { text: 'Starred', href: '/starred', icon: StarIcon },
-  { text: 'Tasks', href: '/tasks', icon: ChecklistIcon },
+  { text: "Home", href: "/", icon: HomeIcon },
+  { text: "Starred", href: "/starred", icon: StarIcon },
+  { text: "Tasks", href: "/tasks", icon: ChecklistIcon },
 ];
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
@@ -60,12 +67,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             component="main"
             sx={{
               flexGrow: 1,
-              bgcolor: 'background.default',
-             
+              bgcolor: "background.default",
             }}
           >
             {children}
           </Box>
+          <FooterLayout>
+            <Footer />
+            <CopyRight />
+          </FooterLayout>
         </ThemeRegistry>
       </body>
     </html>
