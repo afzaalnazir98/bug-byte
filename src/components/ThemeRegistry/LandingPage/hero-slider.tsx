@@ -89,7 +89,6 @@ export default function HeroSlider() {
           }}
           pagination={pagination}
           modules={[EffectFade, Autoplay, Pagination]}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
             <SwiperSlide key={index}>

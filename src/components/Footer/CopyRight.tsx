@@ -13,6 +13,7 @@ export default function CopyRight() {
             textAlign: "center",
             padding: "20px 0px",
             color: "#EAEAEA",
+            fontSize:{ xs: "14px", md: "18px" }
           }}
         >
           Copyright ©2023. All rights reserved.

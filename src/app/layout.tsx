@@ -16,12 +16,53 @@ export const metadata = {
 };
 
 const LINKS = [
-  {text: "Home", href: "/", icon: HomeIcon},
-  {text: "Starred", href: "/starred", icon: StarIcon},
-  {text: "Tasks", href: "/tasks", icon: ChecklistIcon},
+  { text: "Home", href: "/", icon: HomeIcon },
+  { text: "Starred", href: "/starred", icon: StarIcon },
+  { text: "Tasks", href: "/tasks", icon: ChecklistIcon },
 ];
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+const footerData = [
+  {
+    section: "Quick Links",
+    links: [
+      { text: "Home", url: "/" },
+      { text: "About", url: "/about" },
+      { text: "Our Services", url: "/services" },
+      { text: "Portfolio", url: "/portfolio" },
+      { text: "Contact Us", url: "/contact" },
+    ],
+  },
+  {
+    section: "Our Services",
+    links: [
+      { text: "Game Development", url: "/game-development" },
+      { text: "Blockchain", url: "/blockchain" },
+      { text: "AR/VR", url: "/ar-vr" },
+      { text: "Metaverse", url: "/metaverse" },
+      { text: "Unity Development", url: "/unity-development" },
+      { text: "NFT", url: "/nft" },
+    ],
+  },
+  {
+    section: "Contact Us",
+    links: [
+      { text: "202 Helga Springs Rd, Crawford, TN 38554", url: "#" },
+      { text: "1234567890", url: "#" },
+      { text: "hello@example.com", url: "#" },
+    ],
+    socialMedia: [
+      { platform: "Facebook", icon: "/assets/images/facebook.svg", url: "#" },
+      { platform: "Instagram", icon: "/assets/images/instagram.svg", url: "#" },
+      { platform: "Linkdine", icon: "/assets/images/linkdine.svg", url: "#" },
+    ],
+  },
+];
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <Box
@@ -42,7 +83,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             {children}
           </Box>
           <FooterLayout>
-            <Footer />
+            <Footer footerData={footerData} />
             <CopyRight />
           </FooterLayout>
         </ThemeRegistry>

@@ -13,7 +13,6 @@ import Drawer from "@mui/material/Drawer";
 import {useTheme} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo1 from "@/public/assets/images/logo-img.png";
 import {useMediaQuery} from "@mui/material";
 import Image from "next/image";
 
@@ -81,14 +80,10 @@ const Navbar = () => {
         <Box sx={{display: "flex", alignItems: "center", mr: "auto"}}>
           <Box component={Link} href={"/"}>
             <Image
-              src={Logo1.src}
+              src="/assets/images/logo-img.png"
               height={86}
               width={291}
               alt="logo"
-              sx={{
-                transform: "translateY(-2px)",
-                height: matchesSM ? "70px" : "",
-              }}
             />
           </Box>
         </Box>
