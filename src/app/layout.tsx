@@ -9,6 +9,7 @@ import Navbar from "@/utils/Navbar";
 import FooterLayout from "@/components/Footer/FooterLayout";
 import Footer from "@/components/Footer/Footer";
 import CopyRight from "@/components/Footer/CopyRight";
+import "./globals.css"
 
 export const metadata = {
   title: "Next.js App Router + Material UI v5",

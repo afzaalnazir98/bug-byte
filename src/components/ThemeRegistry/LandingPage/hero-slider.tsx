@@ -1,15 +1,15 @@
 "use client";
-import Image from "next/image";
 
-import {Box, Button, Grid, Typography, styled} from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
+
+import {Box, Button, Grid, Typography} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination, Autoplay, EffectFade} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-import Container from "@/utils/container";
-import Link from "next/link";
 
 export default function HeroSlider() {
   const pagination = {
@@ -21,16 +21,14 @@ export default function HeroSlider() {
       const titles = [
         "Blockchain",
         "AR/VR",
-        // "Metaverse",
-        // "Unity Development",
-        // "NFT",
+        "Metaverse",
+        "Unity Development",
+        "NFT",
         // "Metaverse",
       ];
       return `<span class="${className}">${titles[index]}</span>`;
     },
   };
-
-  styled(Box)``;
 
   const swiperStyles = {
     "& .swiper-pagination-bullets": {
@@ -90,42 +88,151 @@ export default function HeroSlider() {
           pagination={pagination}
           modules={[EffectFade, Autoplay, Pagination]}
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
+          {[1, 2, 3, 4, 5].map((num, index) => (
             <SwiperSlide key={index}>
-              <Container>
-                <Grid container>
-                  <Grid item xs={6}>
+              <Grid
+                container
+                sx={{
+                  maxWidth: "1370px",
+                  width: "100%",
+                  p: {
+                    lg: "30px 60px",
+                    md: "15px 30px",
+                    xs: "15px",
+                  },
+                  m: "auto",
+                }}
+              >
+                <Grid item xs={6}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      height: "100%",
+                    }}
+                  >
                     <Box>
-                      <Typography>Building Gaming Worlds</Typography>
-                      <Typography>We Provide</Typography>
-                      <Typography>AR/VR Services</Typography>
-                      <Typography variant="h1">{`${index} - ${num}`}</Typography>
-                      <Typography>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          mb: "22px",
+                          color: "#FFF",
+                          fontSize: "28px",
+                          fontWeight: "400",
+                          lineHeight: "normal",
+                        }}
+                      >
+                        Building Gaming Worlds
+                      </Typography>
+                      <Typography
+                        variant="h2"
+                        sx={{
+                          color: "#FFF",
+                          fontSize: "58px",
+                          fontWeight: "500",
+                          lineHeight: "104.5%",
+                          textTransform: "capitalize",
+                        }}
+                      >
+                        We Provide
+                      </Typography>
+                      <Typography
+                        variant="h2"
+                        sx={{
+                          marginBottom: "22px",
+                          background:
+                            "linear-gradient(100deg, #F04B12 6.88%, #FB8843 62.12%)",
+                          backgroundClip: "text",
+                          color: "transparent",
+                          textTransform: "capitalize",
+                          fontSize: "74px",
+                          fontWeight: 700,
+                          lineHeight: 1.05,
+                        }}
+                      >
+                        AR/VR Services
+                      </Typography>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          marginBottom: "22px",
+                          color: "#FFF",
+                          fontSize: "24px",
+                          fontWeight: 400,
+                          lineHeight: 1.2,
+                        }}
+                      >
                         Unleash Your Imagination – The Virtual Playground
                         Awaits.
                       </Typography>
-                      <Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          gap: "50px",
+                        }}
+                      >
                         <Box component={Link} href={"/"}>
-                          <Button>Get Started</Button>
+                          <Button
+                            sx={{
+                              color: "#FFF",
+                              fontSize: "20px",
+                              fontWeight: 600,
+                              lineHeight: 1.2,
+                              py: "16px",
+                              borderRadius: "6px",
+                              background:
+                                "linear-gradient(95deg, #F04B12 1.59%, #FC8C46 100%)",
+                              minWidth: "194px",
+                              width: "100%",
+                            }}
+                          >
+                            Get Started
+                          </Button>
                         </Box>
                         <Box component={Link} href={"/"}>
-                          <Button>View Portfolio</Button>
+                          <Button
+                            sx={{
+                              color: "#C73300",
+                              fontSize: "20px",
+                              fontWeight: 600,
+                              lineHeight: 1.2,
+                              py: "16px",
+                              borderRadius: "6px",
+                              background: "#FFF",
+                              minWidth: "194px",
+                              width: "100%",
+                              "&:hover": {
+                                background: "revert",
+                              },
+                            }}
+                          >
+                            View Portfolio
+                          </Button>
                         </Box>
                       </Box>
                     </Box>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Box>
-                      <Image
-                        src="/assets/images/hero-image.png"
-                        width={500}
-                        height={500}
-                        alt="hero-image"
-                      />
-                    </Box>
-                  </Grid>
+                  </Box>
                 </Grid>
-              </Container>
+                <Grid item xs={6}>
+                  <Box
+                    sx={{
+                      textAlign: "center",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      loading={"lazy"}
+                      src="/assets/images/hero-image.png"
+                      width={500}
+                      height={500}
+                      alt="hero-image"
+                    />
+                  </Box>
+                </Grid>
+              </Grid>
             </SwiperSlide>
           ))}
           <Box
