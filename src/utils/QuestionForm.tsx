@@ -34,12 +34,10 @@ export default function QuestionFormComponent() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    console.log("Contact Form submitted");
   };
 
   return (
-    <Grid container maxWidth={"1250px"}>
+    <Grid container sx={{gap: {md: "100px"}}}>
       <Grid
         item
         sx={{
@@ -49,8 +47,10 @@ export default function QuestionFormComponent() {
           justifyContent: "center",
           alignItems: "start",
         }}
+        xs={12}
         sm={12}
-        md={6}
+        md={5}
+        lg={6}
       >
         <Typography
           variant="body1"
@@ -73,12 +73,11 @@ export default function QuestionFormComponent() {
             lineHeight: "85%",
             letterSpacing: "0.84px",
             textTransform: "uppercase",
+            color: "white",
             mt: 3,
           }}
         >
-          We'd Love To Hear
-          {/* {matchesXS ? "" : <br />} */}
-          From You
+          We'd Love To Hear From You
         </Typography>
         <Typography
           variant="body1"
@@ -87,6 +86,7 @@ export default function QuestionFormComponent() {
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "120%",
+            color: "white",
             mt: 5,
           }}
         >
@@ -100,6 +100,7 @@ export default function QuestionFormComponent() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            color: "white",
             mt: 3,
           }}
         >
@@ -120,6 +121,7 @@ export default function QuestionFormComponent() {
             justifyContent: "center",
             alignItems: "center",
             mt: 3,
+            color: "white",
           }}
         >
           <Image src={magBoxSvg.src} width={50} height={50} alt="inbox-image" />
@@ -140,9 +142,9 @@ export default function QuestionFormComponent() {
         sx={{
           backgroundColor: "white",
           paddingInline: "2rem",
-          marginTop: {xs: "2rem", sm: "2rem", md: "5rem"},
+          marginTop: {xs: "0.5rem", sm: "2rem", md: "5rem"},
           mb: 3,
-          maxWidth: "450px",
+          marginLeft: {md: "auto"},
           height: "520px",
           borderRadius: "8px",
           "& .MuiInputBase-root": {
@@ -158,8 +160,10 @@ export default function QuestionFormComponent() {
             color: "#F86910",
           },
         }}
+        xs={12}
         sm={12}
-        md={6}
+        md={5}
+        lg={4.5}
       >
         <Box
           component={"form"}
@@ -222,6 +226,9 @@ export default function QuestionFormComponent() {
               height: "50.955px",
               fontSize: "18px",
               fontWeight: 600,
+              "&:hover": {
+                backgroundColor: "#F86910",
+              },
             }}
             type="submit"
             variant="contained"

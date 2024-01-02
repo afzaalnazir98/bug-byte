@@ -19,7 +19,7 @@ export default function HeroSection({items, image}: HeroSectionProps) {
     <Grid
       container
       sx={{
-        marginTop: "8rem",
+        marginTop: {xs: "3rem", md: "0"},
       }}
     >
       <Grid
@@ -30,8 +30,8 @@ export default function HeroSection({items, image}: HeroSectionProps) {
           justifyContent: "center",
           alignItems: "start",
         }}
-        md={7}
-        sm={7}
+        md={5}
+        sm={12}
         xs={12}
       >
         <Typography
@@ -65,12 +65,19 @@ export default function HeroSection({items, image}: HeroSectionProps) {
           {items.des}
         </Typography>
       </Grid>
-      <Grid item sx={{textAlign: "center"}} xs={12} sm={5} md={5}>
+      <Grid
+        item
+        sx={{textAlign: "center", marginLeft: {md: "auto"}}}
+        xs={12}
+        sm={12}
+        md={5}
+      >
         <Image
           src={image.src}
-          alt="hero-img"
-          width={300}
-          height={300}
+          className="hero-image"
+          alt="hero-image"
+          width={400}
+          height={400}
           style={{
             marginTop: "40px",
           }}
