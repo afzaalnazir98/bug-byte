@@ -37,7 +37,7 @@ export default function QuestionFormComponent() {
   };
 
   return (
-    <Grid container sx={{gap: {md: "100px"}}}>
+    <Grid container sx={{gap: {sm: "90px"}}}>
       <Grid
         item
         sx={{
@@ -48,16 +48,15 @@ export default function QuestionFormComponent() {
           alignItems: "start",
         }}
         xs={12}
-        sm={12}
-        md={5}
-        lg={6}
+        sm={5}
+        md={6}
       >
         <Typography
           variant="body1"
           sx={{
             color: "#F86910",
             textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            fontSize: "22px",
+            fontSize: {xs: "18px", md: "22px"},
             fontWeight: 400,
             letterSpacing: "0.44px",
             textTransform: "uppercase",
@@ -68,13 +67,13 @@ export default function QuestionFormComponent() {
         <Typography
           variant="h1"
           sx={{
-            fontSize: "42px",
-            fontWeight: 700,
-            lineHeight: "85%",
+            fontSize: {xs: "34px", md: "42px"},
+            fontWeight: {xs: 500, md: 700},
+            lineHeight: "1.2",
             letterSpacing: "0.84px",
             textTransform: "uppercase",
             color: "white",
-            mt: 3,
+            mt: {xs: 1, md: 3},
           }}
         >
           We'd Love To Hear From You
@@ -87,7 +86,7 @@ export default function QuestionFormComponent() {
             fontWeight: 400,
             lineHeight: "120%",
             color: "white",
-            mt: 5,
+            mt: {xs: 2, md: 5},
           }}
         >
           Please fill out the form and let us know about your concerns.We will{" "}
@@ -101,7 +100,7 @@ export default function QuestionFormComponent() {
             justifyContent: "center",
             alignItems: "center",
             color: "white",
-            mt: 3,
+            mt: {xs: 2, md: 3},
           }}
         >
           <Image src={callSvg.src} width={50} height={50} alt="inbox-image" />
@@ -120,7 +119,7 @@ export default function QuestionFormComponent() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            mt: 3,
+            mt: {xs: 1, md: 3},
             color: "white",
           }}
         >
@@ -142,9 +141,9 @@ export default function QuestionFormComponent() {
         sx={{
           backgroundColor: "white",
           paddingInline: "2rem",
-          marginTop: {xs: "0.5rem", sm: "2rem", md: "5rem"},
+          marginTop: {xs: "2rem", md: "5rem"},
           mb: 3,
-          marginLeft: {md: "auto"},
+          marginLeft: {sm: "auto"},
           height: "520px",
           borderRadius: "8px",
           "& .MuiInputBase-root": {
@@ -161,9 +160,8 @@ export default function QuestionFormComponent() {
           },
         }}
         xs={12}
-        sm={12}
-        md={5}
-        lg={4.5}
+        sm={5}
+        md={4.5}
       >
         <Box
           component={"form"}

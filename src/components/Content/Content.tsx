@@ -64,7 +64,7 @@ export default function ContentComponent({
                 loading="lazy"
                 width={529}
                 height={369}
-
+                layout="intrinsic"
               />
             </Box>
           </Grid>

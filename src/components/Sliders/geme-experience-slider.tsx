@@ -15,6 +15,17 @@ export default function GameExperienceSlider() {
     prevEl: ".swiper-button-prev",
   };
 
+  const hollowArrowStyles = {
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    backgroundColor: "transparent",
+    color: "#fff",
+    cursor: "pointer",
+    border: "2px solid #fff",
+    textAlign: "center",
+  };
+
   return (
     <Box
       sx={{
@@ -26,6 +37,12 @@ export default function GameExperienceSlider() {
         },
         "& .swiper": {
           overflow: "visible",
+        },
+        "& .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after": {
+          fontSize: "20px",
+        },
+        "& .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after": {
+          fontSize: "20px",
         },
       }}
     >
@@ -42,8 +59,16 @@ export default function GameExperienceSlider() {
             className="swiper-main"
             modules={[Autoplay, Navigation]}
             onSwiper={(swiper) => console.log(swiper)}
-            slidesPerView={2}
-            spaceBetween={30}
+            breakpoints={{
+              700: {
+                slidesPerView: 2,
+                spaceBetween: 30, 
+              },
+              0: {
+                slidesPerView: 1, 
+                spaceBetween: 90, 
+              },
+            }}
           >
             {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
               <SwiperSlide key={index}>
@@ -56,14 +81,14 @@ export default function GameExperienceSlider() {
               className="swiper-button-prev"
               sx={{
                 left: "-80px",
-                color: "white",
+                ...hollowArrowStyles,
               }}
             ></Box>
             <Box
               className="swiper-button-next"
               sx={{
                 right: "-80px",
-                color: "white",
+                ...hollowArrowStyles,
               }}
             ></Box>
           </Swiper>

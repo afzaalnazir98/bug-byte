@@ -9,15 +9,20 @@ export default function MediaCard() {
   return (
     <Card sx={{borderRadius: "10px", background: "rgba(0, 0, 0, 0.40)"}}>
       <CardMedia
-        sx={{height: 317, width: "100%"}}
+        sx={{
+          height: {xs: 200, sm: 250, md: 317},
+          width: "100%",
+        }}
         image="/assets/images/card1.png"
+        component="img"
+        loading="lazy"
         title="card-image"
       />
 
       <CardContent
         sx={{
-          paddingInline: "2rem",
-          mt: 2,
+          paddingInline: {xs: "1rem", md: "2rem"},
+          mt: {sm: 0, md: 3},
           color: "white",
         }}
       >
@@ -25,8 +30,8 @@ export default function MediaCard() {
           gutterBottom
           variant="h3"
           sx={{
-            fontSize: "36px",
-            fontWeight: 700,
+            fontSize: {xs: "20px", sm: "24px",md: "34px"},
+            fontWeight: {xs: 600, sm: 700},
             color: "white",
           }}
           component="div"
@@ -34,7 +39,11 @@ export default function MediaCard() {
           Super Jumper 3d Run
         </Typography>
         <Typography
-          sx={{fontSize: "14px", fontWeight: 400, color: "white"}}
+          sx={{
+            fontSize: {xs: "12px", sm: "14px"},
+            fontWeight: {xs: 300, sm: 400},
+            color: "white",
+          }}
           variant="body1"
           gutterBottom
           color="text.secondary"
@@ -42,7 +51,12 @@ export default function MediaCard() {
           Adventure | Mobile | Action RPG
         </Typography>
         <Typography
-          sx={{fontSize: "14px", mt: 2, fontWeight: 400, color: "white"}}
+          sx={{
+            fontSize: {xs: "12px", md: "14px"},
+            fontWeight: {xs: 300, md: 400},
+            mt: 2,
+            color: "white",
+          }}
           variant="body1"
           color="text.secondary"
         >
@@ -53,14 +67,14 @@ export default function MediaCard() {
           sx={{
             borderRadius: "6px",
             mt: 2,
-            width: "162px",
-            height: "48px",
-            fontSize: "18px",
-            fontWeight: 600,
+            width: {xs: "130px", md: "162px"},
+            height: {xs: "30px", md: "48px"},
+            fontSize: {xs: "14px", md: "18px"},
+            fontWeight: {xs: 400, md: 600},
             background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
           }}
           type="submit"
-          variant="contained"
+          variant="contained"   
         >
           View Details
         </Button>
