@@ -1,8 +1,10 @@
+"use client";
+
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Header from "@/components/Header/page";
-import Content from "@/components/Content/page";
-import QuestionForm from "@/utils/QuestionForm";
+import Container from "@/utils/container";
+import ContentComponent from "@/components/Content/page";
+import QuestionFormComponent from "@/utils/QuestionForm";
 
 const dataArray = [
   {
@@ -43,26 +45,20 @@ const dataArray = [
   },
 ];
 
-export default function Unity(props: any) {
-  const { image, title, description, buttonText, buttonLink, order } = props;
+export default function ServiceDetails() {
   return (
-    <Box>
-      <Box
-        sx={{
-          color: "#fff",
-          padding: "3rem 10rem",
-        }}
-      >
-        <Header />
+    <>
+      <Container>
         <Box
           sx={{
+            color: "#fff",
             display: "grid",
             gap: "8rem",
           }}
         >
-          {dataArray.map((item) => (
-            <Content
-              key={item.order} // Assuming order is a unique identifier for each item
+          {dataArray.map((item, index) => (
+            <ContentComponent
+              key={index}
               image={item.image}
               title={item.title}
               description={item.description}
@@ -72,8 +68,8 @@ export default function Unity(props: any) {
             />
           ))}
         </Box>
-      </Box>
-      <QuestionForm />
-    </Box>
+        <QuestionFormComponent />
+      </Container>
+    </>
   );
 }

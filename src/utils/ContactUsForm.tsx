@@ -14,10 +14,10 @@ import {
   Divider,
 } from "@mui/material";
 
-import location from "@/public/assets/location.svg";
-import watch from "@/public/assets/watch.svg";
-import phone from "@/public/assets/phone.svg";
-import message from "@/public/assets/msgSmall.svg";
+import location from "@/public/assets/images/location.svg";
+import watch from "@/public/assets/images/watch.svg";
+import phone from "@/public/assets/images/phone.svg";
+import message from "@/public/assets/images/msgSmall.svg";
 import facebook from "@/public/assets/social-media-icons/facebook.svg";
 import insta from "@/public/assets/social-media-icons/insta.svg";
 import linkdin from "@/public/assets/social-media-icons/linkdin.svg";
@@ -105,7 +105,6 @@ export default function ContactFormSection(): JSX.Element {
               borderRadius: "10px",
               border: "1px solid #333",
               borderColor: "#F86910",
-              
             },
             "& .MuiOutlinedInput-root": {
               "&.Mui-focused fieldset": {
@@ -116,10 +115,10 @@ export default function ContactFormSection(): JSX.Element {
               color: "#F86910",
             },
             "& input": {
-              color: "white", 
+              color: "white",
             },
             "& .MuiInputBase-input": {
-              color: "white", 
+              color: "white",
             },
             "& .MuiSelect-icon": {
               color: "white", // Set your desired color for the icon

@@ -1,4 +1,5 @@
 "use client";
+import Container from "@/utils/container";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
@@ -8,6 +9,7 @@ const iconStyle = {
 
 export default function Footer() {
   return (
+    <Container>
     <Box
       sx={{
         maxWidth: "1250px",
@@ -304,5 +306,6 @@ export default function Footer() {
         </Box>
       </Box>
     </Box>
+    </Container>
   );
 }

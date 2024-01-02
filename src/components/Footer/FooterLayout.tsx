@@ -1,9 +1,9 @@
-import React, { ReactNode, lazy } from "react";
+import React, {ReactNode} from "react";
 
 interface FooterLayoutProps {
   children: ReactNode;
 }
-const FooterLayout: React.FC<FooterLayoutProps> = ({ children }) => {
+const FooterLayout: React.FC<FooterLayoutProps> = ({children}) => {
   return (
     <>
       <footer>{children}</footer>

@@ -2,11 +2,24 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import { Button } from "@mui/material";
+import {Button} from "@mui/material";
 import Link from "next/link";
 
-export default function Content(props: any) {
-  const { image, title, description, buttonText, buttonLink, order } = props;
+export default function ContentComponent({
+  image,
+  title,
+  description,
+  buttonText,
+  buttonLink,
+  order,
+}: {
+  image: any;
+  title: any;
+  description: any;
+  buttonText: any;
+  buttonLink: any;
+  order: any;
+}) {
   return (
     <Box>
       <Box
@@ -19,10 +32,10 @@ export default function Content(props: any) {
           gap: "5rem",
         }}
       >
-        <Box sx={{ flex: "50%", position: "relative", order: { order } }}>
-          <Image src={image} alt="hello" layout="fill" objectFit="cover" />
+        <Box sx={{flex: "50%", position: "relative", order: {order}}}>
+          <Image src={image} width={300} height={300} alt="hello" />
         </Box>
-        <Box sx={{ flex: "50%", alignSelf: "center" }}>
+        <Box sx={{flex: "50%", alignSelf: "center"}}>
           <Box
             sx={{
               display: "grid",
@@ -52,23 +65,23 @@ export default function Content(props: any) {
             >
               {description}
             </Typography>
-            <Button
-              component={Link}
-              href={buttonLink}
-              sx={{
-                padding: "7px 80px",
-                borderRadius: "6px",
-                backgroundImage:
-                  "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
-                fontSize: "24px",
-                fontWeight: 600,
-                textTransform: "capitalize",
-                color: "#fff",
-                maxWidth: "fit-content",
-              }}
-            >
-              {buttonText}
-            </Button>
+            <Box component={Link} href={buttonLink}>
+              <Button
+                sx={{
+                  padding: "7px 80px",
+                  borderRadius: "6px",
+                  backgroundImage:
+                    "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
+                  fontSize: "24px",
+                  fontWeight: 600,
+                  textTransform: "capitalize",
+                  color: "#fff",
+                  maxWidth: "fit-content",
+                }}
+              >
+                {buttonText}
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Box>

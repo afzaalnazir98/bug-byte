@@ -3,10 +3,7 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import {makeStyles, useTheme} from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Image from "next/image";
-
 
 interface HeroSectionProps {
   items: {
@@ -19,9 +16,12 @@ interface HeroSectionProps {
 
 export default function HeroSection({items, image}: HeroSectionProps) {
   return (
-    <Grid container sx={{
-      marginTop:'8rem'
-    }} >
+    <Grid
+      container
+      sx={{
+        marginTop: "8rem",
+      }}
+    >
       <Grid
         item
         sx={{
@@ -29,11 +29,10 @@ export default function HeroSection({items, image}: HeroSectionProps) {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "start",
-          
         }}
-        xs={12}
-        sm={7}
         md={7}
+        sm={7}
+        xs={12}
       >
         <Typography
           variant="body1"
@@ -66,7 +65,6 @@ export default function HeroSection({items, image}: HeroSectionProps) {
           {items.des}
         </Typography>
       </Grid>
-
       <Grid item sx={{textAlign: "center"}} xs={12} sm={5} md={5}>
         <Image
           src={image.src}

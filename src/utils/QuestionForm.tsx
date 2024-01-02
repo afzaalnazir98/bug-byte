@@ -1,11 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import {makeStyles, useTheme} from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
+  Typography,
+  Grid,
   Box,
   TextField,
   Button,
@@ -13,13 +11,11 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  FormLabel,
 } from "@mui/material";
 
-import callSvg from "@/public/assets/call.svg";
-import magBoxSvg from "@/public/assets/msg.svg";
+import callSvg from "@/public/assets/images/call.svg";
+import magBoxSvg from "@/public/assets/images/msg.svg";
 import Image from "next/image";
-import { Label } from "@mui/icons-material";
 
 interface FormData {
   name: string;
@@ -28,32 +24,7 @@ interface FormData {
   message: string;
 }
 
-const useStyles = makeStyles((theme) => ({
-  hero_image: {
-    width: "370px",
-    [theme.breakpoints.down("sm")]: {
-      width: "250px",
-    },
-  },
-  centerTest: {
-    marginTop: "5rem",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "start",
-  },
-  form: {
-    borderRadius: "8px",
-    width: "100%",
-    ml: 8,
-    marginTop: "1rem",
-  },
-}));
-
-export default function QuestionForm(): JSX.Element {
-  const classes = useStyles();
-  const theme = useTheme();
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+export default function QuestionFormComponent() {
   const [formData, setFormData] = React.useState<FormData>({
     name: "",
     email: "",
@@ -69,7 +40,18 @@ export default function QuestionForm(): JSX.Element {
 
   return (
     <Grid container maxWidth={"1250px"}>
-      <Grid item className={classes.centerTest} sm={12} md={6}>
+      <Grid
+        item
+        sx={{
+          marginTop: "5rem",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "start",
+        }}
+        sm={12}
+        md={6}
+      >
         <Typography
           variant="body1"
           sx={{
@@ -94,7 +76,9 @@ export default function QuestionForm(): JSX.Element {
             mt: 3,
           }}
         >
-          We'd Love To Hear {matchesXS ? "" : <br />} From You
+          We'd Love To Hear
+          {/* {matchesXS ? "" : <br />} */}
+          From You
         </Typography>
         <Typography
           variant="body1"
@@ -107,7 +91,7 @@ export default function QuestionForm(): JSX.Element {
           }}
         >
           Please fill out the form and let us know about your concerns.We will{" "}
-          {matchesXS ? "" : <br />}
+          {/* {matchesXS ? "" : <br />} */}
           try our best to provide optimized solutions.
         </Typography>
 
@@ -177,7 +161,15 @@ export default function QuestionForm(): JSX.Element {
         sm={12}
         md={6}
       >
-        <form className={classes.form} onSubmit={(e) => handleSubmit(e)}>
+        <Box
+          component={"form"}
+          sx={{
+            borderRadius: "8px",
+            width: "100%",
+            marginTop: "1rem",
+          }}
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <TextField
             label="Name"
             variant="outlined"
@@ -237,7 +229,7 @@ export default function QuestionForm(): JSX.Element {
           >
             Send
           </Button>
-        </form>
+        </Box>
       </Grid>
     </Grid>
   );
