@@ -22,7 +22,7 @@ export default function MediaCard() {
       <CardContent
         sx={{
           paddingInline: {xs: "1rem", md: "2rem"},
-          mt: {sm: 0, md: 3},
+          mt: {xs: 0, md: 2},
           color: "white",
         }}
       >
