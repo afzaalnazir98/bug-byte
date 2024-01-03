@@ -76,7 +76,7 @@ export default function QuestionFormComponent() {
             mt: {xs: 1, md: 3},
           }}
         >
-          We'd Love To Hear From You
+          We&apos;d Love To Hear From You
         </Typography>
         <Typography
           variant="body1"
@@ -90,7 +90,6 @@ export default function QuestionFormComponent() {
           }}
         >
           Please fill out the form and let us know about your concerns.We will{" "}
-          {/* {matchesXS ? "" : <br />} */}
           try our best to provide optimized solutions.
         </Typography>
 

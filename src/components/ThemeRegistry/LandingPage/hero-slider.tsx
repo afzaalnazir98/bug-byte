@@ -17,14 +17,14 @@ export default function HeroSlider() {
     dynamicBullets: true,
     dynamicMainBullets: 5,
     clickable: true,
-    renderBullet: (index: any, className: any) => {
+    renderBullet: (index: number, className: string) => {
       const titles = [
         "Blockchain",
         "AR/VR",
         "Metaverse",
         "Unity Development",
         "NFT",
-        // "Metaverse",
+        "Metaverse",
       ];
       return `<span class="${className}">${titles[index]}</span>`;
     },
@@ -88,7 +88,7 @@ export default function HeroSlider() {
           pagination={pagination}
           modules={[EffectFade, Autoplay, Pagination]}
         >
-          {[1, 2, 3, 4, 5].map((num, index) => (
+          {[1, 2, 3, 4, 5, 6].map((num, index) => (
             <SwiperSlide key={index}>
               <Grid
                 container

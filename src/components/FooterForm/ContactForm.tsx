@@ -54,7 +54,7 @@ export default function ContactForm() {
                 textAlign: "left",
               }}
             >
-              We'd Love To Hear From You
+              We&apos;d Love To Hear From You
             </Typography>
           </Box>
 

@@ -9,18 +9,13 @@ import Navbar from "@/utils/Navbar";
 import FooterLayout from "@/components/Footer/FooterLayout";
 import Footer from "@/components/Footer/Footer";
 import CopyRight from "@/components/Footer/CopyRight";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css"
 
 export const metadata = {
-  title: "Next.js App Router + Material UI v5",
-  description: "Next.js App Router + Material UI v5",
+  title: "Bug Byte",
+  description: "Reinventing the way of developing games, we aim to Develop the most master-peaced Games available on the market.",
 };
-
-const LINKS = [
-  { text: "Home", href: "/", icon: HomeIcon },
-  { text: "Starred", href: "/starred", icon: StarIcon },
-  { text: "Tasks", href: "/tasks", icon: ChecklistIcon },
-];
 
 const footerData = [
   {
@@ -87,6 +82,7 @@ export default function RootLayout({
             <Footer footerData={footerData} />
             <CopyRight />
           </FooterLayout>
+          <SpeedInsights />
         </ThemeRegistry>
       </Box>
     </html>
