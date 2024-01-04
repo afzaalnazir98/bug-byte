@@ -51,7 +51,10 @@ export default function MediaCard() {
           sx={{
             fontSize: {xs: "20px", sm: "24px", md: "34px"},
             fontWeight: {xs: 600, sm: 700},
-            color: "#FE7624",
+            background:
+              "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
           }}
           component="div"
         >

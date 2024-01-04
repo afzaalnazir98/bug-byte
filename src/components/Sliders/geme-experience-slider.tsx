@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, {useState} from "react";
 import {Box, Tab, Tabs} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation} from "swiper/modules";
@@ -11,7 +11,8 @@ import "swiper/css/effect-fade";
 import Container from "@/components/container";
 
 export default function GameExperienceSlider() {
-  const [activeTab, setActiveTab] = React.useState(0);
+  const [activeTab, setActiveTab] = useState(0);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   const handleTabChange = (event: any, newValue: any) => {
     setActiveTab(newValue);
@@ -24,13 +25,13 @@ export default function GameExperienceSlider() {
   const hollowArrowStyles = {
     borderRadius: "50%",
     backgroundColor: "transparent",
-    color: "#fff",
+    color: "#030A11",
     cursor: "pointer",
-    border: "2px solid #fff",
+    border: "2px solid #030A11",
     textAlign: "center",
   };
   const tabStyles = {
-    color: "white !important",
+    color: "#030A12 !important",
     fontSize: "22px",
     fontWeight: 400,
     lineHeight: "24.42px",
@@ -61,6 +62,13 @@ export default function GameExperienceSlider() {
         },
         "& .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after": {
           fontSize: "20px",
+        },
+        "& .swiper-slide.swiper-slide-active": {
+          borderRadius: "5px",
+          border: "5px solid rgba(240, 75, 18, 0.56)",
+          background: "#071421",
+          boxShadow: "0px 4.549px 45.486px 0px rgba(0, 0, 0, 0.10)",
+          transform: "scale(1.1)",
         },
       }}
     >
@@ -111,11 +119,14 @@ export default function GameExperienceSlider() {
             navigation={navigationel}
             className="swiper-main"
             modules={[Autoplay, Navigation]}
-            onSwiper={(swiper) => console.log(swiper)}
+            onSwiper={(swiper) => {
+              console.log(swiper);
+              setActiveSlideIndex(swiper.activeIndex);
+            }}
             breakpoints={{
               700: {
                 slidesPerView: 2,
-                spaceBetween: 30,
+                spaceBetween: 50,
               },
               0: {
                 slidesPerView: 1,
@@ -126,14 +137,14 @@ export default function GameExperienceSlider() {
             {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
               <SwiperSlide key={index}>
                 <Box>
-                  <GameCard />
+                  <GameCard isActive={index === activeSlideIndex} />
                 </Box>
               </SwiperSlide>
             ))}
             <Box
               className="swiper-button-prev"
               sx={{
-                left: "-70px",
+                left: "-80px",
                 width: {xs: "30px", sm: "40px"},
                 height: {xs: "30px", sm: "40px"},
                 ...hollowArrowStyles,

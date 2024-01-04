@@ -11,9 +11,7 @@ export default function GameExperienceContainer(): JSX.Element {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${imagePath})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        background: '#FFF'
       }}
     >
       <Box
@@ -34,7 +32,7 @@ export default function GameExperienceContainer(): JSX.Element {
             marginTop: "100px",
             letterSpacing: "0.4px",
             textTransform: "uppercase",
-            color: "#FE7624",
+            color: "#030A12",
           }}
         >
           Crafting Unforgettable Gaming Experiences
@@ -47,6 +45,10 @@ export default function GameExperienceContainer(): JSX.Element {
             lineHeight: "41px",
             textTransform: "uppercase",
             mt: {xs: 1, md: 3},
+            background:
+              "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
           }}
         >
           Our Games Are Vibrant Worlds <br /> With Charming Characters
@@ -64,12 +66,15 @@ export default function GameExperienceContainer(): JSX.Element {
       >
         <Button
           sx={{
+            position: "relative",
+            marginTop: "25px",
             borderRadius: "6px",
             width: {xs: "150px", sm: "180px", md: "206px"},
             height: {xs: "30px", sm: "38px", md: "48px"},
             fontSize: {xs: "14px", md: "16px"},
             fontWeight: {xs: 400, md: 600},
             background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
+            boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
           }}
           type="submit"
           variant="contained"

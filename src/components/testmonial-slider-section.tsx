@@ -5,7 +5,7 @@ import TestimonialSlider from "./Sliders/testimonial-slider";
 
 export default function TestimonialSectionContainer(): JSX.Element {
   return (
-    <Box sx={{}}>
+    <Box sx={{background: "#071421"}}>
       <Box
         sx={{
           display: "flex",
@@ -13,18 +13,17 @@ export default function TestimonialSectionContainer(): JSX.Element {
           alignItems: "center",
           flexDirection: "column",
           textAlign: "center",
-          color: "white",
         }}
       >
         <Typography
           variant="body1"
           sx={{
-            fontSize: "20px",
-            fontWeight: 500,
+            fontSize: "25px",
+            fontWeight: 600,
             marginTop: "100px",
-            letterSpacing: "0.4px",
+            letterSpacing: "0.5px",
             textTransform: "uppercase",
-            color: "#FE7624",
+            color: "#ffff",
           }}
         >
           TESTIMONIALS
@@ -36,7 +35,10 @@ export default function TestimonialSectionContainer(): JSX.Element {
             fontWeight: {xs: 500, sm: 700},
             lineHeight: "41px",
             textTransform: "uppercase",
-            mt: {xs: 1, md: 3},
+            background:
+              "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
           }}
         >
           OUR CLIENTS TRUST US

@@ -89,11 +89,11 @@ export default function TestimonialSlider() {
             breakpoints={{
               1050: {
                 slidesPerView: 3,
-                spaceBetween: 80,
+                spaceBetween: 90,
               },
               700: {
                 slidesPerView: 2,
-                spaceBetween: 80,
+                spaceBetween: 90,
               },
               0: {
                 slidesPerView: 1,
@@ -101,7 +101,7 @@ export default function TestimonialSlider() {
               },
             }}
           >
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
+            {[1, 2, 3, 4].map((num, index) => (
               <SwiperSlide key={index}>
                 <Box>
                   <TestimonialCard />
