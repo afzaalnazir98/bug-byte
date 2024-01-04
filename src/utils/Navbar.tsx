@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,7 +15,7 @@ import {useTheme} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import {useMediaQuery} from "@mui/material";
-import Image from "next/image";
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 const LINKS = [
   {text: "About us", href: "/about"},
@@ -80,16 +81,24 @@ const Navbar = () => {
         <Box sx={{display: "flex", alignItems: "center", mr: "auto"}}>
           <Box component={Link} href={"/"}>
             <Image
+              className="brand-logo"
+              loading='lazy'
               src="/assets/images/logo-img.png"
               height={86}
               width={291}
-              alt="logo"
+              alt="brand logo"
             />
           </Box>
         </Box>
         <Box sx={{display: {xs: "block", md: "none"}}}>
-          <IconButton color="default" onClick={toggleDrawer} edge="start">
-            <MenuIcon />
+          <IconButton
+            onClick={toggleDrawer}
+            edge="start"
+            sx={{
+              color: "white",
+            }}
+          >
+            <MenuIcon fontSize="large" />
           </IconButton>
         </Box>
         <Box
@@ -155,7 +164,15 @@ const Navbar = () => {
         </Button>
       </Toolbar>
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer}>
-        <Box sx={{width: 500, mt: "90px"}}>
+        <Box sx={{width: "100%"}}>
+          <Box sx={{
+            textAlign: "right"
+          }}>
+          <HighlightOffIcon sx={{
+            m: "25px",
+            cursor: "pointer"
+          }} fontSize="large"  onClick={toggleDrawer} />
+          </Box>
           {LINKS.map(({text, href}) => (
             <ListItem key={href}>
               <ListItemButton

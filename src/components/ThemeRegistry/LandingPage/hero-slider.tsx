@@ -1,78 +1,38 @@
 "use client";
 
+import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import {Box, Button, Grid, Typography} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Pagination, Autoplay, EffectFade} from "swiper/modules";
+
+import {FreeMode, Thumbs, Autoplay, EffectFade} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
 
 export default function HeroSlider() {
-  const pagination = {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-    dynamicMainBullets: 5,
-    clickable: true,
-    renderBullet: (index: number, className: string) => {
-      const titles = [
-        "Blockchain",
-        "AR/VR",
-        "Metaverse",
-        "Unity Development",
-        "NFT",
-        "Metaverse",
-      ];
-      return `<span class="${className}">${titles[index]}</span>`;
-    },
-  };
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+
+  const titles = [
+    "Blockchain",
+    "AR/VR",
+    "Metaverse",
+    "Unity Development",
+    "NFT",
+    "Metaverse",
+  ];
 
   const swiperStyles = {
-    "& .swiper-pagination-bullets": {
-      position: "unset",
-    },
-    "& .swiper-pagination-bullets .swiper-pagination-bullet": {
-      background: "transparent",
-      height: "auto",
-      width: "auto",
-      margin: 0,
-      borderBottom: "2px solid rgba(255, 255, 255, 0.8)",
-      borderRadius: 0,
-      transition: "0.4s all !important",
-      color: "white",
-      opacity: 1,
-      padding: "0 40px 24px",
-      visibility: "hidden",
-    },
-    "& .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active-main":
-      {
-        visibility: "visible",
-      },
-    "& .swiper-pagination-bullets .swiper-pagination-bullet-active": {
-      color: "#FE7624",
-      borderBottom: "2px solid rgba(254, 118, 36, 0.8)",
-    },
     "& .swiper-fade .swiper-slide": {
       opacity: "0 !important",
     },
     "& .swiper-fade .swiper-slide-active": {
       opacity: "1 !important",
     },
-    "& .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic":
-      {
-        overflow: "hidden",
-        fontSize: "20px",
-        maxWidth: "100%",
-        transform: "unset",
-      },
-    "& .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next, & .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev":
-      {
-        opacity: 0,
-        transform: "scale(1)",
-      },
   };
 
   return (
@@ -85,8 +45,9 @@ export default function HeroSlider() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          pagination={pagination}
-          modules={[EffectFade, Autoplay, Pagination]}
+          thumbs={{swiper: thumbsSwiper}}
+          modules={[EffectFade, Autoplay, FreeMode, Thumbs]}
+          className="mySwiper2"
         >
           {[1, 2, 3, 4, 5, 6].map((num, index) => (
             <SwiperSlide key={index}>
@@ -103,7 +64,12 @@ export default function HeroSlider() {
                   m: "auto",
                 }}
               >
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6} sx={{
+                      order: {
+                        sm: 0,
+                        xs: 2
+                      }
+                }} >
                   <Box
                     sx={{
                       display: "flex",
@@ -115,9 +81,15 @@ export default function HeroSlider() {
                       <Typography
                         variant="body1"
                         sx={{
-                          mb: "22px",
                           color: "#FFF",
-                          fontSize: "28px",
+                          mb: {
+                            md: "22px",
+                            xs: "12px"
+                          },
+                          fontSize: {
+                            md: "28px",
+                            xs: "24px"
+                          },
                           fontWeight: "400",
                           lineHeight: "normal",
                         }}
@@ -128,7 +100,12 @@ export default function HeroSlider() {
                         variant="h2"
                         sx={{
                           color: "#FFF",
-                          fontSize: "58px",
+                          fontSize: {
+                            lg: "58px",
+                            md: "46px",
+                            sm: "42px",
+                            xs: "30px",
+                          },
                           fontWeight: "500",
                           lineHeight: "104.5%",
                           textTransform: "capitalize",
@@ -139,13 +116,20 @@ export default function HeroSlider() {
                       <Typography
                         variant="h2"
                         sx={{
-                          marginBottom: "22px",
+                          mb: {
+                            md: "22px",
+                            xs: "12px"
+                          },
                           background:
                             "linear-gradient(100deg, #F04B12 6.88%, #FB8843 62.12%)",
                           backgroundClip: "text",
                           color: "transparent",
                           textTransform: "capitalize",
-                          fontSize: "74px",
+                          fontSize: {
+                            lg: "74px",
+                            md: "56px",
+                            xs: "46px",
+                          },
                           fontWeight: 700,
                           lineHeight: 1.05,
                         }}
@@ -155,7 +139,10 @@ export default function HeroSlider() {
                       <Typography
                         variant="body1"
                         sx={{
-                          marginBottom: "22px",
+                          mb: {
+                            md: "22px",
+                            xs: "12px"
+                          },
                           color: "#FFF",
                           fontSize: "24px",
                           fontWeight: 400,
@@ -168,21 +155,34 @@ export default function HeroSlider() {
                       <Box
                         sx={{
                           display: "flex",
-                          gap: "50px",
+                          gap: {
+                            lg: "50px",
+                            xs: "30px",
+                          },
                         }}
                       >
                         <Box component={Link} href={"/"}>
                           <Button
                             sx={{
                               color: "#FFF",
-                              fontSize: "20px",
                               fontWeight: 600,
                               lineHeight: 1.2,
-                              py: "16px",
+                              py: {
+                                md: "16px",
+                                xs: "14px",
+                              },
                               borderRadius: "6px",
                               background:
                                 "linear-gradient(95deg, #F04B12 1.59%, #FC8C46 100%)",
-                              minWidth: "194px",
+                              fontSize: {
+                                md: "20px",
+                                xs: "15px",
+                              },
+                              minWidth: {
+                                lg: "194px",
+                                md: "164px",
+                                xs: "144px",
+                              },
                               width: "100%",
                             }}
                           >
@@ -193,13 +193,23 @@ export default function HeroSlider() {
                           <Button
                             sx={{
                               color: "#C73300",
-                              fontSize: "20px",
                               fontWeight: 600,
                               lineHeight: 1.2,
-                              py: "16px",
+                              py: {
+                                md: "16px",
+                                xs: "14px",
+                              },
                               borderRadius: "6px",
                               background: "#FFF",
-                              minWidth: "194px",
+                              fontSize: {
+                                md: "20px",
+                                xs: "15px",
+                              },
+                              minWidth: {
+                                lg: "194px",
+                                md: "164px",
+                                xs: "144px",
+                              },
                               width: "100%",
                               "&:hover": {
                                 background: "revert",
@@ -213,7 +223,7 @@ export default function HeroSlider() {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                   <Box
                     sx={{
                       textAlign: "center",
@@ -221,6 +231,11 @@ export default function HeroSlider() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      "& .main-image": {
+                        width: "100%",
+                        height: "auto",
+                        px: "30px",
+                      },
                     }}
                   >
                     <Image
@@ -229,6 +244,7 @@ export default function HeroSlider() {
                       width={500}
                       height={500}
                       alt="hero-image"
+                      className="main-image"
                     />
                   </Box>
                 </Grid>
@@ -251,6 +267,61 @@ export default function HeroSlider() {
             }}
           ></Box>
         </Swiper>
+        <Box
+          sx={{
+            maxWidth: "1440px",
+            m: "auto",
+            "& .swiper-slide.swiper-slide-thumb-active button": {
+              color: "#FE7624",
+              borderBottomColor: "#FE7624",
+            },
+          }}
+        >
+          <Swiper
+            onSwiper={(swiper: any) => setThumbsSwiper(swiper)}
+            loop
+            freeMode={true}
+            watchSlidesProgress={true}
+            modules={[FreeMode, Thumbs]}
+            breakpoints={{
+              1350: {
+                slidesPerView: 5,
+              },
+              1100: {
+                slidesPerView: 4,
+              },
+              700: {
+                slidesPerView: 3,
+              },
+              0: {
+                slidesPerView: 2,
+              },
+            }}
+            className="mySwiper"
+          >
+            {[1, 2, 3, 4, 5, 6].map((num, index) => (
+              <SwiperSlide key={index}>
+                <Button
+                  sx={{
+                    color: "#EAEAEA",
+                    textAlign: "center",
+                    fontSize: "28px",
+                    fontWeight: "600",
+                    lineHeight: "normal",
+                    width: "100%",
+                    whiteSpace: "nowrap",
+                    borderBottom: "1px solid white",
+                    borderRadius: "0",
+                    textTransform: "capitalize",
+                    py: "24px",
+                  }}
+                >
+                  {titles[index]}
+                </Button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Box>
       </Box>
     </Box>
   );

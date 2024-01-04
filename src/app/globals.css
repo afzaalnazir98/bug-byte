@@ -1,3 +1,10 @@
 body {
     overflow-x: hidden;
 }
+
+@media screen and (max-width:700px) {
+    .brand-logo {       
+        height: 50px;
+        width: auto;
+    }
+}

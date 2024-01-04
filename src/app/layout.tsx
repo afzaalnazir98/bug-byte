@@ -1,9 +1,6 @@
 import * as React from "react";
 
 import Box from "@mui/material/Box";
-import HomeIcon from "@mui/icons-material/Home";
-import StarIcon from "@mui/icons-material/Star";
-import ChecklistIcon from "@mui/icons-material/Checklist";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import Navbar from "@/utils/Navbar";
 import FooterLayout from "@/components/Footer/FooterLayout";

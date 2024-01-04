@@ -5,7 +5,7 @@ import ProjectWithUs from "@/components/ThemeRegistry/LandingPage/project-withus
 import GameExperienceSection from "@/components/game-experience-section";
 import TestimonialSection from "@/components/testmonial-slider-section";
 import Help from "@/components/Content/Help";
-
+import StudioFacts from "@/components/studio-facts";
 
 export default function HomePage() {
   return (
@@ -13,6 +13,7 @@ export default function HomePage() {
       <HeroSlider />
       <ProjectWithUs />
       <Help />
+      <StudioFacts />
       <ServiceDetails />
       <GameExperienceSection />
       <TestimonialSection />
