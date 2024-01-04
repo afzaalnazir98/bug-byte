@@ -3,7 +3,7 @@ import * as React from "react";
 import HeroSection from "@/utils/HeroSection";
 import ContactForm from "@/utils/ContactUsForm";
 import ContactAgent from "@/public/assets/images/contact-agent.png";
-import Container from "@/utils/container";
+import Container from "@/components/container";
 import {Box} from "@mui/material";
 
 const props = [

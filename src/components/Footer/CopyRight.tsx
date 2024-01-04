@@ -1,5 +1,5 @@
 "use client";
-import Container from "@/utils/container";
+import Container from "@/components/container";
 import {Box, Divider} from "@mui/material";
 import React from "react";
 

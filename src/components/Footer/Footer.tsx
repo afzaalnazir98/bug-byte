@@ -1,5 +1,5 @@
 "use client";
-import Container from "@/utils/container";
+import Container from "@/components/container";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";

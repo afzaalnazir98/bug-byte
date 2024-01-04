@@ -1,18 +1,18 @@
 "use client";
 
 import {Box, Typography} from "@mui/material";
-import Container from "../utils/container";
+import Container from "./container";
 
 const StudioFacts = () => {
   return (
     <Container>
       <Box
         sx={{
+          my: "100px",
           borderRadius: "20px",
           background: "rgba(0,0,0, 0.4)",
           padding: "63px 110px",
           color: "white",
-          py: "100px"
         }}
       >
         <Box
@@ -64,7 +64,7 @@ const StudioFacts = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            marginBottom: "-140px",
+            marginBottom: "-100px",
             marginTop: "50px",
           }}
         >
@@ -77,7 +77,7 @@ const StudioFacts = () => {
                   "linear-gradient(95deg, #F04B12 1.59%, #FC8C46 100%)",
                 boxShadow: "0px 4px 30px 0px rgba(0, 0, 0, 0.15)",
                 p: "35px",
-                maxWidth: "272px"
+                maxWidth: "272px",
               }}
             >
               Lorem ipsum {index}

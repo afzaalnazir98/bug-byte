@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Container from "@/utils/container";
+import Container from "@/components/container";
 import { Box, Grid, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";

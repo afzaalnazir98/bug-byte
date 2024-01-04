@@ -8,7 +8,7 @@ import GameCard from "@/components/Cards/game-experience-card";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Container from "@/utils/container";
+import Container from "@/components/container";
 
 export default function GameExperienceSlider() {
   const [activeTab, setActiveTab] = React.useState(0);

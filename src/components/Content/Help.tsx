@@ -5,10 +5,7 @@ import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Button } from "@mui/material";
 import Link from "next/link";
-import Container from "@/utils/container";
-
-
-
+import Container from "@/components/container";
 
 const HelpImageStyled = {
 
@@ -59,7 +56,7 @@ export default function Help() {
                 fontSize: { xs: "18px", sm: "14px" },
                 fontWeight: 600,
                 textTransform: "uppercase",
-                lineHeight: "45.5px" / 325% /,
+                lineHeight: "45.5px",
                 letterSpacing: "4.34px",
               }}
             >
@@ -70,7 +67,7 @@ export default function Help() {
                 color: "#EAEAEA",
                 fontSize: "40px",
                 fontWeight: 700,
-                lineHeight: "45.5px" / 113.75% /,
+                lineHeight: "45.5px",
                 letterSpacing: "0.8px",
                 textTransform: "uppercase",
               }}

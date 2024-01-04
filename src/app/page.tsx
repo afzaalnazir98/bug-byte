@@ -6,6 +6,7 @@ import GameExperienceSection from "@/components/game-experience-section";
 import TestimonialSection from "@/components/testmonial-slider-section";
 import Help from "@/components/Content/Help";
 import StudioFacts from "@/components/studio-facts";
+import QuestionFormComponent from "@/utils/QuestionForm";
 
 export default function HomePage() {
   return (
@@ -14,9 +15,10 @@ export default function HomePage() {
       <ProjectWithUs />
       <Help />
       <StudioFacts />
-      <ServiceDetails />
       <GameExperienceSection />
       <TestimonialSection />
+      <ServiceDetails />
+      <QuestionFormComponent />
     </>
   );
 }

@@ -2,9 +2,8 @@
 
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Container from "@/utils/container";
+import Container from "@/components/container";
 import ContentComponent from "@/components/Content/Content";
-import QuestionFormComponent from "@/utils/QuestionForm";
 
 const dataArray = [
   {
@@ -47,7 +46,6 @@ const dataArray = [
 
 export default function ServiceDetails() {
   return (
-    <>
       <Container>
         <Box
           sx={{
@@ -67,8 +65,6 @@ export default function ServiceDetails() {
             />
           ))}
         </Box>
-        <QuestionFormComponent />
       </Container>
-    </>
   );
 }
