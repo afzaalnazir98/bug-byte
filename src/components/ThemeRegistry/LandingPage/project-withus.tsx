@@ -105,7 +105,7 @@ export default function ProjectWithUs() {
                     maxWidth: "595px",
                   }}
                 >
-                  We offer innovative solutions that will fit our customer's
+                  We offer innovative solutions that will fit our customer&apos;s
                   requirements and for a long-lasting partnership.
                 </Typography>
               </Box>
@@ -202,7 +202,7 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    In-depth research of gamers' needs and expectat is at the
+                    In-depth research of gamers&apos; needs and expectat is at the
                     heart of our game art and development.
                   </Typography>
                 </Box>
@@ -228,7 +228,7 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    80+ products we’ve created don't leave their targ audiences
+                    80+ products we&apos;ve created don&apos;t leave their targ audiences
                     indifferent.
                   </Typography>
                 </Box>
@@ -314,7 +314,7 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    In-depth research of gamers' needs and expectat is at the
+                    In-depth research of gamers&apos; needs and expectat is at the
                     heart of our game art and development.
                   </Typography>
                 </Box>
@@ -340,7 +340,7 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    80+ products we’ve created don't leave their targ audiences
+                    80+ products we&apos;ve created don&apos;t leave their targ audiences
                     indifferent.
                   </Typography>
                 </Box>
@@ -426,7 +426,7 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    In-depth research of gamers' needs and expectat is at the
+                    In-depth research of gamers&apos; needs and expectat is at the
                     heart of our game art and development.
                   </Typography>
                 </Box>
@@ -452,7 +452,7 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    80+ products we’ve created don't leave their targ audiences
+                    80+ products we&apos;ve created don&apos;t leave their targ audiences
                     indifferent.
                   </Typography>
                 </Box>
