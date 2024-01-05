@@ -15,7 +15,8 @@ import {useTheme} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import {useMediaQuery} from "@mui/material";
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const LINKS = [
   {text: "About us", href: "/about"},
@@ -67,8 +68,9 @@ const Navbar = () => {
           backgroundColor: "transparent",
           display: "flex",
           alignItems: "center",
-          justifyContent: "end",
+          justifyContent: "space-between",
           maxWidth: "1370px",
+          flexWrap: "nowrap",
           width: "100%",
           px: {
             lg: "60px !important",
@@ -78,11 +80,11 @@ const Navbar = () => {
           m: "auto",
         }}
       >
-        <Box sx={{display: "flex", alignItems: "center", mr: "auto"}}>
+        <Box sx={{display: "flex", alignItems: "center"}}>
           <Box component={Link} href={"/"}>
             <Image
               className="brand-logo"
-              loading='lazy'
+              loading="lazy"
               src="/assets/images/logo-img.png"
               height={86}
               width={291}
@@ -105,6 +107,7 @@ const Navbar = () => {
           sx={{
             display: {xs: "none", md: "flex"},
             alignItems: "center",
+            gap: "55px",
           }}
         >
           {LINKS.map(({text, href}, index) => (
@@ -112,11 +115,7 @@ const Navbar = () => {
               key={index}
               sx={{
                 width: "auto",
-                pr: {
-                  lg: "60px",
-                  md: "30px",
-                  xs: "15px",
-                },
+                p: 0,
               }}
             >
               <ListItemButton
@@ -144,34 +143,46 @@ const Navbar = () => {
           component={Link}
           href="/get-started"
           sx={{
+            p: {
+              md: "7px 32px",
+              xs: "7px 28px",
+            },
+            fontSize: matchesMd ? "14px" : "18px",
+            fontWeight: matchesSM ? 200 : 400,
             marginLeft: 2,
-            width: matchesMd ? "150px" : "194px",
-            height: matchesMd ? "42px" : "56px",
             ml: matchesMd ? "-7px" : 0,
             display: {xs: "none", md: "flex"},
             borderRadius: "6px",
-            background: "linear-gradient(95deg, #F04B12 1.59%, #FC8C46 100%)",
+            background:
+              "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+            textTransform: "capitalize",
           }}
+          endIcon={
+            <ArrowOutwardIcon
+              sx={{
+                ml: "10px",
+              }}
+            />
+          }
         >
-          <p
-            style={{
-              fontSize: matchesMd ? "14px" : "18px",
-              fontWeight: matchesSM ? 200 : 400,
-            }}
-          >
-            Get Started
-          </p>
+          Get Started
         </Button>
       </Toolbar>
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer}>
         <Box sx={{width: "100%"}}>
-          <Box sx={{
-            textAlign: "right"
-          }}>
-          <HighlightOffIcon sx={{
-            m: "25px",
-            cursor: "pointer"
-          }} fontSize="large"  onClick={toggleDrawer} />
+          <Box
+            sx={{
+              textAlign: "right",
+            }}
+          >
+            <HighlightOffIcon
+              sx={{
+                m: "25px",
+                cursor: "pointer",
+              }}
+              fontSize="large"
+              onClick={toggleDrawer}
+            />
           </Box>
           {LINKS.map(({text, href}) => (
             <ListItem key={href}>

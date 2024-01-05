@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {Box, Button, Grid, Typography} from "@mui/material";
-import {Swiper, SwiperSlide} from "swiper/react";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
+import {Swiper, SwiperSlide} from "swiper/react";
 import {FreeMode, Thumbs, Autoplay, EffectFade} from "swiper/modules";
 
 import "swiper/css";
@@ -64,12 +65,17 @@ export default function HeroSlider() {
                   m: "auto",
                 }}
               >
-                <Grid item xs={12} sm={6} sx={{
-                      order: {
-                        sm: 0,
-                        xs: 2
-                      }
-                }} >
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  sx={{
+                    order: {
+                      sm: 0,
+                      xs: 2,
+                    },
+                  }}
+                >
                   <Box
                     sx={{
                       display: "flex",
@@ -81,14 +87,14 @@ export default function HeroSlider() {
                       <Typography
                         variant="body1"
                         sx={{
-                          color: "#FFF",
+                          color: "#D9D9D9",
                           mb: {
                             md: "22px",
-                            xs: "12px"
+                            xs: "12px",
                           },
                           fontSize: {
                             md: "28px",
-                            xs: "24px"
+                            xs: "24px",
                           },
                           fontWeight: "400",
                           lineHeight: "normal",
@@ -99,16 +105,16 @@ export default function HeroSlider() {
                       <Typography
                         variant="h2"
                         sx={{
-                          color: "#FFF",
+                          color: "#F7F7F7",
                           fontSize: {
-                            lg: "58px",
+                            lg: "85.045px",
                             md: "46px",
                             sm: "42px",
                             xs: "30px",
                           },
-                          fontWeight: "500",
-                          lineHeight: "104.5%",
-                          textTransform: "capitalize",
+                          fontWeight: 700,
+                          lineHeight: 1.045,
+                          textTransform: "uppercase",
                         }}
                       >
                         We Provide
@@ -118,20 +124,20 @@ export default function HeroSlider() {
                         sx={{
                           mb: {
                             md: "22px",
-                            xs: "12px"
+                            xs: "12px",
                           },
                           background:
-                            "linear-gradient(100deg, #F04B12 6.88%, #FB8843 62.12%)",
+                            "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                           backgroundClip: "text",
                           color: "transparent",
-                          textTransform: "capitalize",
+                          textTransform: "uppercase",
                           fontSize: {
-                            lg: "74px",
+                            lg: "85.045px",
                             md: "56px",
                             xs: "46px",
                           },
                           fontWeight: 700,
-                          lineHeight: 1.05,
+                          lineHeight: 1.045,
                         }}
                       >
                         AR/VR Services
@@ -141,12 +147,12 @@ export default function HeroSlider() {
                         sx={{
                           mb: {
                             md: "22px",
-                            xs: "12px"
+                            xs: "12px",
                           },
-                          color: "#FFF",
+                          color: "#D9D9D9",
                           fontSize: "24px",
                           fontWeight: 400,
-                          lineHeight: 1.2,
+                          lineHeight: "normal",
                         }}
                       >
                         Unleash Your Imagination – The Virtual Playground
@@ -156,8 +162,8 @@ export default function HeroSlider() {
                         sx={{
                           display: "flex",
                           gap: {
-                            lg: "50px",
-                            xs: "30px",
+                            lg: "32px",
+                            xs: "26px",
                           },
                         }}
                       >
@@ -165,55 +171,56 @@ export default function HeroSlider() {
                           <Button
                             sx={{
                               color: "#FFF",
-                              fontWeight: 600,
+                              fontWeight: 400,
                               lineHeight: 1.2,
-                              py: {
-                                md: "16px",
-                                xs: "14px",
-                              },
                               borderRadius: "6px",
                               background:
-                                "linear-gradient(95deg, #F04B12 1.59%, #FC8C46 100%)",
+                                "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                              boxShadow:
+                                "20px 25px 50px 0px rgba(0, 0, 0, 0.50)",
                               fontSize: {
                                 md: "20px",
                                 xs: "15px",
                               },
-                              minWidth: {
-                                lg: "194px",
-                                md: "164px",
-                                xs: "144px",
-                              },
                               width: "100%",
+                              textTransform: "capitalize",
+                              p: {
+                                md: "16px 34px",
+                                xs: "14px 28px",
+                              },
                             }}
+                            endIcon={
+                              <ArrowOutwardIcon
+                                sx={{
+                                  ml: {
+                                    md: "37px",
+                                    xs: "20px",
+                                  },
+                                }}
+                              />
+                            }
                           >
-                            Get Started
+                            Get Quote Now
                           </Button>
                         </Box>
                         <Box component={Link} href={"/"}>
                           <Button
                             sx={{
-                              color: "#C73300",
-                              fontWeight: 600,
+                              color: "#FFFFFF",
+                              fontWeight: 400,
                               lineHeight: 1.2,
-                              py: {
-                                md: "16px",
-                                xs: "14px",
+                              p: {
+                                md: "16px 34px",
+                                xs: "14px 28px",
                               },
                               borderRadius: "6px",
-                              background: "#FFF",
+                              background: "#262626",
                               fontSize: {
                                 md: "20px",
                                 xs: "15px",
                               },
-                              minWidth: {
-                                lg: "194px",
-                                md: "164px",
-                                xs: "144px",
-                              },
                               width: "100%",
-                              "&:hover": {
-                                background: "revert",
-                              },
+                              textTransform: "capitalize",
                             }}
                           >
                             View Portfolio
