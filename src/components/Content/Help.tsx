@@ -7,97 +7,112 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import Container from "@/components/container";
 
-const HelpImageStyled = {
-
-  "@media (min-width: 280px)": {
-    width:'270px',
-    height:'250px',
-  },
-  "@media (min-width: 400px)": {
-    width:'370px',
-    height:'350px',
-  },
-  "@media (min-width: 600px)": {
-    width:'400px',
-    height:'380px',
-  },
-  "@media (min-width: 1200px)": {
-    width:'488px',
-    height:'468px'
-  },
-};
 
 export default function Help() {
   return (
-    <Box>
+    <Box
+      sx={{
+        backgroundColor: "#F5F5F5",
+        position: "relative",
+      }}
+    >
+      <Box
+        sx={{
+          backgroundImage: `url(${"/assets/images/help-bg.png"})`,
+          backgroundPosition: "0% 100%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: { xs: "cover", md: "auto" },
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: "0",
+        }}
+      />
       <Container>
         <Box
           sx={{
+            position: "relative",
+            padding: "150px 0px",
             display: "flex",
-            flexDirection:{ xs:"column",md:"row" },
-            justifyContent: {xs:"center",md:"space-between"},
-            gap:{xs:'10px', md:'20px',lg:'30px'}
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: { xs: "center", md: "space-between" },
+            gap: { sm: "2rem", md: "4rem", lg: "8rem" },
           }}
         >
           <Box
             sx={{
-              alignSelf: 'center',
-              maxWidth: {xs:"380px",md:"580.46px"},
+              maxWidth: "529px",
+              height: "100%",
+              alignSelf: "center",
+            }}
+          >
+            <Image
+              src="/assets/images/help-img.png"
+              alt="help-img"
+              loading="lazy"
+              width={505}
+              height={535}
+              layout="intrinsic"
+            />
+          </Box>
+          <Box
+            sx={{
               display: "flex",
-              gap:{ xs:"12px",md:"18px",lg:"24px"},
               flexDirection: "column",
-              order:{xs:2,md:1},
-              justifyContent: "center",
+              alignSelf: "center",
+              gap: { xs: "20px", md: "30px", lg: "42px" },
+              maxWidth: "548px",
             }}
           >
             <Typography
               sx={{
-                color: "#FE7624",
-                fontSize: { xs: "18px", sm: "14px" },
+                color: "#02060B",
+                fontSize: { xs: "20px", lg: "25px" },
                 fontWeight: 600,
-                textTransform: "uppercase",
                 lineHeight: "45.5px",
-                letterSpacing: "4.34px",
+                textTransform: "uppercase",
               }}
             >
               HOW WE HELP YOU?
             </Typography>
             <Typography
               sx={{
-                color: "#EAEAEA",
-                fontSize: "40px",
+                backgroundImage:
+                  "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                fontSize: { xs: "20px", sm: "30px", lg: "40px" },
                 fontWeight: 700,
-                lineHeight: "45.5px",
+                lineHeight: "30px",
                 letterSpacing: "0.8px",
                 textTransform: "uppercase",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
             >
               Bringing People Together Through The Power Of Play
             </Typography>
+
             <Typography
               sx={{
-                color: "#EAEAEA",
-                fontSize: "18px",
+                color: "#071421",
+
+                fontSize: { xs: "18px", md: "14px" },
                 fontWeight: 400,
-                textTransform: "uppercase",
+                lineHeight: "20px",
               }}
             >
               Share your idea and we guarantee to design an outstanding version
               of the game for you. Our game developers are experts in compatible
-              across all devices. This has made us to completely drench into the
-              technology of gaming and thus lead to the stage where we have the
-              solution for each game in the world. As a leading game development
-              company in Pakistan, we use the best gaming technologies in the
-              industry to build exceptionally high-quality and exclusive games.
+              across all devices.
             </Typography>
+
             <Box component={Link} href="#">
               <Button
                 sx={{
-                  padding: { xs: " 7px 58px", md: "7px 80px" },
+                  padding: { xs: " 9px 20px", md: "9px 30px" },
                   borderRadius: "6px",
                   backgroundImage:
-                    "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
-                  fontSize: { xs: "18px", md: "24px" },
+                    "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                  fontSize: { xs: "18px", md: "20px" },
                   fontWeight: 600,
                   textTransform: "capitalize",
                   color: "#fff",
@@ -107,28 +122,6 @@ export default function Help() {
                 More About Us
               </Button>
             </Box>
-          </Box>
-          <Box sx={{
-            alignSelf: 'center',
-            order:{xs:1,md:2},
-          }}>
-
-
-          <Box  sx={{
-                  "&  .project-image": {
-                    ...HelpImageStyled
-                  }
-                }}>
-              <Image
-              className="project-image"
-                src="/assets/images/racing-car.png"
-                alt="racing-car"
-                width={588}
-                height={568}
-               />
-
-              </Box>
-
           </Box>
         </Box>
       </Container>

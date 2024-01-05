@@ -11,18 +11,18 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
-import {useTheme} from "@mui/material";
+import { useTheme } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import {useMediaQuery} from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const LINKS = [
-  {text: "About us", href: "/about"},
-  {text: "Services", href: "/services-detail"},
-  {text: "Portfolio", href: "/portfolio"},
-  {text: "Contact Us", href: "/contact-us"},
+  { text: "About us", href: "/about" },
+  { text: "Services", href: "/services-detail" },
+  { text: "Portfolio", href: "/portfolio" },
+  { text: "Contact Us", href: "/contact-us" },
 ];
 
 const Navbar = () => {
@@ -80,19 +80,19 @@ const Navbar = () => {
           m: "auto",
         }}
       >
-        <Box sx={{display: "flex", alignItems: "center"}}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box component={Link} href={"/"}>
             <Image
               className="brand-logo"
               loading="lazy"
-              src="/assets/images/logo-img.png"
-              height={86}
-              width={291}
+              src="/assets/images/logo.png"
+              width={121}
+              height={61}
               alt="brand logo"
             />
           </Box>
         </Box>
-        <Box sx={{display: {xs: "block", md: "none"}}}>
+        <Box sx={{ display: { xs: "block", md: "none" } }}>
           <IconButton
             onClick={toggleDrawer}
             edge="start"
@@ -105,12 +105,12 @@ const Navbar = () => {
         </Box>
         <Box
           sx={{
-            display: {xs: "none", md: "flex"},
+            display: { xs: "none", md: "flex" },
             alignItems: "center",
             gap: "55px",
           }}
         >
-          {LINKS.map(({text, href}, index) => (
+          {LINKS.map(({ text, href }, index) => (
             <ListItem
               key={index}
               sx={{
@@ -151,7 +151,7 @@ const Navbar = () => {
             fontWeight: matchesSM ? 200 : 400,
             marginLeft: 2,
             ml: matchesMd ? "-7px" : 0,
-            display: {xs: "none", md: "flex"},
+            display: { xs: "none", md: "flex" },
             borderRadius: "6px",
             background:
               "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
@@ -169,7 +169,7 @@ const Navbar = () => {
         </Button>
       </Toolbar>
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer}>
-        <Box sx={{width: "100%"}}>
+        <Box sx={{ width: "100%" }}>
           <Box
             sx={{
               textAlign: "right",
@@ -184,7 +184,7 @@ const Navbar = () => {
               onClick={toggleDrawer}
             />
           </Box>
-          {LINKS.map(({text, href}) => (
+          {LINKS.map(({ text, href }) => (
             <ListItem key={href}>
               <ListItemButton
                 component={Link}

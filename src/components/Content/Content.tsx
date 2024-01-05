@@ -100,8 +100,8 @@ export default function ContentComponent({
               </Typography>
               <Typography
                 sx={{
-                  color: "#FFF",
-                  fontSize: { xs: "14px", md: "18px" },
+                  color: "#EAEAEA",
+                  fontSize: { xs: "18px", md: "14px" },
                   fontWeight: "400",
                   textTransform: "capitalize",
                 }}

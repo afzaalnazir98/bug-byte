@@ -39,7 +39,7 @@ export default function QuestionFormComponent() {
 
   return (
     <Container>
-      <Grid container sx={{gap: {sm: "90px"}}}>
+      <Grid container sx={{ gap: { sm: "90px" } }}>
         <Grid
           item
           sx={{
@@ -58,7 +58,7 @@ export default function QuestionFormComponent() {
             sx={{
               color: "#F86910",
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-              fontSize: {xs: "18px", md: "22px"},
+              fontSize: { xs: "18px", md: "22px" },
               fontWeight: 400,
               letterSpacing: "0.44px",
               textTransform: "uppercase",
@@ -69,13 +69,13 @@ export default function QuestionFormComponent() {
           <Typography
             variant="h1"
             sx={{
-              fontSize: {xs: "34px", md: "42px"},
-              fontWeight: {xs: 500, md: 700},
+              fontSize: { xs: "34px", md: "42px" },
+              fontWeight: { xs: 500, md: 700 },
               lineHeight: "1.2",
               letterSpacing: "0.84px",
               textTransform: "uppercase",
               color: "white",
-              mt: {xs: 1, md: 3},
+              mt: { xs: 1, md: 3 },
             }}
           >
             We&apos;d Love To Hear From You
@@ -88,7 +88,7 @@ export default function QuestionFormComponent() {
               fontWeight: 400,
               lineHeight: "120%",
               color: "white",
-              mt: {xs: 2, md: 5},
+              mt: { xs: 2, md: 5 },
             }}
           >
             Please fill out the form and let us know about your concerns.We will{" "}
@@ -101,7 +101,7 @@ export default function QuestionFormComponent() {
               justifyContent: "center",
               alignItems: "center",
               color: "white",
-              mt: {xs: 2, md: 3},
+              mt: { xs: 2, md: 3 },
             }}
           >
             <Image src={callSvg.src} width={50} height={50} alt="inbox-image" />
@@ -120,7 +120,7 @@ export default function QuestionFormComponent() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mt: {xs: 1, md: 3},
+              mt: { xs: 1, md: 3 },
               color: "white",
             }}
           >
@@ -147,9 +147,9 @@ export default function QuestionFormComponent() {
           sx={{
             backgroundColor: "white",
             paddingInline: "2rem",
-            marginTop: {xs: "2rem", md: "5rem"},
+            marginTop: { xs: "2rem", md: "5rem" },
             mb: 3,
-            marginLeft: {sm: "auto"},
+            marginLeft: { sm: "auto" },
             height: "520px",
             borderRadius: "8px",
             "& .MuiInputBase-root": {
@@ -184,7 +184,9 @@ export default function QuestionFormComponent() {
               fullWidth
               margin="normal"
               required
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
             />
             <TextField
               label="Email"
@@ -194,7 +196,7 @@ export default function QuestionFormComponent() {
               required
               type="email"
               onChange={(e) =>
-                setFormData({...formData, email: e.target.value})
+                setFormData({ ...formData, email: e.target.value })
               }
             />
             <FormControl variant="outlined" fullWidth margin="normal" required>
@@ -205,7 +207,10 @@ export default function QuestionFormComponent() {
                 id="service"
                 value={formData.service}
                 onChange={(e) =>
-                  setFormData({...formData, service: e.target.value as string})
+                  setFormData({
+                    ...formData,
+                    service: e.target.value as string,
+                  })
                 }
               >
                 <MenuItem value="service1">Service 1</MenuItem>
@@ -221,7 +226,7 @@ export default function QuestionFormComponent() {
               margin="normal"
               required
               onChange={(e) =>
-                setFormData({...formData, message: e.target.value})
+                setFormData({ ...formData, message: e.target.value })
               }
             />
             <Button

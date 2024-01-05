@@ -16,16 +16,12 @@ interface FooterProps {
   }[];
 }
 
-
 const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
-
   return (
     <Container>
       <Box
         sx={{
-          maxWidth: "1250px",
-          m: "auto",
-          padding: "5.3rem 0",
+          padding: "60px 0",
           color: "#EAEAEA",
         }}
       >
@@ -41,27 +37,31 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
             sx={{
               flex: "30%",
               display: "flex",
-              justifyContent: "center",
+              justifyContent: { xs: "center", md: "start" },
             }}
           >
             <Box
               sx={{
-                display: "grid",
+                display: "flex",
+                flexDirection: "column",
                 gap: "20px",
-                maxWidth: "min-content",
-                justifyContent: "center",
+                maxWidth: "330px",
+                justifyContent: "start",
                 textAlign: { xs: "center", md: "left" },
               }}
             >
-              <Image
-                src="/assets/images/logo.png"
-                alt="logo.png"
-                width={260}
-                height={76}
-              />
+              <Box component={Link} href={"/"}>
+                <Image
+                  src="/assets/images/logo.png"
+                  alt="logo.png"
+                  loading="lazy"
+                  width={200}
+                  height={99}
+                />
+              </Box>
               <Typography
                 sx={{
-                  fontSize: { xs: "14px", md: "18px" },
+                  fontSize: { xs: "18px", md: "14px" },
                   fontWeight: 400,
                 }}
               >
@@ -94,6 +94,11 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                           fontSize: "20px",
                           fontWeight: 700,
                           color: "#F86910",
+                          background:
+                            "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
                         }}
                       >
                         {data.section}
@@ -111,10 +116,9 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                           >
                             <Typography
                               sx={{
-                                fontSize: { xs: "14px", md: "18px" },
+                                fontSize: { xs: "18px", md: "14px" },
                                 fontWeight: 400,
                                 marginTop: "20px",
-                                maxWidth: { sm: "150px" },
                               }}
                             >
                               {val.text}
@@ -134,7 +138,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                                   key={socialIndex}
                                   component={Link}
                                   href={social.url}
-                                  sx={{marginRight: "30px"}}
+                                  sx={{ marginRight: "30px" }}
                                 >
                                   <Image
                                     src={social.icon}
