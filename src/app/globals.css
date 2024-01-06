@@ -1,10 +1,28 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
-@media screen and (max-width:700px) {
-    .brand-logo {       
-        height: 50px;
-        width: auto;
-    }
+@media screen and (max-width: 700px) {
+  .brand-logo {
+    height: 50px;
+    width: auto;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollOpposite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

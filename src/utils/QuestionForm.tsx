@@ -3,7 +3,6 @@
 import * as React from "react";
 import {
   Typography,
-  Grid,
   Box,
   TextField,
   Button,
@@ -14,7 +13,7 @@ import {
 } from "@mui/material";
 
 import callSvg from "@/public/assets/images/call.svg";
-import magBoxSvg from "@/public/assets/images/msg.svg";
+import magBoxSvg from "@/public/assets/images/message.svg";
 import Image from "next/image";
 import Container from "../components/container";
 
@@ -38,218 +37,254 @@ export default function QuestionFormComponent() {
   };
 
   return (
-    <Container>
-      <Grid container sx={{ gap: { sm: "90px" } }}>
-        <Grid
-          item
+    <Box
+      sx={{
+        backgroundColor: "#F5F5F5",
+        padding: "10rem 0px",
+      }}
+    >
+      <Container>
+        <Box
           sx={{
-            marginTop: "5rem",
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "start",
+            flexDirection: { xs: "column", lg: "row" },
+            justifyContent: { xs: "center", lg: "space-between" },
+            alignItems: "center",
+            gap: { xs: "10rem", lg: "0rem" },
           }}
-          xs={12}
-          sm={5}
-          md={6}
-        >
-          <Typography
-            variant="body1"
-            sx={{
-              color: "#F86910",
-              textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-              fontSize: { xs: "18px", md: "22px" },
-              fontWeight: 400,
-              letterSpacing: "0.44px",
-              textTransform: "uppercase",
-            }}
-          >
-            Have Questions?
-          </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: "34px", md: "42px" },
-              fontWeight: { xs: 500, md: 700 },
-              lineHeight: "1.2",
-              letterSpacing: "0.84px",
-              textTransform: "uppercase",
-              color: "white",
-              mt: { xs: 1, md: 3 },
-            }}
-          >
-            We&apos;d Love To Hear From You
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: "18px",
-              fontStyle: "normal",
-              fontWeight: 400,
-              lineHeight: "120%",
-              color: "white",
-              mt: { xs: 2, md: 5 },
-            }}
-          >
-            Please fill out the form and let us know about your concerns.We will{" "}
-            try our best to provide optimized solutions.
-          </Typography>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "white",
-              mt: { xs: 2, md: 3 },
-            }}
-          >
-            <Image src={callSvg.src} width={50} height={50} alt="inbox-image" />
-            <Typography
-              sx={{
-                fontSize: "18px",
-                fontWeight: 600,
-                ml: 2,
-              }}
-            >
-              +(2) 578 - 365 - 379
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              mt: { xs: 1, md: 3 },
-              color: "white",
-            }}
-          >
-            <Image
-              src={magBoxSvg.src}
-              width={50}
-              height={50}
-              alt="inbox-image"
-            />
-            <Typography
-              sx={{
-                ml: 2,
-                fontSize: "18px",
-                fontWeight: 600,
-              }}
-            >
-              Hello@example.com
-            </Typography>
-          </Box>
-        </Grid>
-
-        <Grid
-          item
-          sx={{
-            backgroundColor: "white",
-            paddingInline: "2rem",
-            marginTop: { xs: "2rem", md: "5rem" },
-            mb: 3,
-            marginLeft: { sm: "auto" },
-            height: "520px",
-            borderRadius: "8px",
-            "& .MuiInputBase-root": {
-              borderRadius: "10px",
-              border: "1px solid #333",
-            },
-            "& .MuiOutlinedInput-root": {
-              "&.Mui-focused fieldset": {
-                borderColor: "#F86910",
-              },
-            },
-            "& label.Mui-focused": {
-              color: "#F86910",
-            },
-          }}
-          xs={12}
-          sm={5}
-          md={4.5}
         >
           <Box
-            component={"form"}
             sx={{
-              borderRadius: "8px",
-              width: "100%",
-              marginTop: "1rem",
+              paddingLeft: { xs: "15px", md: "30px", lg: "60px" },
+              alignSelf: "center",
             }}
-            onSubmit={(e) => handleSubmit(e)}
           >
-            <TextField
-              label="Name"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              required
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-            />
-            <TextField
-              label="Email"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              required
-              type="email"
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-            />
-            <FormControl variant="outlined" fullWidth margin="normal" required>
-              <InputLabel id="service-label">Service</InputLabel>
-              <Select
-                label="Service"
-                labelId="service-label"
-                id="service"
-                value={formData.service}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    service: e.target.value as string,
-                  })
-                }
+            <Box
+              sx={{
+                maxWidth: "380px",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "#F03E18",
+                  fontSize: "22px",
+                  fontWeight: 400,
+                  letterSpacing: "0.44px",
+                  textTransform: "uppercase",
+                  maxWidth: "380px",
+                }}
               >
-                <MenuItem value="service1">Service 1</MenuItem>
-                <MenuItem value="service2">Service 2</MenuItem>
-              </Select>
-            </FormControl>
-            <TextField
-              label="Enter Message"
-              variant="outlined"
-              multiline
-              rows={4}
-              fullWidth
-              margin="normal"
-              required
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-            />
-            <Button
+                Have Questions?
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#05111C",
+                  fontSize: "42px",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  marginTop: "15px",
+                }}
+              >
+                We'd Love To Hear From You
+              </Typography>
+            </Box>
+
+            <Box
               sx={{
-                borderRadius: "10px",
-                background: "#F86910",
-                mt: 2,
-                height: "50.955px",
-                fontSize: "18px",
-                fontWeight: 600,
-                "&:hover": {
-                  backgroundColor: "#F86910",
+                marginTop: "44px",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "#05111C",
+                  fontSize: "18px",
+                  fontWeight: 400,
+                  lineHeight: "124%",
+                  maxWidth: "540px",
+                }}
+              >
+                Please fill out the form and let us know about your concerns.We
+                will try our best to provide optimized solutions.
+              </Typography>
+              <Box
+                sx={{
+                  marginTop: "30px",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: "10px",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image src={callSvg} alt="call-icon" width={50} height={50} />
+                  <Typography
+                    sx={{
+                      color: "#06111C",
+                      fontSize: "18px",
+                      fontWeight: 600,
+                    }}
+                  >
+                    +(2) 578 - 365 - 379
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: "10px",
+                    alignItems: "center",
+                    marginTop: "23px",
+                  }}
+                >
+                  <Image
+                    src={magBoxSvg}
+                    alt="call-icon"
+                    width={50}
+                    height={50}
+                  />
+                  <Typography
+                    sx={{
+                      color: "#06111C",
+                      fontSize: "18px",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Hello@example.com
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              minWidth: { xs: "100%", md: "687px" },
+              minHeight: { xs: "100%", sm: "655px" },
+              backgroundImage: `url(${"/assets/images/question-form-bg.png"})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <Box
+              sx={{
+                marginLeft: "13%",
+                marginTop: "22%",
+                maxWidth: { xs: "66%", sm: "420px", lg: "450px" },
+                height: "100%",
+                backgroundColor: "#0B1D30",
+                padding: { xs: "8px 15px", sm: "10px 20px", md: "20px 32px" },
+                borderRadius: "8px",
+                "& .MuiInputBase-root": {
+                  borderRadius: "10px",
+                  border: "1px solid white",
+                },
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "white",
+                    color: "white",
+                  },
+                },
+                "& .MuiInputBase-input": {
+                  color: "white",
+                },
+                "& .MuiInputLabel-root": {
+                  color: "white",
+                },
+                "& label.Mui-focused": {
+                  color: "white",
                 },
               }}
-              type="submit"
-              variant="contained"
-              fullWidth
             >
-              Send
-            </Button>
+              <Box
+                component={"form"}
+                sx={{
+                  display: "grid",
+                  borderRadius: "8px",
+                  paddingBottom: "10px",
+                }}
+                onSubmit={(e) => handleSubmit(e)}
+              >
+                <TextField
+                  label="Name"
+                  variant="outlined"
+                  fullWidth
+                  margin="normal"
+                  required
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+                <TextField
+                  label="Email"
+                  variant="outlined"
+                  fullWidth
+                  margin="normal"
+                  required
+                  type="email"
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
+                <FormControl
+                  variant="outlined"
+                  fullWidth
+                  margin="normal"
+                  required
+                >
+                  <InputLabel id="service-label">Service</InputLabel>
+                  <Select
+                    label="Service"
+                    labelId="service-label"
+                    id="service"
+                    value={formData.service}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        service: e.target.value as string,
+                      })
+                    }
+                  >
+                    <MenuItem value="service1">Service 1</MenuItem>
+                    <MenuItem value="service2">Service 2</MenuItem>
+                  </Select>
+                </FormControl>
+                <TextField
+                  label="Enter Message"
+                  variant="outlined"
+                  multiline
+                  rows={4}
+                  fullWidth
+                  margin="normal"
+                  required
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                />
+                <Button
+                  sx={{
+                    borderRadius: "10px",
+                    background:
+                      "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                    mt: 2,
+                    height: "50.955px",
+                    fontSize: "18px",
+                    fontWeight: 600,
+                    "&:hover": {
+                      backgroundColor: "#F86910",
+                    },
+                  }}
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                >
+                  Send
+                </Button>
+              </Box>
+            </Box>
           </Box>
-        </Grid>
-      </Grid>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 }

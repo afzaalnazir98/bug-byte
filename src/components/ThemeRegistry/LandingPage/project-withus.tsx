@@ -14,10 +14,10 @@ const projectInfoImage = {
     textAlign: "center",
   },
   "@media (min-width: 768px)": {
-    marginLeft: "-25px",
+    marginRight: "20px",
   },
   "@media (min-width: 1200px)": {
-    marginLeft: "-55px",
+    // marginLeft: "-55px",
   },
 };
 
@@ -64,24 +64,7 @@ export default function ProjectWithUs() {
             >
               <Box
                 sx={{
-                  ...projectInfoImage,
-                  "&  .project-image": {
-                    marginTop: "-98px",
-                    verticalAlign: "bottom",
-                    ...projectImageStyled,
-                  },
-                }}
-              >
-                <Image
-                  className="project-image"
-                  src="/assets/images/image-section2-landingPage.png"
-                  alt="cartoon-img"
-                  width={400}
-                  height={323}
-                />
-              </Box>
-              <Box
-                sx={{
+                  order: { xs: 2, md: 1 },
                   transform: { xs: "", sm: "rotate(-1.096deg)" },
                   padding: { xs: "30px 20px", md: "50px 0px" },
                   textAlign: { xs: "center", sm: "" },
@@ -103,11 +86,33 @@ export default function ProjectWithUs() {
                     fontSize: "18px",
                     fontWeight: 400,
                     maxWidth: "595px",
+                    textAlign: { xs: "center", lg: "left" },
                   }}
                 >
-                  We offer innovative solutions that will fit our customer&apos;s
-                  requirements and for a long-lasting partnership.
+                  We offer innovative solutions that will fit our
+                  customer&apos;s requirements and for a long-lasting
+                  partnership.
                 </Typography>
+              </Box>
+
+              <Box
+                sx={{
+                  order: { xs: 1, md: 2 },
+                  ...projectInfoImage,
+                  "&  .project-image": {
+                    marginTop: "-98px",
+                    verticalAlign: "bottom",
+                    ...projectImageStyled,
+                  },
+                }}
+              >
+                <Image
+                  className="project-image"
+                  src="/assets/images/image-section2-landingPage.png"
+                  alt="cartoon-img"
+                  width={400}
+                  height={323}
+                />
               </Box>
             </Box>
           </Box>
@@ -202,8 +207,8 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    In-depth research of gamers&apos; needs and expectat is at the
-                    heart of our game art and development.
+                    In-depth research of gamers&apos; needs and expectat is at
+                    the heart of our game art and development.
                   </Typography>
                 </Box>
                 <Box
@@ -228,8 +233,8 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    80+ products we&apos;ve created don&apos;t leave their targ audiences
-                    indifferent.
+                    80+ products we&apos;ve created don&apos;t leave their targ
+                    audiences indifferent.
                   </Typography>
                 </Box>
               </Box>
@@ -314,8 +319,8 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    In-depth research of gamers&apos; needs and expectat is at the
-                    heart of our game art and development.
+                    In-depth research of gamers&apos; needs and expectat is at
+                    the heart of our game art and development.
                   </Typography>
                 </Box>
                 <Box
@@ -340,8 +345,8 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    80+ products we&apos;ve created don&apos;t leave their targ audiences
-                    indifferent.
+                    80+ products we&apos;ve created don&apos;t leave their targ
+                    audiences indifferent.
                   </Typography>
                 </Box>
               </Box>
@@ -386,6 +391,7 @@ export default function ProjectWithUs() {
                   sx={{
                     borderRightWidth: "thin",
                     width: "max-content",
+                    marginTop: "-8px",
                     height: "120px",
                     borderColor: "white",
                   }}
@@ -426,8 +432,8 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    In-depth research of gamers&apos; needs and expectat is at the
-                    heart of our game art and development.
+                    In-depth research of gamers&apos; needs and expectat is at
+                    the heart of our game art and development.
                   </Typography>
                 </Box>
                 <Box
@@ -452,8 +458,8 @@ export default function ProjectWithUs() {
                       textTransform: "uppercase",
                     }}
                   >
-                    80+ products we&apos;ve created don&apos;t leave their targ audiences
-                    indifferent.
+                    80+ products we&apos;ve created don&apos;t leave their targ
+                    audiences indifferent.
                   </Typography>
                 </Box>
               </Box>
