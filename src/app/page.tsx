@@ -13,11 +13,11 @@ export default function HomePage() {
   return (
     <>
       <HeroSlider />
+      <Help />
       <ProjectWithUs />
       <Sponser />
-      <Help />
-      <StudioFacts />
       <GameExperienceSection />
+      <StudioFacts />
       <TestimonialSection />
       <ServiceDetails />
       <QuestionFormComponent />

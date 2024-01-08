@@ -10,104 +10,148 @@ import Logo5 from "@/public/assets/social-media-icons/scroll-logo5.svg";
 import Logo6 from "@/public/assets/social-media-icons/scroll-logo6.svg";
 import Star from "@/public/assets/social-media-icons/star.svg";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 import Container from "@/components/container";
 
 export default function Sponsor() {
-  const logoContainerStyles = {
-    overflow: "hidden",
-    whiteSpace: "nowrap",
-  };
-
   const logoStyles = {
     display: "inline-block",
     margin: "0 10px",
-    animation: "scroll 5s linear infinite",
   };
 
-  const secondBoxStyles = {
-    position: "relative",
-    zIndex: 2,
-    animation: "scrollOpposite 15s linear infinite",
-  };
-
-  const banner = {
-    position: "relative",
-    top: "51px",
-    transform: "rotate(4.25deg)",
-    width: "calc(100% + 18px)",
-    background:
-      "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-    padding: "30px 0px",
-  };
+  const textToReverse = "BUG BYTE STUDIO";
+  const reversedText = textToReverse.split("").reverse().join("");
   return (
     <>
       <Box
         sx={{
-          padding: "200px 0px",
+          background: "linear-gradient(0deg, white 60%, black 40%)",
+          paddingBottom:"55px"
         }}
       >
-        <Box sx={logoContainerStyles}>
-          <Image
-            src={Logo1}
-            alt="Logo1"
-            height={36}
-            width={219}
-            style={logoStyles}
-          />
-          <Image
-            src={Logo2}
-            alt="Logo2"
-            height={36}
-            width={219}
-            style={logoStyles}
-          />
-          <Image
-            src={Logo3}
-            alt="Logo3"
-            height={36}
-            width={219}
-            style={logoStyles}
-          />
-          <Image
-            src={Logo4}
-            alt="Logo4"
-            height={36}
-            width={219}
-            style={logoStyles}
-          />
-          <Image
-            src={Logo5}
-            alt="Logo5"
-            height={36}
-            width={219}
-            style={logoStyles}
-          />
-          <Image
-            src={Logo6}
-            alt="Logo6"
-            height={36}
-            width={219}
-            style={logoStyles}
-          />
+        <Box
+          sx={{
+            maxWidth: "1440px",
+            marginX: "auto",
+          }}
+        >
+          <Marquee pauseOnHover={true}>
+            <Box sx={logoStyles}>
+              <Image src={Logo1} alt="Logo1" height={36} width={219} />
+            </Box>
+            <Box sx={logoStyles}>
+              <Image src={Logo2} alt="Logo2" height={36} width={219} />
+            </Box>
+            <Box sx={logoStyles}>
+              <Image src={Logo3} alt="Logo3" height={36} width={219} />
+            </Box>
+            <Box sx={logoStyles}>
+              <Image src={Logo4} alt="Logo4" height={36} width={219} />
+            </Box>
+            <Box sx={logoStyles}>
+              <Image src={Logo5} alt="Logo5" height={36} width={219} />
+            </Box>
+            <Box sx={logoStyles}>
+              <Image src={Logo6} alt="Logo6" height={36} width={219} />
+            </Box>
+          </Marquee>
         </Box>
-        <Box>
-          <Box sx={banner}>
+
+        <Box
+          sx={{
+            position: "relative",
+            zIndex: 1,
+            top: "34px",
+          }}
+        >
+          <Box
+            sx={{
+              transform: "rotate(4.25deg)",
+              width: "calc(100% + 14px)",
+              padding: "30px 0px",
+              marginLeft: "-8px",
+              background:
+                "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+            }}
+          >
             <Container>
-              <Box
-                sx={{
-                  display: "inline-block",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                }}
-              >
-                <Box sx={secondBoxStyles}>
+              <Marquee direction="right">
+                <Box
+                  sx={{
+                    display: "inline-block",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "relative",
+                      zIndex: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        gap: "4rem",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          color: "#EAEAEA",
+                          fontSize: "60px",
+                          fontWeight: 600,
+                          letterSpacing: "10.8px",
+                        }}
+                      >
+                        BUG BYTE STUDIO
+                      </Typography>
+                      <Image src={Star} alt="star" width={38} height={38} />
+                      <Typography
+                        sx={{
+                          color: "#EAEAEA",
+                          fontSize: "60px",
+                          fontWeight: 600,
+                          letterSpacing: "10.8px",
+                        }}
+                      >
+                        BUG BYTE STUDIO
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+              </Marquee>
+            </Container>
+          </Box>
+          <Box
+            sx={{
+              background:
+                "linear-gradient(90deg, rgba(247, 67, 29, 0.20) 0%, rgba(232, 57, 19, 0.20) 100%)",
+              transform: "rotate(-1.545deg)",
+              width: "calc(100% + 14px)",
+              marginLeft: "-8px",
+              position: "relative",
+              zIndex: -1,
+              overflow: "hidden",
+              padding: "30px 0px",
+            }}
+          >
+            <Container>
+              <Marquee>
+                <Box
+                  sx={{
+                    display: "inline-block",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                  }}
+                >
                   <Box
                     sx={{
                       display: "flex",
                       justifyContent: "center",
                       gap: "4rem",
                       alignItems: "center",
-                      transform: "rotate(-0.5deg)",
                     }}
                   >
                     <Typography
@@ -116,9 +160,10 @@ export default function Sponsor() {
                         fontSize: "60px",
                         fontWeight: 600,
                         letterSpacing: "10.8px",
+                        direction: "rtl",
                       }}
                     >
-                      BUG BYTE STUDIO
+                      {reversedText}
                     </Typography>
                     <Image src={Star} alt="star" width={38} height={38} />
                     <Typography
@@ -127,13 +172,14 @@ export default function Sponsor() {
                         fontSize: "60px",
                         fontWeight: 600,
                         letterSpacing: "10.8px",
+                        direction: "rtl",
                       }}
                     >
-                      BUG BYTE STUDIO
+                      {reversedText}
                     </Typography>
                   </Box>
                 </Box>
-              </Box>
+              </Marquee>
             </Container>
           </Box>
         </Box>
