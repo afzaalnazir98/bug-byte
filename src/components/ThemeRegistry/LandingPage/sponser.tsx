@@ -35,6 +35,7 @@ export default function Sponsor() {
             md: "linear-gradient(0deg, white 60%, black 40%)",
           },
           paddingBottom: "55px",
+          overflow: "hidden",
         }}
       >
         <Box
@@ -47,7 +48,7 @@ export default function Sponsor() {
             <Box sx={logoStyles}>
               <Image
                 className="logo"
-                src={Logo1.src}
+                src={Logo1}
                 alt="Logo1"
                 height={36}
                 width={219}
@@ -56,7 +57,7 @@ export default function Sponsor() {
             <Box sx={logoStyles}>
               <Image
                 className="logo"
-                src={Logo2.src}
+                src={Logo2}
                 alt="Logo2"
                 height={36}
                 width={219}

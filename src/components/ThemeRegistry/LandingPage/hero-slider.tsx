@@ -1,15 +1,12 @@
 "use client";
 
-import {useState} from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-import {Box, Button, Grid, Typography} from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-
-import {Swiper, SwiperSlide} from "swiper/react";
-import {FreeMode, Thumbs, Autoplay, EffectFade} from "swiper/modules";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Thumbs, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/free-mode";
@@ -46,7 +43,7 @@ export default function HeroSlider() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          thumbs={{swiper: thumbsSwiper}}
+          thumbs={{ swiper: thumbsSwiper }}
           modules={[EffectFade, Autoplay, FreeMode, Thumbs]}
           className="mySwiper2"
         >
@@ -58,11 +55,11 @@ export default function HeroSlider() {
                   maxWidth: "1370px",
                   width: "100%",
                   p: {
-                    lg: "30px 60px",
-                    md: "15px 30px",
-                    xs: "15px",
+                    xs: "2rem 1rem ",
+                    md: "4rem 2rem",
+                    lg: "2rem 4rem",
                   },
-                  m: "auto",
+                  mb: "auto",
                 }}
               >
                 <Grid
@@ -94,7 +91,8 @@ export default function HeroSlider() {
                           },
                           fontSize: {
                             md: "28px",
-                            xs: "24px",
+                            sm: "24px",
+                            xs: "18px",
                           },
                           fontWeight: "400",
                           lineHeight: "normal",
@@ -109,7 +107,7 @@ export default function HeroSlider() {
                           fontSize: {
                             lg: "85.045px",
                             md: "46px",
-                            sm: "42px",
+                            sm: "40px",
                             xs: "30px",
                           },
                           fontWeight: 700,
@@ -134,6 +132,7 @@ export default function HeroSlider() {
                           fontSize: {
                             lg: "85.045px",
                             md: "56px",
+                            sm: "50px",
                             xs: "46px",
                           },
                           fontWeight: 700,
@@ -150,9 +149,9 @@ export default function HeroSlider() {
                             xs: "12px",
                           },
                           color: "#D9D9D9",
-                          fontSize: "24px",
+                          fontSize: { xs: "18px", sm: "22px", lg: "24px" },
                           fontWeight: 400,
-                          lineHeight: "normal",
+                          lineHeight: { xs: "1.5", sm: "1.7", md: "normal" },
                         }}
                       >
                         Unleash Your Imagination – The Virtual Playground
@@ -163,7 +162,9 @@ export default function HeroSlider() {
                           display: "flex",
                           gap: {
                             lg: "32px",
-                            xs: "26px",
+                            md: "26px",
+                            sm: "18px",
+                            xs: "8px",
                           },
                         }}
                       >
@@ -184,9 +185,11 @@ export default function HeroSlider() {
                               },
                               width: "100%",
                               textTransform: "capitalize",
+                              whiteSpace: "nowrap",
                               p: {
                                 md: "16px 34px",
-                                xs: "14px 28px",
+                                sm: "14px 20px",
+                                xs: "8px 16px",
                               },
                             }}
                             endIcon={
@@ -194,7 +197,8 @@ export default function HeroSlider() {
                                 sx={{
                                   ml: {
                                     md: "37px",
-                                    xs: "20px",
+                                    sm: "18px",
+                                    xs: "8px",
                                   },
                                 }}
                               />
@@ -211,13 +215,16 @@ export default function HeroSlider() {
                               lineHeight: 1.2,
                               p: {
                                 md: "16px 34px",
-                                xs: "14px 28px",
+                                sm: "14px 20px",
+                                xs: "10px 20px",
                               },
+                              whiteSpace: "nowrap",
                               borderRadius: "6px",
                               background: "#262626",
                               fontSize: {
                                 md: "20px",
-                                xs: "15px",
+                                sm: "18px",
+                                xs: "14px",
                               },
                               width: "100%",
                               textTransform: "capitalize",
@@ -313,7 +320,7 @@ export default function HeroSlider() {
                   sx={{
                     color: "#EAEAEA",
                     textAlign: "center",
-                    fontSize: "28px",
+                    fontSize: { xs: "18px", sm: "22px", md: "28px" },
                     fontWeight: "600",
                     lineHeight: "normal",
                     width: "100%",
@@ -321,7 +328,7 @@ export default function HeroSlider() {
                     borderBottom: "1px solid white",
                     borderRadius: "0",
                     textTransform: "capitalize",
-                    py: "24px",
+                    py: { xs: "18px", sm: "20px", md: "24px" },
                   }}
                 >
                   {titles[index]}

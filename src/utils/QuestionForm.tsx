@@ -11,7 +11,6 @@ import {
   FormControl,
   InputLabel,
 } from "@mui/material";
-
 import callSvg from "@/public/assets/images/call.svg";
 import magBoxSvg from "@/public/assets/images/message.svg";
 import Image from "next/image";
@@ -24,7 +23,7 @@ interface FormData {
   message: string;
 }
 
-export default function QuestionFormComponent() {
+export default function QuestionForm() {
   const [formData, setFormData] = React.useState<FormData>({
     name: "",
     email: "",
@@ -45,7 +44,12 @@ export default function QuestionFormComponent() {
       <Box
         sx={{
           backgroundImage: `url(${"/assets/images/contact-bg-image.png"})`,
-          padding: "10rem 0px",
+          padding: {
+            xs: "5rem 0px",
+            sm: "7rem 0px",
+            md: "8rem 0px",
+            lg: "10rem 0px",
+          },
         }}
       >
         <Container>
@@ -55,7 +59,7 @@ export default function QuestionFormComponent() {
               flexDirection: { xs: "column", lg: "row" },
               justifyContent: { xs: "center", lg: "space-between" },
               alignItems: "center",
-              gap: { xs: "10rem", lg: "0rem" },
+              gap: { xs: "5rem 0px", sm: "7rem 0px", md: "8rem 0px", lg: "0" },
             }}
           >
             <Box
@@ -189,16 +193,18 @@ export default function QuestionFormComponent() {
                     borderRadius: "10px",
                     border: "1px solid white",
                   },
-                  "& .mui-sm7gn3-MuiInputBase-root-MuiOutlinedInput-root":{
-
-                    padding: {xs:"8.5px 6px",sm:"14.5px 12px",md:"16.5px 14px"},
+                  "& .mui-sm7gn3-MuiInputBase-root-MuiOutlinedInput-root": {
+                    padding: {
+                      xs: "8.5px 6px",
+                      sm: "14.5px 12px",
+                      md: "16.5px 14px",
+                    },
                   },
                   "& .MuiOutlinedInput-root": {
                     "&.Mui-focused fieldset": {
                       borderColor: "white",
                       color: "white",
                     },
-                    
                   },
                   "& .MuiInputBase-input": {
                     color: "white",
@@ -210,7 +216,6 @@ export default function QuestionFormComponent() {
                   "& label.Mui-focused": {
                     color: "white",
                   },
-
                 }}
               >
                 <Box
@@ -238,8 +243,7 @@ export default function QuestionFormComponent() {
                     }
                   />
                   <TextField
-                  
-                  className="input-field"
+                    className="input-field"
                     label="Email"
                     variant="outlined"
                     fullWidth
@@ -251,8 +255,7 @@ export default function QuestionFormComponent() {
                     }
                   />
                   <FormControl
-                  
-                  className="input-field"
+                    className="input-field"
                     variant="outlined"
                     fullWidth
                     margin="normal"
@@ -276,8 +279,7 @@ export default function QuestionFormComponent() {
                     </Select>
                   </FormControl>
                   <TextField
-                  
-                  className="input-field"
+                    className="input-field"
                     label="Enter Message"
                     variant="outlined"
                     multiline
@@ -294,7 +296,7 @@ export default function QuestionFormComponent() {
                       borderRadius: "10px",
                       background:
                         "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                      marginTop: {xs:"10px",sm:"15px"},
+                      marginTop: { xs: "10px", sm: "15px" },
                       height: "50.955px",
                       fontSize: "18px",
                       fontWeight: 600,

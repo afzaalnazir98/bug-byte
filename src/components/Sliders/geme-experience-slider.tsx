@@ -1,9 +1,9 @@
 "use client";
 
-import React, {useState} from "react";
-import {Box, Tab, Tabs} from "@mui/material";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay, Navigation} from "swiper/modules";
+import React, { useState } from "react";
+import { Box, Tab, Tabs } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
 import GameCard from "@/components/Cards/game-experience-card";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -51,17 +51,18 @@ export default function GameExperienceSlider() {
         "& .swiper-slide": {
           visibility: "hidden",
         },
-        "& .swiper-slide.swiper-slide-active, & .swiper-slide.swiper-slide-next": {
-          visibility: "visible",
-        },
+        "& .swiper-slide.swiper-slide-active, & .swiper-slide.swiper-slide-next":
+          {
+            visibility: "visible",
+          },
         "& .swiper": {
           overflow: "visible",
         },
         "& .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after": {
-          fontSize: "20px",
+          fontSize: "16px",
         },
         "& .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after": {
-          fontSize: "20px",
+          fontSize: "16px",
         },
         "& .swiper-slide.swiper-slide-active": {
           borderRadius: "5px",
@@ -76,7 +77,7 @@ export default function GameExperienceSlider() {
         <Box
           sx={{
             p: {
-              xs: "20px 80px 40px 80px",
+              xs: "20px 40px 60px 40px",
               sm: "35px 80px 47px 80px",
               md: "60px 80px 57px 80px",
             },
@@ -85,7 +86,7 @@ export default function GameExperienceSlider() {
         >
           <Box
             sx={{
-              marginBottom: {xs: "30px", md: "50px"},
+              marginBottom: { xs: "30px", md: "50px", lg: "90px" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -105,13 +106,13 @@ export default function GameExperienceSlider() {
                 "& .MuiTabs-indicator": indicatorStyles,
               }}
             >
-              <Tab sx={{...tabStyles}} label="All" />
-              <Tab sx={{...tabStyles, ml: 2}} label="Digital Twins" />
-              <Tab sx={{...tabStyles, ml: 2}} label="AR/VR" />
-              <Tab sx={{...tabStyles, ml: 2}} label="Unity Development" />
-              <Tab sx={{...tabStyles, ml: 2}} label="Metaverse" />
-              <Tab sx={{...tabStyles, ml: 2}} label="NFT" />
-              <Tab sx={{...tabStyles, ml: 2}} label="blockchain" />
+              <Tab sx={{ ...tabStyles }} label="All" />
+              <Tab sx={{ ...tabStyles, ml: 2 }} label="Digital Twins" />
+              <Tab sx={{ ...tabStyles, ml: 2 }} label="AR/VR" />
+              <Tab sx={{ ...tabStyles, ml: 2 }} label="Unity Development" />
+              <Tab sx={{ ...tabStyles, ml: 2 }} label="Metaverse" />
+              <Tab sx={{ ...tabStyles, ml: 2 }} label="NFT" />
+              <Tab sx={{ ...tabStyles, ml: 2 }} label="blockchain" />
             </Tabs>
           </Box>
           <Swiper
@@ -129,33 +130,48 @@ export default function GameExperienceSlider() {
               },
               0: {
                 slidesPerView: 1,
-                spaceBetween: 90,
+                spaceBetween: 100,
               },
             }}
           >
             {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
               <SwiperSlide key={index}>
-                  <GameCard isActive={index === activeSlideIndex} />
+                <GameCard isActive={index === activeSlideIndex} />
               </SwiperSlide>
             ))}
+
             <Box
-              className="swiper-button-prev"
               sx={{
-                left: "-80px",
-                width: {xs: "30px", sm: "40px"},
-                height: {xs: "30px", sm: "40px"},
-                ...hollowArrowStyles,
+                display: "flex",
+                gap: "30px",
+                justifyContent: "space-between",
+                width: { xs: "fit-content", sm: "auto" },
+                margin: "auto",
+                position: "relative",
+                top: { xs: "60px", sm: "-190px", md: "-300px" },
               }}
-            ></Box>
-            <Box
-              className="swiper-button-next"
-              sx={{
-                right: "-70px",
-                width: {xs: "30px", sm: "40px"},
-                height: {xs: "30px", sm: "40px"},
-                ...hollowArrowStyles,
-              }}
-            ></Box>
+            >
+              <Box
+                className="swiper-button-prev"
+                sx={{
+                  position: { xs: "unset", sm: "relative" },
+                  left: "-80px",
+                  width: { xs: "30px", sm: "40px" },
+                  height: { xs: "30px", sm: "40px" },
+                  ...hollowArrowStyles,
+                }}
+              ></Box>
+              <Box
+                className="swiper-button-next"
+                sx={{
+                  position: { xs: "unset", sm: "relative" },
+                  right: "-70px",
+                  width: { xs: "30px", sm: "40px" },
+                  height: { xs: "30px", sm: "40px" },
+                  ...hollowArrowStyles,
+                }}
+              ></Box>
+            </Box>
           </Swiper>
         </Box>
       </Container>

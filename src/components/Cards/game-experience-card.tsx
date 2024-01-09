@@ -44,7 +44,7 @@ export default function MediaCard({isActive}: MediaCardProps) {
 
       <CardContent
         sx={{
-          paddingInline: {xs: "1rem", md: "2rem"},
+          paddingInline: {xs: "0.5rem", md: "2rem"},
           mt: {xs: 0, md: 2},
           color: "white",
         }}

@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {Box} from "@mui/material";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay, Navigation, Pagination} from "swiper/modules";
+import { Box } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import TestimonialCard from "@/components/Cards/testimonial-slider-card";
 import Container from "@/components/container";
 
@@ -40,17 +40,18 @@ export default function TestimonialSlider() {
         "& .swiper-slide.swiper-slide-prev": {
           visibility: "hidden !important",
         },
-        "& .swiper-slide.swiper-slide-active, & .swiper-slide.swiper-slide-next": {
-          visibility: "visible",
-        },
+        "& .swiper-slide.swiper-slide-active, & .swiper-slide.swiper-slide-next":
+          {
+            visibility: "visible",
+          },
         "& .swiper": {
           overflow: "visible",
         },
         "& .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after": {
-          fontSize: "20px",
+          fontSize: "16px",
         },
         "& .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after": {
-          fontSize: "20px",
+          fontSize: "16px",
         },
         "& .swiper-pagination-bullet": {
           width: "10px",
@@ -73,18 +74,17 @@ export default function TestimonialSlider() {
         <Box
           sx={{
             p: {
-              xs: "20px 80px 100px 80px",
+              xs: "20px 40px 100px 40px",
               sm: "35px 80px 100px 80px",
               md: "60px 80px 80px 80px",
             },
             overflow: "hidden",
-            marginBottom: "50px",
           }}
         >
           <Swiper
             loop
             navigation={navigationEl}
-            pagination={{clickable: true}}
+            pagination={{ clickable: true }}
             className="swiper-main"
             modules={[Autoplay, Navigation, Pagination]}
             breakpoints={{
@@ -109,28 +109,42 @@ export default function TestimonialSlider() {
                 </Box>
               </SwiperSlide>
             ))}
+
             <Box
-              className="swiper-button-prev"
               sx={{
-                left: "-70px",
-                width: {xs: "30px", sm: "40px"},
-                height: {xs: "30px", sm: "40px"},
-                ...hollowArrowStyles,
+                display: "flex",
+                gap: "30px",
+                justifyContent: "space-between",
+                width: { xs: "fit-content", sm: "auto" },
+                margin: "auto",
+                position: "relative",
+                top: { xs: "40px", sm: "-140px", md: "-190px" },
               }}
-            ></Box>
-            <Box
-              className="swiper-button-next"
-              sx={{
-                right: "-70px",
-                width: {xs: "30px", sm: "40px"},
-                height: {xs: "30px", sm: "40px"},
-                ...hollowArrowStyles,
-              }}
-            ></Box>
+            >
+              <Box
+                className="swiper-button-prev"
+                sx={{
+                  position: { xs: "unset", sm: "relative" },
+                  left: "-80px",
+                  width: { xs: "30px", sm: "40px" },
+                  height: { xs: "30px", sm: "40px" },
+                  ...hollowArrowStyles,
+                }}
+              ></Box>
+              <Box
+                className="swiper-button-next"
+                sx={{
+                  position: { xs: "unset", sm: "relative" },
+                  right: "-70px",
+                  width: { xs: "30px", sm: "40px" },
+                  height: { xs: "30px", sm: "40px" },
+                  ...hollowArrowStyles,
+                }}
+              ></Box>
+            </Box>
           </Swiper>
           <Box sx={paginationStyles}></Box>
         </Box>
-        
       </Container>
     </Box>
   );

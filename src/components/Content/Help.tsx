@@ -13,6 +13,7 @@ export default function Help() {
       sx={{
         backgroundColor: "#F5F5F5",
         position: "relative",
+        paddingBottom:{xs:"10rem",sm:"8rem",md:"2rem"},
       }}
     >
       <Box
@@ -31,7 +32,7 @@ export default function Help() {
         <Box
           sx={{
             position: "relative",
-            padding: "150px 0px",
+            padding: {xs:"2rem 0rem",md:"4rem 0rem",lg:"8rem 0px"},
             display: "flex",
             flexDirection: {xs: "column", md: "row"},
             justifyContent: {xs: "center", md: "space-between"},
