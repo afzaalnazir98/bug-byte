@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -61,7 +63,6 @@ export default function ContentComponent({
               <Image
                 src={image}
                 alt={title}
-                loading="lazy"
                 width={529}
                 height={369}
                 layout="intrinsic"

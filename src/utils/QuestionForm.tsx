@@ -90,7 +90,7 @@ export default function QuestionFormComponent() {
                     marginTop: "15px",
                   }}
                 >
-                  We'd Love To Hear From You
+                  We&apos;d Love To Hear From You
                 </Typography>
               </Box>
 
@@ -124,7 +124,7 @@ export default function QuestionFormComponent() {
                     }}
                   >
                     <Image
-                      src={callSvg}
+                      src={callSvg.src}
                       alt="call-icon"
                       width={50}
                       height={50}
@@ -148,7 +148,7 @@ export default function QuestionFormComponent() {
                     }}
                   >
                     <Image
-                      src={magBoxSvg}
+                      src={magBoxSvg.src}
                       alt="call-icon"
                       width={50}
                       height={50}
@@ -160,7 +160,7 @@ export default function QuestionFormComponent() {
                         fontWeight: 600,
                       }}
                     >
-                      Hello@example.com
+                      mailto:hello@example.com
                     </Typography>
                   </Box>
                 </Box>

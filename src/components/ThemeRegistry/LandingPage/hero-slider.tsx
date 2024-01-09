@@ -246,7 +246,6 @@ export default function HeroSlider() {
                     }}
                   >
                     <Image
-                      loading={"lazy"}
                       src="/assets/images/hero-image.png"
                       width={500}
                       height={500}
@@ -277,10 +276,12 @@ export default function HeroSlider() {
         <Box
           sx={{
             maxWidth: "1440px",
+            background: "#051223",
             m: "auto",
             "& .swiper-slide.swiper-slide-thumb-active button": {
               color: "#FE7624",
               borderBottomColor: "#FE7624",
+              background: "#040D15",
             },
           }}
         >

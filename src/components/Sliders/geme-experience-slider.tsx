@@ -120,7 +120,6 @@ export default function GameExperienceSlider() {
             className="swiper-main"
             modules={[Autoplay, Navigation]}
             onSwiper={(swiper) => {
-              console.log(swiper);
               setActiveSlideIndex(swiper.activeIndex);
             }}
             breakpoints={{
@@ -136,9 +135,7 @@ export default function GameExperienceSlider() {
           >
             {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
               <SwiperSlide key={index}>
-                <Box>
                   <GameCard isActive={index === activeSlideIndex} />
-                </Box>
               </SwiperSlide>
             ))}
             <Box

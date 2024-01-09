@@ -54,7 +54,6 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                 <Image
                   src="/assets/images/logo.png"
                   alt="logo.png"
-                  loading="lazy"
                   width={200}
                   height={99}
                 />

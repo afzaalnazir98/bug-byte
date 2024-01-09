@@ -41,8 +41,6 @@ export default function ContactFormSection(): JSX.Element {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    console.log("Contact Form submitted");
   };
 
   return (
@@ -298,7 +296,7 @@ export default function ContactFormSection(): JSX.Element {
               marginLeft: "20px",
             }}
           >
-            <Image src={location} width={18} height={24} alt="location" />
+            <Image src={location.src} width={18} height={24} alt="location" />
             <Box sx={{marginLeft: "37px"}}>
               <Typography
                 variant="body1"
@@ -336,7 +334,7 @@ export default function ContactFormSection(): JSX.Element {
               marginLeft: "20px",
             }}
           >
-            <Image src={message} width={24} height={24} alt="location" />
+            <Image src={message.src} width={24} height={24} alt="location" />
             <Box sx={{marginLeft: "37px"}}>
               <Typography
                 variant="body1"
@@ -374,7 +372,7 @@ export default function ContactFormSection(): JSX.Element {
               marginLeft: "20px",
             }}
           >
-            <Image src={phone} width={26} height={24} alt="location" />
+            <Image src={phone.src} width={26} height={24} alt="location" />
             <Box sx={{marginLeft: "37px"}}>
               <Typography
                 variant="body1"
@@ -412,7 +410,7 @@ export default function ContactFormSection(): JSX.Element {
               marginLeft: "20px",
             }}
           >
-            <Image src={watch} width={24} height={24} alt="location" />
+            <Image src={watch.src} width={24} height={24} alt="location" />
             <Box sx={{marginLeft: "37px"}}>
               <Typography
                 variant="body1"
@@ -445,10 +443,10 @@ export default function ContactFormSection(): JSX.Element {
               mb: 4,
             }}
           >
-            <Image src={facebook} width={35} height={35} alt="facebook-svg" />
-            <Image src={insta} width={35} height={35} alt="instagram-svg" />
-            <Image src={linkdin} width={35} height={35} alt="linkdIn-svg" />
-            <Image src={X} width={35} height={35} alt="X-svg" />
+            <Image src={facebook.src} width={35} height={35} alt="facebook" />
+            <Image src={insta.src} width={35} height={35} alt="instagram" />
+            <Image src={linkdin.src} width={35} height={35} alt="linkedIn" />
+            <Image src={X.src} width={35} height={35} alt="X" />
           </Box>
         </Grid>
       </Grid>

@@ -53,7 +53,6 @@ const Navbar = () => {
         background: scroll ? "rgba( 21, 20, 20, 0.35 )" : "transparent",
         boxShadow: scroll ? "0px 0px" : "0px 0px",
         backdropFilter: scroll ? "blur( 18.5px )" : "blur( 0px )",
-        borderRadius: "10px",
         padding: "0",
         minHeight: "auto",
         height: "auto",
@@ -84,7 +83,6 @@ const Navbar = () => {
           <Box component={Link} href={"/"}>
             <Image
               className="brand-logo"
-              loading="lazy"
               src="/assets/images/logo.png"
               width={121}
               height={61}

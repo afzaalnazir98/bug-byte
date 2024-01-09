@@ -83,7 +83,7 @@ export default function ContactForm() {
                 gap: "20px",
               }}
             >
-              <Image src={callSvg} alt="call" />
+              <Image src={callSvg.src} alt="call" />
               <Typography
                 sx={{
                   color: "#EAEAEA",
@@ -102,7 +102,7 @@ export default function ContactForm() {
                 gap: "20px",
               }}
             >
-              <Image src={messageSvg} alt="message" />
+              <Image src={messageSvg.src} alt="message" />
               <Typography
                 sx={{
                   color: "#EAEAEA",

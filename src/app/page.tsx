@@ -1,14 +1,13 @@
 import * as React from "react";
-import ServiceDetails from "./services-detail/page";
 import HeroSlider from "@/components/ThemeRegistry/LandingPage/hero-slider";
 import ProjectWithUs from "@/components/ThemeRegistry/LandingPage/project-withus";
 import Sponser from "@/components/ThemeRegistry/LandingPage/sponser";
 import CompanyProgress from "@/components/ThemeRegistry/LandingPage/company-progress";
-import GameExperienceSection from "@/components/game-experience-section";
+import GameExperience from "@/components/game-experience-section";
 import TestimonialSection from "@/components/testmonial-slider-section";
 import Help from "@/components/Content/Help";
-import StudioFacts from "@/components/studio-facts";
-import QuestionFormComponent from "@/utils/QuestionForm";
+import QuestionForm from "@/utils/QuestionForm";
+import NextLevelServicesProvider from "@/components/next-level-services-provider";
 
 export default function HomePage() {
   return (
@@ -17,12 +16,11 @@ export default function HomePage() {
       <Help />
       <ProjectWithUs />
       <Sponser />
-      <GameExperienceSection />
-      <StudioFacts />
-      <TestimonialSection />
-      <ServiceDetails />
+      <GameExperience />
+      <NextLevelServicesProvider />
       <CompanyProgress/>
-      <QuestionFormComponent />
+      <TestimonialSection />
+      <QuestionForm />
     </>
   );
 }

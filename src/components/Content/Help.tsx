@@ -3,10 +3,9 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import { Button } from "@mui/material";
+import {Button} from "@mui/material";
 import Link from "next/link";
 import Container from "@/components/container";
-
 
 export default function Help() {
   return (
@@ -21,7 +20,7 @@ export default function Help() {
           backgroundImage: `url(${"/assets/images/help-bg.png"})`,
           backgroundPosition: "0% 100%",
           backgroundRepeat: "no-repeat",
-          backgroundSize: { xs: "cover", md: "auto" },
+          backgroundSize: {xs: "cover", md: "auto"},
           width: "100%",
           height: "100%",
           position: "absolute",
@@ -34,9 +33,9 @@ export default function Help() {
             position: "relative",
             padding: "150px 0px",
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            justifyContent: { xs: "center", md: "space-between" },
-            gap: { sm: "2rem", md: "4rem", lg: "8rem" },
+            flexDirection: {xs: "column", md: "row"},
+            justifyContent: {xs: "center", md: "space-between"},
+            gap: {sm: "2rem", md: "4rem", lg: "8rem"},
           }}
         >
           <Box
@@ -44,15 +43,20 @@ export default function Help() {
               maxWidth: "529px",
               height: "100%",
               alignSelf: "center",
+              "& .character-image": {
+                "@media (max-width: 600px)": {
+                  width: "100%",
+                  height: "auto",
+                },
+              },
             }}
           >
             <Image
+              className="character-image"
               src="/assets/images/help-img.png"
               alt="help-img"
-              loading="lazy"
               width={505}
               height={535}
-              layout="intrinsic"
             />
           </Box>
           <Box
@@ -60,14 +64,14 @@ export default function Help() {
               display: "flex",
               flexDirection: "column",
               alignSelf: "center",
-              gap: { xs: "20px", md: "30px", lg: "42px" },
+              gap: {xs: "20px", md: "30px", lg: "42px"},
               maxWidth: "548px",
             }}
           >
             <Typography
               sx={{
                 color: "#02060B",
-                fontSize: { xs: "20px", lg: "25px" },
+                fontSize: {xs: "20px", lg: "25px"},
                 fontWeight: 600,
                 lineHeight: "45.5px",
                 textTransform: "uppercase",
@@ -79,7 +83,7 @@ export default function Help() {
               sx={{
                 backgroundImage:
                   "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                fontSize: { xs: "20px", sm: "30px", lg: "40px" },
+                fontSize: {xs: "20px", sm: "30px", lg: "40px"},
                 fontWeight: 700,
                 lineHeight: "30px",
                 letterSpacing: "0.8px",
@@ -95,7 +99,7 @@ export default function Help() {
               sx={{
                 color: "#071421",
 
-                fontSize: { xs: "18px", md: "14px" },
+                fontSize: {xs: "18px", md: "14px"},
                 fontWeight: 400,
                 lineHeight: "20px",
               }}
@@ -108,11 +112,11 @@ export default function Help() {
             <Box component={Link} href="#">
               <Button
                 sx={{
-                  padding: { xs: " 9px 20px", md: "9px 30px" },
+                  padding: {xs: " 9px 20px", md: "9px 30px"},
                   borderRadius: "6px",
                   backgroundImage:
                     "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                  fontSize: { xs: "18px", md: "20px" },
+                  fontSize: {xs: "18px", md: "20px"},
                   fontWeight: 600,
                   textTransform: "capitalize",
                   color: "#fff",

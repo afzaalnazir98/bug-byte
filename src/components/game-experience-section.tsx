@@ -5,8 +5,7 @@ import Typography from "@mui/material/Typography";
 import {Box, Button} from "@mui/material";
 import GameSlider from "@/components/Sliders/geme-experience-slider";
 
-export default function GameExperienceContainer(): JSX.Element {
-  const imagePath = "/assets/images/gameExperience-bg.png";
+export default function GameExperience(): JSX.Element {
 
   return (
     <Box

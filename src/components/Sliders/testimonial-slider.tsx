@@ -1,17 +1,19 @@
 "use client";
+
 import * as React from "react";
 import {Box} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation, Pagination} from "swiper/modules";
 import TestimonialCard from "@/components/Cards/testimonial-slider-card";
+import Container from "@/components/container";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Container from "@/components/container";
 
 export default function TestimonialSlider() {
-  const navigationel = {
+  const navigationEl = {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   };
@@ -81,11 +83,10 @@ export default function TestimonialSlider() {
         >
           <Swiper
             loop
-            navigation={navigationel}
+            navigation={navigationEl}
             pagination={{clickable: true}}
             className="swiper-main"
             modules={[Autoplay, Navigation, Pagination]}
-            onSwiper={(swiper) => console.log(swiper)}
             breakpoints={{
               1050: {
                 slidesPerView: 3,

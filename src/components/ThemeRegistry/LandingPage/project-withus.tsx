@@ -41,6 +41,7 @@ export default function ProjectWithUs() {
         color: "white",
         padding: "10rem 0rem",
         overflow: "hidden",
+        marginTop: "-220px"
       }}
     >
       <Box
@@ -189,7 +190,7 @@ export default function ProjectWithUs() {
                   }}
                 />
               </Box>
-              <Image src={svg1} width={60} height={60} alt="instagram-svg" />
+              <Image src={svg1.src} width={60} height={60} alt="instagram-svg" />
 
               <Typography
                 sx={{
@@ -211,7 +212,7 @@ export default function ProjectWithUs() {
                   }}
                 >
                   <Image
-                    src={arrow}
+                    src={arrow.src}
                     width={13}
                     height={13}
                     alt="instagram-svg"
@@ -310,7 +311,7 @@ export default function ProjectWithUs() {
                   }}
                 />
               </Box>
-              <Image src={svg2} width={60} height={60} alt="instagram-svg" />
+              <Image src={svg2.src} width={60} height={60} alt="instagram-svg" />
 
               <Typography
                 sx={{
@@ -432,7 +433,7 @@ export default function ProjectWithUs() {
                   }}
                 />
               </Box>
-              <Image src={svg3} width={60} height={60} alt="instagram-svg" />
+              <Image src={svg3.src} width={60} height={60} alt="instagram-svg" />
 
               <Typography
                 sx={{
