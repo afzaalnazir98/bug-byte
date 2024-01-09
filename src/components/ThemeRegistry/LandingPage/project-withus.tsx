@@ -8,6 +8,7 @@ import svg1 from "@/public/assets/social-media-icons/projectWIthUsIcon1.svg";
 import svg2 from "@/public/assets/social-media-icons/projectWIthUsIcon2.svg";
 import svg3 from "@/public/assets/social-media-icons/projectWIthUsIcon3.svg";
 import arrow from "@/public/assets/social-media-icons/arrow.svg";
+import { motion } from "framer-motion";
 
 const projectInfoImage = {
   "@media (max-width: 600px)": {
@@ -27,6 +28,11 @@ const projectImageStyled = {
     height: "250px",
   },
 };
+const container={
+   color:"white"
+
+
+}
 
 export default function ProjectWithUs() {
   return (
@@ -119,6 +125,7 @@ export default function ProjectWithUs() {
         </Container>
       </Box>
       <Container>
+        
         <Grid
           container
           spacing={8}
@@ -129,6 +136,16 @@ export default function ProjectWithUs() {
           }}
         >
           <Grid item xs={12} sm={8} md={4}>
+            
+      <motion.div
+        initial={{ opacity: 0, scale: 2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.2,
+          delay: 0.3,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
             <Box
               sx={{
                 display: "grid",
@@ -204,7 +221,6 @@ export default function ProjectWithUs() {
                       color: "#EAEAEA",
                       fontSize: { xs: "18px", md: "14px" },
                       fontWeight: 400,
-                      textTransform: "uppercase",
                     }}
                   >
                     In-depth research of gamers&apos; needs and expectat is at
@@ -230,7 +246,6 @@ export default function ProjectWithUs() {
                       color: "#EAEAEA",
                       fontSize: { xs: "18px", md: "14px" },
                       fontWeight: 400,
-                      textTransform: "uppercase",
                     }}
                   >
                     80+ products we&apos;ve created don&apos;t leave their targ
@@ -239,8 +254,19 @@ export default function ProjectWithUs() {
                 </Box>
               </Box>
             </Box>
+            
+      </motion.div>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
+          <motion.div
+        initial={{ opacity: 0, scale: 2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.7,
+          delay: 0.7,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
             <Box
               sx={{
                 display: "grid",
@@ -316,7 +342,6 @@ export default function ProjectWithUs() {
                       color: "#EAEAEA",
                       fontSize: { xs: "18px", md: "14px" },
                       fontWeight: 400,
-                      textTransform: "uppercase",
                     }}
                   >
                     In-depth research of gamers&apos; needs and expectat is at
@@ -342,7 +367,6 @@ export default function ProjectWithUs() {
                       color: "#EAEAEA",
                       fontSize: { xs: "18px", md: "14px" },
                       fontWeight: 400,
-                      textTransform: "uppercase",
                     }}
                   >
                     80+ products we&apos;ve created don&apos;t leave their targ
@@ -351,8 +375,19 @@ export default function ProjectWithUs() {
                 </Box>
               </Box>
             </Box>
+      </motion.div>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
+          <motion.div
+        initial={{ opacity: 0, scale: 2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 1,
+          delay: 1,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        
             <Box
               sx={{
                 display: "grid",
@@ -429,7 +464,6 @@ export default function ProjectWithUs() {
                       color: "#EAEAEA",
                       fontSize: { xs: "18px", md: "14px" },
                       fontWeight: 400,
-                      textTransform: "uppercase",
                     }}
                   >
                     In-depth research of gamers&apos; needs and expectat is at
@@ -455,7 +489,6 @@ export default function ProjectWithUs() {
                       color: "#EAEAEA",
                       fontSize: { xs: "18px", md: "14px" },
                       fontWeight: 400,
-                      textTransform: "uppercase",
                     }}
                   >
                     80+ products we&apos;ve created don&apos;t leave their targ
@@ -464,6 +497,8 @@ export default function ProjectWithUs() {
                 </Box>
               </Box>
             </Box>
+            
+      </motion.div>
           </Grid>
         </Grid>
       </Container>

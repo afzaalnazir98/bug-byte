@@ -3,6 +3,7 @@ import ServiceDetails from "./services-detail/page";
 import HeroSlider from "@/components/ThemeRegistry/LandingPage/hero-slider";
 import ProjectWithUs from "@/components/ThemeRegistry/LandingPage/project-withus";
 import Sponser from "@/components/ThemeRegistry/LandingPage/sponser";
+import CompanyProgress from "@/components/ThemeRegistry/LandingPage/company-progress";
 import GameExperienceSection from "@/components/game-experience-section";
 import TestimonialSection from "@/components/testmonial-slider-section";
 import Help from "@/components/Content/Help";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <StudioFacts />
       <TestimonialSection />
       <ServiceDetails />
+      <CompanyProgress/>
       <QuestionFormComponent />
     </>
   );

@@ -16,7 +16,13 @@ import Container from "@/components/container";
 export default function Sponsor() {
   const logoStyles = {
     display: "inline-block",
-    margin: "0 10px",
+    margin: {xs:"0 5px",sm:"0 8px",md:"0 10px"},
+    "& .logo":{
+      height:{xs:"20px",sm:"25px",md:"30px",lg:"36px"},
+      width:{xs:"160px",sm:"180px",md:"200px",lg:"219px"} 
+
+    }
+
   };
 
   const textToReverse = "BUG BYTE STUDIO";
@@ -25,8 +31,8 @@ export default function Sponsor() {
     <>
       <Box
         sx={{
-          background: "linear-gradient(0deg, white 60%, black 40%)",
-          paddingBottom:"55px"
+          background: {xs:"linear-gradient(0deg, white 67%, black 33%)",sm:"linear-gradient(0deg, white 60%, black 40%)",md:"linear-gradient(0deg, white 60%, black 40%)"},
+          paddingBottom: "55px",
         }}
       >
         <Box
@@ -37,22 +43,22 @@ export default function Sponsor() {
         >
           <Marquee pauseOnHover={true}>
             <Box sx={logoStyles}>
-              <Image src={Logo1} alt="Logo1" height={36} width={219} />
+              <Image className="logo" src={Logo1} alt="Logo1" height={36} width={219} />
             </Box>
             <Box sx={logoStyles}>
-              <Image src={Logo2} alt="Logo2" height={36} width={219} />
+              <Image className="logo" src={Logo2} alt="Logo2" height={36} width={219} />
             </Box>
             <Box sx={logoStyles}>
-              <Image src={Logo3} alt="Logo3" height={36} width={219} />
+              <Image className="logo" src={Logo3} alt="Logo3" height={36} width={219} />
             </Box>
             <Box sx={logoStyles}>
-              <Image src={Logo4} alt="Logo4" height={36} width={219} />
+              <Image  className="logo" src={Logo4} alt="Logo4" height={36} width={219} />
             </Box>
             <Box sx={logoStyles}>
-              <Image src={Logo5} alt="Logo5" height={36} width={219} />
+              <Image className="logo" src={Logo5} alt="Logo5" height={36} width={219} />
             </Box>
             <Box sx={logoStyles}>
-              <Image src={Logo6} alt="Logo6" height={36} width={219} />
+              <Image className="logo" src={Logo6} alt="Logo6" height={36} width={219} />
             </Box>
           </Marquee>
         </Box>
@@ -61,14 +67,14 @@ export default function Sponsor() {
           sx={{
             position: "relative",
             zIndex: 1,
-            top: "34px",
+            top: {xs:"8px",sm:"15px",md:"20px",lg:"34px"},
           }}
         >
           <Box
             sx={{
               transform: "rotate(4.25deg)",
               width: "calc(100% + 14px)",
-              padding: "30px 0px",
+              padding: {xs:"8px 0px",sm:"10px 0px",md:"20px 0px",lg:"30px 0px"},
               marginLeft: "-8px",
               background:
                 "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
@@ -100,7 +106,7 @@ export default function Sponsor() {
                       <Typography
                         sx={{
                           color: "#EAEAEA",
-                          fontSize: "60px",
+                          fontSize: {xs:"30px",sm:"40px",md:"50px",lg:"60px"},
                           fontWeight: 600,
                           letterSpacing: "10.8px",
                         }}
@@ -111,7 +117,7 @@ export default function Sponsor() {
                       <Typography
                         sx={{
                           color: "#EAEAEA",
-                          fontSize: "60px",
+                          fontSize: {xs:"30px",sm:"40px",md:"50px",lg:"60px"},
                           fontWeight: 600,
                           letterSpacing: "10.8px",
                         }}
@@ -134,7 +140,7 @@ export default function Sponsor() {
               position: "relative",
               zIndex: -1,
               overflow: "hidden",
-              padding: "30px 0px",
+              padding: {xs:"8px 0px",sm:"10px 0px",md:"20px 0px",lg:"30px 0px"},
             }}
           >
             <Container>
@@ -157,7 +163,7 @@ export default function Sponsor() {
                     <Typography
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: "60px",
+                        fontSize: {xs:"30px",sm:"40px",md:"50px",lg:"60px"},
                         fontWeight: 600,
                         letterSpacing: "10.8px",
                         direction: "rtl",
@@ -169,7 +175,7 @@ export default function Sponsor() {
                     <Typography
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: "60px",
+                        fontSize: {xs:"30px",sm:"40px",md:"50px",lg:"60px"},
                         fontWeight: 600,
                         letterSpacing: "10.8px",
                         direction: "rtl",
