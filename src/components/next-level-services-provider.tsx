@@ -30,7 +30,7 @@ const NextLevelServicesProvider = () => {
       imagePath: GameDevelopment,
       title: "Game Development",
       description:
-        "Game design, programming, art, animation audio, testing, marketing, publishing, monetization, maintenance, player",
+        "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance.",
       buttonLink: "/",
       buttonText: "Learn More",
     },
@@ -38,23 +38,22 @@ const NextLevelServicesProvider = () => {
       imagePath: GameDesign,
       title: "Game Design",
       description:
-        "Game design, programming, art, animation audio, testing, marketing, publishing, monetization, maintenance, player",
+        "Level design, logic and gameplay, environment design, character art, animation",
       buttonLink: "/",
       buttonText: "Learn More",
     },
     {
       imagePath: ArVr,
-      title: "AR/VR Games",
+      title: "AR and VR Games",
       description:
-        "Game design, programming, art, animation audio, testing, marketing, publishing, monetization, maintenance, player",
+        "Real-life simulations, gamified metaverses, shopping experiences, real estate, sports, fashion.",
       buttonLink: "/",
       buttonText: "Learn More",
     },
     {
       imagePath: BlockchainGames,
       title: "Blockchain Games",
-      description:
-        "Game design, programming, art, animation audio, testing, marketing, publishing, monetization, maintenance, player",
+      description: "P2E, NFT marketplaces, staking, smart contracts",
       buttonLink: "/",
       buttonText: "Learn More",
     },
@@ -70,10 +69,12 @@ const NextLevelServicesProvider = () => {
         background: "#071421",
       }}
     >
-      <Box sx={{
-        maxWidth: "1440px",
-        m: "auto"
-      }}>
+      <Box
+        sx={{
+          maxWidth: "1440px",
+          m: "auto",
+        }}
+      >
         <Box
           sx={{
             textAlign: "center",

@@ -13,8 +13,8 @@ export default function MediaCard() {
         borderRadius: "20px",
         border: "1px solid #000",
         background: `linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${imagePath})`,
-        backgroundSize: "cover", 
-        backgroundPosition: "center", 
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
         display: "flex",
         alignItems: "center",
@@ -26,7 +26,7 @@ export default function MediaCard() {
         sx={{
           height: "194.221px",
           width: "194.221px",
-          mt:3
+          mt: 3,
         }}
         image="/assets/images/game-development-agency-logo-with-faeture-image-623505743 1.png"
         component="img"
@@ -43,10 +43,10 @@ export default function MediaCard() {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
+          textAlign: "center",
         }}
       >
         <Typography
-          
           variant="h3"
           sx={{
             fontSize: {xs: "20px", sm: "24px", md: "34px"},
@@ -70,7 +70,7 @@ export default function MediaCard() {
           gutterBottom
           color="text.secondary"
         >
-          Lorem ipsum dolor sit amet, consectetu adit. 
+          Lorem ipsum dolor sit amet, consectetu adit.
         </Typography>
       </CardContent>
     </Card>

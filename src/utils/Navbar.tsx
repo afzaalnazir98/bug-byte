@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import {useEffect, useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import AppBar from "@mui/material/AppBar";
@@ -11,31 +11,29 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
-import { useTheme } from "@mui/material";
+import {styled, useTheme} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useMediaQuery } from "@mui/material";
+import {useMediaQuery} from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const LINKS = [
-  { text: "About us", href: "/about" },
-  { text: "Services", href: "/services-detail" },
-  { text: "Portfolio", href: "/portfolio" },
-  { text: "Contact Us", href: "/contact-us" },
+  {text: "About us", href: "/about"},
+  {text: "Services", href: "/services-detail"},
+  {text: "Portfolio", href: "/portfolio"},
+  {text: "Contact Us", href: "/contact-us"},
 ];
 
 const Navbar = () => {
-  const [scroll, setScroll] = React.useState(false);
+  const [scroll, setScroll] = useState(false);
 
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesMd = useMediaQuery(theme.breakpoints.down("md"));
-  const matcheslg = useMediaQuery(theme.breakpoints.down("lg"));
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 100);
     });
@@ -45,41 +43,44 @@ const Navbar = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const NavAppBar = styled(AppBar)({
+    position: "fixed",
+    color: "white",
+    background: scroll ? "rgba( 21, 20, 20, 0.35 )" : "transparent",
+    boxShadow: scroll ? "0px 0px" : "0px 0px",
+    backdropFilter: scroll ? "blur( 18.5px )" : "blur( 0px )",
+    padding: "0",
+    minHeight: "auto",
+    height: "auto",
+    transition: "0.3s all",
+  });
+
+  const NavToolbar = styled(Toolbar)({
+    padding: "25px !important",
+    minHeight: "auto",
+    position: "relative",
+    backgroundColor: "transparent",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    maxWidth: "1370px",
+    flexWrap: "nowrap",
+    width: "100%",
+    margin: "auto",
+  });
+
   return (
-    <AppBar
-      sx={{
-        position: "fixed",
-        color: "white",
-        background: scroll ? "rgba( 21, 20, 20, 0.35 )" : "transparent",
-        boxShadow: scroll ? "0px 0px" : "0px 0px",
-        backdropFilter: scroll ? "blur( 18.5px )" : "blur( 0px )",
-        padding: "0",
-        minHeight: "auto",
-        height: "auto",
-        transition: "0.3s all",
-      }}
-    >
-      <Toolbar
+    <NavAppBar>
+      <NavToolbar
         sx={{
-          padding: "25px !important",
-          minHeight: "auto",
-          position: "relative",
-          backgroundColor: "transparent",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          maxWidth: "1370px",
-          flexWrap: "nowrap",
-          width: "100%",
           px: {
             lg: "60px !important",
             md: "30px !important",
             xs: "15px !important",
           },
-          m: "auto",
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{display: "flex", alignItems: "center"}}>
           <Box component={Link} href={"/"}>
             <Image
               className="brand-logo"
@@ -90,7 +91,7 @@ const Navbar = () => {
             />
           </Box>
         </Box>
-        <Box sx={{ display: { xs: "block", md: "none" } }}>
+        <Box sx={{display: {xs: "block", md: "none"}}}>
           <IconButton
             onClick={toggleDrawer}
             edge="start"
@@ -103,12 +104,12 @@ const Navbar = () => {
         </Box>
         <Box
           sx={{
-            display: { xs: "none", md: "flex" },
+            display: {xs: "none", md: "flex"},
             alignItems: "center",
             gap: "55px",
           }}
         >
-          {LINKS.map(({ text, href }, index) => (
+          {LINKS.map(({text, href}, index) => (
             <ListItem
               key={index}
               sx={{
@@ -129,6 +130,10 @@ const Navbar = () => {
                     color: "#EAEAEA",
                     fontSize: "18px",
                     fontWeight: "400",
+                    borderBottom: "1px solid transparent",
+                    "&:hover": {
+                      borderBottom: "1px solid white",
+                    },
                   }}
                 />
               </ListItemButton>
@@ -149,7 +154,7 @@ const Navbar = () => {
             fontWeight: matchesSM ? 200 : 400,
             marginLeft: 2,
             ml: matchesMd ? "-7px" : 0,
-            display: { xs: "none", md: "flex" },
+            display: {xs: "none", md: "flex"},
             borderRadius: "6px",
             background:
               "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
@@ -165,9 +170,9 @@ const Navbar = () => {
         >
           Get Started
         </Button>
-      </Toolbar>
+      </NavToolbar>
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer}>
-        <Box sx={{ width: "100%" }}>
+        <Box sx={{width: "100%"}}>
           <Box
             sx={{
               textAlign: "right",
@@ -182,7 +187,7 @@ const Navbar = () => {
               onClick={toggleDrawer}
             />
           </Box>
-          {LINKS.map(({ text, href }) => (
+          {LINKS.map(({text, href}) => (
             <ListItem key={href}>
               <ListItemButton
                 component={Link}
@@ -221,7 +226,7 @@ const Navbar = () => {
           </Button>
         </Box>
       </Drawer>
-    </AppBar>
+    </NavAppBar>
   );
 };
 

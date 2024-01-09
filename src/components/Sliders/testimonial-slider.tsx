@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Box } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import {Box} from "@mui/material";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay, Navigation, Pagination} from "swiper/modules";
 import TestimonialCard from "@/components/Cards/testimonial-slider-card";
 import Container from "@/components/container";
 
@@ -84,7 +84,7 @@ export default function TestimonialSlider() {
           <Swiper
             loop
             navigation={navigationEl}
-            pagination={{ clickable: true }}
+            pagination={{clickable: true}}
             className="swiper-main"
             modules={[Autoplay, Navigation, Pagination]}
             breakpoints={{
@@ -104,9 +104,7 @@ export default function TestimonialSlider() {
           >
             {[1, 2, 3, 4].map((num, index) => (
               <SwiperSlide key={index}>
-                <Box>
-                  <TestimonialCard />
-                </Box>
+                <TestimonialCard />
               </SwiperSlide>
             ))}
 
@@ -115,29 +113,29 @@ export default function TestimonialSlider() {
                 display: "flex",
                 gap: "30px",
                 justifyContent: "space-between",
-                width: { xs: "fit-content", sm: "auto" },
+                width: {xs: "fit-content", sm: "auto"},
                 margin: "auto",
                 position: "relative",
-                top: { xs: "40px", sm: "-140px", md: "-190px" },
+                top: {xs: "40px", sm: "-140px", md: "-190px"},
               }}
             >
               <Box
                 className="swiper-button-prev"
                 sx={{
-                  position: { xs: "unset", sm: "relative" },
+                  position: {xs: "unset", sm: "relative"},
                   left: "-80px",
-                  width: { xs: "30px", sm: "40px" },
-                  height: { xs: "30px", sm: "40px" },
+                  width: {xs: "30px", sm: "40px"},
+                  height: {xs: "30px", sm: "40px"},
                   ...hollowArrowStyles,
                 }}
               ></Box>
               <Box
                 className="swiper-button-next"
                 sx={{
-                  position: { xs: "unset", sm: "relative" },
+                  position: {xs: "unset", sm: "relative"},
                   right: "-70px",
-                  width: { xs: "30px", sm: "40px" },
-                  height: { xs: "30px", sm: "40px" },
+                  width: {xs: "30px", sm: "40px"},
+                  height: {xs: "30px", sm: "40px"},
                   ...hollowArrowStyles,
                 }}
               ></Box>

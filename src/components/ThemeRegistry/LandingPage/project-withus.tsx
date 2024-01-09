@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 import Container from "@/components/container";
-import { Box, Grid, Typography } from "@mui/material";
+import {Box, Grid, Typography} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
 import svg1 from "@/public/assets/social-media-icons/projectWIthUsIcon1.svg";
 import svg2 from "@/public/assets/social-media-icons/projectWIthUsIcon2.svg";
 import svg3 from "@/public/assets/social-media-icons/projectWIthUsIcon3.svg";
 import arrow from "@/public/assets/social-media-icons/arrow.svg";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 const projectInfoImage = {
   "@media (max-width: 600px)": {
@@ -28,11 +28,9 @@ const projectImageStyled = {
     height: "250px",
   },
 };
-const container={
-   color:"white"
-
-
-}
+const container = {
+  color: "white",
+};
 
 export default function ProjectWithUs() {
   return (
@@ -41,7 +39,7 @@ export default function ProjectWithUs() {
         color: "white",
         padding: "10rem 0rem",
         overflow: "hidden",
-        marginTop: "-220px"
+        marginTop: "-220px",
       }}
     >
       <Box
@@ -57,7 +55,7 @@ export default function ProjectWithUs() {
         <Container>
           <Box
             sx={{
-              display: { xs: "flex", md: "block" },
+              display: {xs: "flex", md: "block"},
               justifyContent: "center",
             }}
           >
@@ -65,22 +63,22 @@ export default function ProjectWithUs() {
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
-                flexDirection: { xs: "column", md: "row" },
-                gap: { xs: "15px", sm: "20px", md: "30px" },
+                flexDirection: {xs: "column", md: "row"},
+                gap: {xs: "15px", sm: "20px", md: "30px"},
               }}
             >
               <Box
                 sx={{
-                  order: { xs: 2, md: 1 },
-                  transform: { xs: "", sm: "rotate(-1.096deg)" },
-                  padding: { xs: "30px 20px", md: "50px 0px" },
-                  textAlign: { xs: "center", sm: "" },
+                  order: {xs: 2, md: 1},
+                  transform: {xs: "", sm: "rotate(-1.096deg)"},
+                  padding: {xs: "30px 20px", md: "50px 0px"},
+                  textAlign: {xs: "center", sm: ""},
                 }}
               >
                 <Typography
                   sx={{
-                    fontSize: { xs: "32px", lg: "42px" },
-                    lineHeight: { xs: "1.2", md: "1.5" },
+                    fontSize: {xs: "32px", lg: "42px"},
+                    lineHeight: {xs: "1.2", md: "1.5"},
                     fontWeight: 600,
                     textTransform: "uppercase",
                   }}
@@ -93,7 +91,7 @@ export default function ProjectWithUs() {
                     fontSize: "18px",
                     fontWeight: 400,
                     maxWidth: "595px",
-                    textAlign: { xs: "center", lg: "left" },
+                    textAlign: {xs: "center", lg: "left"},
                   }}
                 >
                   We offer innovative solutions that will fit our
@@ -104,7 +102,7 @@ export default function ProjectWithUs() {
 
               <Box
                 sx={{
-                  order: { xs: 1, md: 2 },
+                  order: {xs: 1, md: 2},
                   ...projectInfoImage,
                   "&  .project-image": {
                     marginTop: "-98px",
@@ -126,380 +124,386 @@ export default function ProjectWithUs() {
         </Container>
       </Box>
       <Container>
-        
         <Grid
           container
           spacing={8}
           sx={{
-            paddingTop: { xs: "50px", md: "0px" },
-            flexDirection: { xs: "column", md: "row" },
-            alignContent: { xs: "center", md: "left" },
+            paddingTop: {xs: "50px", md: "0px"},
+            flexDirection: {xs: "column", md: "row"},
+            alignContent: {xs: "center", md: "left"},
           }}
         >
           <Grid item xs={12} sm={8} md={4}>
-            
-      <motion.div
-        initial={{ opacity: 0, scale: 2 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.2,
-          delay: 0.3,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-            <Box
-              sx={{
-                display: "grid",
-                gap: "15px",
+            <motion.div
+              initial={{opacity: 0, scale: 2}}
+              animate={{opacity: 1, scale: 1}}
+              transition={{
+                duration: 0.2,
+                delay: 0.3,
+                ease: [0, 0.71, 0.2, 1.01],
               }}
             >
               <Box
                 sx={{
-                  display: { xs: "none", md: "block" },
-                  color: "white",
-                  textAlign: "center",
-                  position: "relative",
-                  left: "20px",
-                  marginBottom: "15px",
-                  maxWidth: "fit-content",
+                  display: "grid",
+                  gap: "15px",
                 }}
               >
                 <Box
                   sx={{
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      left: "-4px",
-                      bottom: 0,
-                      background: "white",
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "10px",
-                    },
+                    display: {xs: "none", md: "block"},
+                    color: "white",
+                    textAlign: "center",
+                    position: "relative",
+                    left: "20px",
+                    marginBottom: "15px",
+                    maxWidth: "fit-content",
                   }}
+                >
+                  <Box
+                    sx={{
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        left: "-4px",
+                        bottom: 0,
+                        background: "white",
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "10px",
+                      },
+                    }}
+                  />
+                  <Divider
+                    orientation="vertical"
+                    variant="fullWidth"
+                    light={true}
+                    sx={{
+                      borderRightWidth: "thin",
+                      width: "max-content",
+                      height: "194px",
+                      borderColor: "white",
+                    }}
+                  />
+                </Box>
+                <Image
+                  src={svg1.src}
+                  width={60}
+                  height={60}
+                  alt="instagram-svg"
                 />
-                <Divider
-                  orientation="vertical"
-                  variant="fullWidth"
-                  light={true}
-                  sx={{
-                    borderRightWidth: "thin",
-                    width: "max-content",
-                    height: "194px",
-                    borderColor: "white",
-                  }}
-                />
-              </Box>
-              <Image src={svg1.src} width={60} height={60} alt="instagram-svg" />
 
-              <Typography
-                sx={{
-                  color: "#EAEAEA",
-                  fontSize: "26px",
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                }}
-              >
-                {" "}
-                Quality Services
-              </Typography>
-              <Box>
-                <Box
+                <Typography
                   sx={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "10px",
+                    color: "#EAEAEA",
+                    fontSize: "26px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
                   }}
                 >
-                  <Image
-                    src={arrow.src}
-                    width={13}
-                    height={13}
-                    alt="instagram-svg"
-                  />
-                  <Typography
+                  Quality Services
+                </Typography>
+                <Box>
+                  <Box
                     sx={{
-                      color: "#EAEAEA",
-                      fontSize: { xs: "18px", md: "14px" },
-                      fontWeight: 400,
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "10px",
                     }}
                   >
-                    In-depth research of gamers&apos; needs and expectat is at
-                    the heart of our game art and development.
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    marginTop: "15px",
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "10px",
-                  }}
-                >
-                  <Image
-                    src={arrow}
-                    width={13}
-                    height={13}
-                    alt="instagram-svg"
-                  />
-                  <Typography
+                    <Image
+                      src={arrow.src}
+                      width={13}
+                      height={13}
+                      alt="instagram-svg"
+                    />
+                    <Typography
+                      sx={{
+                        color: "#EAEAEA",
+                        fontSize: {xs: "18px", md: "14px"},
+                        fontWeight: 400,
+                      }}
+                    >
+                      At Buggbyte, we promise awesome gaming experiences.
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
-                      color: "#EAEAEA",
-                      fontSize: { xs: "18px", md: "14px" },
-                      fontWeight: 400,
+                      marginTop: "15px",
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "10px",
                     }}
                   >
-                    80+ products we&apos;ve created don&apos;t leave their targ
-                    audiences indifferent.
-                  </Typography>
+                    <Image
+                      src={arrow}
+                      width={13}
+                      height={13}
+                      alt="instagram-svg"
+                    />
+                    <Typography
+                      sx={{
+                        color: "#EAEAEA",
+                        fontSize: {xs: "18px", md: "14px"},
+                        fontWeight: 400,
+                      }}
+                    >
+                      We work hard to make sure everything, from the graphics to
+                      the gameplay, is super cool for you.
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-            
-      </motion.div>
+            </motion.div>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
-          <motion.div
-        initial={{ opacity: 0, scale: 2 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.7,
-          delay: 0.7,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-            <Box
-              sx={{
-                display: "grid",
-                gap: "15px",
+            <motion.div
+              initial={{opacity: 0, scale: 2}}
+              animate={{opacity: 1, scale: 1}}
+              transition={{
+                duration: 0.7,
+                delay: 0.7,
+                ease: [0, 0.71, 0.2, 1.01],
               }}
             >
               <Box
                 sx={{
-                  display: { xs: "none", md: "block" },
-                  color: "white",
-                  textAlign: "center",
-                  position: "relative",
-                  left: "20px",
-                  marginBottom: "15px",
-                  maxWidth: "fit-content",
+                  display: "grid",
+                  gap: "15px",
                 }}
               >
                 <Box
                   sx={{
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      left: "-4px",
-                      bottom: 0,
-                      background: "white",
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "10px",
-                    },
+                    display: {xs: "none", md: "block"},
+                    color: "white",
+                    textAlign: "center",
+                    position: "relative",
+                    left: "20px",
+                    marginBottom: "15px",
+                    maxWidth: "fit-content",
                   }}
+                >
+                  <Box
+                    sx={{
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        left: "-4px",
+                        bottom: 0,
+                        background: "white",
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "10px",
+                      },
+                    }}
+                  />
+                  <Divider
+                    orientation="vertical"
+                    variant="fullWidth"
+                    light={true}
+                    sx={{
+                      borderRightWidth: "thin",
+                      width: "max-content",
+                      height: "159px",
+                      borderColor: "white",
+                    }}
+                  />
+                </Box>
+                <Image
+                  src={svg2.src}
+                  width={60}
+                  height={60}
+                  alt="instagram-svg"
                 />
-                <Divider
-                  orientation="vertical"
-                  variant="fullWidth"
-                  light={true}
-                  sx={{
-                    borderRightWidth: "thin",
-                    width: "max-content",
-                    height: "159px",
-                    borderColor: "white",
-                  }}
-                />
-              </Box>
-              <Image src={svg2.src} width={60} height={60} alt="instagram-svg" />
 
-              <Typography
-                sx={{
-                  color: "#EAEAEA",
-                  fontSize: "26px",
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                }}
-              >
-                {" "}
-                Quality Services
-              </Typography>
-              <Box>
-                <Box
+                <Typography
                   sx={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "10px",
+                    color: "#EAEAEA",
+                    fontSize: "26px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
                   }}
                 >
-                  <Image
-                    src={arrow}
-                    width={13}
-                    height={13}
-                    alt="instagram-svg"
-                  />
-                  <Typography
+                  Reliability
+                </Typography>
+                <Box>
+                  <Box
                     sx={{
-                      color: "#EAEAEA",
-                      fontSize: { xs: "18px", md: "14px" },
-                      fontWeight: 400,
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "10px",
                     }}
                   >
-                    In-depth research of gamers&apos; needs and expectat is at
-                    the heart of our game art and development.
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    marginTop: "15px",
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "10px",
-                  }}
-                >
-                  <Image
-                    src={arrow}
-                    width={13}
-                    height={13}
-                    alt="instagram-svg"
-                  />
-                  <Typography
+                    <Image
+                      src={arrow}
+                      width={13}
+                      height={13}
+                      alt="instagram-svg"
+                    />
+                    <Typography
+                      sx={{
+                        color: "#EAEAEA",
+                        fontSize: {xs: "18px", md: "14px"},
+                        fontWeight: 400,
+                      }}
+                    >
+                      You can trust us! Buggbyte is your dependable friend in
+                      gaming.
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
-                      color: "#EAEAEA",
-                      fontSize: { xs: "18px", md: "14px" },
-                      fontWeight: 400,
+                      marginTop: "15px",
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "10px",
                     }}
                   >
-                    80+ products we&apos;ve created don&apos;t leave their targ
-                    audiences indifferent.
-                  </Typography>
+                    <Image
+                      src={arrow}
+                      width={13}
+                      height={13}
+                      alt="instagram-svg"
+                    />
+                    <Typography
+                      sx={{
+                        color: "#EAEAEA",
+                        fontSize: {xs: "18px", md: "14px"},
+                        fontWeight: 400,
+                      }}
+                    >
+                      We make sure everything runs smoothly, so you have a great
+                      time playing without any interruptions.
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-      </motion.div>
+            </motion.div>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
-          <motion.div
-        initial={{ opacity: 0, scale: 2 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 1,
-          delay: 1,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-        
-            <Box
-              sx={{
-                display: "grid",
-                gap: "15px",
+            <motion.div
+              initial={{opacity: 0, scale: 2}}
+              animate={{opacity: 1, scale: 1}}
+              transition={{
+                duration: 1,
+                delay: 1,
+                ease: [0, 0.71, 0.2, 1.01],
               }}
             >
               <Box
                 sx={{
-                  display: { xs: "none", md: "block" },
-                  color: "white",
-                  textAlign: "center",
-                  position: "relative",
-                  left: "20px",
-                  marginBottom: "15px",
-                  maxWidth: "fit-content",
+                  display: "grid",
+                  gap: "15px",
                 }}
               >
                 <Box
                   sx={{
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      left: "-4px",
-                      bottom: 0,
-                      background: "white",
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "10px",
-                    },
+                    display: {xs: "none", md: "block"},
+                    color: "white",
+                    textAlign: "center",
+                    position: "relative",
+                    left: "20px",
+                    marginBottom: "15px",
+                    maxWidth: "fit-content",
                   }}
+                >
+                  <Box
+                    sx={{
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        left: "-4px",
+                        bottom: 0,
+                        background: "white",
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "10px",
+                      },
+                    }}
+                  />
+                  <Divider
+                    orientation="vertical"
+                    variant="fullWidth"
+                    light={true}
+                    sx={{
+                      borderRightWidth: "thin",
+                      width: "max-content",
+                      marginTop: "-8px",
+                      height: "120px",
+                      borderColor: "white",
+                    }}
+                  />
+                </Box>
+                <Image
+                  src={svg3.src}
+                  width={60}
+                  height={60}
+                  alt="instagram-svg"
                 />
-                <Divider
-                  orientation="vertical"
-                  variant="fullWidth"
-                  light={true}
-                  sx={{
-                    borderRightWidth: "thin",
-                    width: "max-content",
-                    marginTop: "-8px",
-                    height: "120px",
-                    borderColor: "white",
-                  }}
-                />
-              </Box>
-              <Image src={svg3.src} width={60} height={60} alt="instagram-svg" />
 
-              <Typography
-                sx={{
-                  color: "#EAEAEA",
-                  fontSize: "26px",
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                }}
-              >
-                {" "}
-                Quality Services
-              </Typography>
-              <Box>
-                <Box
+                <Typography
                   sx={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "10px",
+                    color: "#EAEAEA",
+                    fontSize: "26px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
                   }}
                 >
-                  <Image
-                    src={arrow}
-                    width={13}
-                    height={13}
-                    alt="instagram-svg"
-                  />
-                  <Typography
+                  High-Quality Solutions
+                </Typography>
+                <Box>
+                  <Box
                     sx={{
-                      color: "#EAEAEA",
-                      fontSize: { xs: "18px", md: "14px" },
-                      fontWeight: 400,
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "10px",
                     }}
                   >
-                    In-depth research of gamers&apos; needs and expectat is at
-                    the heart of our game art and development.
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    marginTop: "15px",
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "10px",
-                  }}
-                >
-                  <Image
-                    src={arrow}
-                    width={13}
-                    height={13}
-                    alt="instagram-svg"
-                  />
-                  <Typography
+                    <Image
+                      src={arrow}
+                      width={13}
+                      height={13}
+                      alt="instagram-svg"
+                    />
+                    <Typography
+                      sx={{
+                        color: "#EAEAEA",
+                        fontSize: {xs: "18px", md: "14px"},
+                        fontWeight: 400,
+                      }}
+                    >
+                      Make your gaming experience even better with Buggbyte.
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
-                      color: "#EAEAEA",
-                      fontSize: { xs: "18px", md: "14px" },
-                      fontWeight: 400,
+                      marginTop: "15px",
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "10px",
                     }}
                   >
-                    80+ products we&apos;ve created don&apos;t leave their targ
-                    audiences indifferent.
-                  </Typography>
+                    <Image
+                      src={arrow}
+                      width={13}
+                      height={13}
+                      alt="instagram-svg"
+                    />
+                    <Typography
+                      sx={{
+                        color: "#EAEAEA",
+                        fontSize: {xs: "18px", md: "14px"},
+                        fontWeight: 400,
+                      }}
+                    >
+                      We&apos;re always working to give you top-notch stuff –
+                      cool features, amazing tech – everything to make your
+                      gaming super awesome!
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-            
-      </motion.div>
+            </motion.div>
           </Grid>
         </Grid>
       </Container>

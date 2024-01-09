@@ -6,26 +6,20 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import {GameExperience} from "@/utils/types";
+import Link from "next/link";
+import {Box} from "@mui/material";
 
 interface MediaCardProps {
   isActive: boolean;
+  gameExperience: GameExperience;
 }
 
-export default function MediaCard({isActive}: MediaCardProps) {
+export default function GameCard({gameExperience, isActive}: MediaCardProps) {
   return (
-    //     border-radius: 5px;
-    // border: 5px solid rgba(240, 75, 18, 0.56),
-    // background: #071421,
-    // box-shadow: 0px 4.549px 45.486px 0px rgba(0, 0, 0, 0.10)
     <Card
       sx={{
-        // border: isActive ? "5px solid rgba(240, 75, 18, 0.56)" : "",
-        // boxShadow: isActive
-        //   ? "0px 4.549px 45.486px 0px rgba(0, 0, 0, 0.10)"
-        //   : "",
-        // borderRadius: "10px",
         background: "#071421",
-        // transform: isActive ? "scale(1.2)" : "scale(1)",
       }}
     >
       <CardMedia
@@ -59,7 +53,7 @@ export default function MediaCard({isActive}: MediaCardProps) {
           }}
           component="div"
         >
-          Super Jumper 3d Run
+          {gameExperience.title}
         </Typography>
         <Typography
           sx={{
@@ -71,7 +65,7 @@ export default function MediaCard({isActive}: MediaCardProps) {
           gutterBottom
           color="text.secondary"
         >
-          Adventure | Mobile | Action RPG
+          {gameExperience?.tags?.join(" | ")}
         </Typography>
         <Typography
           sx={{
@@ -83,24 +77,25 @@ export default function MediaCard({isActive}: MediaCardProps) {
           variant="body1"
           color="text.secondary"
         >
-          Mauris euismod nibh mollis sodales eleifend. Donec tempor erat risus,
-          congue magna accumsan commodo pretium.. Read More
+          {gameExperience.description}
         </Typography>
-        <Button
-          sx={{
-            borderRadius: "6px",
-            mt: {xs: 1, sm: 2},
-            width: {xs: "130px", md: "162px"},
-            height: {xs: "30px", md: "48px"},
-            fontSize: {xs: "14px", md: "18px"},
-            fontWeight: {xs: 400, md: 600},
-            background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
-          }}
-          type="submit"
-          variant="contained"
-        >
-          View Details
-        </Button>
+        <Box component={Link} href={gameExperience.btnLink}>
+          <Button
+            sx={{
+              borderRadius: "6px",
+              mt: {xs: 1, sm: 2},
+              width: {xs: "130px", md: "162px"},
+              height: {xs: "30px", md: "48px"},
+              fontSize: {xs: "14px", md: "18px"},
+              fontWeight: {xs: 400, md: 600},
+              background:
+                "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
+            }}
+            variant="contained"
+          >
+            {gameExperience.btnTitle}
+          </Button>
+        </Box>
       </CardContent>
     </Card>
   );

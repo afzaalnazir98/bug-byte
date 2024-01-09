@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import Logo1 from "@/public/assets/social-media-icons/scroll-logo1.svg";
 import Logo2 from "@/public/assets/social-media-icons/scroll-logo2.svg";
 import Logo3 from "@/public/assets/social-media-icons/scroll-logo3.svg";
@@ -16,14 +16,14 @@ import Container from "@/components/container";
 export default function Sponsor() {
   const logoStyles = {
     display: "inline-block",
-    margin: { xs: "0 5px", sm: "0 8px", md: "0 10px" },
+    margin: {xs: "0 5px", sm: "0 8px", md: "0 10px"},
     "& .logo": {
-      height: { xs: "20px", sm: "25px", md: "30px", lg: "36px" },
-      width: { xs: "160px", sm: "180px", md: "200px", lg: "219px" },
+      height: {xs: "20px", sm: "25px", md: "30px", lg: "36px"},
+      width: {xs: "160px", sm: "180px", md: "200px", lg: "219px"},
     },
   };
 
-  const textToReverse = "BUG BYTE STUDIO";
+  const textToReverse = "BUGG BYTE STUDIO";
   const reversedText = textToReverse.split("").reverse().join("");
   return (
     <>
@@ -106,7 +106,7 @@ export default function Sponsor() {
           sx={{
             position: "relative",
             zIndex: 1,
-            top: { xs: "8px", sm: "15px", md: "20px", lg: "34px" },
+            top: {xs: "8px", sm: "15px", md: "20px", lg: "34px"},
           }}
         >
           <Box
@@ -160,7 +160,7 @@ export default function Sponsor() {
                           letterSpacing: "10.8px",
                         }}
                       >
-                        BUG BYTE STUDIO
+                        BUGG BYTE STUDIO
                       </Typography>
                       <Image src={Star.src} alt="star" width={38} height={38} />
                       <Typography
@@ -176,7 +176,7 @@ export default function Sponsor() {
                           letterSpacing: "10.8px",
                         }}
                       >
-                        BUG BYTE STUDIO
+                        BUGG BYTE STUDIO
                       </Typography>
                     </Box>
                   </Box>

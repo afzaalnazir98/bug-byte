@@ -3,40 +3,80 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import {Button} from "@mui/material";
+import {Button, styled} from "@mui/material";
 import Link from "next/link";
 import Container from "@/components/container";
 
 export default function Help() {
+  const HelpSection = styled(Box)({
+    backgroundColor: "#F5F5F5",
+    position: "relative",
+  });
+
+  const Cover = styled(Box)({
+    backgroundImage: `url(${"/assets/images/help-bg.png"})`,
+    backgroundPosition: "0% 100%",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: "0",
+  });
+
+  const SubTitle = styled(Typography)({
+    color: "#02060B",
+    fontWeight: 600,
+    lineHeight: "45.5px",
+    textTransform: "uppercase",
+  });
+
+  const Title = styled(Typography)({
+    backgroundImage:
+      "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+    fontWeight: 700,
+    lineHeight: "30px",
+    letterSpacing: "0.8px",
+    textTransform: "uppercase",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  });
+
+  const Description = styled(Typography)({
+    color: "#071421",
+    fontWeight: 400,
+    lineHeight: "20px",
+  });
+
+  const StyleButton = styled(Button)({
+    borderRadius: "6px",
+    backgroundImage:
+      "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+    fontWeight: 600,
+    textTransform: "capitalize",
+    color: "#fff",
+    maxWidth: "fit-content",
+  });
+
   return (
-    <Box
+    <HelpSection
       sx={{
-        backgroundColor: "#F5F5F5",
-        position: "relative",
-        paddingBottom:{xs:"10rem",sm:"8rem",md:"2rem"},
+        paddingBottom: {xs: "10rem", sm: "8rem", md: "2rem"},
       }}
     >
-      <Box
+      <Cover
         sx={{
-          backgroundImage: `url(${"/assets/images/help-bg.png"})`,
-          backgroundPosition: "0% 100%",
-          backgroundRepeat: "no-repeat",
           backgroundSize: {xs: "cover", md: "auto"},
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: "0",
         }}
       />
       <Container>
         <Box
           sx={{
-            position: "relative",
-            padding: {xs:"2rem 0rem",md:"4rem 0rem",lg:"8rem 0px"},
             display: "flex",
+            position: "relative",
+            gap: {sm: "2rem", md: "4rem", lg: "8rem"},
             flexDirection: {xs: "column", md: "row"},
             justifyContent: {xs: "center", md: "space-between"},
-            gap: {sm: "2rem", md: "4rem", lg: "8rem"},
+            padding: {xs: "2rem 0rem", md: "4rem 0rem", lg: "8rem 0px"},
           }}
         >
           <Box
@@ -69,67 +109,47 @@ export default function Help() {
               maxWidth: "548px",
             }}
           >
-            <Typography
+            <SubTitle
               sx={{
-                color: "#02060B",
                 fontSize: {xs: "20px", lg: "25px"},
-                fontWeight: 600,
-                lineHeight: "45.5px",
-                textTransform: "uppercase",
               }}
             >
               HOW WE HELP YOU?
-            </Typography>
-            <Typography
+            </SubTitle>
+            <Title
               sx={{
-                backgroundImage:
-                  "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                 fontSize: {xs: "20px", sm: "30px", lg: "40px"},
-                fontWeight: 700,
-                lineHeight: "30px",
-                letterSpacing: "0.8px",
-                textTransform: "uppercase",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
               }}
             >
               Bringing People Together Through The Power Of Play
-            </Typography>
-
-            <Typography
+            </Title>
+            <Description
               sx={{
-                color: "#071421",
-
-                fontSize: {xs: "18px", md: "14px"},
-                fontWeight: 400,
-                lineHeight: "20px",
+                fontSize: {md: "18px", xs: "14px"},
               }}
             >
-              Share your idea and we guarantee to design an outstanding version
-              of the game for you. Our game developers are experts in compatible
-              across all devices.
-            </Typography>
-
-            <Box component={Link} href="#">
-              <Button
+              Welcome to Buggbyte Studios! We create fun games using Unity and
+              Unreal Engine. Have you ever heard of the Metaverse? It&apos;s a
+              virtual world where our games come to life, and you can join in
+              using AR and VR technology, which makes the experience even
+              cooler. Your in-game items are extra special because of Blockchain
+              and NFTs. They&apos;re like your own personal treasures! At Buggbyte
+              Studios, we strive to make gaming easy, exciting, and filled with
+              joy. Are you ready to play?
+            </Description>
+            <Box component={Link} href="/">
+              <StyleButton
                 sx={{
-                  padding: {xs: " 9px 20px", md: "9px 30px"},
-                  borderRadius: "6px",
-                  backgroundImage:
-                    "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                   fontSize: {xs: "18px", md: "20px"},
-                  fontWeight: 600,
-                  textTransform: "capitalize",
-                  color: "#fff",
-                  maxWidth: "fit-content",
+                  padding: {xs: " 9px 20px", md: "9px 30px"},
                 }}
               >
                 More About Us
-              </Button>
+              </StyleButton>
             </Box>
           </Box>
         </Box>
       </Container>
-    </Box>
+    </HelpSection>
   );
 }

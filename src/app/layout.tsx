@@ -10,7 +10,7 @@ import {SpeedInsights} from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata = {
-  title: "Bug Byte",
+  title: "BUGG BYTE",
   description:
     "Reinventing the way of developing games, we aim to Develop the most master-peaced Games available on the market.",
 };
@@ -42,7 +42,7 @@ const footerData = [
     links: [
       {text: "202 Helga Springs Rd, Crawford, TN 38554", url: "#"},
       {text: "1234567890", url: "#"},
-      {text: "mailto:hello@example.com", url: "#"},
+      {text: "hello@example.com", url: "mailto:hello@example.com"},
     ],
     socialMedia: [
       {platform: "Facebook", icon: "/assets/images/facebook.svg", url: "#"},

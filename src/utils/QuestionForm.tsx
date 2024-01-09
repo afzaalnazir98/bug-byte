@@ -56,15 +56,15 @@ export default function QuestionForm() {
           <Box
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", lg: "row" },
-              justifyContent: { xs: "center", lg: "space-between" },
+              flexDirection: {xs: "column", lg: "row"},
+              justifyContent: {xs: "center", lg: "space-between"},
               alignItems: "center",
-              gap: { xs: "5rem 0px", sm: "7rem 0px", md: "8rem 0px", lg: "0" },
+              gap: {xs: "5rem 0px", sm: "7rem 0px", md: "8rem 0px", lg: "0"},
             }}
           >
             <Box
               sx={{
-                paddingLeft: { xs: "15px", md: "30px", lg: "60px" },
+                paddingLeft: {xs: "15px", md: "30px", lg: "60px"},
                 alignSelf: "center",
               }}
             >
@@ -164,7 +164,7 @@ export default function QuestionForm() {
                         fontWeight: 600,
                       }}
                     >
-                      mailto:hello@example.com
+                      hello@example.com
                     </Typography>
                   </Box>
                 </Box>
@@ -173,8 +173,8 @@ export default function QuestionForm() {
 
             <Box
               sx={{
-                minWidth: { xs: "100%", md: "687px" },
-                minHeight: { xs: "100%", sm: "655px" },
+                minWidth: {xs: "100%", md: "687px"},
+                minHeight: {xs: "100%", sm: "655px"},
                 backgroundImage: `url(${"/assets/images/question-form-bg.png"})`,
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
@@ -184,10 +184,10 @@ export default function QuestionForm() {
                 sx={{
                   marginLeft: "13%",
                   marginTop: "22%",
-                  maxWidth: { xs: "66%", sm: "420px", lg: "450px" },
+                  maxWidth: {xs: "66%", sm: "420px", lg: "450px"},
                   height: "100%",
                   backgroundColor: "#0B1D30",
-                  padding: { xs: "8px 15px", sm: "10px 20px", md: "20px 32px" },
+                  padding: {xs: "8px 15px", sm: "10px 20px", md: "20px 32px"},
                   borderRadius: "8px",
                   "& .MuiInputBase-root": {
                     borderRadius: "10px",
@@ -208,7 +208,7 @@ export default function QuestionForm() {
                   },
                   "& .MuiInputBase-input": {
                     color: "white",
-                    padding: { xs: "12.5px 10px", sm: "" },
+                    padding: {xs: "12.5px 10px", sm: ""},
                   },
                   "& .MuiInputLabel-root": {
                     color: "white",
@@ -225,8 +225,8 @@ export default function QuestionForm() {
                     borderRadius: "8px",
                     paddingBottom: "10px",
                     "& .input-field": {
-                      marginTop: { xs: "9px", sm: "16px" },
-                      marginBottom: { xs: "4px", sm: "8px" },
+                      marginTop: {xs: "9px", sm: "16px"},
+                      marginBottom: {xs: "4px", sm: "8px"},
                     },
                   }}
                   onSubmit={(e) => handleSubmit(e)}
@@ -239,7 +239,7 @@ export default function QuestionForm() {
                     margin="normal"
                     required
                     onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
+                      setFormData({...formData, name: e.target.value})
                     }
                   />
                   <TextField
@@ -251,7 +251,7 @@ export default function QuestionForm() {
                     required
                     type="email"
                     onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
+                      setFormData({...formData, email: e.target.value})
                     }
                   />
                   <FormControl
@@ -288,7 +288,7 @@ export default function QuestionForm() {
                     margin="normal"
                     required
                     onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
+                      setFormData({...formData, message: e.target.value})
                     }
                   />
                   <Button
@@ -296,7 +296,7 @@ export default function QuestionForm() {
                       borderRadius: "10px",
                       background:
                         "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                      marginTop: { xs: "10px", sm: "15px" },
+                      marginTop: {xs: "10px", sm: "15px"},
                       height: "50.955px",
                       fontSize: "18px",
                       fontWeight: 600,

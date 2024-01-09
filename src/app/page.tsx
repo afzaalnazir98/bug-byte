@@ -18,7 +18,7 @@ export default function HomePage() {
       <Sponser />
       <GameExperience />
       <NextLevelServicesProvider />
-      {/* <CompanyProgress/> */}
+      <CompanyProgress/>
       <TestimonialSection />
       <QuestionForm />
     </>

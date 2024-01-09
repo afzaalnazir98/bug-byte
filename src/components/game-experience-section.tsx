@@ -6,11 +6,10 @@ import {Box, Button} from "@mui/material";
 import GameSlider from "@/components/Sliders/geme-experience-slider";
 
 export default function GameExperience(): JSX.Element {
-
   return (
     <Box
       sx={{
-        background: '#FFF'
+        background: "#FFF",
       }}
     >
       <Box
@@ -60,7 +59,7 @@ export default function GameExperience(): JSX.Element {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          p:'0px 0 70px'
+          p: "0px 0 70px",
         }}
       >
         <Button
