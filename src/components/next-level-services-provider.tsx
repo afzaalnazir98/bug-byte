@@ -10,17 +10,10 @@ import GameDevelopment from "@/public/assets/images/game-development.png";
 import GameDesign from "@/public/assets/images/game-design.png";
 import ArVr from "@/public/assets/images/ar-vr.png";
 import BlockchainGames from "@/public/assets/images/blockchain-games.png";
-
-import "swiper/css";
 import Link from "next/link";
 
-interface ServiceDetail {
-  imagePath: any;
-  title: string;
-  description: string;
-  buttonLink: string;
-  buttonText: string;
-}
+import "swiper/css";
+import { ServiceDetail } from "@/utils/types";
 
 const NextLevelServicesProvider = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);

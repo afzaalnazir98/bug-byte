@@ -4,15 +4,7 @@ import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
-
-interface HeroSectionProps {
-  items: {
-    text: string;
-    title: string;
-    des: string;
-  };
-  image: {src: string};
-}
+import { HeroSectionProps } from "./types";
 
 export default function HeroSection({items, image}: HeroSectionProps) {
   return (

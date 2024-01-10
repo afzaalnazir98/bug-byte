@@ -5,15 +5,11 @@ import Typography from "@mui/material/Typography";
 import Container from "@/components/container";
 import Divider from "@mui/material/Divider";
 import {useMediaQuery, useTheme} from "@mui/material";
+import { progressData } from "@/utils/types";
 
 export default function CompanyProgress() {
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-
-  interface progressData {
-    title: String;
-    subtitle: String;
-  }
 
   const companyProgress: progressData[] = [
     {

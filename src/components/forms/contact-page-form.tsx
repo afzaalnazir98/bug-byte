@@ -23,13 +23,7 @@ import insta from "@/public/assets/social-media-icons/insta.svg";
 import linkdin from "@/public/assets/social-media-icons/linkdin.svg";
 import X from "@/public/assets/social-media-icons/X.svg";
 import Image from "next/image";
-
-interface FormData {
-  name: string;
-  email: string;
-  service: string;
-  message: string;
-}
+import { FormData } from "@/utils/types";
 
 export default function ContactFormSection(): JSX.Element {
   const [formData, setFormData] = React.useState<FormData>({

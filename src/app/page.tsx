@@ -6,7 +6,7 @@ import CompanyProgress from "@/components/ThemeRegistry/LandingPage/company-prog
 import GameExperience from "@/components/game-experience-section";
 import TestimonialSection from "@/components/testmonial-slider-section";
 import Help from "@/components/Content/Help";
-import QuestionForm from "@/utils/QuestionForm";
+import QuestionForm from "@/components/QuestionForm";
 import NextLevelServicesProvider from "@/components/next-level-services-provider";
 
 export default function HomePage() {

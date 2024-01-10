@@ -19,8 +19,8 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const LINKS = [
-  {text: "About us", href: "/about"},
-  {text: "Services", href: "/services-detail"},
+  {text: "About us", href: "/about-us"},
+  {text: "Services", href: "/services"},
   {text: "Portfolio", href: "/portfolio"},
   {text: "Contact Us", href: "/contact-us"},
 ];

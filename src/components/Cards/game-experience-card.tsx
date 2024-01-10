@@ -6,14 +6,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import {GameExperience} from "@/utils/types";
+import {MediaCardProps} from "@/utils/types";
 import Link from "next/link";
 import {Box} from "@mui/material";
 
-interface MediaCardProps {
-  isActive: boolean;
-  gameExperience: GameExperience;
-}
 
 export default function GameCard({gameExperience, isActive}: MediaCardProps) {
   return (

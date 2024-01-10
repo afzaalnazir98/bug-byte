@@ -1,20 +1,12 @@
 "use client";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/container";
 import { Box, Grid, Typography } from "@mui/material";
-import Image from "next/image";
-import React from "react";
 
-import Link from "next/link";
-interface FooterProps {
-  footerData: {
-    section: string;
-    links?: Array<{ text: string; url: string }>;
-    address?: string;
-    phone?: string;
-    email?: string;
-    socialMedia?: Array<{ platform: string; icon: string; url: string }>;
-  }[];
-}
+import { FooterProps } from "@/utils/types";
+
 
 const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
   return (

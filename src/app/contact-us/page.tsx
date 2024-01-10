@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import HeroSection from "@/utils/HeroSection";
-import ContactForm from "@/utils/ContactUsForm";
+import ContactForm from "@/components/forms/contact-page-form";
 import ContactAgent from "@/public/assets/images/contact-agent.png";
 import Container from "@/components/container";
 import {Box} from "@mui/material";
