@@ -37,6 +37,8 @@ export default function TestimonialSlider() {
   return (
     <Box
       sx={{
+        
+        overflow: "hidden",
         "& .swiper-slide.swiper-slide-prev": {
           visibility: "hidden !important",
         },
@@ -46,6 +48,9 @@ export default function TestimonialSlider() {
           },
         "& .swiper": {
           overflow: "visible",
+        },
+        "& .swiper-wrapper":{
+         overflow: "hidden",
         },
         "& .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after": {
           fontSize: "16px",
@@ -90,15 +95,15 @@ export default function TestimonialSlider() {
             breakpoints={{
               1050: {
                 slidesPerView: 3,
-                spaceBetween: 90,
+                spaceBetween: 30,
               },
               700: {
                 slidesPerView: 2,
-                spaceBetween: 90,
+                spaceBetween: 30,
               },
               0: {
                 slidesPerView: 1,
-                spaceBetween: 90,
+                spaceBetween: 30,
               },
             }}
           >
