@@ -56,7 +56,6 @@ export default function MediaCard() {
             WebkitBackgroundClip: "text",
             color: "transparent",
           }}
-          component="div"
         >
           Danger
         </Typography>

@@ -9,3 +9,16 @@ body {
   }
 }
 
+
+.anime{
+  animation: anime1 35s linear infinite;
+}
+  @keyframes anime1 {
+    0%{
+        rotate: 360deg;
+    }
+    100%{
+        rotate: 0deg;
+
+    }
+}
