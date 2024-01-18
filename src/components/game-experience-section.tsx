@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import {Box, Button} from "@mui/material";
 import GameSlider from "@/components/Sliders/geme-experience-slider";
 
-export default function GameExperience(): JSX.Element {
+export default function GameExperience() {
   return (
     <Box
       sx={{

@@ -13,7 +13,7 @@ import BlockchainGames from "@/public/assets/images/blockchain-games.png";
 import Link from "next/link";
 
 import "swiper/css";
-import { ServiceDetail } from "@/utils/types";
+import {ServiceDetail} from "@/utils/types";
 
 const NextLevelServicesProvider = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);

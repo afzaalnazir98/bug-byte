@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import {Box} from "@mui/material";
 import TestimonialSlider from "./Sliders/testimonial-slider";
 
-export default function TestimonialSectionContainer(): JSX.Element {
+export default function TestimonialSectionContainer() {
   return (
     <Box sx={{background: "#071421"}}>
       <Box

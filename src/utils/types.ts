@@ -51,4 +51,19 @@ interface progressData {
   subtitle: String;
 }
 
-export type {GameExperience, ServiceDetail, MediaCardProps, FooterProps, FormData, HeroSectionProps, progressData};
+interface slide {
+  subTitle: string;
+  title: {
+      t1: string;
+      t2: string;
+  };
+  description: string;
+  btns: {
+      Styled: boolean;
+      text: string;
+      link: string;
+  }[];
+  imagePath: string;
+}
+
+export type {GameExperience, ServiceDetail, MediaCardProps, FooterProps, FormData, HeroSectionProps, progressData, slide};

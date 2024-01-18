@@ -9,17 +9,152 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import {slide} from "@/utils/types";
 
 export default function HeroSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
-  const titles = [
+  const Slides: slide[] = [
+    {
+      subTitle: "Building Gaming Worlds",
+      title: {
+        t1: "We Provide",
+        t2: "VR Services",
+      },
+      description: "Cross into surreal dimensions, engaging and exciting",
+      btns: [
+        {
+          Styled: true,
+          text: "Get Quote Now",
+          link: "/",
+        },
+        {
+          Styled: false,
+          text: "View Portfolio",
+          link: "/",
+        },
+      ],
+      imagePath: "/assets/images/hero-image.png",
+    },
+
+    {
+      subTitle: "Building Gaming Worlds",
+      title: {
+        t1: "We Provide",
+        t2: "Unity & unreal",
+      },
+      description: "Unleash the heights of realism and immersiveness",
+      btns: [
+        {
+          Styled: true,
+          text: "Get Quote Now",
+          link: "/",
+        },
+        {
+          Styled: false,
+          text: "View Portfolio",
+          link: "/",
+        },
+      ],
+      imagePath: "/assets/images/unity-unreal.png",
+    },
+
+    {
+      subTitle: "Building Gaming Worlds",
+      title: {
+        t1: "We Provide",
+        t2: "NFT & METAVERSE",
+      },
+      description: "Immerse in virtual worlds and explore the change",
+      btns: [
+        {
+          Styled: true,
+          text: "Get Quote Now",
+          link: "/",
+        },
+        {
+          Styled: false,
+          text: "View Portfolio",
+          link: "/",
+        },
+      ],
+      imagePath: "/assets/images/nft-metaverse.png",
+    },
+
+    {
+      subTitle: "Building Gaming Worlds",
+      title: {
+        t1: "We Provide",
+        t2: "GAME DESIGN",
+      },
+      description: "Bring your ideas to digital reincarnation",
+      btns: [
+        {
+          Styled: true,
+          text: "Get Quote Now",
+          link: "/",
+        },
+        {
+          Styled: false,
+          text: "View Portfolio",
+          link: "/",
+        },
+      ],
+      imagePath: "/assets/images/game-design-1.png",
+    },
+
+    {
+      subTitle: "Building Gaming Worlds",
+      title: {
+        t1: "We Provide",
+        t2: "blockchain games",
+      },
+      description: "Explore the future of gamification",
+      btns: [
+        {
+          Styled: true,
+          text: "Get Quote Now",
+          link: "/",
+        },
+        {
+          Styled: false,
+          text: "View Portfolio",
+          link: "/",
+        },
+      ],
+      imagePath: "/assets/images/blockchain.png",
+    },
+
+    {
+      subTitle: "Building Gaming Worlds",
+      title: {
+        t1: "We Provide",
+        t2: "AR Development",
+      },
+      description: "Experience the next-gen of immersiveness",
+      btns: [
+        {
+          Styled: true,
+          text: "Get Quote Now",
+          link: "/",
+        },
+        {
+          Styled: false,
+          text: "View Portfolio",
+          link: "/",
+        },
+      ],
+      imagePath: "/assets/images/ar-development.png",
+    },
+  ];
+
+  const titles: string[] = [
+    "VR",
+    "Unity/Unreal",
+    "NFT/Metaverse",
+    "Game design",
     "Blockchain",
-    "AR/VR",
-    "Metaverse",
-    "Unity Development",
-    "NFT",
-    "Metaverse",
+    "AR",
   ];
 
   const swiperStyles = {
@@ -38,7 +173,7 @@ export default function HeroSlider() {
     lineHeight: "normal",
     width: "100%",
     whiteSpace: "nowrap",
-    borderBottom: "1px solid white",
+    borderBottom: "3px solid white",
     borderRadius: "0",
     textTransform: "capitalize",
   });
@@ -55,11 +190,12 @@ export default function HeroSlider() {
         thumbs={{swiper: thumbsSwiper}}
         modules={[EffectFade, Autoplay, FreeMode, Thumbs]}
       >
-        {[1, 2, 3, 4, 5, 6].map((num, index) => (
-          <SwiperSlide key={index}>
-            <HeroSection />
-          </SwiperSlide>
-        ))}
+        {Slides &&
+          Slides.map((Slide, index) => (
+            <SwiperSlide key={index}>
+              <HeroSection Slide={Slide} />
+            </SwiperSlide>
+          ))}
       </Swiper>
       <Box
         sx={{
@@ -101,7 +237,7 @@ export default function HeroSlider() {
               },
             }}
           >
-            {[1, 2, 3, 4, 5, 6].map((num, index) => (
+            {titles.map((title, index) => (
               <SwiperSlide key={index}>
                 <SliderButton
                   sx={{
@@ -109,7 +245,7 @@ export default function HeroSlider() {
                     py: {xs: "18px", sm: "20px", md: "24px"},
                   }}
                 >
-                  {titles[index]}
+                  {title}
                 </SliderButton>
               </SwiperSlide>
             ))}
