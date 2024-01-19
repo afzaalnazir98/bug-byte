@@ -11,6 +11,7 @@ export default function HeroSection({items, image}: HeroSectionProps) {
     <Grid
       container
       sx={{
+        padding:" 150px 0 0 0",
         marginTop: {xs: "3rem", md: "0"},
       }}
     >

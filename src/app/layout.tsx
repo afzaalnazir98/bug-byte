@@ -71,9 +71,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <Navbar />
             <Box
               component="main"
-              sx={{
-                paddingTop: "140px",
-              }}
             >
               {children}
             </Box>
