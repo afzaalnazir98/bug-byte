@@ -1,27 +1,30 @@
-"use client";
-
 import * as React from "react";
-import Container from "@/components/container";
-import QuestionForm from "@/components/QuestionForm";
-import Offering from "@/components/services/Offering";
-import Work from "@/components/services/Work";
-import ServicesImage from "@/public/assets/images/services.png";
-import { Box } from "@mui/material";
 import HeroSection from "@/utils/HeroSection";
+import ContactForm from "@/components/forms/contact-page-form";
+import UnityDev from "@/public/assets/images/unityDev.png";
+import Container from "@/components/container";
+import { Box } from "@mui/material";
+import QuestionForm from "@/components/QuestionForm";
+import ServiceDetails from "../services-detail/page";
+import jsonData from "@/Mocks/service-data.json";
+
+// Extract the data array
+const dataArray = jsonData.serviceDetail;
 
 const props = [
   {
-    title: "Our Services",
+    title: "UNITY & UNREAL DEVELOPMENT",
     text: "Explore",
     des: "Lorem ipsum dolor sit amet, consectetur adipisc",
-    image: { ServicesImage },
+    image: { UnityDev },
   },
 ];
 
-export default function Service() {
+export default function Services() {
+  const Image = "/assets/images/contactUs-hero-bg.png";
   return (
     <>
-    <Box
+      <Box
         sx={{
           backgroundImage: `linear-gradient(rgba(0, 16, 32, 0.95), rgba(0, 16, 32, 0.95)), url(${"/assets/images/common-bg.png"})`,
           backgroundSize: "cover",
@@ -34,12 +37,11 @@ export default function Service() {
               color: "#fff",
             }}
           >
-            <HeroSection items={props[0]} image={ServicesImage} />
+            <HeroSection items={props[0]} image={UnityDev} />
           </Box>
         </Container>
       </Box>
-      <Offering />
-      <Work />
+      <ServiceDetails params={dataArray} />
       <QuestionForm />
     </>
   );

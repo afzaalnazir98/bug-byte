@@ -39,7 +39,7 @@ export default function QuestionForm() {
               flexDirection: {xs: "column", lg: "row"},
               justifyContent: {xs: "center", lg: "space-between"},
               alignItems: "center",
-              gap: {xs: "5rem 0px", sm: "7rem 0px", md: "8rem 0px", lg: "0"},
+              gap: {xs: "3rem 0px", sm: "5rem 0px", md: "8rem 0px", lg: "0"},
             }}
           >
             <Box

@@ -7,11 +7,12 @@ interface GameExperience {
 }
 
 interface ServiceDetail {
-  imagePath: any;
+  image: any;
   title: string;
   description: string;
   buttonLink: string;
   buttonText: string;
+  order?:number;
 }
 
 interface MediaCardProps {

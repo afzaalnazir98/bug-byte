@@ -1,70 +1,54 @@
-"use client";
-
+// Import necessary components and data
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@/components/container";
 import ContentComponent from "@/components/Content/Content";
+import { ServiceDetail } from "@/utils/types"; 
 
-const dataArray = [
-  {
-    image: "/assets/images/unity-pic1.png",
-    title: "Crossplatform Games",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-    buttonText: "contact us",
-    buttonLink: "contact",
-    order: 0,
-  },
-  {
-    image: "/assets/images/unity-pic2.png",
-    title: "Multiplayer Games",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-    buttonText: "Multiplayer",
-    buttonLink: "contact",
-    order: 1,
-  },
-  {
-    image: "/assets/images/unity-pic3.png",
-    title: "Hypercausal games",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-    buttonText: "Hypercausal",
-    buttonLink: "contact",
-    order: 0,
-  },
-  {
-    image: "/assets/images/unity-pic4.png",
-    title: "Simulation Games",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-    buttonText: "Simulation",
-    buttonLink: "contact",
-    order: 1,
-  },
-];
+interface ServiceDetailsProps {
+  params: ServiceDetail[];
+}
 
-export default function ServiceDetails() {
+const ServiceDetails: React.FC<ServiceDetailsProps> = ({ params }) => {
   return (
-      <Container>
+    <>
+      {params && params.length && params.map((item, index) => (
         <Box
+          key={index}
           sx={{
-            color: "#fff",
-            display: "grid",
+            background:
+              item.order === 0
+                ? "#fff"
+                : "linear-gradient(110deg, rgba(23, 69, 113, 0.30) 5.87%, rgba(0, 0, 0, 0.30) 122.69%)",
+            color: item.order === 0 ? "#000" : "#fff",
           }}
         >
-          {dataArray.map((item, index) => (
-            <ContentComponent
-              key={index}
-              image={item.image}
-              title={item.title}
-              description={item.description}
-              buttonText={item.buttonText}
-              buttonLink={item.buttonLink}
-              order={item.order}
-            />
-          ))}
+          <Container>
+            <Box
+              sx={{
+                color: "#fff",
+                display: "grid",
+                fontSize: "18px",
+                fontWeight: 400,
+                lineHeight: "96.5%",
+                textTransform: "capitalize",
+              }}
+            >
+              <ContentComponent
+                key={index}
+                image={item.image}
+                title={item.title}
+                description={item.description}
+                buttonText={item.buttonText}
+                buttonLink={item.buttonLink}
+                order={item.order}
+              />
+            </Box>
+          </Container>
         </Box>
-      </Container>
+      ))}
+    </>
   );
 }
+
+export default ServiceDetails;

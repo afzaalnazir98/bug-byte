@@ -80,7 +80,7 @@ export default function Offering() {
   return (
     <Box
       sx={{
-        padding: { sm: "2rem 0rem", md: "4rem 0rem", lg: "6rem 0rem" },
+        padding: { xs: "2rem 0rem",sm: "3rem 0rem", md: "4rem 0rem", lg: "6rem 0rem" },
         backgroundColor: "white",
       }}
     >

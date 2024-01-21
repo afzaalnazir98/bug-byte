@@ -101,6 +101,7 @@ export default function Work() {
           textAlign: "center",
           padding: "60px 0px",
           display: "grid",
+          backgroundSize:"cover",
           justifyContent: "center",
           gap: "30px",
           alignItems: "center",
@@ -171,7 +172,7 @@ export default function Work() {
             >
               {circle.map((val,index) => {
                 return (
-                  <Box sx={{
+                  <Box key={index} sx={{
                     border: 
                     index === currentIndex ?"1px solid #DD2C00":"1px solid transparent",
                   display: "flex",

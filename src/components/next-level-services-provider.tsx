@@ -20,7 +20,7 @@ const NextLevelServicesProvider = () => {
 
   const serviceDetails: ServiceDetail[] = [
     {
-      imagePath: GameDevelopment,
+      image: GameDevelopment,
       title: "Game Development",
       description:
         "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance.",
@@ -28,26 +28,26 @@ const NextLevelServicesProvider = () => {
       buttonText: "Learn More",
     },
     {
-      imagePath: GameDesign,
+      image: GameDesign,
       title: "Game Design",
       description:
         "Level design, logic and gameplay, environment design, character art, animation",
-      buttonLink: "/",
+      buttonLink: "/game-design",
       buttonText: "Learn More",
     },
     {
-      imagePath: ArVr,
+      image: ArVr,
       title: "AR and VR Games",
       description:
         "Real-life simulations, gamified metaverses, shopping experiences, real estate, sports, fashion.",
-      buttonLink: "/",
+      buttonLink: "/ar-development",
       buttonText: "Learn More",
     },
     {
-      imagePath: BlockchainGames,
+      image: BlockchainGames,
       title: "Blockchain Games",
       description: "P2E, NFT marketplaces, staking, smart contracts",
-      buttonLink: "/",
+      buttonLink: "/blockchain-games",
       buttonText: "Learn More",
     },
   ];
@@ -204,7 +204,7 @@ const NextLevelServicesProvider = () => {
                   >
                     <Image
                       className="slide-image"
-                      src={`${service?.imagePath?.src}`}
+                      src={`${service?.image?.src}`}
                       alt={service?.title ?? ""}
                       height={100}
                       width={100}
