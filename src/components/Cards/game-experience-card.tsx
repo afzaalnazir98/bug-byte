@@ -47,7 +47,6 @@ export default function GameCard({gameExperience, isActive}: MediaCardProps) {
             fontWeight: {xs: 600, sm: 700},
             color: "white",
           }}
-          component="div"
         >
           {gameExperience.title}
         </Typography>

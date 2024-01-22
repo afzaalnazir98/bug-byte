@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Contact Us",
+    "text": "Get In Touch",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/contact-agent.png"
+  },
+  {
+    "title": "About us",
+    "des": "Your journey into the digital realm starts here!"
+  },
+  {
+    "title": "Explore",
+    "text": "Our Services",
+    "des": "Our services combine smart ideas with creative fun – that's what makes Buggbyte Studios unique!",
+    "image": "/assets/images/services-header-img.png"
+  },
+  {
+    "title": "Explore",
+    "text": "Our PORTFOLIO",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/portfolio-header-img.png"
+  },
+  {
+    "title": "Alien Shooter Space War Games",
+    "text": "Unity ",
+    "des": "Galaxy Shooter – Alien Hunter : Space Shooting Games. \"Galaxy Shooter Sky Force –alien shooting game\" is an engaging arcade galaxy space shooting game that draws inspiration from classics like Galaxia.",
+    "image": "/assets/images/protfolio-detail-header-img.png",
+    "buttonText": "Request to play"
+  },
+  {
+    "title": "AR DEVELOPMENT",
+    "text": "Explore",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/ar-dev.png"
+  },
+  {
+    "title": "BLOCKCHAIN DEVELOPMENT",
+    "text": "Explore",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/bc-games.png"
+  },
+  {
+    "title": "GAME DESIGN",
+    "text": "Explore",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/game-design-1.png"
+  },
+  {
+    "title": "NFT & METAVERSE",
+    "text": "Explore",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/nft-and-metaverse.png"
+  },
+  {
+    "title": "VR DEVELOPMENT",
+    "text": "Explore",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/vr-dev.png"
+  },
+  {
+    "title": "VIRTUAL EXPERIENCES",
+    "text": "Explore",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/ar-dev.png"
+  },
+  {
+    "title": "UNITY & UNREAL DEVELOPMENT",
+    "text": "Explore",
+    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "image": "/assets/images/unityDev.png"
+  }
+]

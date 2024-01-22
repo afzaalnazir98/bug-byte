@@ -17,9 +17,6 @@ const projectInfoImage = {
   "@media (min-width: 768px)": {
     marginRight: "20px",
   },
-  "@media (min-width: 1200px)": {
-    // marginLeft: "-55px",
-  },
 };
 
 const projectImageStyled = {
@@ -134,7 +131,8 @@ export default function ProjectWithUs() {
           }}
         >
           <Grid item xs={12} sm={8} md={4}>
-            <motion.div
+            <Box
+            component={motion.div}
               initial={{opacity: 0, scale: 2}}
               animate={{opacity: 1, scale: 1}}
               transition={{
@@ -254,10 +252,11 @@ export default function ProjectWithUs() {
                   </Box>
                 </Box>
               </Box>
-            </motion.div>
+            </Box>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
-            <motion.div
+          <Box
+            component={motion.div}
               initial={{opacity: 0, scale: 2}}
               animate={{opacity: 1, scale: 1}}
               transition={{
@@ -378,10 +377,11 @@ export default function ProjectWithUs() {
                   </Box>
                 </Box>
               </Box>
-            </motion.div>
+            </Box>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
-            <motion.div
+          <Box
+            component={motion.div}
               initial={{opacity: 0, scale: 2}}
               animate={{opacity: 1, scale: 1}}
               transition={{
@@ -503,7 +503,7 @@ export default function ProjectWithUs() {
                   </Box>
                 </Box>
               </Box>
-            </motion.div>
+            </Box>
           </Grid>
         </Grid>
       </Container>

@@ -1,10 +1,10 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {Box, Button, CircularProgress, Typography} from "@mui/material";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay} from "swiper/modules";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import GameDevelopment from "@/public/assets/images/game-development.png";
 import GameDesign from "@/public/assets/images/game-design.png";
@@ -13,7 +13,7 @@ import BlockchainGames from "@/public/assets/images/blockchain-games.png";
 import Link from "next/link";
 
 import "swiper/css";
-import {ServiceDetail} from "@/utils/types";
+import { ServiceDetail } from "@/utils/types";
 
 const NextLevelServicesProvider = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);

@@ -1,0 +1,52 @@
+[
+    {
+      "img": "/assets/images/portfolio-img1.png",
+      "size": {
+        "width":550,
+        "height":620
+      }
+    },
+    {
+      "img": "/assets/images/portfolio-img2.png",
+      "size": {
+        "width":550,
+        "height":450
+      }
+    },
+    {
+      "img": "/assets/images/portfolio-img3.png",
+      "size": {
+        "width":550,
+        "height":350
+      }
+    },
+    {
+      "img": "/assets/images/portfolio-img4.png",
+      "size": {
+        "width":550,
+        "height":350
+      }
+    },
+    {
+      "img": "/assets/images/portfolio-img5.png",
+      "size": {
+        "width":550,
+        "height":550
+      }
+    },
+    {
+      "img": "/assets/images/portfolio-img6.png",
+      "size": {
+        "width":550,
+        "height":500
+      }
+    },
+    {
+      "img": "/assets/images/portfolio-img7.png",
+      "size": {
+        "width":550,
+        "height":600
+      }
+    }
+  ]
+  

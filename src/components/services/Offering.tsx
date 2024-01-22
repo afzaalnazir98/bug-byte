@@ -1,10 +1,10 @@
 "use client";
 import * as React from "react";
-import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Button, styled} from "@mui/material";
+import { Button, styled } from "@mui/material";
 import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Image from "next/image";
@@ -25,8 +25,11 @@ const StyleButton = styled(Button)({
   color: "#fff",
   maxWidth: "fit-content",
 });
+const Label = styled(Tab)({
+  color: "#030B12",
+});
 
-const Title = styled(Typography)({
+const Title = styled(Box)({
   backgroundImage:
     "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
   fontWeight: 700,
@@ -50,8 +53,8 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ padding: "0px 24px" }}>
-          <Typography>{children}</Typography>
+        <Box>
+          <Box>{children}</Box>
         </Box>
       )}
     </Box>
@@ -116,74 +119,70 @@ export default function Offering() {
             marginTop: { xs: "20px", sm: "30px", md: "40px", lg: "50px" },
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
-            height: 450,
+            gap: "20px",
+            paddingBottom: "5rem",
           }}
         >
           <Tabs
-            orientation={matches ? "horizontal" : "vertical"}
-            variant="scrollable"
-            scrollButtons={matches ? true : false}
             value={value}
             onChange={handleChange}
-            allowScrollButtonsMobile={matches ? true : false}
-            aria-label="Vertical tabs example"
+            variant="scrollable"
+            scrollButtons="auto"
+            aria-label={
+              matches ? "scrollable auto tabs example" : "Vertical tabs example"
+            }
             sx={{
-              minWidth: "fit-content",
-              overflowX: { xs: "visible", sm: "hidden" },
-              display: { xs: "flex", sm: "block" },
-              maxWidth: { xs: 320, sm: 480 },
-
               "& .mui-heg063-MuiTabs-flexContainer": {
+                gap: "10px",
                 flexDirection: { xs: "row", sm: "column" },
               },
+              "& .mui-69z67c-MuiTabs-scroller": {
+                maxHeight: { sm: "350px", md: "420px" },
+                overflowY: "visible",
+              },
+              "& .MuiTabs-scrollButtons ": {
+                display: "none",
+              },
+              "& .mui-r76b0o-MuiButtonBase-root-MuiTab-root.Mui-selected": {
+                color: "#FF3F00",
 
-              "& .MuiTab-root": {
-                padding: {
-                  sm: "5px 22px 5px 12px",
-                  md: "5px 25px 5px 15px",
-                  lg: "5px 30px 5px 20px",
-                },
-                whiteSpace: "nowrap",
+                zIndex: 2,
               },
-              "&  .mui-10d9dml-MuiTabs-indicator": {
+              "& .mui-8je8zh-MuiTouchRipple-root": {
                 backgroundColor: "#06121F",
-                width: "100%",
-                borderRadius: "5px",
+                zIndex: -1,
               },
-              "& .mui-2dhfn1-MuiButtonBase-root-MuiTab-root": {
-                padding: "8px",
-              },
-              "& .mui-2dhfn1-MuiButtonBase-root-MuiTab-root.Mui-selected": {
-                backgroundImage:
-                  "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                fontSize: { sm: "18px", md: "22px", lg: "25px" },
-                fontWeight: 700,
-                zIndex: 1,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              },
-              "& .MuiTab-root.Mui-selected": {
-                color: "#06121F",
+              "& .mui-1aquho2-MuiTabs-indicator": {
+                display: "none",
               },
               "& .label": {
                 fontSize: { sm: "14px", md: "20px", lg: "24px" },
                 fontWeight: 600,
                 alignItems: "flex-start",
+                whiteSpace: "nowrap",
                 maxWidth: { xs: "max-content", sm: "370px" },
               },
             }}
           >
-            <Tab label="Unity & unreal" {...a11yProps(0)} className="label" />
-            <Tab label="BLOCKCHAIN games" {...a11yProps(1)} className="label" />
-            <Tab label="nft & metaverse" {...a11yProps(2)} className="label" />
-            <Tab label="AR DEVELOPMENT" {...a11yProps(3)} className="label" />
-            <Tab label="VR DEVELOPMENT" {...a11yProps(4)} className="label" />
-            <Tab
-              label="GAMES & ANIMATIONS"
+            <Label label="Unity & unreal" {...a11yProps(0)} className="label" />
+            <Label
+              label="BLOCKCHAIN games"
+              {...a11yProps(1)}
+              className="label"
+            />
+            <Label
+              label="nft & metaverse"
+              {...a11yProps(2)}
+              className="label"
+            />
+            <Label label="AR DEVELOPMENT" {...a11yProps(3)} className="label" />
+            <Label label="VR DEVELOPMENT" {...a11yProps(4)} className="label" />
+            <Label
+              label="GAMES  DESIGN & ANIMATIONS"
               {...a11yProps(5)}
               className="label"
             />
-            <Tab
+            <Label
               label="VIRTUAL EXPERIENCES"
               {...a11yProps(6)}
               className="label"

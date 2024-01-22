@@ -73,7 +73,7 @@ export default function Help() {
           sx={{
             display: "flex",
             position: "relative",
-            gap: {sm: "2rem", md: "4rem", lg: "8rem"},
+            gap: { lg: "8rem"},
             flexDirection: {xs: "column", md: "row"},
             justifyContent: {xs: "center", md: "space-between"},
             padding: {xs: "2rem 0rem", md: "4rem 0rem", lg: "8rem 0px"},
@@ -105,7 +105,7 @@ export default function Help() {
               display: "flex",
               flexDirection: "column",
               alignSelf: "center",
-              gap: {xs: "20px", md: "30px", lg: "42px"},
+              gap: {xs:"15px",lg:"17px"},
               maxWidth: "548px",
             }}
           >
@@ -119,6 +119,8 @@ export default function Help() {
             <Title
               sx={{
                 fontSize: {xs: "20px", sm: "30px", lg: "40px"},
+                lineHeight:{xs:"20px",sm:"25px",md:"30px",lg:"40px"},
+                letterSpacing: {xs:"1.2",md:'1.8'}
               }}
             >
               Bringing People Together Through The Power Of Play
@@ -126,6 +128,8 @@ export default function Help() {
             <Description
               sx={{
                 fontSize: {md: "18px", xs: "14px"},
+                lineHeight:{xs:"18px",sm:"20px",lg:"25px"}, 
+                color:"#071421"
               }}
             >
               Welcome to Buggbyte Studios! We create fun games using Unity and

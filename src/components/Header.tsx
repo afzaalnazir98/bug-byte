@@ -1,23 +1,32 @@
 "use client";
-
 import * as React from "react";
 import HeroSection from "@/utils/HeroSection";
-import ContactAgent from "@/public/assets/images/contact-agent.png";
 import Container from "@/components/container";
+import {hero} from "@/utils/types";
+import HerosData from "@/Mock/HerosData.json" ;
+import { Box } from "@mui/material";
 
-const props = [
-  {
-    title: "Contact Us",
-    text: "Get In Touch",
-    des: "Lorem ipsum dolor sit amet, consectetur adipisc",
-    image: {ContactAgent},
-  },
-];
 
-export default function Header() {
+const Heros: hero[] = HerosData;
+
+export default function Header({ num, url }: { num: number; url: string }) {
   return (
+    <Box
+    sx={{
+      backgroundImage: `linear-gradient(rgba(0, 16, 32, 0.95), rgba(0, 16, 32, 0.95)), url(${url})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
     <Container>
-      <HeroSection items={props[0]} image={ContactAgent} />
+      <Box
+        sx={{
+          color: "#fff",
+        }}
+      >
+        <HeroSection {...Heros[num]} />
+      </Box>
     </Container>
+  </Box>
   );
 }

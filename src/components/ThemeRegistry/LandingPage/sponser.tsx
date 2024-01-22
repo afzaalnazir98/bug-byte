@@ -1,25 +1,25 @@
 "use client";
 
 import React from "react";
-import {Box, Typography} from "@mui/material";
-import Logo1 from "@/public/assets/social-media-icons/scroll-logo1.svg";
-import Logo2 from "@/public/assets/social-media-icons/scroll-logo2.svg";
-import Logo3 from "@/public/assets/social-media-icons/scroll-logo3.svg";
-import Logo4 from "@/public/assets/social-media-icons/scroll-logo4.svg";
-import Logo5 from "@/public/assets/social-media-icons/scroll-logo5.svg";
-import Logo6 from "@/public/assets/social-media-icons/scroll-logo6.svg";
+import { Box, Typography } from "@mui/material";
+import Logo1 from "@/public/assets/social-media-icons/sponser1.png";
+import Logo2 from "@/public/assets/social-media-icons/sponser2.png";
+import Logo3 from "@/public/assets/social-media-icons/sponser3.png";
+import Logo4 from "@/public/assets/social-media-icons/sponser4.png";
+import Logo5 from "@/public/assets/social-media-icons/sponser5.png";
+import Logo6 from "@/public/assets/social-media-icons/sponser6.png";
+import Logo7 from "@/public/assets/social-media-icons/sponser7.png";
 import Star from "@/public/assets/social-media-icons/star.svg";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import Container from "@/components/container";
 
 export default function Sponsor() {
   const logoStyles = {
     display: "inline-block",
-    margin: {xs: "0 5px", sm: "0 8px", md: "0 10px"},
+    margin: { xs: "0 8px", sm: "0 15px", md: "0 20px" },
     "& .logo": {
-      height: {xs: "20px", sm: "25px", md: "30px", lg: "36px"},
-      width: {xs: "160px", sm: "180px", md: "200px", lg: "219px"},
+      height: { xs: "20px", sm: "25px", md: "30px", lg: "36px" },
+      width: { xs: "160px", sm: "180px", md: "200px", lg: "219px" },
     },
   };
 
@@ -50,8 +50,8 @@ export default function Sponsor() {
                 className="logo"
                 src={Logo1}
                 alt="Logo1"
-                height={36}
-                width={219}
+                height={60}
+                width={200}
               />
             </Box>
             <Box sx={logoStyles}>
@@ -59,8 +59,8 @@ export default function Sponsor() {
                 className="logo"
                 src={Logo2}
                 alt="Logo2"
-                height={36}
-                width={219}
+                height={60}
+                width={200}
               />
             </Box>
             <Box sx={logoStyles}>
@@ -68,8 +68,8 @@ export default function Sponsor() {
                 className="logo"
                 src={Logo3.src}
                 alt="Logo3"
-                height={36}
-                width={219}
+                height={60}
+                width={200}
               />
             </Box>
             <Box sx={logoStyles}>
@@ -77,8 +77,8 @@ export default function Sponsor() {
                 className="logo"
                 src={Logo4.src}
                 alt="Logo4"
-                height={36}
-                width={219}
+                height={60}
+                width={200}
               />
             </Box>
             <Box sx={logoStyles}>
@@ -86,8 +86,8 @@ export default function Sponsor() {
                 className="logo"
                 src={Logo5.src}
                 alt="Logo5"
-                height={36}
-                width={219}
+                height={60}
+                width={200}
               />
             </Box>
             <Box sx={logoStyles}>
@@ -95,8 +95,17 @@ export default function Sponsor() {
                 className="logo"
                 src={Logo6.src}
                 alt="Logo6"
-                height={36}
-                width={219}
+                height={60}
+                width={200}
+              />
+            </Box>
+            <Box sx={logoStyles}>
+              <Image
+                className="logo"
+                src={Logo7.src}
+                alt="Logo6"
+                height={60}
+                width={200}
               />
             </Box>
           </Marquee>
@@ -106,7 +115,7 @@ export default function Sponsor() {
           sx={{
             position: "relative",
             zIndex: 1,
-            top: {xs: "8px", sm: "15px", md: "20px", lg: "34px"},
+            top: { xs: "8px", sm: "15px", md: "20px", lg: "34px" },
           }}
         >
           <Box
@@ -124,7 +133,12 @@ export default function Sponsor() {
                 "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
             }}
           >
-            <Container>
+            <Box
+              sx={{
+                maxWidth: "1440px",
+                margin: "auto",
+              }}
+            >
               <Marquee direction="right">
                 <Box
                   sx={{
@@ -182,7 +196,7 @@ export default function Sponsor() {
                   </Box>
                 </Box>
               </Marquee>
-            </Container>
+            </Box>
           </Box>
           <Box
             sx={{
@@ -202,7 +216,12 @@ export default function Sponsor() {
               },
             }}
           >
-            <Container>
+            <Box
+              sx={{
+                maxWidth: "1440px",
+                margin: "auto",
+              }}
+            >
               <Marquee>
                 <Box
                   sx={{
@@ -221,7 +240,7 @@ export default function Sponsor() {
                   >
                     <Typography
                       sx={{
-                        color: "#EAEAEA",
+                        color: "#F7431D",
                         fontSize: {
                           xs: "30px",
                           sm: "40px",
@@ -238,7 +257,7 @@ export default function Sponsor() {
                     <Image src={Star.src} alt="star" width={38} height={38} />
                     <Typography
                       sx={{
-                        color: "#EAEAEA",
+                        color: "#F7431D",
                         fontSize: {
                           xs: "30px",
                           sm: "40px",
@@ -255,7 +274,7 @@ export default function Sponsor() {
                   </Box>
                 </Box>
               </Marquee>
-            </Container>
+            </Box>
           </Box>
         </Box>
       </Box>

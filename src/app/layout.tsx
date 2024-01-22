@@ -29,12 +29,13 @@ const footerData = [
   {
     section: "Our Services",
     links: [
-      {text: "Game Development", url: "/game-development"},
-      {text: "Blockchain", url: "/blockchain"},
-      {text: "AR/VR", url: "/ar-vr"},
-      {text: "Metaverse", url: "/metaverse"},
+      {text: "Game Development", url: "/game-design"},
+      {text: "Blockchain", url: "/blockchain-games"},
+      {text: "VR", url: "/vr-development"},
+      {text: "AR", url: "/ar-development"},
+      {text: "Metaverse", url: "/nft-metaverse"},
       {text: "Unity Development", url: "/unity-development"},
-      {text: "NFT", url: "/nft"},
+      {text: "NFT", url: "/nft-metaverse"},
     ],
   },
   {

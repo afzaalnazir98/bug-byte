@@ -10,6 +10,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import {slide} from "@/utils/types";
+import SlidesData from "@/Mock/SlidesData.json" 
 
 export default function HeroSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);

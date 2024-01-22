@@ -152,7 +152,7 @@ export default function Work() {
               backgroundSize: "contain",
               height: {xs:"240px",sm:"550px",md:"600px"},
               width: {xs:"240px",sm:"550px",md:"600px"},
-              transform: "rotate(75deg)",
+              transform: "rotate(60deg)",
               animation: "anime1 35s linear infinite",
               borderRadius: "50%",
               position: "relative",

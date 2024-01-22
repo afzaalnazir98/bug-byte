@@ -83,7 +83,7 @@ export default function ContactForm() {
               marginBottom: {xs: "4px", sm: "8px"},
             },
           }}
-          onSubmit={(e) => handleSubmit(e)}
+          onSubmit={(e:any) => handleSubmit(e)}
         >
           <TextField
             className="input-field"
@@ -92,7 +92,7 @@ export default function ContactForm() {
             fullWidth
             margin="normal"
             required
-            onChange={(e) => setFormData({...formData, name: e.target.value})}
+            onChange={(e:any) => setFormData({...formData, name: e.target.value})}
           />
           <TextField
             className="input-field"
@@ -102,7 +102,7 @@ export default function ContactForm() {
             margin="normal"
             required
             type="email"
-            onChange={(e) => setFormData({...formData, email: e.target.value})}
+            onChange={(e:any) => setFormData({...formData, email: e.target.value})}
           />
           <FormControl
             className="input-field"

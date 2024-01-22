@@ -9,7 +9,6 @@ body {
   }
 }
 
-
 .anime{
   animation: anime1 35s linear infinite;
 }
@@ -21,4 +20,14 @@ body {
         rotate: 0deg;
 
     }
+}
+
+@keyframes jKVXCn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+
 }
