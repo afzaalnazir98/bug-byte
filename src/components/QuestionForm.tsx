@@ -1,10 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  Typography,
-  Box,
-} from "@mui/material";
+import {Typography, Box} from "@mui/material";
 import callSvg from "@/public/assets/images/call.svg";
 import magBoxSvg from "@/public/assets/images/message.svg";
 import Image from "next/image";
@@ -12,7 +9,6 @@ import Container from "./container";
 import ContactForm from "./forms/contact-form";
 
 export default function QuestionForm() {
-
   return (
     <Box
       sx={{

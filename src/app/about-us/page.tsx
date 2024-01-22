@@ -1,12 +1,14 @@
 "use client";
 
 import * as React from "react";
-import Company from "@/components/about-us/company";
-import QuestionForm from "@/components/QuestionForm";
-import Service from "@/components/about-us/service";
-import CompanyProgress from "@/components/ThemeRegistry/LandingPage/company-progress";
-import TimeLineSection from "@/components/about-us/timeline-section";
-import Header from "@/components/Header";
+import dynamic from 'next/dynamic';
+
+const Header = dynamic(() => import('@/components/Header'), { ssr: false });
+const Company = dynamic(() => import('@/components/about-us/company'), { ssr: false });
+const Service = dynamic(() => import('@/components/about-us/service'), { ssr: false });
+const CompanyProgress = dynamic(() => import('@/components/ThemeRegistry/LandingPage/company-progress'), { ssr: false });
+const TimeLineSection = dynamic(() => import('@/components/about-us/timeline-section'), { ssr: false });
+const QuestionForm = dynamic(() => import('@/components/QuestionForm'), { ssr: false });
 
 export default function About() {
   return (

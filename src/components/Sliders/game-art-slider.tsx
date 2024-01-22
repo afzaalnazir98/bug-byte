@@ -13,13 +13,13 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import GameArtCard from "../Cards/game-art-slider-card";
 
-const gameArtCardImage=[
-    {img:"./assets/images/game-art-img1.png"},
-    {img:"./assets/images/game-art-img2.png"},
-    {img:"./assets/images/game-art-img3.png"},
-    {img:"./assets/images/game-art-img1.png"},
-    {img:"./assets/images/game-art-img2.png"},
-]
+const gameArtCardImage = [
+  {img: "./assets/images/game-art-img1.png"},
+  {img: "./assets/images/game-art-img2.png"},
+  {img: "./assets/images/game-art-img3.png"},
+  {img: "./assets/images/game-art-img1.png"},
+  {img: "./assets/images/game-art-img2.png"},
+];
 
 export default function GameArtSilder() {
   const navigationEl = {
@@ -27,13 +27,17 @@ export default function GameArtSilder() {
     prevEl: ".swiper-button-prev",
   };
 
-  const hollowArrowStyles = {
+  const commonStyles = {
     borderRadius: "50%",
     backgroundColor: "transparent",
-    color: "#F04B12",
     cursor: "pointer",
-    border: "2px solid #F04B12",
     textAlign: "center",
+  };
+
+  const hollowArrowStyles = {
+    ...commonStyles,
+    color: "#F04B12",
+    border: "2px solid #F04B12",
   };
 
   const paginationStyles = {
@@ -46,7 +50,6 @@ export default function GameArtSilder() {
   return (
     <Box
       sx={{
-        
         overflow: "hidden",
         "& .swiper-slide.swiper-slide-prev": {
           visibility: "hidden !important",
@@ -56,10 +59,8 @@ export default function GameArtSilder() {
             visibility: "visible",
           },
         "& .swiper": {
-          overflow: "visible",
-        },
-        "& .swiper-wrapper":{
-         overflow: "hidden",
+          overflow: "hidden",
+          pb: "50px",
         },
         "& .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after": {
           fontSize: "16px",
@@ -85,44 +86,49 @@ export default function GameArtSilder() {
       }}
     >
       <Container>
-        <Box
-          sx={{
-            p: {
-              xs: "20px 40px 100px 40px",
-              sm: "35px 80px 100px 80px",
-              md: "60px 80px 80px 80px",
-            },
-            overflow: "hidden",
-        
-          }}
-        >
-          <Swiper
-            loop
-            navigation={navigationEl}
-            pagination={{clickable: true}}
-            className="swiper-main"
-            modules={[Autoplay, Navigation, Pagination]}
-            breakpoints={{
-              1050: {
-                slidesPerView: 3,
-                spaceBetween: 30,
+        {gameArtCardImage.length > 0 && (
+          <Box
+            sx={{
+              p: {
+                xs: "20px 40px 100px 40px",
+                sm: "35px 80px 100px 80px",
+                md: "60px 80px",
               },
-              700: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-              },
+              overflow: "hidden",
             }}
           >
-            {gameArtCardImage.map((data, index) => (
-              <SwiperSlide key={index}>
-                <GameArtCard img={data.img}/>
-              </SwiperSlide>
-            ))}
-
+            <Swiper
+              loop
+              navigation={navigationEl}
+              pagination={{
+                clickable: true,
+                el: ".swiper-pagination",
+              }}
+              // pagination={{clickable: true}}
+              className="swiper-main"
+              modules={[Autoplay, Navigation, Pagination]}
+              breakpoints={{
+                1050: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+                700: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 30,
+                },
+              }}
+            >
+              {gameArtCardImage.map((data, index) => (
+                <SwiperSlide key={index}>
+                  <GameArtCard img={data.img} />
+                </SwiperSlide>
+              ))}
+              <Box className="swiper-pagination" sx={paginationStyles}></Box>
+            </Swiper>
             <Box
               sx={{
                 display: "flex",
@@ -155,9 +161,8 @@ export default function GameArtSilder() {
                 }}
               ></Box>
             </Box>
-          </Swiper>
-          <Box sx={paginationStyles}></Box>
-        </Box>
+          </Box>
+        )}
       </Container>
     </Box>
   );

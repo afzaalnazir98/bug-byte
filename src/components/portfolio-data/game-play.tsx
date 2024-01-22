@@ -1,6 +1,4 @@
-"use client";
-
-import { Box, Typography, styled } from "@mui/material";
+import {Box, Typography, styled} from "@mui/material";
 import Image from "next/image";
 
 const projectInfoImage = {
@@ -37,7 +35,7 @@ export default function GetPlay() {
       sx={{
         backgroundColor: "#fff",
         display: "grid",
-        gap: { xs: "35px", md: "50px", lg: "64px" },
+        gap: {xs: "35px", md: "50px", lg: "64px"},
         justifyItems: "center",
         padding: {
           xs: "40px 0px",
@@ -50,7 +48,7 @@ export default function GetPlay() {
       <Box>
         <Title
           sx={{
-            fontSize: { xs: "20px", sm: "30px", lg: "40px" },
+            fontSize: {xs: "20px", sm: "30px", lg: "40px"},
             textAlign: "center",
           }}
         >
@@ -58,9 +56,9 @@ export default function GetPlay() {
         </Title>
         <SubTitle
           sx={{
-            fontSize: { xs: "20px", lg: "25px" },
+            fontSize: {xs: "20px", lg: "25px"},
 
-            lineHeight: { xs: "1.2", md: "1.5" },
+            lineHeight: {xs: "1.2", md: "1.5"},
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

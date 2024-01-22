@@ -37,7 +37,6 @@ export default function TestimonialSlider() {
   return (
     <Box
       sx={{
-        
         overflow: "hidden",
         "& .swiper-slide.swiper-slide-prev": {
           visibility: "hidden !important",
@@ -47,10 +46,8 @@ export default function TestimonialSlider() {
             visibility: "visible",
           },
         "& .swiper": {
-          overflow: "visible",
-        },
-        "& .swiper-wrapper":{
-         overflow: "hidden",
+          overflow: "hidden",
+          pb: "50px",
         },
         "& .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after": {
           fontSize: "16px",
@@ -81,7 +78,7 @@ export default function TestimonialSlider() {
             p: {
               xs: "20px 40px 100px 40px",
               sm: "35px 80px 100px 80px",
-              md: "60px 80px 80px 80px",
+              md: "60px 80px",
             },
             overflow: "hidden",
           }}
@@ -112,41 +109,40 @@ export default function TestimonialSlider() {
                 <TestimonialCard />
               </SwiperSlide>
             ))}
-
-            <Box
-              sx={{
-                display: "flex",
-                gap: "30px",
-                justifyContent: "space-between",
-                width: {xs: "fit-content", sm: "auto"},
-                margin: "auto",
-                position: "relative",
-                top: {xs: "40px", sm: "-140px", md: "-190px"},
-              }}
-            >
-              <Box
-                className="swiper-button-prev"
-                sx={{
-                  position: {xs: "unset", sm: "relative"},
-                  left: "-80px",
-                  width: {xs: "30px", sm: "40px"},
-                  height: {xs: "30px", sm: "40px"},
-                  ...hollowArrowStyles,
-                }}
-              ></Box>
-              <Box
-                className="swiper-button-next"
-                sx={{
-                  position: {xs: "unset", sm: "relative"},
-                  right: "-70px",
-                  width: {xs: "30px", sm: "40px"},
-                  height: {xs: "30px", sm: "40px"},
-                  ...hollowArrowStyles,
-                }}
-              ></Box>
-            </Box>
+            <Box className="swiper-pagination" sx={paginationStyles}></Box>
           </Swiper>
-          <Box sx={paginationStyles}></Box>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "30px",
+              justifyContent: "space-between",
+              width: {xs: "fit-content", sm: "auto"},
+              margin: "auto",
+              position: "relative",
+              top: {xs: "40px", sm: "-140px", md: "-190px"},
+            }}
+          >
+            <Box
+              className="swiper-button-prev"
+              sx={{
+                position: {xs: "unset", sm: "relative"},
+                left: "-80px",
+                width: {xs: "30px", sm: "40px"},
+                height: {xs: "30px", sm: "40px"},
+                ...hollowArrowStyles,
+              }}
+            ></Box>
+            <Box
+              className="swiper-button-next"
+              sx={{
+                position: {xs: "unset", sm: "relative"},
+                right: "-70px",
+                width: {xs: "30px", sm: "40px"},
+                height: {xs: "30px", sm: "40px"},
+                ...hollowArrowStyles,
+              }}
+            ></Box>
+          </Box>
         </Box>
       </Container>
     </Box>

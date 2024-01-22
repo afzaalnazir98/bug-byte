@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-// import OtherProject from "@/Mock/OtherProjects.json";
 import { OtherProjectsDetail } from "@/utils/types";
 import Link from "next/link";
 import "swiper/css";

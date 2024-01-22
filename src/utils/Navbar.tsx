@@ -34,9 +34,11 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 100);
-    });
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () => {
+        setScroll(window.scrollY > 100);
+      });
+    }
   }, []);
 
   const toggleDrawer = () => {
@@ -85,8 +87,8 @@ const Navbar = () => {
             <Image
               className="brand-logo"
               src="/assets/images/logo.png"
-              width={121}
-              height={61}
+              width={185}
+              height={55}
               alt="brand logo"
             />
           </Box>
@@ -144,7 +146,7 @@ const Navbar = () => {
           variant="contained"
           color="primary"
           component={Link}
-          href="/get-started"
+          href="/"
           sx={{
             p: {
               md: "7px 32px",
