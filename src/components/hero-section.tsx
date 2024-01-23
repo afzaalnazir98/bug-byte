@@ -165,6 +165,10 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                           sm: "14px 20px",
                           xs: "8px 16px",
                         },
+                        transition: "transform 0.4s ease",
+                        ":hover":{
+                          transform: "translateY(-30%)",
+                        }
                       }}
                       endIcon={
                         <ArrowOutwardIcon
@@ -201,6 +205,10 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                         },
                         width: "100%",
                         textTransform: "capitalize",
+                        ":hover":{
+                          color:"#262626",
+                          background:"#fff"
+                        }
                       }}
                     >
                       {btn.text}

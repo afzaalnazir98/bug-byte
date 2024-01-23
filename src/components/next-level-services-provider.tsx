@@ -196,8 +196,13 @@ const NextLevelServicesProvider = () => {
                         lineHeight: "normal",
                         textTransform: "capitalize",
                         p: 0,
-                        "&:hover": {
-                          textDecoration: "underline",
+                      },
+                      "&:hover .service-link":{
+                        transition: "transform 0.5s ease",
+                        marginLeft: "15px",
+                        "& .MuiButton-endIcon": {
+                          transform: "translateX(1000%)",
+                          transition: "transform 0.5s ease",
                         },
                       },
                     }}
@@ -220,6 +225,7 @@ const NextLevelServicesProvider = () => {
                             className="service-link"
                             variant="text"
                             endIcon={<ArrowForwardIcon />}
+                          
                           >
                             {service?.buttonText}
                           </Button>
