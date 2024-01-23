@@ -114,6 +114,11 @@ interface hero {
   image?: string | undefined;
   buttonText?: string | undefined;
 }
+interface TimeLineType {
+  cardTitle: string,
+  cardSubtitle: string,
+  cardDetailedText: string
+}
 
 export type {
   GameExperience,
@@ -125,5 +130,6 @@ export type {
   slide,
   hero,
   portfolio,
+  TimeLineType,
   OtherProjectsDetail,
 };
