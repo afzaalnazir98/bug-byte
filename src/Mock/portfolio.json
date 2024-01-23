@@ -2,51 +2,51 @@
     {
       "img": "/assets/images/portfolio-img1.png",
       "size": {
-        "width":550,
-        "height":620
-      }
+        "width":600,
+        "height":670
+      },
+      "order":1
     },
     {
       "img": "/assets/images/portfolio-img2.png",
       "size": {
-        "width":550,
-        "height":450
-      }
+        "width":600,
+        "height":352
+      },
+      "order":2
     },
     {
       "img": "/assets/images/portfolio-img3.png",
       "size": {
-        "width":550,
-        "height":350
-      }
+        "width":600,
+        "height":470
+      },
+      "order":1
     },
+
     {
       "img": "/assets/images/portfolio-img4.png",
       "size": {
-        "width":550,
-        "height":350
-      }
+        "width":600,
+        "height":610
+      },
+      "order":2
     },
     {
       "img": "/assets/images/portfolio-img5.png",
       "size": {
-        "width":550,
-        "height":550
-      }
+        "width":600,
+        "height":343
+      },
+      "order":1
     },
     {
       "img": "/assets/images/portfolio-img6.png",
       "size": {
-        "width":550,
-        "height":500
-      }
-    },
-    {
-      "img": "/assets/images/portfolio-img7.png",
-      "size": {
-        "width":550,
-        "height":600
-      }
+        "width":600,
+        "height":530
+      },
+      "order":2
     }
   ]
   

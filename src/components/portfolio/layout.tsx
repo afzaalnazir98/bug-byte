@@ -5,7 +5,6 @@ import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
 import PortfolioData from "@/Mock/portfolio.json";
 import { portfolio } from "@/utils/types";
 import Image from "next/image";
-import { TabPanel } from "@mui/lab";
 import Link from "next/link";
 
 const Portfolio: portfolio[] = PortfolioData;
@@ -64,23 +63,26 @@ export default function ImageMasonry() {
           <Tab sx={{ ...tabStyles, ml: 2 }} label="blockchain" />
         </Tabs>
       </Box>
-      <Box
-        sx={{
-          maxHeight: "1500px",
-          overflow: "auto",
-        }}
-      >
+      <Box>
         <Masonry columns={{ xs: 1, md: 2 }} spacing={{ xs: 1, sm: 2 }}>
           {Portfolio.map((item, index) => (
             <Box
               key={index}
               sx={{
                 position: "relative",
+                order: `${item.order} !important`,
                 "&:hover": {
                   ".hover-box": {
                     display: "flex",
                     opacity: 1,
-                    transition: "opacity 0.3s ease-in-out",
+                    transition: "all 0.5s ease-in-out",
+                  },
+                },
+                "& .portfolio-image": {
+                  minHeight: "250px",
+                  "@media (max-width: 1100px)": {
+                    width: "100%",
+                    height: "auto",
                   },
                 },
               }}
@@ -134,14 +136,14 @@ export default function ImageMasonry() {
                     <Box
                       sx={{
                         textAlign: "center",
-                        margin: "0px 30px",
+                        margin: { sm: "0px 15px", md: "0px 30px" },
                         opacity: 1,
                       }}
                     >
                       <Typography
                         sx={{
                           color: "#FFF",
-                          fontSize: "18px",
+                          fontSize: { xs: "16px", md: "18px" },
                           fontWeight: 600,
                         }}
                       >
@@ -150,10 +152,11 @@ export default function ImageMasonry() {
                       <Typography
                         sx={{
                           color: "#FFF",
-                          fontSize: "55px",
+                          fontSize: { xs: "40px", md: "55px" },
                           fontWeight: 600,
                           textTransform: "capitalize",
                           marginTop: "5px",
+                          lineHeight: { xs: "1", md: "1.5" },
                         }}
                       >
                         Tiny Titans
@@ -161,10 +164,11 @@ export default function ImageMasonry() {
                       <Typography
                         sx={{
                           color: "#FFF",
-                          fontSize: "18px",
+                          fontSize: { xs: "14px", sm: "16px", md: "18px" },
                           fontWeight: 500,
+                          lineHeight: { sm: "1.2", md: "1.5" },
                           textTransform: "capitalize",
-                          marginTop: "10px",
+                          marginTop: { sm: "6px", md: "10px" },
                         }}
                       >
                         Join thousands of players who are fighting tiny but
@@ -173,18 +177,30 @@ export default function ImageMasonry() {
                       <Box component={Link} href={"portfolio-detail"}>
                         <Button
                           sx={{
-                            marginTop: "30px",
-                            padding: "16px 42px",
+                            marginTop: { xs: "10px", sm: "12px", md: "30px" },
+                            padding: {
+                              xs: "8px 20px",
+                              sm: "10px 30px",
+                              md: "16px 42px",
+                            },
                             borderRadius: "5px",
                             backgroundColor: "white",
                             fontSize: { xs: "18px", md: "24px" },
                             fontWeight: 600,
                             textTransform: "capitalize",
                             color: "#F04B12",
+                            whiteSpace: "nowrap",
                             maxWidth: "fit-content",
                             "&:hover": {
                               backgroundColor: "white",
-                              padding: "18px 44px",
+                              padding: {
+                                xs: "10px 25px",
+                                sm: "16px 42px",
+                                lg: "17px 46px",
+                              },
+                              fontSize: { xs: "20px", md: "26px" },
+                              transition: "all .3s ease-in-out",
+                              whiteSpace: "nowrap",
                             },
                           }}
                         >

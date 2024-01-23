@@ -65,7 +65,7 @@ export default function PortfolioGameCards() {
         <Button
           sx={{
             position: "relative",
-            marginTop: "25px",
+            marginTop: { xs: "10%", sm: "-3%", md: "-8%" },
             borderRadius: "6px",
             width: { xs: "150px", sm: "180px", md: "206px" },
             height: { xs: "30px", sm: "38px", md: "48px" },

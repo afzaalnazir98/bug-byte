@@ -187,8 +187,8 @@ export default function OtherProject() {
                                 background:
                                   "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                                 opacity: 0.7,
-                                width: " 90%",
-                                height: "90%",
+                                width: " 92%",
+                                height: "92%",
                                 display: "grid",
                                 alignItems: "center",
                               }}
@@ -212,7 +212,7 @@ export default function OtherProject() {
                                 <Typography
                                   sx={{
                                     color: "#FFF",
-                                    fontSize: "36px",
+                                    fontSize: {xs:"29px",sm:"33px",md:"36px"},
                                     fontWeight: 600,
                                     textTransform: "capitalize",
                                     marginTop: "5px",
@@ -224,10 +224,10 @@ export default function OtherProject() {
                                 <Typography
                                   sx={{
                                     color: "#FFF",
-                                    fontSize: "16px",
+                                    fontSize: {xs:"10px",sm:"13px"},
                                     fontWeight: 400,
                                     textTransform: "capitalize",
-                                    marginTop: "10px",
+                                    marginTop: "6px",
                                   }}
                                 >
                                   Lorem ipsum dolor sit amet, consectetur
@@ -240,18 +240,20 @@ export default function OtherProject() {
                                 <Box component={Link} href={"portfolio-detail"}>
                                   <Button
                                     sx={{
-                                      marginTop: "30px",
-                                      padding: "16px 42px",
+                                      marginTop: {xs:"14px",lg:"16px"},
+                                      padding: {xs:"10px 28px",sm:"12px 38px",lg:"12px 34px"},
                                       borderRadius: "5px",
                                       backgroundColor: "white",
-                                      fontSize: { xs: "18px", md: "24px" },
+                                      fontSize:"18px",
                                       fontWeight: 600,
                                       textTransform: "capitalize",
                                       color: "#F04B12",
                                       maxWidth: "fit-content",
                                       "&:hover": {
                                         backgroundColor: "white",
-                                        padding: "18px 44px",
+                                        padding: {xs:"12px 32px",sm:"13px 40px",lg:"14px 36px"},
+                                        fontSize:"20px",
+                                        transition: "all .3s ease-in-out"
                                       },
                                     }}
                                   >

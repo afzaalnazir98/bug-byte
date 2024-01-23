@@ -1,5 +1,6 @@
-import {Box, Typography, styled} from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import Image from "next/image";
+import Container from "../container";
 
 const projectInfoImage = {
   "@media (max-width: 600px)": {
@@ -34,65 +35,72 @@ export default function GetPlay() {
     <Box
       sx={{
         backgroundColor: "#fff",
-        display: "grid",
-        gap: {xs: "35px", md: "50px", lg: "64px"},
-        justifyItems: "center",
-        padding: {
-          xs: "40px 0px",
-          sm: "60px 0px",
-          md: "80px 0px",
-          lg: "100px 0px",
-        },
       }}
     >
-      <Box>
-        <Title
+      <Container>
+        <Box
           sx={{
-            fontSize: {xs: "20px", sm: "30px", lg: "40px"},
-            textAlign: "center",
+            display: "grid",
+            gap: { xs: "35px", md: "50px", lg: "64px" },
+            justifyContent: "center",
+            padding: {
+              xs: "40px 0px",
+              sm: "60px 0px",
+              md: "80px 0px",
+              lg: "100px 0px",
+            },
           }}
         >
-          ANGRY TED’S GAME PLAY
-        </Title>
-        <SubTitle
-          sx={{
-            fontSize: {xs: "20px", lg: "25px"},
+          <Box>
+            <Title
+              sx={{
+                fontSize: { xs: "20px", sm: "30px", lg: "40px" },
+                textAlign: "center",
+              }}
+            >
+              ANGRY TED’S GAME PLAY
+            </Title>
+            <SubTitle
+              sx={{
+                fontSize: { xs: "20px", lg: "25px" },
 
-            lineHeight: {xs: "1.2", md: "1.5"},
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        </SubTitle>
-      </Box>
+                lineHeight: { xs: "1.2", md: "1.5" },
+              }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            </SubTitle>
+          </Box>
 
-      <Box
-        sx={{
-          flex: "40%",
-          ...projectInfoImage,
-          "&  .gameplay-image": {
-            "@media (max-width: 1200px)": {
-              width: "auto",
-              height: "100%",
-            },
-            "@media (max-width: 600px)": {
-              width: "350px",
-              height: "200px",
-            },
-            "@media (max-width: 380px)": {
-              width: "280px",
-              height: "160px",
-            },
-          },
-        }}
-      >
-        <Image
-          className="gameplay-image"
-          src="/assets/images/gameplay.png"
-          alt="cartoon-img"
-          width={1100}
-          height={500}
-        />
-      </Box>
+          <Box
+            sx={{
+              flex: "40%",
+              ...projectInfoImage,
+              "&  .gameplay-image": {
+                "@media (max-width: 1200px)": {
+                  width: "auto",
+                  height: "100%",
+                },
+                "@media (max-width: 600px)": {
+                  width: "380px",
+                  height: "200px",
+                },
+                "@media (max-width: 400px)": {
+                  width: "280px",
+                  height: "160px",
+                },
+              },
+            }}
+          >
+            <Image
+              className="gameplay-image"
+              src="/assets/images/gameplay.png"
+              alt="cartoon-img"
+              width={1100}
+              height={500}
+            />
+          </Box>
+        </Box>
+      </Container>
     </Box>
   );
 }

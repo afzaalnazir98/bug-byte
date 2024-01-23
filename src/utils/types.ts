@@ -90,6 +90,7 @@ interface portfolio {
     width: number;
     height: number;
   };
+  order: number;
 }
 
 interface slide {
