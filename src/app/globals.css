@@ -31,3 +31,85 @@ body {
   }
 
 }
+
+[data-aos="right-anime"] {
+  transform: translateX(-800px);
+  opacity: 0;
+  transition: all 2s ease-in-out;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+[data-aos="right-anime-fast"] {
+  transform: translateX(-600px);
+  opacity: 0;
+  transition: transform, opacity 0.3s ease-in-out;
+  &.aos-animate {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+[data-aos="right-left-anime"]{
+  transform: translateX(0px);
+  opacity: 0;
+  transition: transform, opacity ease-in-out;
+  &.aos-animate {
+    transform: translateX(780px);
+    opacity: 1;
+  }
+}
+[data-aos="left-anime-slow"] {
+  transform: translateX(3000px);
+  opacity: 0;
+  transition: transform, opacity 20s ease-in-out;
+  &.aos-animate {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+[data-aos="left-anime-medium"] {
+  transform: translateX(600px);
+  opacity: 0;
+  transition: transform, opacity 2s ease-in-out;
+  &.aos-animate {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+[data-aos="zoom-in-button"] {
+  transform: translate(-50px 50px);
+  opacity: 0;
+  transition: transform, opacity 100s ease-in-out;
+  &.aos-animate {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+[data-aos="left-anime-fast"] {
+  transform: translateX(800px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+
+
+[data-aos="right-anime-rotate-fade"] {
+  transform:  translate(0px, -100px) rotate(4deg);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform:   translate(0px, 0px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+

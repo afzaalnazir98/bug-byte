@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
 import Container from "@/components/container";
-import {Box, Grid, Typography} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
 import svg1 from "@/public/assets/social-media-icons/projectWIthUsIcon1.svg";
 import svg2 from "@/public/assets/social-media-icons/projectWIthUsIcon2.svg";
 import svg3 from "@/public/assets/social-media-icons/projectWIthUsIcon3.svg";
 import arrow from "@/public/assets/social-media-icons/arrow.svg";
-import {motion} from "framer-motion";
 
 const projectInfoImage = {
   "@media (max-width: 600px)": {
@@ -25,9 +24,6 @@ const projectImageStyled = {
     height: "250px",
   },
 };
-const container = {
-  color: "white",
-};
 
 export default function ProjectWithUs() {
   return (
@@ -40,6 +36,9 @@ export default function ProjectWithUs() {
       }}
     >
       <Box
+      data-aos="fade-left"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
         sx={{
           background: "linear-gradient(91deg, #E95A29 6.55%, #F07325 98.79%)",
           transform: "rotate(-1.545deg)",
@@ -52,7 +51,7 @@ export default function ProjectWithUs() {
         <Container>
           <Box
             sx={{
-              display: {xs: "flex", md: "block"},
+              display: { xs: "flex", md: "block" },
               justifyContent: "center",
             }}
           >
@@ -60,22 +59,25 @@ export default function ProjectWithUs() {
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
-                flexDirection: {xs: "column", md: "row"},
-                gap: {xs: "15px", sm: "20px", md: "30px"},
+                flexDirection: { xs: "column", md: "row" },
+                gap: { xs: "15px", sm: "20px", md: "30px" },
               }}
             >
               <Box
+                data-aos="fade-left"
+                data-aos-delay="800"
+                data-aos-duration="1200"
                 sx={{
-                  order: {xs: 2, md: 1},
-                  transform: {xs: "", sm: "rotate(-1.096deg)"},
-                  padding: {xs: "30px 20px", md: "50px 0px"},
-                  textAlign: {xs: "center", sm: ""},
+                  order: { xs: 2, md: 1 },
+                  transform: { xs: "", sm: "rotate(-1.096deg)" },
+                  padding: { xs: "30px 20px", md: "50px 0px" },
+                  textAlign: { xs: "center", sm: "" },
                 }}
               >
                 <Typography
                   sx={{
-                    fontSize: {xs: "32px", lg: "42px"},
-                    lineHeight: {xs: "1.2", md: "1.5"},
+                    fontSize: { xs: "32px", lg: "42px" },
+                    lineHeight: { xs: "1.2", md: "1.5" },
                     fontWeight: 600,
                     textTransform: "uppercase",
                   }}
@@ -83,12 +85,16 @@ export default function ProjectWithUs() {
                   LET’S Create a Project with Us!
                 </Typography>
                 <Typography
+                
+                data-aos="fade-left"
+                data-aos-delay="1000"
+                data-aos-duration="1200"
                   sx={{
                     color: "#EBEBF0",
                     fontSize: "18px",
                     fontWeight: 400,
                     maxWidth: "595px",
-                    textAlign: {xs: "center", lg: "left"},
+                    textAlign: { xs: "center", lg: "left" },
                   }}
                 >
                   We offer innovative solutions that will fit our
@@ -99,7 +105,7 @@ export default function ProjectWithUs() {
 
               <Box
                 sx={{
-                  order: {xs: 1, md: 2},
+                  order: { xs: 1, md: 2 },
                   ...projectInfoImage,
                   "&  .project-image": {
                     marginTop: "-98px",
@@ -125,22 +131,13 @@ export default function ProjectWithUs() {
           container
           spacing={8}
           sx={{
-            paddingTop: {xs: "50px", md: "0px"},
-            flexDirection: {xs: "column", md: "row"},
-            alignContent: {xs: "center", md: "left"},
+            paddingTop: { xs: "50px", md: "0px" },
+            flexDirection: { xs: "column", md: "row" },
+            alignContent: { xs: "center", md: "left" },
           }}
         >
           <Grid item xs={12} sm={8} md={4}>
-            <Box
-            component={motion.div}
-              initial={{opacity: 0, scale: 2}}
-              animate={{opacity: 1, scale: 1}}
-              transition={{
-                duration: 0.2,
-                delay: 0.3,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
-            >
+            <Box>
               <Box
                 sx={{
                   display: "grid",
@@ -148,8 +145,11 @@ export default function ProjectWithUs() {
                 }}
               >
                 <Box
+                  data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500"
                   sx={{
-                    display: {xs: "none", md: "block"},
+                    display: { xs: "none", md: "block" },
                     color: "white",
                     textAlign: "center",
                     position: "relative",
@@ -175,7 +175,6 @@ export default function ProjectWithUs() {
                   <Divider
                     orientation="vertical"
                     variant="fullWidth"
-                    light={true}
                     sx={{
                       borderRightWidth: "thin",
                       width: "max-content",
@@ -184,24 +183,27 @@ export default function ProjectWithUs() {
                     }}
                   />
                 </Box>
-                <Image
-                  src={svg1.src}
-                  width={60}
-                  height={60}
-                  alt="instagram-svg"
-                />
+                <Box data-aos="zoom-in" >
+                  <Image
+                    src={svg1.src}
+                    width={60}
+                    height={60}
+                    alt="instagram-svg"
+                  />
 
-                <Typography
-                  sx={{
-                    color: "#EAEAEA",
-                    fontSize: "26px",
-                    fontWeight: 600,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Quality Services
-                </Typography>
-                <Box>
+                  <Typography
+                    sx={{
+                      color: "#EAEAEA",
+                      fontSize: "26px",
+                      fontWeight: 600,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Quality Services
+                  </Typography>
+                </Box>
+
+                <Box data-aos="fade-left" data-aos-delay="500" >
                   <Box
                     sx={{
                       display: "flex",
@@ -218,7 +220,7 @@ export default function ProjectWithUs() {
                     <Typography
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: {xs: "18px", md: "14px"},
+                        fontSize: { xs: "18px", md: "14px" },
                         fontWeight: 400,
                       }}
                     >
@@ -240,9 +242,10 @@ export default function ProjectWithUs() {
                       alt="instagram-svg"
                     />
                     <Typography
+                     data-aos="fade-left" data-aos-delay="800" 
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: {xs: "18px", md: "14px"},
+                        fontSize: { xs: "18px", md: "14px" },
                         fontWeight: 400,
                       }}
                     >
@@ -255,16 +258,7 @@ export default function ProjectWithUs() {
             </Box>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
-          <Box
-            component={motion.div}
-              initial={{opacity: 0, scale: 2}}
-              animate={{opacity: 1, scale: 1}}
-              transition={{
-                duration: 0.7,
-                delay: 0.7,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
-            >
+            <Box>
               <Box
                 sx={{
                   display: "grid",
@@ -272,8 +266,12 @@ export default function ProjectWithUs() {
                 }}
               >
                 <Box
+                  data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500"
+                  
                   sx={{
-                    display: {xs: "none", md: "block"},
+                    display: { xs: "none", md: "block" },
                     color: "white",
                     textAlign: "center",
                     position: "relative",
@@ -308,24 +306,27 @@ export default function ProjectWithUs() {
                     }}
                   />
                 </Box>
-                <Image
-                  src={svg2.src}
-                  width={60}
-                  height={60}
-                  alt="instagram-svg"
-                />
+                <Box data-aos="zoom-in" >
+                  <Image
+                    src={svg2.src}
+                    width={60}
+                    height={60}
+                    alt="instagram-svg"
+                  />
 
-                <Typography
-                  sx={{
-                    color: "#EAEAEA",
-                    fontSize: "26px",
-                    fontWeight: 600,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Reliability
-                </Typography>
-                <Box>
+                  <Typography
+                    sx={{
+                      color: "#EAEAEA",
+                      fontSize: "26px",
+                      fontWeight: 600,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Reliability
+                  </Typography>
+                </Box>
+
+                <Box data-aos="fade-left" data-aos-delay="500" >
                   <Box
                     sx={{
                       display: "flex",
@@ -342,7 +343,7 @@ export default function ProjectWithUs() {
                     <Typography
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: {xs: "18px", md: "14px"},
+                        fontSize: { xs: "18px", md: "14px" },
                         fontWeight: 400,
                       }}
                     >
@@ -365,9 +366,10 @@ export default function ProjectWithUs() {
                       alt="instagram-svg"
                     />
                     <Typography
+                     data-aos="fade-left" data-aos-delay="800" 
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: {xs: "18px", md: "14px"},
+                        fontSize: { xs: "18px", md: "14px" },
                         fontWeight: 400,
                       }}
                     >
@@ -380,16 +382,7 @@ export default function ProjectWithUs() {
             </Box>
           </Grid>
           <Grid item xs={12} sm={8} md={4}>
-          <Box
-            component={motion.div}
-              initial={{opacity: 0, scale: 2}}
-              animate={{opacity: 1, scale: 1}}
-              transition={{
-                duration: 1,
-                delay: 1,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
-            >
+            <Box>
               <Box
                 sx={{
                   display: "grid",
@@ -397,8 +390,11 @@ export default function ProjectWithUs() {
                 }}
               >
                 <Box
+                  data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500"
                   sx={{
-                    display: {xs: "none", md: "block"},
+                    display: { xs: "none", md: "block" },
                     color: "white",
                     textAlign: "center",
                     position: "relative",
@@ -434,24 +430,28 @@ export default function ProjectWithUs() {
                     }}
                   />
                 </Box>
-                <Image
-                  src={svg3.src}
-                  width={60}
-                  height={60}
-                  alt="instagram-svg"
-                />
 
-                <Typography
-                  sx={{
-                    color: "#EAEAEA",
-                    fontSize: "26px",
-                    fontWeight: 600,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  High-Quality Solutions
-                </Typography>
-                <Box>
+                <Box data-aos="zoom-in" > 
+                  <Image
+                    src={svg3.src}
+                    width={60}
+                    height={60}
+                    alt="instagram-svg"
+                  />
+
+                  <Typography
+                    sx={{
+                      color: "#EAEAEA",
+                      fontSize: "26px",
+                      fontWeight: 600,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    High-Quality Solutions
+                  </Typography>
+                </Box>
+
+                <Box data-aos="fade-left" data-aos-delay="500" >
                   <Box
                     sx={{
                       display: "flex",
@@ -468,7 +468,7 @@ export default function ProjectWithUs() {
                     <Typography
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: {xs: "18px", md: "14px"},
+                        fontSize: { xs: "18px", md: "14px" },
                         fontWeight: 400,
                       }}
                     >
@@ -490,9 +490,10 @@ export default function ProjectWithUs() {
                       alt="instagram-svg"
                     />
                     <Typography
+                    data-aos="fade-left" data-aos-delay="800" 
                       sx={{
                         color: "#EAEAEA",
-                        fontSize: {xs: "18px", md: "14px"},
+                        fontSize: { xs: "18px", md: "14px" },
                         fontWeight: 400,
                       }}
                     >

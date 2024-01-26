@@ -39,6 +39,7 @@ export default function QuestionForm() {
             }}
           >
             <Box
+              data-aos="fade-right"
               sx={{
                 paddingLeft: {xs: "15px", md: "30px", lg: "60px"},
                 alignSelf: "center",
@@ -92,6 +93,8 @@ export default function QuestionForm() {
                   concerns.We will try our best to provide optimized solutions.
                 </Typography>
                 <Box
+                data-aos="fade-right"
+                data-aos-duration="2000"
                   sx={{
                     marginTop: "30px",
                   }}

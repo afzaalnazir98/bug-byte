@@ -4,8 +4,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@/components/container";
 import Divider from "@mui/material/Divider";
-import {useMediaQuery, useTheme} from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { progressData } from "@/utils/types";
+import Counter from "@/components/counter";
 
 export default function CompanyProgress() {
   const theme = useTheme();
@@ -13,15 +14,15 @@ export default function CompanyProgress() {
 
   const companyProgress: progressData[] = [
     {
-      title: "1k+",
+      title: 1000,
       subtitle: "Total Projects Completed",
     },
     {
-      title: "10",
+      title: 10,
       subtitle: "Projects In-Progress",
     },
     {
-      title: "100+",
+      title: 100,
       subtitle: "Talented Team Members",
     },
   ];
@@ -38,7 +39,7 @@ export default function CompanyProgress() {
           height: "100%",
           position: "absolute",
           zIndex: "1px",
-          backgroundSize: {xs: "cover", md: "auto"},
+          backgroundSize: { xs: "cover", md: "auto" },
           "&::before": {
             content: '""',
             background: `url(${"/assets/images/progress-bg.png"}) no-repeat 0% 100%`,
@@ -117,20 +118,9 @@ export default function CompanyProgress() {
                 }}
               >
                 <Box>
-                  <Typography
-                    className="progress-title"
-                    sx={{
-                      textShadow: "20px 15px 80px rgba(0, 0, 0, 0.10)",
-                      fontSize: "100px",
-                      fontWeight: 700,
-                      background:
-                        "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                  >
-                    {progress.title}
-                  </Typography>
+                  <Box>
+                    <Counter value={progress.title} />
+                  </Box>
                   <Typography
                     className="progress-subtitle"
                     sx={{

@@ -81,7 +81,7 @@ interface FormData {
 }
 
 interface progressData {
-  title: String;
+  title: number;
   subtitle: String;
 }
 
@@ -126,6 +126,21 @@ interface TimeLineType {
   cardDetailedText: string
 }
 
+interface FooterSection {
+  section: string;
+  links: Link[];
+  socialMedia?: SocialMedia[];
+}
+interface SocialMedia {
+  platform: string;
+  icon: string;
+  url: string;
+}
+interface Link {
+  text: string;
+  url: string;
+}
+
 export type {
   GameExperience,
   ServiceDetail,
@@ -138,4 +153,5 @@ export type {
   portfolio,
   TimeLineType,
   OtherProjectsDetail,
+  FooterSection
 };

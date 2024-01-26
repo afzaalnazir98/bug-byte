@@ -18,6 +18,8 @@ export default function TestimonialSectionContainer() {
         }}
       >
         <Typography
+        
+        data-aos="right-anime-rotate-fade"
           variant="body1"
           sx={{
             fontSize: "25px",
@@ -31,6 +33,10 @@ export default function TestimonialSectionContainer() {
           TESTIMONIALS
         </Typography>
         <Typography
+        
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="500"
           variant="h1"
           sx={{
             fontSize: {xs: "30px", sm: "40px"},

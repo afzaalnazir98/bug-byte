@@ -11,9 +11,20 @@ import GameDesign from "@/public/assets/images/game-design.png";
 import ArVr from "@/public/assets/images/ar-vr.png";
 import BlockchainGames from "@/public/assets/images/blockchain-games.png";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 import "swiper/css";
 import { ServiceDetail } from "@/utils/types";
+
+const arrowMotion = {
+  rest: {
+    opacity: 0,
+  },
+  hover: {
+    opacity: 1,
+    x: '90%',
+    transition: { type: "spring", stiffness: 300, damping: 20 },
+  },
+};
 
 const NextLevelServicesProvider = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -69,6 +80,9 @@ const NextLevelServicesProvider = () => {
         }}
       >
         <Box
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="500"
           sx={{
             textAlign: "center",
             p: "90px 0 60px 0",
@@ -87,6 +101,9 @@ const NextLevelServicesProvider = () => {
             WE PROVIDE
           </Typography>
           <Typography
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="200"
             variant="h3"
             sx={{
               fontSize: "48px",
@@ -191,19 +208,12 @@ const NextLevelServicesProvider = () => {
                       "& .service-link": {
                         textDecoration: "underline",
                         color: "#FFF",
+                        display: "block",
                         fontSize: "16px",
                         fontWeight: 700,
                         lineHeight: "normal",
                         textTransform: "capitalize",
                         p: 0,
-                      },
-                      "&:hover .service-link":{
-                        transition: "transform 0.5s ease",
-                        marginLeft: "15px",
-                        "& .MuiButton-endIcon": {
-                          transform: "translateX(1000%)",
-                          transition: "transform 0.5s ease",
-                        },
                       },
                     }}
                   >
@@ -220,19 +230,30 @@ const NextLevelServicesProvider = () => {
                         <Typography className="service-title" variant="body1">
                           {service?.title}
                         </Typography>
-                        <Link href={service?.buttonLink ?? "/"}>
-                          <Button
-                            className="service-link"
-                            variant="text"
-                            endIcon={<ArrowForwardIcon />}
-                          
-                          >
-                            {service?.buttonText}
-                          </Button>
-                        </Link>
+                        <Box sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                        }}>
+                        <Box
+                          component={Link}
+                          href={service?.buttonLink ?? "/"}
+                          className="service-link"
+                        >
+                          {service?.buttonText}
+                        </Box>
+                        <Box sx={{ display: "inline-block", margin: "7px 0px 0px 6px" }}>
+                            <ArrowForwardIcon />
+                          </Box>
+                        </Box>
+                        
                       </Box>
                     </Box>
-                    <Box className="slide-content-overlay slide-overlay-2">
+                    <Box
+                      component={motion.div}
+                      initial="rest"
+                      whileHover="hover"
+                      className="slide-content-overlay slide-overlay-2"
+                    >
                       <Box>
                         <Typography className="service-title" variant="body1">
                           {service?.title}
@@ -251,15 +272,27 @@ const NextLevelServicesProvider = () => {
                         >
                           {service?.description}
                         </Typography>
-                        <Link href={service?.buttonLink ?? "/"}>
-                          <Button
-                            className="service-link"
-                            variant="text"
-                            endIcon={<ArrowForwardIcon />}
+                        <Box sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          width:'100%'
+                        }}>
+                          <Box
+                          component={Link}
+                          href={service?.buttonLink ?? "/"}
+                          className="service-link"
                           >
-                            {service?.buttonText}
-                          </Button>
-                        </Link>
+                          {service?.buttonText}
+                        </Box>
+                        <Box
+                            component={motion.div}
+                            sx={{ display: "inline-block", margin: "7px 0px 0px 6px" ,flexGrow:2}}
+                            variants={arrowMotion}
+                          >
+                            <ArrowForwardIcon />
+                          </Box>
+                        </Box>
+                        
                       </Box>
                     </Box>
                   </Box>

@@ -23,6 +23,7 @@ export default function GameExperience() {
         }}
       >
         <Typography
+        data-aos="fade-down"
           variant="body1"
           sx={{
             fontSize: "20px",
@@ -36,6 +37,7 @@ export default function GameExperience() {
           Crafting Unforgettable Gaming Experiences
         </Typography>
         <Typography
+        data-aos="right-anime-rotate-fade"
           variant="h1"
           sx={{
             fontSize: { xs: "26px", sm: "32px", md: "40px" },
@@ -49,7 +51,7 @@ export default function GameExperience() {
             color: "transparent",
           }}
         >
-          Our Games Are Vibrant Worlds <br /> With Charming Characters
+          Our Games Are Vibrant Worlds
         </Typography>
       </Box>
       <GameSlider />

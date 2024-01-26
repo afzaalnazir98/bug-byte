@@ -25,8 +25,16 @@ export default function ContactForm() {
   };
 
   return (
-    <Box
+    <Box sx={{
+      position: 'relative',
+      minWidth: {xs: "100%", md: "687px"},
+      minHeight: {xs: "100%", sm: "655px"},
+    }}>
+      
+      <Box
+      data-aos="zoom-in-down"
       sx={{
+      position: 'absolute',
         minWidth: {xs: "100%", md: "687px"},
         minHeight: {xs: "100%", sm: "655px"},
         backgroundImage: `url(${"/assets/images/question-form-bg.png"})`,
@@ -34,8 +42,13 @@ export default function ContactForm() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Box
+      
+    </Box>
+    <Box
+    
+    data-aos="fade-up"
         sx={{
+          position: 'relative',
           marginLeft: "13%",
           marginTop: "22%",
           maxWidth: {xs: "66%", sm: "420px", lg: "450px"},
@@ -163,5 +176,7 @@ export default function ContactForm() {
         </Box>
       </Box>
     </Box>
+  
+
   );
 }
