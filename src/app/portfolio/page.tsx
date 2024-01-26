@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import QuestionForm from "@/components/QuestionForm";
 import PortfolioGameCards from "@/components/portfolio/portfolio-game-cards";
-import { Box } from "@mui/material";
 
 export default function Portfolio() {
     return(

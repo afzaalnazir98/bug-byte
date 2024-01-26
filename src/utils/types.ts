@@ -85,6 +85,10 @@ interface progressData {
   subtitle: String;
 }
 interface portfolio {
+  subHeading:string;
+  heading:string;
+  description:string;
+  link:any;
   img: string;
   size: {
     width: number;

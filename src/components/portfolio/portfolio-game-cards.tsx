@@ -1,11 +1,14 @@
 "use client";
 
-import * as React from "react";
+import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import { Box, Button } from "@mui/material";
 import ImageMasonry from "./layout";
 
 export default function PortfolioGameCards() {
+
+const [portfolioNumber, setportfolioNumber] = useState(6)
+
   return (
     <Box
       sx={{
@@ -52,7 +55,7 @@ export default function PortfolioGameCards() {
           Our Games Are Vibrant Worlds <br /> With Charming Characters
         </Typography>
       </Box>
-      <ImageMasonry />
+      <ImageMasonry portfolioNumber={portfolioNumber}/>
       <Box
         sx={{
           display: "flex",
@@ -75,6 +78,7 @@ export default function PortfolioGameCards() {
             boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
             color: "#fff",
           }}
+          onClick={()=> setportfolioNumber(portfolioNumber+6)}
         >
           View All Projects
         </Button>
