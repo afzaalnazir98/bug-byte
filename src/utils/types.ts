@@ -84,13 +84,18 @@ interface progressData {
   title: String;
   subtitle: String;
 }
+
 interface portfolio {
+  subHeading: string;
+  heading: string;
+  description: string;
+  link: string;
   img: string;
-  size: {
-    width: number;
-    height: number;
-  };
-  order: number;
+  size: Size;
+}
+interface Size {
+  width: number;
+  height: number;
 }
 
 interface slide {

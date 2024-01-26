@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { hero } from "./types";

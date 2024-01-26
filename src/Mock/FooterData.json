@@ -1,0 +1,38 @@
+[
+    {
+      "section": "Quick Links",
+      "links": [
+        {"text": "Home", "url": "/"},
+        {"text": "About", "url": "/about"},
+        {"text": "Our Services", "url": "/services"},
+        {"text": "Portfolio", "url": "/portfolio"},
+        {"text": "Contact Us", "url": "/contact-us"}
+      ]
+    },
+    {
+      "section": "Our Services",
+      "links": [
+        {"text": "Game Development", "url": "/game-design"},
+        {"text": "Blockchain", "url": "/blockchain-games"},
+        {"text": "VR", "url": "/vr-development"},
+        {"text": "AR", "url": "/ar-development"},
+        {"text": "Metaverse", "url": "/nft-metaverse"},
+        {"text": "Unity Development", "url": "/unity-development"},
+        {"text": "NFT", "url": "/nft-metaverse"}
+      ]
+    },
+    {
+      "section": "Contact Us",
+      "links": [
+        {"text": "202 Helga Springs Rd, Crawford, TN 38554", "url": "#"},
+        {"text": "1234567890", "url": "#"},
+        {"text": "hello@example.com", "url": "mailto:hello@example.com"}
+      ],
+      "socialMedia": [
+        {"platform": "Facebook", "icon": "/assets/images/facebook.svg", "url": "#"},
+        {"platform": "Instagram", "icon": "/assets/images/instagram.svg", "url": "#"},
+        {"platform": "Linkdine", "icon": "/assets/images/linkdine.svg", "url": "#"}
+      ]
+    }
+  ]
+  

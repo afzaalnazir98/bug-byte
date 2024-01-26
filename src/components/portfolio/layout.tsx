@@ -8,7 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Portfolio: portfolio[] = PortfolioData;
-export default function ImageMasonry() {
+
+export default function ImageMasonry({portfolioNumber}: {portfolioNumber: number}) {
   const [isHovered, setHovered] = useState(-1);
   const [activeTab, setActiveTab] = useState(0);
 
@@ -65,12 +66,13 @@ export default function ImageMasonry() {
       </Box>
       <Box>
         <Masonry columns={{ xs: 1, md: 2 }} spacing={{ xs: 1, sm: 2 }}>
-          {Portfolio.map((item, index) => (
+          {Portfolio.slice(0, portfolioNumber).map((item, index) => (
             <Box
               key={index}
               sx={{
                 position: "relative",
-                order: `${item.order} !important`,
+                overflowX:"hidden",
+                // order: `${item.order} !important`,
                 "&:hover": {
                   ".hover-box": {
                     display: "flex",
@@ -101,6 +103,7 @@ export default function ImageMasonry() {
                   borderBottomRightRadius: 4,
                   display: "block",
                   width: "100%",
+                  backgroundSize:"cover"
                 }}
               />
               <Box
@@ -147,7 +150,7 @@ export default function ImageMasonry() {
                           fontWeight: 600,
                         }}
                       >
-                        Metaverse
+                        {item.subHeading}
                       </Typography>
                       <Typography
                         sx={{
@@ -159,7 +162,7 @@ export default function ImageMasonry() {
                           lineHeight: { xs: "1", md: "1.5" },
                         }}
                       >
-                        Tiny Titans
+                        {item.heading}
                       </Typography>
                       <Typography
                         sx={{
@@ -171,10 +174,9 @@ export default function ImageMasonry() {
                           marginTop: { sm: "6px", md: "10px" },
                         }}
                       >
-                        Join thousands of players who are fighting tiny but
-                        winning BIG.
+                        {item.description}
                       </Typography>
-                      <Box component={Link} href={"portfolio-detail"}>
+                      <Box component={Link} href= {`portfolio/${item.link}`}>
                         <Button
                           sx={{
                             marginTop: { xs: "10px", sm: "12px", md: "30px" },

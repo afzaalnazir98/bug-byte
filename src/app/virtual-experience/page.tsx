@@ -1,7 +1,7 @@
 import * as React from "react";
 import QuestionForm from "@/components/QuestionForm";
 import ServiceDetails from "../services-detail/page";
-import jsonData from "@/Mocks/service-data.json";
+import jsonData from "@/Mock/service-data.json";
 import Header from "@/components/Header";
 
 const dataArray = jsonData.virtualExperience;
