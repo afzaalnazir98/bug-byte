@@ -33,7 +33,7 @@ export default function Counter({
       );
       console.log("formattedValue", formattedValue);
     });
-  }, [springValue]);
+  }, [formattedValue, springValue]);
 
   return (
     <Typography

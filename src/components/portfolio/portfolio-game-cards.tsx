@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Typography from "@mui/material/Typography";
-import { Box, Button } from "@mui/material";
-import ImageMasonry from "./layout";
+import {Box, Button} from "@mui/material";
+import dynamic from "next/dynamic";
+
+const ImageMasonry = dynamic(() => import("./layout"), {ssr: false});
 
 export default function PortfolioGameCards() {
-
-const [portfolioNumber, setportfolioNumber] = useState(6)
+  const [portfolioNumber, setportfolioNumber] = useState(6);
 
   return (
     <Box
@@ -41,11 +42,11 @@ const [portfolioNumber, setportfolioNumber] = useState(6)
         <Typography
           variant="h1"
           sx={{
-            fontSize: { xs: "26px", sm: "32px", md: "40px" },
-            fontWeight: { xs: 500, sm: 700 },
+            fontSize: {xs: "26px", sm: "32px", md: "40px"},
+            fontWeight: {xs: 500, sm: 700},
             lineHeight: "41px",
             textTransform: "uppercase",
-            mt: { xs: 1, md: 3 },
+            mt: {xs: 1, md: 3},
             background:
               "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
             WebkitBackgroundClip: "text",
@@ -55,7 +56,7 @@ const [portfolioNumber, setportfolioNumber] = useState(6)
           Our Games Are Vibrant Worlds <br /> With Charming Characters
         </Typography>
       </Box>
-      <ImageMasonry portfolioNumber={portfolioNumber}/>
+      <ImageMasonry portfolioNumber={portfolioNumber} />
       <Box
         sx={{
           display: "flex",
@@ -70,15 +71,15 @@ const [portfolioNumber, setportfolioNumber] = useState(6)
             position: "relative",
             marginTop: "40px",
             borderRadius: "6px",
-            width: { xs: "150px", sm: "180px", md: "206px" },
-            height: { xs: "30px", sm: "38px", md: "48px" },
-            fontSize: { xs: "14px", md: "16px" },
-            fontWeight: { xs: 400, md: 600 },
+            width: {xs: "150px", sm: "180px", md: "206px"},
+            height: {xs: "30px", sm: "38px", md: "48px"},
+            fontSize: {xs: "14px", md: "16px"},
+            fontWeight: {xs: 400, md: 600},
             background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
             boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
             color: "#fff",
           }}
-          onClick={()=> setportfolioNumber(portfolioNumber+6)}
+          onClick={() => setportfolioNumber(portfolioNumber + 6)}
         >
           View All Projects
         </Button>

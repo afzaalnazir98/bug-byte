@@ -6,7 +6,12 @@ import callSvg from "@/public/assets/images/call.svg";
 import magBoxSvg from "@/public/assets/images/message.svg";
 import Image from "next/image";
 import Container from "./container";
-import ContactForm from "./forms/contact-form";
+
+import dynamic from "next/dynamic";
+
+const ContactForm = dynamic(() => import("./forms/contact-form"), {
+  ssr: false
+}) ;
 
 export default function QuestionForm() {
   return (
@@ -93,8 +98,8 @@ export default function QuestionForm() {
                   concerns.We will try our best to provide optimized solutions.
                 </Typography>
                 <Box
-                data-aos="fade-right"
-                data-aos-duration="2000"
+                  data-aos="fade-right"
+                  data-aos-duration="2000"
                   sx={{
                     marginTop: "30px",
                   }}

@@ -15,7 +15,9 @@ import "aos/dist/aos.css";
 
 export default function HomePage() {
   React.useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true
+    });
   }, []);
 
 
