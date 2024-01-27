@@ -4,7 +4,7 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Button, styled } from "@mui/material";
+import {Button, styled} from "@mui/material";
 import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Image from "next/image";
@@ -42,7 +42,7 @@ const Title = styled(Box)({
 });
 
 function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+  const {children, value, index, ...other} = props;
 
   return (
     <Box
@@ -83,7 +83,12 @@ export default function Offering() {
   return (
     <Box
       sx={{
-        padding: { xs: "2rem 0rem",sm: "3rem 0rem", md: "4rem 0rem", lg: "6rem 0rem" },
+        padding: {
+          xs: "2rem 0rem",
+          sm: "3rem 0rem",
+          md: "4rem 0rem",
+          lg: "6rem 0rem",
+        },
         backgroundColor: "white",
       }}
     >
@@ -101,7 +106,7 @@ export default function Offering() {
 
         <Title
           sx={{
-            fontSize: { xs: "20px", sm: "30px", lg: "40px" },
+            fontSize: {xs: "20px", sm: "30px", lg: "40px"},
           }}
         >
           OUR SERVICES
@@ -116,14 +121,15 @@ export default function Offering() {
         <Box
           sx={{
             flexGrow: 1,
-            marginTop: { xs: "20px", sm: "30px", md: "40px", lg: "50px" },
+            marginTop: {xs: "20px", sm: "30px", md: "40px", lg: "50px"},
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
+            flexDirection: {xs: "column", sm: "row"},
             gap: "20px",
             paddingBottom: "5rem",
           }}
         >
           <Tabs
+            className="tabs-container"
             value={value}
             onChange={handleChange}
             variant="scrollable"
@@ -132,35 +138,35 @@ export default function Offering() {
               matches ? "scrollable auto tabs example" : "Vertical tabs example"
             }
             sx={{
-              "& .mui-heg063-MuiTabs-flexContainer": {
+              "& [role='tablist']": {
                 gap: "10px",
-                flexDirection: { xs: "row", sm: "column" },
+                flexDirection: {xs: "row", sm: "column"},
               },
-              "& .mui-69z67c-MuiTabs-scroller": {
-                maxHeight: { sm: "350px", md: "420px" },
+              "& .MuiTabs-scroller": {
+                maxHeight: {sm: "350px", md: "420px"},
                 overflowY: "visible",
               },
               "& .MuiTabs-scrollButtons ": {
                 display: "none",
               },
-              "& .mui-r76b0o-MuiButtonBase-root-MuiTab-root.Mui-selected": {
-                color: "#FF3F00",
-
-                zIndex: 2,
-              },
-              "& .mui-8je8zh-MuiTouchRipple-root": {
+              "& .MuiTouchRipple-root": {
                 backgroundColor: "#06121F",
                 zIndex: -1,
               },
-              "& .mui-1aquho2-MuiTabs-indicator": {
+              "& [role='tablist'] + .MuiTabs-indicator": {
                 display: "none",
               },
+              "& .label.Mui-selected": {
+                color: "#FF3F00",
+                zIndex: 2,
+              },
               "& .label": {
-                fontSize: { sm: "14px", md: "20px", lg: "24px" },
+                whiteSpace: "pre-line",
+                textAlign: "left",
+                fontSize: {sm: "14px", md: "20px", lg: "24px"},
                 fontWeight: 600,
                 alignItems: "flex-start",
-                whiteSpace: "nowrap",
-                maxWidth: { xs: "max-content", sm: "370px" },
+                maxWidth: {xs: "max-content", sm: "370px"},
               },
             }}
           >
@@ -194,7 +200,7 @@ export default function Offering() {
                 maxWidth: "858px",
                 display: "grid",
                 justifyContent: "center",
-                gap: { xs: "20px", md: "30px", lg: "40px" },
+                gap: {xs: "20px", md: "30px", lg: "40px"},
               }}
             >
               <Box
@@ -220,7 +226,7 @@ export default function Offering() {
               </Box>
               <Description
                 sx={{
-                  fontSize: { md: "18px", xs: "14px" },
+                  fontSize: {md: "18px", xs: "14px"},
                 }}
               >
                 Join the fun at Buggbyte! Our games, made with Unity and Unreal
@@ -232,8 +238,8 @@ export default function Offering() {
               <Box component={Link} href="/">
                 <StyleButton
                   sx={{
-                    fontSize: { xs: "18px", md: "20px" },
-                    padding: { xs: " 6px 28px", md: "7px 30px" },
+                    fontSize: {xs: "18px", md: "20px"},
+                    padding: {xs: " 6px 28px", md: "7px 30px"},
                   }}
                 >
                   Learn More
@@ -247,7 +253,7 @@ export default function Offering() {
                 maxWidth: "858px",
                 display: "grid",
                 justifyContent: "center",
-                gap: { xs: "20px", md: "30px", lg: "40px" },
+                gap: {xs: "20px", md: "30px", lg: "40px"},
               }}
             >
               <Box
@@ -273,7 +279,7 @@ export default function Offering() {
               </Box>
               <Description
                 sx={{
-                  fontSize: { md: "18px", xs: "14px" },
+                  fontSize: {md: "18px", xs: "14px"},
                 }}
               >
                 Join the fun at Buggbyte! Our games, made with Unity and Unreal
@@ -285,8 +291,8 @@ export default function Offering() {
               <Box component={Link} href="/">
                 <StyleButton
                   sx={{
-                    fontSize: { xs: "18px", md: "20px" },
-                    padding: { xs: " 6px 28px", md: "7px 30px" },
+                    fontSize: {xs: "18px", md: "20px"},
+                    padding: {xs: " 6px 28px", md: "7px 30px"},
                   }}
                 >
                   Learn More
@@ -300,7 +306,7 @@ export default function Offering() {
                 maxWidth: "858px",
                 display: "grid",
                 justifyContent: "center",
-                gap: { xs: "20px", md: "30px", lg: "40px" },
+                gap: {xs: "20px", md: "30px", lg: "40px"},
               }}
             >
               <Box
@@ -326,7 +332,7 @@ export default function Offering() {
               </Box>
               <Description
                 sx={{
-                  fontSize: { md: "18px", xs: "14px" },
+                  fontSize: {md: "18px", xs: "14px"},
                 }}
               >
                 Join the fun at Buggbyte! Our games, made with Unity and Unreal
@@ -338,8 +344,8 @@ export default function Offering() {
               <Box component={Link} href="/">
                 <StyleButton
                   sx={{
-                    fontSize: { xs: "18px", md: "20px" },
-                    padding: { xs: " 6px 28px", md: "7px 30px" },
+                    fontSize: {xs: "18px", md: "20px"},
+                    padding: {xs: " 6px 28px", md: "7px 30px"},
                   }}
                 >
                   Learn More
@@ -353,7 +359,7 @@ export default function Offering() {
                 maxWidth: "858px",
                 display: "grid",
                 justifyContent: "center",
-                gap: { xs: "20px", md: "30px", lg: "40px" },
+                gap: {xs: "20px", md: "30px", lg: "40px"},
               }}
             >
               <Box
@@ -379,7 +385,7 @@ export default function Offering() {
               </Box>
               <Description
                 sx={{
-                  fontSize: { md: "18px", xs: "14px" },
+                  fontSize: {md: "18px", xs: "14px"},
                 }}
               >
                 Join the fun at Buggbyte! Our games, made with Unity and Unreal
@@ -391,8 +397,8 @@ export default function Offering() {
               <Box component={Link} href="/">
                 <StyleButton
                   sx={{
-                    fontSize: { xs: "18px", md: "20px" },
-                    padding: { xs: " 6px 28px", md: "7px 30px" },
+                    fontSize: {xs: "18px", md: "20px"},
+                    padding: {xs: " 6px 28px", md: "7px 30px"},
                   }}
                 >
                   Learn More
@@ -406,7 +412,7 @@ export default function Offering() {
                 maxWidth: "858px",
                 display: "grid",
                 justifyContent: "center",
-                gap: { xs: "20px", md: "30px", lg: "40px" },
+                gap: {xs: "20px", md: "30px", lg: "40px"},
               }}
             >
               <Box
@@ -432,7 +438,7 @@ export default function Offering() {
               </Box>
               <Description
                 sx={{
-                  fontSize: { md: "18px", xs: "14px" },
+                  fontSize: {md: "18px", xs: "14px"},
                 }}
               >
                 JOur games, made with Unity and Unreal Engine, not only look
@@ -444,8 +450,8 @@ export default function Offering() {
               <Box component={Link} href="/">
                 <StyleButton
                   sx={{
-                    fontSize: { xs: "18px", md: "20px" },
-                    padding: { xs: " 6px 28px", md: "7px 30px" },
+                    fontSize: {xs: "18px", md: "20px"},
+                    padding: {xs: " 6px 28px", md: "7px 30px"},
                   }}
                 >
                   Learn More
@@ -459,7 +465,7 @@ export default function Offering() {
                 maxWidth: "858px",
                 display: "grid",
                 justifyContent: "center",
-                gap: { xs: "20px", md: "30px", lg: "40px" },
+                gap: {xs: "20px", md: "30px", lg: "40px"},
               }}
             >
               <Box
@@ -485,7 +491,7 @@ export default function Offering() {
               </Box>
               <Description
                 sx={{
-                  fontSize: { md: "18px", xs: "14px" },
+                  fontSize: {md: "18px", xs: "14px"},
                 }}
               >
                 Join the fun at Buggbyte! Our games, made with Unity and Unreal
@@ -496,8 +502,8 @@ export default function Offering() {
               <Box component={Link} href="/">
                 <StyleButton
                   sx={{
-                    fontSize: { xs: "18px", md: "20px" },
-                    padding: { xs: " 6px 28px", md: "7px 30px" },
+                    fontSize: {xs: "18px", md: "20px"},
+                    padding: {xs: " 6px 28px", md: "7px 30px"},
                   }}
                 >
                   Learn More
@@ -511,7 +517,7 @@ export default function Offering() {
                 maxWidth: "858px",
                 display: "grid",
                 justifyContent: "center",
-                gap: { xs: "20px", md: "30px", lg: "40px" },
+                gap: {xs: "20px", md: "30px", lg: "40px"},
               }}
             >
               <Box
@@ -537,7 +543,7 @@ export default function Offering() {
               </Box>
               <Description
                 sx={{
-                  fontSize: { md: "18px", xs: "14px" },
+                  fontSize: {md: "18px", xs: "14px"},
                 }}
               >
                 Join the fun at Buggbyte! Our games, made with Unity and Unreal
@@ -549,8 +555,8 @@ export default function Offering() {
               <Box component={Link} href="/">
                 <StyleButton
                   sx={{
-                    fontSize: { xs: "18px", md: "20px" },
-                    padding: { xs: " 6px 28px", md: "7px 30px" },
+                    fontSize: {xs: "18px", md: "20px"},
+                    padding: {xs: " 6px 28px", md: "7px 30px"},
                   }}
                 >
                   Learn More
