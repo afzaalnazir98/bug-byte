@@ -63,6 +63,40 @@
         {
           "image": "/assets/images/gd1.png",
           "title": "2D GAME DESIGN",
+          "description": "We craft visually captivating games, transforming flat images into dynamic adventures. Enjoy the simplicity and fun of 2D gaming, where every pixel contributes to an exciting story. Join us for a gaming experience that brings together classic charm and modern enjoyment!",
+          "buttonText": "Learn More",
+          "buttonLink": "contact-us",
+          "order": 0
+        },
+        {
+          "image": "/assets/images/gd2.png",
+          "title": "3D GAMES DESIGN",
+          "description": "Our team creates cool games that look amazing, bringing ideas to life in three dimensions. Dive into exciting 3D gaming adventures, where every detail adds to the fun. Join us for games that make your imagination pop in 3D!",
+          "buttonText": "Learn More",
+          "buttonLink": "contact-us",
+          "order": 1
+        },
+        {
+          "image": "/assets/images/gd3.png",
+          "title": "GAME ENVIORMENT DESIGN",
+          "description": "Enter the world of Game Environment Design – where Buggbyte's creative squad makes the coolest game settings. Explore our carefully crafted virtual worlds where every tiny detail adds to the fun. Join us for a laid-back adventure, and let's turn digital landscapes into your favorite gaming spots!",
+          "buttonText": "Learn More",
+          "buttonLink": "contact-us",
+          "order": 0
+        },
+        {
+          "image": "/assets/images/gd4.png",
+          "title": "CHARACTER DESIGN",
+          "description": "Our team creates cool characters that make your games more fun. Check out the unique and awesome looks we've made, where every character has its own story. Join us for a cool adventure where virtual friends become part of your gaming fun!",
+          "buttonText": "Learn More",
+          "buttonLink": "contact-us",
+          "order": 1
+        }
+      ],
+      "gameDevelopment": [
+        {
+          "image": "/assets/images/gd1.png",
+          "title": "2D GAME DESIGN",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
           "buttonText": "Learn More",
           "buttonLink": "contact-us",
@@ -92,7 +126,7 @@
           "buttonLink": "contact-us",
           "order": 1
         }
-      ],
+      ],  
       "blockChainGame": [
         {
           "image": "/assets/images/bc1.png",

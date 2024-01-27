@@ -18,7 +18,7 @@ export default function Sponsor() {
     display: "inline-block",
     margin: { xs: "0 8px", sm: "0 15px", md: "0 20px" },
     "& .logo": {
-      height: { xs: "20px", sm: "25px", md: "30px", lg: "36px" },
+      height: { xs: "auto" },
       width: { xs: "160px", sm: "180px", md: "200px", lg: "219px" },
     },
   };

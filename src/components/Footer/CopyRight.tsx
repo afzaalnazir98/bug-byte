@@ -16,7 +16,7 @@ export default function CopyRight() {
             fontSize:{ xs: "14px", md: "18px" }
           }}
         >
-          Copyright ©2023. All rights reserved.
+          Copyright ©2024. All rights reserved.
         </Box>
       </Container>
     </>

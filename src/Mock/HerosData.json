@@ -2,17 +2,17 @@
   {
     "title": "Contact Us",
     "text": "Get In Touch",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Please fill out the form and let us know about your concerns.We will try our best to provide optimized solutions.",
     "image": "/assets/images/contact-agent.png"
   },
   {
-    "title": "About us",
-    "des": "Your journey into the digital realm starts here!"
+    "title": "About US",
+    "des": "Welcome to our world! We're the best development company creating awesome 3D games, Avatar experiences, and AR/VR wonders. Dive into the Metaverse with our NFT and blockchain expertise. Our team excels in Unity and Unreal Engine development, crafting games that stand out. Join us for top-notch game design and engagement – your journey into the digital realm starts here!"
   },
   {
     "title": "Explore",
     "text": "Our Services",
-    "des": "Our services combine smart ideas with creative fun – that's what makes Buggbyte Studios unique!",
+    "des": "Our services combine smart ideas with creative fun – that's what makes Buggbyte Studios unique! BuggBytes creates cool 3D games, personalizes journeys, and delivers excellent results. Our solutions are made just for you, using things like NFTs, blockchain, Unity, and Unreal Engine. Trust Bugubytes Studios for great work that adds joy with fun game designs and cool AR/VR wonders. Get ready for exciting adventures as you step into our digital world.",
     "image": "/assets/images/services-header-img.png"
   },
   {
@@ -29,45 +29,51 @@
     "buttonText": "Request to play"
   },
   {
-    "title": "AR DEVELOPMENT",
+    "title": "AR Development",
     "text": "Explore",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Explore the fun world of AR development at Buggbyte! Our team makes cool stuff that mixes the digital and real worlds, turning ideas into awesome experiences. Join us in making interactive things that bring a touch of magic to everyday life. Whether it's a fashion statement or an immersive shopping experience!",
     "image": "/assets/images/ar-dev.png"
   },
   {
-    "title": "BLOCKCHAIN DEVELOPMENT",
+    "title": "Blockchain Games",
     "text": "Explore",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Discover Buggbyte Blockchain Games, where your game loot is special and just for you, making every playtime super exclusive. Jump into a safe and exciting gaming world, where the cool magic of blockchain adds an extra layer of fun. Let Buggbyte make your gaming adventure unique with treasures that are all yours",
     "image": "/assets/images/bc-games.png"
   },
   {
-    "title": "GAME DESIGN",
+    "title": "Game Development",
     "text": "Explore",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance",
     "image": "/assets/images/game-design-1.png"
   },
   {
-    "title": "NFT & METAVERSE",
+    "title": "NFT AND Metaverse",
     "text": "Explore",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Discover the magic of Buggbyte Metaverse with NFTs – your virtual treasures are only yours, making your gaming moments super special. Imagine a world where your in-game items are uniquely exclusive, thanks to the cool NFT magic. Come and be part of our Metaverse, where every game is a personalized adventure just for you!",
     "image": "/assets/images/nft-and-metaverse.png"
   },
   {
     "title": "VR DEVELOPMENT",
     "text": "Explore",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Our team crafts fun and realistic virtual experiences, bringing your imagination to life. Dive into a world of excitement and wonder with Buggbyte's awesome VR creations. Come join us for a super fun adventure in the awesome world of virtual reality!",
     "image": "/assets/images/vr-dev.png"
   },
   {
     "title": "VIRTUAL EXPERIENCES",
     "text": "Explore",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Dive into a digital world where everything feels real and exciting. Join us in exploring lots of fun stuff online, where every click brings you to new and awesome adventures. Let's make your online time magical with Buggbyte!",
     "image": "/assets/images/ar-dev.png"
   },
   {
-    "title": "UNITY & UNREAL DEVELOPMENT",
+    "title": "Unity and Unreal",
     "text": "Explore",
-    "des": "Lorem ipsum dolor sit amet, consectetur adipisc",
+    "des": "Join the fun at Buggbyte! Our games, made with Unity and Unreal Engine, not only look cool but also have a relaxed vibe. Picture yourself going on exciting adventures or simply chilling in a virtual world. Come be part of the enjoyment where each part of the game tells a laid-back and cool story, crafted just for you!",
     "image": "/assets/images/unityDev.png"
+  },
+  {
+    "title": "Game Design and Animation",
+    "text": "Explore",
+    "des": "Our creative team brings characters and worlds to life, crafting engaging and visually stunning experiences. Immerse yourself in the excitement of our games, where innovative design and captivating animations come together. Join us on a journey where every pixel tells a story",
+    "image": "/assets/images/game-design-1.png"
   }
 ]

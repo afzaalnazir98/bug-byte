@@ -287,18 +287,6 @@ export default function Work() {
             </Box>
           </Box>
         </Box>
-
-        <Typography
-          sx={{
-            color: "#FFF",
-            fontSize: {xs:"18px",sm:"22px",md:"24px"},
-            fontWeight: 400,
-            maxWidth: {xs:"330px",sm:"max-content"},
-            textTransform: "capitalize",
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        </Typography>
         <Box component={Link} href="#">
           <StyleButton
             sx={{

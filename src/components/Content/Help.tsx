@@ -3,7 +3,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import { Button, styled } from "@mui/material";
+import { styled } from "@mui/material";
 import Link from "next/link";
 import Container from "@/components/container";
 import { motion } from "framer-motion";
@@ -48,9 +48,6 @@ export default function Help() {
     fontWeight: 400,
     lineHeight: "20px",
   });
-
-  const StyleButton = styled(Button)({});
-
   return (
     <HelpSection
       sx={{
@@ -146,18 +143,11 @@ export default function Help() {
                 color: "#071421",
               }}
             >
-              Welcome to Buggbyte Studios! We create fun games using Unity and
-              Unreal Engine. Have you ever heard of the Metaverse? It&apos;s a
-              virtual world where our games come to life, and you can join in
-              using AR and VR technology, which makes the experience even
-              cooler. Your in-game items are extra special because of Blockchain
-              and NFTs. They&apos;re like your own personal treasures! At
-              Buggbyte Studios, we strive to make gaming easy, exciting, and
-              filled with joy. Are you ready to play?
+              Welcome to Buggbyte Studios! We create fun games using Unity and Unreal Engine. Have you ever heard of the Metaverse? It&apos;s a virtual world where our games come to life, and you can join in using AR and VR technology, which makes the experience even cooler. Your in-game items are extra special because of Blockchain and NFTs. They&apos;re like your own personal treasures! At Buggbyte Studios, we strive to make gaming easy, exciting, and filled with joy. Are you ready to play?
             </Description>
             <Box
-            data-aos="zoom-in-down"
-            data-aos-offset="200"
+              data-aos="fade-down-right"
+              data-aos-offset="200"
               data-aos-duration="600"
               component={Link}
               sx={{

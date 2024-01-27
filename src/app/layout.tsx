@@ -1,25 +1,25 @@
-"use client";
-
 import * as React from "react";
+
 import Box from "@mui/material/Box";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import Navbar from "@/utils/Navbar";
 import FooterLayout from "@/components/Footer/FooterLayout";
 import Footer from "@/components/Footer/Footer";
 import CopyRight from "@/components/Footer/CopyRight";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
-import FooterData from "../Mock/FooterData.json";
+import {SpeedInsights} from "@vercel/speed-insights/next";
 import "./globals.css";
-import { FooterSection } from "@/utils/types";
+import FooterData from "../Mock/FooterData.json";
+import {FooterSection} from "@/utils/types";
+
+export const metadata = {
+  title: "BUGG BYTE",
+  description:
+    "Reinventing the way of developing games, we aim to Develop the most master-peaced Games available on the market.",
+};
 
 const footerData: FooterSection[] = FooterData;
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <Box
@@ -38,12 +38,6 @@ export default function RootLayout({
             <Navbar />
             <Box component="main">
               {children}
-              <ProgressBar
-                height="6px"
-                color="#FA9D04"
-                options={{ showSpinner: false }}
-                shallowRouting
-              />
             </Box>
             <FooterLayout>
               <Footer footerData={footerData} />

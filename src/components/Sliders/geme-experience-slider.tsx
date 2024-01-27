@@ -7,29 +7,12 @@ import {Autoplay, Navigation} from "swiper/modules";
 import GameCard from "@/components/Cards/game-experience-card";
 import Container from "@/components/container";
 import {GameExperience} from "@/utils/types";
-
+import GameExperenceData from "../../Mock/GameExperenceData.json";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-const GameExperienceData: GameExperience[] = [
-  {
-    title: "Super Jumper 3D Runs",
-    tags: ["Adventure", "Mobile", "Action RPG"],
-    description:
-      "Jump into the fun with 'Super Jumper 3D Runs,' a cool mobile adventure game! Explore 3D worlds, take on exciting challenges, and enjoy the thrill wherever you go. It's gaming excitement made easy!",
-    btnLink: "/",
-    btnTitle: "View Details",
-  },
-  {
-    title: "Angry Ted War Sold",
-    tags: ["Adventure", "Mobile", "Action RPG"],
-    description:
-      "Get ready for super fun with Angry Ted War Sold! It's an awesome mobile game where you go on cool adventures and have big battles. Join Angry Ted now and let the excitement begin!",
-    btnLink: "/",
-    btnTitle: "View Details",
-  },
-];
+const GameCardData: GameExperience[] = GameExperenceData;
 
 export default function GameExperienceSlider() {
   const [activeTab, setActiveTab] = useState(0);
@@ -76,6 +59,7 @@ export default function GameExperienceSlider() {
           {
             visibility: "visible",
           },
+          
         "& .swiper": {
           overflow: "visible",
         },
@@ -84,13 +68,6 @@ export default function GameExperienceSlider() {
         },
         "& .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after": {
           fontSize: "16px",
-        },
-        "& .swiper-slide.swiper-slide-active": {
-          borderRadius: "5px",
-          border: "5px solid rgba(240, 75, 18, 0.56)",
-          background: "#071421",
-          boxShadow: "0px 4.549px 45.486px 0px rgba(0, 0, 0, 0.10)",
-          transform: "scale(1.1)",
         },
       }}
     >
@@ -106,6 +83,7 @@ export default function GameExperienceSlider() {
           }}
         >
           <Box
+        data-aos="fade-down"
             sx={{
               marginBottom: {xs: "30px", md: "50px", lg: "90px"},
               display: "flex",
@@ -155,12 +133,9 @@ export default function GameExperienceSlider() {
               },
             }}
           >
-            {GameExperienceData?.map((gameExp, index) => (
+            {GameCardData?.map((gameExp, index) => (
               <SwiperSlide key={index}>
-                <GameCard
-                  gameExperience={gameExp}
-                  isActive={index === activeSlideIndex}
-                />
+               <GameCard gameExperience={gameExp}/>
               </SwiperSlide>
             ))}
             <Box

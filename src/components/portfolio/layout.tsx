@@ -72,7 +72,6 @@ export default function ImageMasonry({portfolioNumber}: {portfolioNumber: number
               sx={{
                 position: "relative",
                 overflowX:"hidden",
-                // order: `${item.order} !important`,
                 "&:hover": {
                   ".hover-box": {
                     display: "flex",

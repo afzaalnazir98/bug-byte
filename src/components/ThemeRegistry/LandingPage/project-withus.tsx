@@ -249,8 +249,7 @@ export default function ProjectWithUs() {
                         fontWeight: 400,
                       }}
                     >
-                      We work hard to make sure everything, from the graphics to
-                      the gameplay, is super cool for you.
+                      We work hard to ensure everything, from the graphics to the gameplay, is super cool for you.
                     </Typography>
                   </Box>
                 </Box>
@@ -347,8 +346,7 @@ export default function ProjectWithUs() {
                         fontWeight: 400,
                       }}
                     >
-                      You can trust us! Buggbyte is your dependable friend in
-                      gaming.
+                      You can trust us! Buggbyte is your dependable friend in gaming.
                     </Typography>
                   </Box>
                   <Box
@@ -373,8 +371,7 @@ export default function ProjectWithUs() {
                         fontWeight: 400,
                       }}
                     >
-                      We make sure everything runs smoothly, so you have a great
-                      time playing without any interruptions.
+                      We make sure everything runs smoothly, so you have a great time playing without any interruptions.
                     </Typography>
                   </Box>
                 </Box>
@@ -472,7 +469,7 @@ export default function ProjectWithUs() {
                         fontWeight: 400,
                       }}
                     >
-                      Make your gaming experience even better with Buggbyte.
+                      Make your gaming experience even better with Buggbyte
                     </Typography>
                   </Box>
                   <Box
@@ -497,9 +494,7 @@ export default function ProjectWithUs() {
                         fontWeight: 400,
                       }}
                     >
-                      We&apos;re always working to give you top-notch stuff –
-                      cool features, amazing tech – everything to make your
-                      gaming super awesome!
+                      We&apos;re always working to give you top-notch stuff – cool features, amazing tech – everything to make your gaming super awesome!
                     </Typography>
                   </Box>
                 </Box>

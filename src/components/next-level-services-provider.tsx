@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Box, Button, CircularProgress, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -12,8 +12,8 @@ import ArVr from "@/public/assets/images/ar-vr.png";
 import BlockchainGames from "@/public/assets/images/blockchain-games.png";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import "swiper/css";
 import { ServiceDetail } from "@/utils/types";
+import "swiper/css";
 
 const arrowMotion = {
   rest: {
@@ -40,10 +40,10 @@ const NextLevelServicesProvider = () => {
     },
     {
       image: GameDesign,
-      title: "Game Design",
+      title: "Game Development",
       description:
-        "Level design, logic and gameplay, environment design, character art, animation",
-      buttonLink: "/game-design",
+        "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance.",
+      buttonLink: "/game-development",
       buttonText: "Learn More",
     },
     {
