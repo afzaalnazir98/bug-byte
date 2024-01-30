@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, {useState} from "react";
 import Container from "../container";
@@ -132,7 +132,8 @@ export default function ImageMasonry({
                   >
                     <Box
                       sx={{
-                        background: "linear-gradient(88deg, rgba(221, 44, 0, 0.7) -9.17%, rgba(255, 63, 0, 0.7) 67.35%, rgba(250, 157, 4, 0.7) 130.66%)",
+                        background:
+                          "linear-gradient(88deg, rgba(221, 44, 0, 0.7) -9.17%, rgba(255, 63, 0, 0.7) 67.35%, rgba(250, 157, 4, 0.7) 130.66%)",
                         width: " 90%",
                         height: "90%",
                         display: "grid",

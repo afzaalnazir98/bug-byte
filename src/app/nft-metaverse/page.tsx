@@ -6,12 +6,10 @@ import Header from "@/components/Header";
 
 const dataArray = jsonData.nftMetaverse;
 
-
 export default function Services() {
   return (
     <>
-      
-    <Header num={8} url={"/assets/images/common-bg.png"}/>
+      <Header num={8} url={"/assets/images/common-bg.png"} />
       <ServiceDetails params={dataArray} />
       <QuestionForm />
     </>

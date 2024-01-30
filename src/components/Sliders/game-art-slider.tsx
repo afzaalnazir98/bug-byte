@@ -4,24 +4,19 @@ import * as React from "react";
 import {Box} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation, Pagination} from "swiper/modules";
-import TestimonialCard from "@/components/Cards/testimonial-slider-card";
 import Container from "@/components/container";
+import GameArtCard from "../Cards/game-art-slider-card";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import GameArtCard from "../Cards/game-art-slider-card";
 
-const gameArtCardImage = [
-  {img: "./assets/images/game-art-img1.png"},
-  {img: "./assets/images/game-art-img2.png"},
-  {img: "./assets/images/game-art-img3.png"},
-  {img: "./assets/images/game-art-img1.png"},
-  {img: "./assets/images/game-art-img2.png"},
-];
-
-export default function GameArtSilder() {
+export default function GameArtSilder({
+  gameArtImages,
+}: {
+  gameArtImages: string[];
+}) {
   const navigationEl = {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -86,7 +81,7 @@ export default function GameArtSilder() {
       }}
     >
       <Container>
-        {gameArtCardImage.length > 0 && (
+        {gameArtImages.length > 0 && (
           <Box
             sx={{
               p: {
@@ -104,7 +99,6 @@ export default function GameArtSilder() {
                 clickable: true,
                 el: ".swiper-pagination",
               }}
-              // pagination={{clickable: true}}
               className="swiper-main"
               modules={[Autoplay, Navigation, Pagination]}
               breakpoints={{
@@ -122,9 +116,9 @@ export default function GameArtSilder() {
                 },
               }}
             >
-              {gameArtCardImage.map((data, index) => (
+              {gameArtImages.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <GameArtCard img={data.img} />
+                  <GameArtCard img={image} />
                 </SwiperSlide>
               ))}
               <Box className="swiper-pagination" sx={paginationStyles}></Box>

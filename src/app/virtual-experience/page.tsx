@@ -7,10 +7,9 @@ import Header from "@/components/Header";
 const dataArray = jsonData.virtualExperience;
 
 export default function Services() {
-
   return (
-    <>   
-    <Header num={10} url={"/assets/images/common-bg.png"}/>
+    <>
+      <Header num={10} url={"/assets/images/common-bg.png"} />
       <ServiceDetails params={dataArray} />
       <QuestionForm />
     </>

@@ -31,7 +31,6 @@ export default function Counter({
       isFormattedValue(
         latest >= 1000 ? "1K+" : latest >= 100 ? "100+" : latest.toFixed(0)
       );
-      console.log("formattedValue", formattedValue);
     });
   }, [formattedValue, springValue]);
 

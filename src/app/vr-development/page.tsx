@@ -6,12 +6,10 @@ import Header from "@/components/Header";
 
 const dataArray = jsonData.VRDevelopment;
 
-
 export default function Services() {
   return (
     <>
-    
-    <Header num={9} url={"/assets/images/common-bg.png"}/>
+      <Header num={9} url={"/assets/images/common-bg.png"} />
       <ServiceDetails params={dataArray} />
       <QuestionForm />
     </>

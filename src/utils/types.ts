@@ -54,8 +54,12 @@ interface ServiceDetail {
   order?:number;
 }
 interface OtherProjectsDetail {
-  imageUrl: string;
+  category?: string;
   title: string;
+  description: string;
+  btnText?: string;
+  btnLink?: string;
+  imageUrl: string;
 }
 
 interface MediaCardProps {
@@ -120,11 +124,18 @@ interface hero {
   des: string;
   image?: string | undefined;
   buttonText?: string | undefined;
+  btnLink?: string;
 }
 interface TimeLineType {
   cardTitle: string,
   cardSubtitle: string,
   cardDetailedText: string
+}
+
+interface gameArt {
+  title: string;
+  description: string;
+  images: string[];
 }
 
 interface FooterSection {
@@ -147,6 +158,28 @@ interface ServiceOfferType {
   imageUrl: string;
 }
 
+interface projectInfo {
+  title: string;
+  description: string;
+  mainImage: string;
+  projectType?: {
+    videoGame?: boolean;
+    mobileApp?: boolean;
+    arMobileApp?: boolean;
+  };
+  technologyStacks?: {
+    unity?: boolean;
+    autoDesk?: boolean;
+    blender?: boolean;
+    autoDesk3DSMAX?: boolean;
+    adobePhotoshopIllustrator?: boolean;
+  };
+  availableAt?: {
+    appleStore?: boolean;
+    playStore?: boolean;
+  };
+};
+
 export type {
   GameExperience,
   ServiceDetail,
@@ -160,5 +193,7 @@ export type {
   portfolio,
   TimeLineType,
   OtherProjectsDetail,
-  FooterSection
+  FooterSection,
+  gameArt,
+  projectInfo
 };

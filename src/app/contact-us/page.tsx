@@ -1,14 +1,6 @@
 import * as React from "react";
-import HeroSection from "@/utils/HeroSection";
 import ContactForm from "@/components/forms/contact-page-form";
-import Container from "@/components/container";
-import { Box } from "@mui/material";
-import {hero} from "@/utils/types";
-import HerosData from "@/Mock/HerosData.json" ;
 import Header from "@/components/Header";
-
-
-const Heros: hero[] = HerosData;
 
 
 export default function Services() {

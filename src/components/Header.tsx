@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import HeroSection from "@/utils/HeroSection";
+import HeroSection from "@/components/HeroSection";
 import Container from "@/components/container";
 import {hero} from "@/utils/types";
 import HerosData from "@/Mock/HerosData.json";

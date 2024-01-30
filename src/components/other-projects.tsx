@@ -1,36 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
-import { Box, Button, CircularProgress, Typography } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import { OtherProjectsDetail } from "@/utils/types";
+import {Box, Button, CircularProgress, Typography} from "@mui/material";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay} from "swiper/modules";
+import {OtherProjectsDetail} from "@/utils/types";
 import Link from "next/link";
+import FeaturedProjects from "@/Mock/featured-projects.json";
 import "swiper/css";
 
 export default function OtherProject() {
-  const [isHovered, setHovered] = useState(-1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const OtherProjectData: OtherProjectsDetail[] = [
-    {
-      imageUrl: "/assets/images/other-project-img1.png",
-      title: "Robot",
-    },
-    {
-      imageUrl: "/assets/images/other-project-img2.png",
-      title: "Tank",
-    },
-    {
-      imageUrl: "/assets/images/other-project-img3.png",
-      title: "Jin",
-    },
-    {
-      imageUrl: "/assets/images/game-design.png",
-      title: "Game Development",
-    },
-  ];
+  const FeaturedProjectsData: OtherProjectsDetail[] = FeaturedProjects;
 
   useEffect(() => {
     setIsLoading(false);
@@ -121,8 +104,8 @@ export default function OtherProject() {
                 },
               }}
             >
-              {OtherProjectData &&
-                OtherProjectData?.map(
+              {FeaturedProjectsData &&
+                FeaturedProjectsData?.map(
                   (service: OtherProjectsDetail, index: number) => (
                     <SwiperSlide key={index}>
                       <Box
@@ -135,9 +118,9 @@ export default function OtherProject() {
                           color: "white",
                           "&:hover": {
                             ".hover-box": {
-                              display: "flex",
+                              visibility: "visible",
                               opacity: 1,
-                              transition: "opacity 0.3s ease-in-out",
+                              transition: "all 0.3s ease-in-out",
                             },
                           },
                           "& .service-title": {
@@ -152,8 +135,6 @@ export default function OtherProject() {
                             height: "auto",
                           },
                         }}
-                        onMouseEnter={() => setHovered(index)}
-                        onMouseLeave={() => setHovered(-1)}
                       >
                         <Image
                           className="slide-image"
@@ -166,8 +147,8 @@ export default function OtherProject() {
                         <Box
                           className="hover-box"
                           sx={{
-                            display: "none",
-                            ...(isHovered === index && { display: "flex" }),
+                            visibility: "hidden",
+                            opacity: 0,
                           }}
                         >
                           <Box
@@ -185,8 +166,7 @@ export default function OtherProject() {
                             <Box
                               sx={{
                                 background:
-                                  "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                                opacity: 0.7,
+                                  "linear-gradient(88deg, rgba(221, 44, 0, 0.7) -9.17%, rgba(255, 63, 0, 0.7) 67.35%, rgba(250, 157, 4, 0.7) 130.66%)",
                                 width: " 92%",
                                 height: "92%",
                                 display: "grid",
@@ -207,59 +187,76 @@ export default function OtherProject() {
                                     fontWeight: 600,
                                   }}
                                 >
-                                  Unity Develoment
+                                  {service.category}
                                 </Typography>
                                 <Typography
                                   sx={{
                                     color: "#FFF",
-                                    fontSize: {xs:"29px",sm:"33px",md:"36px"},
+                                    fontSize: {
+                                      xs: "29px",
+                                      sm: "33px",
+                                      md: "36px",
+                                    },
                                     fontWeight: 600,
                                     textTransform: "capitalize",
                                     marginTop: "5px",
                                     lineHeight: "1",
                                   }}
                                 >
-                                  Fighting Tank in MountainsTiny Titans
+                                  {service.title}
                                 </Typography>
                                 <Typography
                                   sx={{
                                     color: "#FFF",
-                                    fontSize: {xs:"10px",sm:"13px"},
+                                    fontSize: {
+                                      xs: "10px",
+                                      sm: "13px",
+                                      md: "24px",
+                                    },
                                     fontWeight: 400,
+                                    lineHeight: 1.2,
                                     textTransform: "capitalize",
                                     marginTop: "6px",
                                   }}
                                 >
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit, sed do eiusmod tempor inc
-                                  ididunt ut labore et dolore magna ali qua. Ut
-                                  enim ad minim veniam, quis nostrud exe
-                                  rcitation ull mco laboris nisi ut aliquip ex
-                                  ea commodo consequat.
+                                  {service.description}
                                 </Typography>
-                                <Box component={Link} href={"portfolio-detail"}>
-                                  <Button
-                                    sx={{
-                                      marginTop: {xs:"14px",lg:"16px"},
-                                      padding: {xs:"10px 28px",sm:"12px 38px",lg:"12px 34px"},
-                                      borderRadius: "5px",
-                                      backgroundColor: "white",
-                                      fontSize:"18px",
-                                      fontWeight: 600,
-                                      textTransform: "capitalize",
-                                      color: "#F04B12",
-                                      maxWidth: "fit-content",
-                                      "&:hover": {
-                                        backgroundColor: "white",
-                                        padding: {xs:"12px 32px",sm:"13px 40px",lg:"14px 36px"},
-                                        fontSize:"20px",
-                                        transition: "all .3s ease-in-out"
-                                      },
-                                    }}
+                                {service.btnText && (
+                                  <Box
+                                    component={Link}
+                                    href={service.btnLink ?? ""}
                                   >
-                                    View Details
-                                  </Button>
-                                </Box>
+                                    <Button
+                                      sx={{
+                                        marginTop: {xs: "14px", lg: "16px"},
+                                        padding: {
+                                          xs: "10px 28px",
+                                          sm: "12px 38px",
+                                          lg: "12px 34px",
+                                        },
+                                        borderRadius: "5px",
+                                        backgroundColor: "white",
+                                        fontSize: "18px",
+                                        fontWeight: 600,
+                                        textTransform: "capitalize",
+                                        color: "#F04B12",
+                                        maxWidth: "fit-content",
+                                        "&:hover": {
+                                          backgroundColor: "white",
+                                          padding: {
+                                            xs: "12px 32px",
+                                            sm: "13px 40px",
+                                            lg: "14px 36px",
+                                          },
+                                          fontSize: "20px",
+                                          transition: "all .3s ease-in-out",
+                                        },
+                                      }}
+                                    >
+                                      {service.btnText}
+                                    </Button>
+                                  </Box>
+                                )}
                               </Box>
                             </Box>
                           </Box>
@@ -281,22 +278,25 @@ export default function OtherProject() {
           p: "0px 0 70px",
         }}
       >
-        <Button
-          sx={{
-            position: "relative",
-            marginTop: "25px",
-            borderRadius: "6px",
-            width: { xs: "150px", sm: "180px", md: "206px" },
-            height: { xs: "30px", sm: "38px", md: "48px" },
-            fontSize: { xs: "14px", md: "16px" },
-            fontWeight: { xs: 400, md: 600 },
-            background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
-            boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
-            color: "#fff",
-          }}
-        >
-          View More Projects
-        </Button>
+        <Box component={Link} href={"/portfolio"}>
+          <Button
+            sx={{
+              position: "relative",
+              marginTop: "25px",
+              borderRadius: "6px",
+              width: {xs: "150px", sm: "180px", md: "206px"},
+              height: {xs: "30px", sm: "38px", md: "48px"},
+              fontSize: {xs: "14px", md: "16px"},
+              fontWeight: {xs: 400, md: 600},
+              background:
+                "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
+              boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
+              color: "#fff",
+            }}
+          >
+            View More Projects
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
