@@ -114,6 +114,7 @@ export default function HeroSection({headerData}: {headerData: hero}) {
               alignSelf: "center",
               paddingBottom: "100px",
               "& .hero-image": {
+                objectFit: "contain",
                 "@media (max-width: 1000px)": {
                   width: "450px",
                   height: "auto",
