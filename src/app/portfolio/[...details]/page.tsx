@@ -11,17 +11,25 @@ import projectDetails from "@/Mock/portfolio-detail.json";
 import {notFound} from "next/navigation";
 import {hero, gameArt, projectInfo} from "@/utils/types";
 
-export default function Portfolio({params}: {params: {details: string[]}}) {
+interface PortfolioProps {
+  params: {
+    details: string[];
+  };
+}
+
+type ProjectDetail = {
+  [key: string]: {
+    Header: hero;
+    GameArt: gameArt;
+    ProjectInfo: projectInfo;
+  };
+};
+
+export default function Portfolio({params}: PortfolioProps) {
   const gameNameToFind = params.details[0] ?? "";
   const selectedGame = projectDetails.find(
     (item) => gameNameToFind in item
-  ) as {
-    [key: string]: {
-      Header: hero;
-      GameArt: gameArt;
-      ProjectInfo: projectInfo;
-    };
-  };
+  ) as ProjectDetail;
 
   useEffect(() => {
     if (!selectedGame) {
@@ -33,19 +41,17 @@ export default function Portfolio({params}: {params: {details: string[]}}) {
     return null;
   }
 
+  const {
+    Header,
+    GameArt: GameArtData,
+    ProjectInfo: PortfolioData,
+  } = selectedGame[gameNameToFind];
+
   return (
     <Box>
-      {selectedGame[gameNameToFind]?.Header && (
-        <PorfolioHeader headerData={selectedGame[gameNameToFind]?.Header} />
-      )}
-      {selectedGame[gameNameToFind]?.GameArt && (
-        <GameArt gameArtData={selectedGame[gameNameToFind]?.GameArt} />
-      )}
-      {selectedGame[gameNameToFind]?.ProjectInfo && (
-        <ProjectInfo
-          portfolioData={selectedGame[gameNameToFind]?.ProjectInfo}
-        />
-      )}
+      {Header && <PorfolioHeader headerData={Header} />}
+      {GameArtData && <GameArt gameArtData={GameArtData} />}
+      {PortfolioData && <ProjectInfo portfolioData={PortfolioData} />}
       <OtherProject />
       <QuestionForm />
     </Box>
