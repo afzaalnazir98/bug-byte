@@ -35,7 +35,7 @@ const NextLevelServicesProvider = () => {
       title: "Game Development",
       description:
         "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance.",
-      buttonLink: "/",
+      buttonLink: "/game-development",
       buttonText: "Learn More",
     },
     {
@@ -43,7 +43,7 @@ const NextLevelServicesProvider = () => {
       title: "Game Development",
       description:
         "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance.",
-      buttonLink: "/game-development",
+      buttonLink: "/game-design",
       buttonText: "Learn More",
     },
     {

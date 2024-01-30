@@ -120,7 +120,6 @@ export default function Help() {
             </SubTitle>
 
             <Title
-            data-aos-once="true"
               data-aos-delay="500"
               data-aos-duration="800"
               data-aos="left-anime-slow"
@@ -133,7 +132,6 @@ export default function Help() {
               Bringing People Together Through The Power Of Play
             </Title>
             <Description
-            data-aos-once="true"
               data-aos-delay="500"
               data-aos-duration="800"
               data-aos="left-anime-slow"
@@ -150,7 +148,7 @@ export default function Help() {
               data-aos-offset="200"
               data-aos-duration="600"
               component={Link}
-              sx={{
+              sx={{ 
                 maxWidth:"fit-content",
                 textDecoration:"none"
               }}

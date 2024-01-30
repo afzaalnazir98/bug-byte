@@ -30,7 +30,7 @@ export default function HomePage() {
       <GameExperience />
       <NextLevelServicesProvider />
       <CompanyProgress/>
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <QuestionForm />
     </>
   );

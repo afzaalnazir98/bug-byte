@@ -6,6 +6,40 @@ import Image from "next/image";
 import { hero } from "./types";
 import { Box, Button } from "@mui/material";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+
+const textVariants = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const imageVariants = {
+  initial: {
+    x: 500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 export default function HeroSection(items: hero) {
   const { title, text, des, image, buttonText } = items;
@@ -31,6 +65,12 @@ export default function HeroSection(items: hero) {
         }}
       >
         <Box
+            
+            component={motion.div}
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -40,8 +80,9 @@ export default function HeroSection(items: hero) {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Typography
-            variant="body1"
+             <Box
+              component={motion.p}
+                variants={textVariants}
             sx={{
               fontSize: { xs: "20px", sm: "28px" },
               fontWeight: { xs: 300, sm: 400 },
@@ -49,12 +90,14 @@ export default function HeroSection(items: hero) {
             }}
           >
             {text}
-          </Typography>
-          <Typography
-            variant="h1"
+          </Box>
+          <Box
+              component={motion.p}
+                variants={textVariants}
             sx={{
               fontSize: { xs: "50px", sm: "60px", md:"64px" ,lg: "74px" },
               fontWeight: { xs: 600, sm: 700 },
+              m:0,
               marginTop: "15px",
               textTransform: "capitalize",
               lineHeight: {xs:"1",lg:"1.16"},
@@ -65,9 +108,10 @@ export default function HeroSection(items: hero) {
             }}
           >
             {title}
-          </Typography>
-          <Typography
-            variant="body1"
+          </Box>
+          <Box
+              component={motion.p}
+                variants={textVariants}
             sx={{
               fontSize: { xs: "18px",sm:"20px",md:"22px", lg: "24px" },
               fontWeight: { xs: 300, sm: 400 },
@@ -75,10 +119,11 @@ export default function HeroSection(items: hero) {
             }}
           >
             {des}
-          </Typography>
+          </Box>
           {buttonText !== undefined && (
             <Box
-              component={Link}
+              component={motion.a}
+              variants={textVariants}
               href={"#"}
               sx={{
                 padding: "20px 0px 100px 0px",
@@ -103,6 +148,10 @@ export default function HeroSection(items: hero) {
           )}
         </Box>
         <Box
+        component={motion.div}
+        variants={imageVariants}
+        initial="initial"
+        animate="animate"
           sx={{
             alignSelf: { xs: "auto", md: "end" },
           }}

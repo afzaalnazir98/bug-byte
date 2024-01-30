@@ -10,12 +10,12 @@
         {
           "Styled": true,
           "text": "Get Quote Now",
-          "link": "/"
+          "link": "/vr-development"
         },
         {
           "Styled": false,
           "text": "View Portfolio",
-          "link": "/"
+          "link": "/portfolio"
         }
       ],
       "imagePath": "/assets/images/hero-image.png"
@@ -31,12 +31,12 @@
         {
           "Styled": true,
           "text": "Get Quote Now",
-          "link": "/"
+          "link": "/game-development"
         },
         {
           "Styled": false,
           "text": "View Portfolio",
-          "link": "/"
+          "link": "/portfolio"
         }
       ],
       "imagePath": "/assets/images/unity-unreal.png"
@@ -52,12 +52,12 @@
         {
           "Styled": true,
           "text": "Get Quote Now",
-          "link": "/"
+          "link": "/nft-metaverse"
         },
         {
           "Styled": false,
           "text": "View Portfolio",
-          "link": "/"
+          "link": "/portfolio"
         }
       ],
       "imagePath": "/assets/images/nft-metaverse.png"
@@ -73,12 +73,12 @@
         {
           "Styled": true,
           "text": "Get Quote Now",
-          "link": "/"
+          "link": "/game-design"
         },
         {
           "Styled": false,
           "text": "View Portfolio",
-          "link": "/"
+          "link": "/portfolio"
         }
       ],
       "imagePath": "/assets/images/game-design-1.png"
@@ -94,12 +94,12 @@
         {
           "Styled": true,
           "text": "Get Quote Now",
-          "link": "/"
+          "link": "/blockchain-games"
         },
         {
           "Styled": false,
           "text": "View Portfolio",
-          "link": "/"
+          "link": "/portfolio"
         }
       ],
       "imagePath": "/assets/images/blockchain.png"
@@ -115,12 +115,12 @@
         {
           "Styled": true,
           "text": "Get Quote Now",
-          "link": "/"
+          "link": "/ar-development"
         },
         {
           "Styled": false,
           "text": "View Portfolio",
-          "link": "/"
+          "link": "/portfolio"
         }
       ],
       "imagePath": "/assets/images/ar-development.png"

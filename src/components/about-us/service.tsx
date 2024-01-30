@@ -119,7 +119,7 @@ export default function Service() {
                       textTransform: "capitalize",
                     }}
                   >
-                    Years{" "}
+                    Year
                     <Typography
                       sx={{
                         display: "inline",
@@ -145,7 +145,8 @@ export default function Service() {
                       fontWeight: 400,
                     }}
                   >
-                     Explore our world of experience! We&apos;re the best in creating 3D games, Avatar experiences, and AR/VR wonders. Our NFT and blockchain expertise, combined with Unity and Unreal Engine skills, opens the doorway to a digital future filled with top-notch game design and captivating animations.
+                    Explore our world of experience! We&apos;re the best in creating
+                    3D games, Avatar experiences, and AR/VR wonders.
                   </Typography>
                 </Box>
 
@@ -195,7 +196,8 @@ export default function Service() {
                       fontWeight: 400,
                     }}
                   >
-                    Tailored for you! Our years of experience ensure personalized solutions for your unique needs. Dive into the Metaverse with confidence, enjoying NFT and blockchain expertise and standout Unity and Unreal Engine development.
+                    Tailored for you! Our years of experience ensure
+                    personalized solutions for your unique needs.
                   </Typography>
                 </Box>
               </Box>
@@ -252,7 +254,9 @@ export default function Service() {
                       fontWeight: 400,
                     }}
                   >
-                    Guaranteed excellence! As the best development company, our commitment to quality ensures outcomes that exceed expectations. Dive into the Metaverse confidently, knowing the doorway to the digital future opens to a world of guaranteed quality results.
+                    Guaranteed excellence! As the best development company, our
+                    commitment to quality ensures outcomes that exceed
+                    expectations.
                   </Typography>
                 </Box>
                 <Box
@@ -289,7 +293,7 @@ export default function Service() {
                         textTransform: "capitalize",
                       }}
                     >
-                      Solutions
+                      Approach
                     </Typography>
                   </Typography>
                   <Typography
@@ -301,7 +305,9 @@ export default function Service() {
                       fontWeight: 400,
                     }}
                   >
-                    You are at the center of our world! Our client-centric approach revolves around your satisfaction, whether diving into the Metaverse with excitement or exploring 3D games and AR/VR wonders. Our solutions are tailored to your unique needs.
+                    You are at the center of our world! Our client-centric
+                    approach revolves around your satisfaction, whether you&apos;re
+                    diving into the Metaverse with excitement.
                   </Typography>
                 </Box>
               </Box>

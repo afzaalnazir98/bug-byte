@@ -1,3 +1,4 @@
+
 import * as React from "react";
 
 export interface VerticalTimelineProps {
@@ -140,6 +141,11 @@ interface Link {
   text: string;
   url: string;
 }
+interface ServiceOfferType {
+  title: string;
+  desc: string;
+  imageUrl: string;
+}
 
 export type {
   GameExperience,
@@ -150,6 +156,7 @@ export type {
   progressData,
   slide,
   hero,
+  ServiceOfferType,
   portfolio,
   TimeLineType,
   OtherProjectsDetail,

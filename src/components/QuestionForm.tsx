@@ -8,6 +8,7 @@ import Image from "next/image";
 import Container from "./container";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const ContactForm = dynamic(() => import("./forms/contact-form"), {
   ssr: false
@@ -105,10 +106,13 @@ export default function QuestionForm() {
                   }}
                 >
                   <Box
+                  component={Link}
+                  href={"tel:+971542990227"}
                     sx={{
                       display: "flex",
                       gap: "10px",
                       alignItems: "center",
+                      textDecoration:"none"
                     }}
                   >
                     <Image
@@ -124,15 +128,18 @@ export default function QuestionForm() {
                         fontWeight: 600,
                       }}
                     >
-                      +(2) 578 - 365 - 379
+                      +971542990227
                     </Typography>
                   </Box>
                   <Box
+                  component={Link}
+                  href={"mailto:hello@Buggbytestudios.com"}
                     sx={{
                       display: "flex",
                       gap: "10px",
                       alignItems: "center",
                       marginTop: "23px",
+                      textDecoration:"none"
                     }}
                   >
                     <Image
@@ -148,7 +155,7 @@ export default function QuestionForm() {
                         fontWeight: 600,
                       }}
                     >
-                      hello@example.com
+                      hello@Buggbytestudios.com
                     </Typography>
                   </Box>
                 </Box>

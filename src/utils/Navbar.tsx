@@ -146,7 +146,7 @@ const Navbar = () => {
           variant="contained"
           color="primary"
           component={Link}
-          href="/"
+          href="/contact-us"
           sx={{
             p: {
               md: "7px 32px",
@@ -204,7 +204,7 @@ const Navbar = () => {
             variant="contained"
             color="primary"
             component={Link}
-            href="/"
+            href="/contact-us"
             sx={{
               marginTop: 2,
               marginLeft: 2,

@@ -4,14 +4,12 @@ import ServiceDetails from "../services-detail/page";
 import jsonData from "@/Mock/service-data.json";
 import Header from "@/components/Header";
 
-// Extract the data array
-const dataArray = jsonData.serviceDetail;
+const dataArray = jsonData.gameDesign;
 
 export default function Services() {
   return (
     <>
-      
-    <Header num={11} url={"/assets/images/common-bg.png"}/>
+      <Header num={11} url={"/assets/images/common-bg.png"} />
       <ServiceDetails params={dataArray} />
       <QuestionForm />
     </>

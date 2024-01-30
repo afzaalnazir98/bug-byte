@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useRef } from "react";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import {
@@ -13,18 +14,69 @@ import {
   FormLabel,
   Divider,
 } from "@mui/material";
-
-import location from "@/public/assets/images/location.svg";
 import watch from "@/public/assets/images/watch.svg";
 import phone from "@/public/assets/images/phone.svg";
 import message from "@/public/assets/images/msgSmall.svg";
-import facebook from "@/public/assets/social-media-icons/facebook.svg";
-import insta from "@/public/assets/social-media-icons/insta.svg";
-import linkdin from "@/public/assets/social-media-icons/linkdin.svg";
-import X from "@/public/assets/social-media-icons/X.svg";
 import Image from "next/image";
 import { FormData } from "@/utils/types";
 import Container from "../container";
+import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+
+const socialMediaLinks = [
+  {
+    platform: "Facebook",
+    icon: "/assets/social-media-icons/facebook.svg",
+    url: "https://www.facebook.com/profile.php?id=61555682863123",
+  },
+  {
+    platform: "Instagram",
+    icon: "/assets/social-media-icons/insta.svg",
+    url: "https://www.instagram.com/buggbyte_studios/",
+  },
+  {
+    platform: "LinkedIn",
+    icon: "/assets/social-media-icons/linkdin.svg",
+    url: "https://www.linkedin.com/company/buggbyte-studios/about/",
+  },
+  // {
+  //   platform: "twitter",
+  //   icon: "/assets/social-media-icons/X.svg",
+  //   url: "https://twitter.com/",
+  // },
+];
+
+const formVariants = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  initial: {
+    x: 500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 export default function ContactFormSection(): JSX.Element {
   const [formData, setFormData] = React.useState<FormData>({
@@ -33,7 +85,10 @@ export default function ContactFormSection(): JSX.Element {
     service: "",
     message: "",
   });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
+  console.log("Service",useInView);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
   };
@@ -42,10 +97,12 @@ export default function ContactFormSection(): JSX.Element {
     <Box
       sx={{
         background: "#fff",
+        width: "100%",
       }}
     >
       <Container>
         <Box
+        ref={ref}
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -68,8 +125,8 @@ export default function ContactFormSection(): JSX.Element {
           <Typography
             variant="h1"
             sx={{
-              fontSize: {xs: "24px", sm: "36px"},
-              fontWeight: {xs: 500, sm: 700},
+              fontSize: { xs: "24px", sm: "36px" },
+              fontWeight: { xs: 500, sm: 700 },
               lineHeight: "41px",
               background:
                 "var(--Main-Color, linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%))",
@@ -95,14 +152,18 @@ export default function ContactFormSection(): JSX.Element {
         >
           <Grid
             item
+            component={motion.div}
+            variants={formVariants}
+            initial="initial"
+            animate={isInView?"animate":undefined} 
             sx={{
               display: "flex",
               alignItems: "start",
               flexDirection: "column",
               background: "#0B1D30",
-              paddingInline: {xs: "1rem", sm: "2rem"},
-              height: {sm: "700px", md: "760.371px"},
-              marginTop: {xs: "2rem", sm: "2rem", md: "5rem"},
+              paddingInline: { xs: "1rem", sm: "2rem" },
+              height: { sm: "700px", md: "760.371px" },
+              marginTop: { xs: "2rem", sm: "2rem", md: "5rem" },
               mb: 3,
               marginLeft: { xs: "20px", sm: "50px", md: 0 },
               marginRight: { xs: "20px", sm: "50px", md: 0 },
@@ -138,16 +199,19 @@ export default function ContactFormSection(): JSX.Element {
             md={6.3}
           >
             <FormLabel
+              component={motion.form}
+              variants={formVariants}
+              initial="initial"
+              animate="animate"
               sx={{
-                fontSize: {xs: "26px", sm: "32px"},
-                fontWeight: {xs: 500, sm: 700},
-                lineHeight: {xs: "20.4px", sm: "38.4px"},
+                fontSize: { xs: "26px", sm: "32px" },
+                fontWeight: { xs: 500, sm: 700 },
+                lineHeight: { xs: "20.4px", sm: "38.4px" },
                 color: "#fff",
                 textTransform: "capitalize",
-                marginTop: {xs: "1rem", sm: "3rem"},
+                marginTop: { xs: "1rem", sm: "3rem" },
               }}
             >
-              {" "}
               Write A Message
             </FormLabel>
             <form
@@ -162,7 +226,7 @@ export default function ContactFormSection(): JSX.Element {
                 sx={{
                   fontSize: "18px",
                   fontWeight: 500,
-                  lineHeight: {xs: "20px", sm: "24px"},
+                  lineHeight: { xs: "20px", sm: "24px" },
                 }}
               >
                 {" "}
@@ -274,6 +338,10 @@ export default function ContactFormSection(): JSX.Element {
           </Grid>
           <Grid
             item
+            component={motion.div}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView?"animate":undefined} 
             sx={{
               display: "flex",
               alignItems: "start",
@@ -293,6 +361,8 @@ export default function ContactFormSection(): JSX.Element {
             md={5.3}
           >
             <Typography
+              component={motion.p}
+              variants={cardVariants}
               sx={{
                 fontSize: { xs: "26px", sm: "32px" },
                 fontWeight: { xs: 500, sm: 600 },
@@ -301,7 +371,6 @@ export default function ContactFormSection(): JSX.Element {
                 marginTop: { xs: "1rem", sm: "3rem" },
               }}
             >
-              {" "}
               Get in Touch
             </Typography>
             <Divider
@@ -314,44 +383,8 @@ export default function ContactFormSection(): JSX.Element {
             />
 
             <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                marginLeft: "20px",
-              }}
-            >
-              <Image src={location.src} width={18} height={24} alt="location" />
-              <Box sx={{ marginLeft: "37px" }}>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    fontSize: { xs: "18px", sm: "22px" },
-                    fontWeight: { xs: 500, sm: 600 },
-                  }}
-                >
-                  Location
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    fontSize: { xs: "16px", sm: "18px" },
-                    fontWeight: 400,
-                  }}
-                >
-                  Al. Brucknera Aleksandra 63, Wrocław 51-410
-                </Typography>
-              </Box>
-            </Box>
-            <Divider
-              sx={{
-                my: { xs: "1rem", sm: "1.5rem", md: "2.1rem" },
-                width: "100%",
-                strokeWidth: "0.5px",
-                border: "1px #C8C8C8 solid",
-              }}
-            />
-
-            <Box
+              component={motion.div}
+              variants={cardVariants}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -376,7 +409,7 @@ export default function ContactFormSection(): JSX.Element {
                     fontWeight: 400,
                   }}
                 >
-                  Example@gmail.com
+                  hello@buggbytestudios.com
                 </Typography>
               </Box>
             </Box>
@@ -390,6 +423,8 @@ export default function ContactFormSection(): JSX.Element {
             />
 
             <Box
+              component={motion.div}
+              variants={cardVariants}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -414,7 +449,7 @@ export default function ContactFormSection(): JSX.Element {
                     fontWeight: 400,
                   }}
                 >
-                  (302) 555-0107 (704) 555-0127
+                  +971542990227
                 </Typography>
               </Box>
             </Box>
@@ -428,6 +463,8 @@ export default function ContactFormSection(): JSX.Element {
             />
 
             <Box
+              component={motion.div}
+              variants={cardVariants}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -456,8 +493,9 @@ export default function ContactFormSection(): JSX.Element {
                 </Typography>
               </Box>
             </Box>
-
             <Box
+              component={motion.div}
+              variants={cardVariants}
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -467,10 +505,16 @@ export default function ContactFormSection(): JSX.Element {
                 mb: 10,
               }}
             >
-              <Image src={facebook.src} width={35} height={35} alt="facebook" />
-              <Image src={insta.src} width={35} height={35} alt="instagram" />
-              <Image src={linkdin.src} width={35} height={35} alt="linkedIn" />
-              <Image src={X.src} width={35} height={35} alt="X" />
+              {socialMediaLinks.map((link, index) => (
+                <Link key={index} href={link.url} passHref>
+                  <Image
+                    src={link.icon}
+                    width={35}
+                    height={35}
+                    alt={link.platform}
+                  />
+                </Link>
+              ))}
             </Box>
           </Grid>
         </Grid>

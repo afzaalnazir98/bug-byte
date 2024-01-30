@@ -17,21 +17,19 @@
         {"text": "Blockchain", "url": "/blockchain-games"},
         {"text": "VR", "url": "/vr-development"},
         {"text": "AR", "url": "/ar-development"},
-        {"text": "Metaverse", "url": "/nft-metaverse"},
-        {"text": "Unity Development", "url": "/unity-development"},
-        {"text": "NFT", "url": "/nft-metaverse"}
+        {"text": "NFT And Metaverse", "url": "/nft-metaverse"}
       ]
     },
     {
       "section": "Contact Us",
       "links": [
-        {"text": "+971542990227", "url": "#"},
+        {"text": "+971542990227", "url": "tel:+971542990227"},
         {"text": "hello@Buggbytestudios.com", "url": "mailto:hello@Buggbytestudios.com"}
       ],
       "socialMedia": [
-        {"platform": "Facebook", "icon": "/assets/images/facebook.svg", "url": "#"},
-        {"platform": "Instagram", "icon": "/assets/images/instagram.svg", "url": "#"},
-        {"platform": "Linkdine", "icon": "/assets/images/linkdine.svg", "url": "#"}
+        {"platform": "Facebook", "icon": "/assets/images/facebook.svg", "url": "https://www.facebook.com/profile.php?id=61555682863123"},
+        {"platform": "Instagram", "icon": "/assets/images/instagram.svg", "url": "https://www.instagram.com/buggbyte_studios/"},
+        {"platform": "Linkdine", "icon": "/assets/images/linkdine.svg", "url": "https://www.linkedin.com/company/buggbyte-studios/about/"}
       ]
     }
   ]

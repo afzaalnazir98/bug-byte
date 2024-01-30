@@ -81,7 +81,7 @@ export default function ContentComponent({
           >
             <Box
               sx={{
-                display: "grid",
+                 display: "grid",
                 gap: { xs: "10px", md: "20px" },
               }}
             >

@@ -48,7 +48,7 @@ export default function HeroSlider() {
         loop
         effect="fade"
         autoplay={{
-          delay: 2500,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         thumbs={{swiper: thumbsSwiper}}
