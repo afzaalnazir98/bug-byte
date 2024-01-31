@@ -46,7 +46,7 @@ interface GameExperience {
 }
 
 interface ServiceDetail {
-  image: any;
+  image: string;
   title: string;
   description: string;
   buttonLink: string;
@@ -66,6 +66,12 @@ interface MediaCardProps {
   isActive: boolean;
   gameExperience: GameExperience;
 }
+type ProjectLifecycleItem = {
+  step: number;
+  phase: string;
+  description: string;
+};
+
 
 interface FooterProps {
   footerData: {
@@ -156,7 +162,11 @@ interface ServiceOfferType {
   title: string;
   desc: string;
   imageUrl: string;
+  btnLink: string;
 }
+type CircleItem = {
+  url: string;
+};
 
 interface projectInfo {
   title: string;
@@ -195,5 +205,7 @@ export type {
   OtherProjectsDetail,
   FooterSection,
   gameArt,
-  projectInfo
+  projectInfo,
+  ProjectLifecycleItem,
+  CircleItem
 };

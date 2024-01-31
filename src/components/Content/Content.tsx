@@ -5,8 +5,41 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Button } from "@mui/material";
-import Link from "next/link";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Grid from "@mui/material/Grid";
+
+const textVariants = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  initial: {
+    x: 500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 export default function ContentComponent({
   image,
@@ -23,9 +56,13 @@ export default function ContentComponent({
   buttonLink: any;
   order: any;
 }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <Box>
       <Box
+        ref={ref}
         sx={{
           padding: { xs: "50px 0px", md: "100px 0px" },
         }}
@@ -41,6 +78,10 @@ export default function ContentComponent({
         >
           <Grid
             item
+            component={motion.div}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView?"animate":undefined}
             xs={12}
             sm={8}
             md={6}
@@ -54,6 +95,8 @@ export default function ContentComponent({
             }}
           >
             <Box
+              component={motion.div}
+              variants={cardVariants}
               sx={{
                 maxWidth: "529px",
                 height: "100%",
@@ -80,12 +123,18 @@ export default function ContentComponent({
             }}
           >
             <Box
+            component={motion.div}
+            variants={textVariants}
+            initial="initial"
+            animate={isInView?"animate":undefined}
               sx={{
                  display: "grid",
                 gap: { xs: "10px", md: "20px" },
               }}
             >
-              <Typography
+              <Typography 
+              component={motion.p}
+              variants={textVariants}
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 700,
@@ -100,6 +149,8 @@ export default function ContentComponent({
                 {title}
               </Typography>
               <Typography
+              component={motion.p}
+              variants={textVariants}
                 sx={{
                   fontSize: { xs: "18px", md: "18px" },
                   fontWeight: "400",
@@ -109,7 +160,10 @@ export default function ContentComponent({
               >
                 {description}
               </Typography>
-              <Box component={Link} href={buttonLink}>
+              <Box 
+              component={motion.a}
+              href={buttonLink}
+              variants={textVariants}>
                 <Button
                   sx={{
                     padding: { xs: " 7px 58px", md: "7px 80px" },

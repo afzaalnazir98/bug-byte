@@ -45,6 +45,8 @@ export default function GameArt({gameArtData}: {gameArtData: gameArt}) {
               lineHeight: "41px",
               textTransform: "uppercase",
               color: "#00000",
+              maxWidth:"1024px",
+              padding:"0px 15px",
             }}
           >
             {gameArtData.description}

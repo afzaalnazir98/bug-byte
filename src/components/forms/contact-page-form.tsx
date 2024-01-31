@@ -88,7 +88,6 @@ export default function ContactFormSection(): JSX.Element {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  console.log("Service",useInView);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
   };
@@ -102,7 +101,6 @@ export default function ContactFormSection(): JSX.Element {
     >
       <Container>
         <Box
-        ref={ref}
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -151,6 +149,7 @@ export default function ContactFormSection(): JSX.Element {
           }}
         >
           <Grid
+           ref={ref}
             item
             component={motion.div}
             variants={formVariants}

@@ -6,14 +6,11 @@ import { Box, CircularProgress, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import GameDevelopment from "@/public/assets/images/game-development.png";
-import GameDesign from "@/public/assets/images/game-design.png";
-import ArVr from "@/public/assets/images/ar-vr.png";
-import BlockchainGames from "@/public/assets/images/blockchain-games.png";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ServiceDetail } from "@/utils/types";
 import "swiper/css";
+import ServiceDetailsDsta from "../Mock/services-detail.json";
 
 const arrowMotion = {
   rest: {
@@ -29,39 +26,7 @@ const arrowMotion = {
 const NextLevelServicesProvider = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const serviceDetails: ServiceDetail[] = [
-    {
-      image: GameDevelopment,
-      title: "Game Development",
-      description:
-        "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance.",
-      buttonLink: "/game-development",
-      buttonText: "Learn More",
-    },
-    {
-      image: GameDesign,
-      title: "Game Development",
-      description:
-        "Game design, programming, art, animation, audio, testing, marketing, publishing, monetization, maintenance.",
-      buttonLink: "/game-design",
-      buttonText: "Learn More",
-    },
-    {
-      image: ArVr,
-      title: "AR and VR Games",
-      description:
-        "Real-life simulations, gamified metaverses, shopping experiences, real estate, sports, fashion.",
-      buttonLink: "/ar-development",
-      buttonText: "Learn More",
-    },
-    {
-      image: BlockchainGames,
-      title: "Blockchain Games",
-      description: "P2E, NFT marketplaces, staking, smart contracts",
-      buttonLink: "/blockchain-games",
-      buttonText: "Learn More",
-    },
-  ];
+  const serviceDetails: ServiceDetail[] = ServiceDetailsDsta;
 
   useEffect(() => {
     setIsLoading(false);
@@ -219,8 +184,8 @@ const NextLevelServicesProvider = () => {
                   >
                     <Image
                       className="slide-image"
-                      src={`${service?.image?.src}`}
-                      alt={service?.title ?? ""}
+                      src={service.image}
+                      alt={service.title}
                       height={100}
                       width={100}
                       loading="lazy"

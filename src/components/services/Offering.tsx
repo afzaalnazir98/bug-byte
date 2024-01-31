@@ -148,7 +148,7 @@ export default function Offering() {
                 flexDirection: { xs: "row", sm: "column" },
               },
               "& .MuiTabs-scroller": {
-                maxHeight: { sm: "350px", md: "420px" },
+                maxHeight: { sm: "350px", md: "520px" },
                 overflowY: "visible",
               },
               "& .MuiTabs-scrollButtons ": {
@@ -217,7 +217,9 @@ export default function Offering() {
                 >
                   {item.desc}
                 </Description>
-                <Box component={Link} href="/">
+                <Box component={Link} href={item.btnLink} sx={{
+                  maxWidth:"fit-content"
+                }}>
                   <StyleButton
                     sx={{
                       fontSize: { xs: "18px", md: "20px" },

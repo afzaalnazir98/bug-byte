@@ -121,7 +121,7 @@ export default function ProjectTechnologies({
                 }}
               >
                 <Image
-                  src="/assets/social-media-icons/project-info-unity.svg"
+                  src="/assets/social-media-icons/auto-desk-maya.svg"
                   alt="project-info-type-svg1"
                   width={36}
                   height={36}
@@ -147,7 +147,7 @@ export default function ProjectTechnologies({
                 }}
               >
                 <Image
-                  src="/assets/social-media-icons/project-info-unity.svg"
+                  src="/assets/social-media-icons/blender.svg"
                   alt="project-info-type-svg1"
                   width={36}
                   height={36}

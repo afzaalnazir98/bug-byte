@@ -2,10 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import {hero} from "@/utils/types";
-import {Box, Button} from "@mui/material";
-import Link from "next/link";
-import {motion} from "framer-motion";
+import { hero } from "@/utils/types";
+import { Box, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
 const textVariants = {
   initial: {
@@ -27,28 +26,30 @@ const imageVariants = {
   initial: {
     x: 500,
     opacity: 0,
+    scale: 0.5,
   },
   animate: {
-    x: 0,
     opacity: 1,
-    y: 0,
+    scale: 1,
+    x: 0,
     transition: {
-      duration: 1,
-      staggerChildren: 0.1,
+      duration: 1.4,
+      delay: 1,
+      ease: [0, 0.71, 0.2, 1.01],
     },
   },
 };
 
 export default function HeroSection(items: hero) {
-  const {title, text, des, image, buttonText} = items;
+  const { title, text, des, image, buttonText } = items;
 
   return (
     <Box
       sx={{
-        minHeight: {xs: "620px", md: "720px"},
+        minHeight: { xs: "620px", md: "720px" },
         display: "flex",
         alignItems: "end",
-        paddingTop: {xs: "100px", md: "160px"},
+        paddingTop: { xs: "100px", md: "160px" },
       }}
     >
       <Box
@@ -56,10 +57,10 @@ export default function HeroSection(items: hero) {
           minHeight: "550px",
           width: "100%",
           display: "flex",
-          justifyContent: {xs: "center", md: "space-between"},
+          justifyContent: { xs: "center", md: "space-between" },
           alignItems: "center",
-          gap: {xs: "30px"},
-          flexDirection: {xs: "column", md: "row"},
+          gap: { xs: "30px" },
+          flexDirection: { xs: "column", md: "row" },
         }}
       >
         <Box
@@ -71,17 +72,17 @@ export default function HeroSection(items: hero) {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: {xs: "center", md: "start"},
+            alignItems: { xs: "center", md: "start" },
             maxWidth: "600px",
-            textAlign: {xs: "center", md: "left"},
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           <Box
             component={motion.p}
             variants={textVariants}
             sx={{
-              fontSize: {xs: "20px", sm: "28px"},
-              fontWeight: {xs: 300, sm: 400},
+              fontSize: { xs: "20px", sm: "28px" },
+              fontWeight: { xs: 300, sm: 400 },
               color: "white",
             }}
           >
@@ -91,12 +92,12 @@ export default function HeroSection(items: hero) {
             component={motion.p}
             variants={textVariants}
             sx={{
-              fontSize: {xs: "50px", sm: "60px", md: "64px", lg: "74px"},
-              fontWeight: {xs: 600, sm: 700},
+              fontSize: { xs: "50px", sm: "60px", md: "64px", lg: "74px" },
+              fontWeight: { xs: 600, sm: 700 },
               m: 0,
               marginTop: "15px",
               textTransform: "capitalize",
-              lineHeight: {xs: "1", lg: "1.16"},
+              lineHeight: { xs: "1", lg: "1.16" },
               background:
                 "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
               backgroundClip: "text",
@@ -109,8 +110,8 @@ export default function HeroSection(items: hero) {
             component={motion.p}
             variants={textVariants}
             sx={{
-              fontSize: {xs: "18px", sm: "20px", md: "22px", lg: "24px"},
-              fontWeight: {xs: 300, sm: 400},
+              fontSize: { xs: "18px", sm: "20px", md: "22px", lg: "24px" },
+              fontWeight: { xs: 300, sm: 400 },
               color: "#fff",
             }}
           >
@@ -127,11 +128,11 @@ export default function HeroSection(items: hero) {
             >
               <Button
                 sx={{
-                  padding: {xs: " 7px 58px", md: "7px 80px"},
+                  padding: { xs: " 7px 58px", md: "7px 80px" },
                   borderRadius: "6px",
                   backgroundImage:
                     "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                  fontSize: {xs: "18px", md: "24px"},
+                  fontSize: { xs: "18px", md: "24px" },
                   fontWeight: 600,
                   textTransform: "capitalize",
                   color: "#fff",
@@ -144,15 +145,15 @@ export default function HeroSection(items: hero) {
           )}
         </Box>
         <Box
+          sx={{
+            alignSelf: { xs: "auto", md: "end" },
+          }}
+        >
+          <Box
           component={motion.div}
           variants={imageVariants}
           initial="initial"
           animate="animate"
-          sx={{
-            alignSelf: {xs: "auto", md: "end"},
-          }}
-        >
-          <Box
             sx={{
               maxWidth: "550px",
               height: "100%",

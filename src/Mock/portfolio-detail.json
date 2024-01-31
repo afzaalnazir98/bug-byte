@@ -11,7 +11,7 @@
       },
       "GameArt": {
         "title": "META WARRIORS GAMES ARTS",
-        "description": "ONLINE MULTIPLAYER KILL-TO-EARN ZOMBIE SHOOTING",
+        "description": "ONLINE MULTIPLAYER KILL-TO-EARN ZOMBIE SHOOTING Every living creature in this city is a bloodthirsty zombie but the city has a lot of value for people as food supplies and weapon artillery and factories are in this city",
         "images": [
           "/assets/images/game-art-image-4.png",
           "/assets/images/game-art-image-5.png",
@@ -36,7 +36,7 @@
     },
     "ar-bazaar": {
       "Header": {
-        "text": "unity",
+        "text": "AUGMENTED REALITY",
         "title": "AR BAZAAR",
         "des": "Immerse yourself in a world where products come to life before your eyes",
         "btnLink": "/",
@@ -59,7 +59,8 @@
         "projectType": {"mobileApp": true},
         "technologyStacks": {
           "unity": true,
-          "autoDesk": true
+          "autoDesk": true,
+          "blender": true
         },
         "availableAt": {
           "appleStore": true,
@@ -102,7 +103,7 @@
     },
     "pixels-debates": {
       "Header": {
-        "text": "unity",
+        "text": "WEB 3.0 GAME",
         "title": "pixels debates",
         "des": "Pixel Debates is an online multiplayer game in which players engage in debate matches against each other. The game features a variety of debate topics and allows players to defend their positions using evidence and logical argumentation.",
         "btnLink": "/",
@@ -144,7 +145,7 @@
       },
       "GameArt": {
         "title": "HEARTS CLASSIC CARD GAME",
-        "description": "Hearts is a classic competitive card game,",
+        "description": "Hearts is a classic competitive card game",
         "images": [
           "/assets/images/game-art-image-16.png",
           "/assets/images/game-art-image-17.png",
@@ -158,8 +159,7 @@
         "projectType": {"videoGame": true},
         "technologyStacks": {
           "unity": true,
-          "autoDesk": true,
-          "blender": true
+          "adobePhotoshopIllustrator": true
         },
         "availableAt": {
           "appleStore": true,
@@ -169,7 +169,7 @@
     },
     "ar-real-estate": {
       "Header": {
-        "text": "AR",
+        "text": "AUGMENTED REALITY",
         "title": "AR REAL ESTATE",
         "des": "Galaxy Shooter – Alien Hunter : Space Shooting Games'Galaxy Shooter Sky Force –alien game' is an engaging arcade galaxy space shooting game draws inspiration from classics like Galaxia.",
         "btnLink": "/",
@@ -192,7 +192,8 @@
         "projectType": {"arMobileApp": true},
         "technologyStacks": {
           "unity": true,
-          "autoDesk3DSMAX": true
+          "autoDesk3DSMAX": true,
+          "blender": true
         },
         "availableAt": {
           "appleStore": true,
@@ -202,7 +203,7 @@
     },
     "jasmine-grand-mall": {
       "Header": {
-        "text": "unity",
+        "text": "DIGITAL TWINS",
         "title": "JASMINE GRAND MALL",
         "des": "The largest shopping mall in Bahria Town Lahore.",
         "btnLink": "/",
@@ -211,7 +212,7 @@
       },
       "GameArt": {
         "title": "JASMINE GRAND MALL PROJECT",
-        "description": "The largest shopping mall in Bahria Town Lahore ",
+        "description": "The largest shopping mall in Bahria Town Lahore",
         "images": [
           "/assets/images/game-art-image-22.png",
           "/assets/images/game-art-image-23.png",
@@ -227,16 +228,12 @@
           "unity": true,
           "autoDesk": true,
           "blender": true
-        },
-        "availableAt": {
-          "appleStore": true,
-          "playStore": true
         }
       }
     },
     "dark-taverns": {
       "Header": {
-        "text": "unity",
+        "text": "WEB 3.0 GAME",
         "title": "dark taverns",
         "des": "Dark Taverns is an open-world MMORPG set in a unique fantasy world filled with hidden secrets and magic. Explore the deep forests and discover mythical creatures and items.",
         "btnLink": "/",
@@ -270,7 +267,7 @@
     },
     "q-high-street": {
       "Header": {
-        "text": "Virtual Experiences",
+        "text": "DIGITAL TWINS",
         "title": "Q HIGH STREET",
         "des": "Every corner of this one million-wide modern street is the fusion of contemporary and neoclassical design dedicatedly designed by the Hiline architecture and 3D designing team with the perfect blend of luxury, growth, and lifestyle.",
         "btnLink": "/",
@@ -295,18 +292,14 @@
           "unity": true,
           "autoDesk": true,
           "blender": true
-        },
-        "availableAt": {
-          "appleStore": true,
-          "playStore": true
         }
       }
     },
     "manager-football": {
       "Header": {
-        "text": "Unity",
+        "text": "BLOCKCHAIN GAME",
         "title": "Manager football",
-        "des": "You're the boss of an elite soccer team. Build a dream squad of real-life stars or coach new talent and lead them to victory in this management game.",
+        "des": "You're the boss of an elite soccer team. Build a dream squad of  real-life stars or coach new talent and lead them to victory in this management game.",
         "btnLink": "/",
         "buttonText": "Request to play",
         "image": "/assets/images/featured-project-15.png"
@@ -338,7 +331,7 @@
     },
     "rifters": {
       "Header": {
-        "text": "Virtual Experiences",
+        "text": "METAVERSE",
         "title": "RIFTERS.IO",
         "des": "Rifters is the first ever MOCERPG - Massive Online Community Event Role Playing Game",
         "btnLink": "/",
@@ -361,8 +354,7 @@
         "projectType": {"videoGame": true},
         "technologyStacks": {
           "unity": true,
-          "autoDesk": true,
-          "blender": true
+          "adobePhotoshopIllustrator": true
         },
         "availableAt": {
           "appleStore": true,
@@ -372,9 +364,9 @@
     },
     "q-central-mall": {
       "Header": {
-        "text": "Virtual Experiences",
+        "text": "DIGITAL TWINS",
         "title": "Q-CENTRAL MALL & RESIDENCES",
-        "des": "Bahria Orchard and South Lahore's very first skyscraper",
+        "des": "Bahria Orchard and South Lahore's very first skyscraper.",
         "btnLink": "/",
         "buttonText": "Request to play",
         "image": "/assets/images/featured-project-17.png"

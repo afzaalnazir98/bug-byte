@@ -24,15 +24,15 @@ export default function Sponsor() {
   };
 
   const textToReverse = "BUGG BYTE STUDIO";
-  const reversedText = textToReverse.split("").reverse().join("");
+  const reflectedText = textToReverse.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+
   return (
     <>
       <Box
         sx={{
           background: {
-            xs: "linear-gradient(0deg, white 67%, black 33%)",
-            sm: "linear-gradient(0deg, white 60%, black 40%)",
-            md: "linear-gradient(0deg, white 60%, black 40%)",
+            xs: "linear-gradient(0deg, rgba(255,255, 255) 67%, rgba(0,0,0,0.1) 33%)",
+            sm: "linear-gradient(0deg, rgba(255,255, 255) 60%, rgba(0,0,0,0.1) 40%)",
           },
           paddingBottom: "55px",
           overflow: "hidden",
@@ -44,7 +44,7 @@ export default function Sponsor() {
             marginX: "auto",
           }}
         >
-          <Marquee pauseOnHover={true}>
+          <Marquee>
             <Box sx={logoStyles}>
               <Image
                 className="logo"
@@ -222,7 +222,7 @@ export default function Sponsor() {
                 margin: "auto",
               }}
             >
-              <Marquee>
+              <Marquee direction="right"> 
                 <Box
                   sx={{
                     display: "inline-block",
@@ -249,10 +249,10 @@ export default function Sponsor() {
                         },
                         fontWeight: 600,
                         letterSpacing: "10.8px",
-                        direction: "rtl",
+                        
                       }}
                     >
-                      {reversedText}
+                      {reflectedText}
                     </Typography>
                     <Image src={Star.src} alt="star" width={38} height={38} />
                     <Typography
@@ -266,10 +266,9 @@ export default function Sponsor() {
                         },
                         fontWeight: 600,
                         letterSpacing: "10.8px",
-                        direction: "rtl",
                       }}
                     >
-                      {reversedText}
+                       {reflectedText}
                     </Typography>
                   </Box>
                 </Box>

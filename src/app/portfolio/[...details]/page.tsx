@@ -45,7 +45,7 @@ export default function Portfolio({params}: PortfolioProps) {
     Header,
     GameArt: GameArtData,
     ProjectInfo: PortfolioData,
-  } = selectedGame[gameNameToFind];
+  } = selectedGame[gameNameToFind]
 
   return (
     <Box>

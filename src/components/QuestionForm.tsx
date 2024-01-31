@@ -132,8 +132,8 @@ export default function QuestionForm() {
                     </Typography>
                   </Box>
                   <Box
-                  component={Link}
-                  href={"mailto:hello@Buggbytestudios.com"}
+                    component={Link}
+                    href={"mailto:hello@Buggbytestudios.com"}
                     sx={{
                       display: "flex",
                       gap: "10px",

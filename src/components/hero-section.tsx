@@ -58,6 +58,23 @@ const buttonVariantsProfile = {
      }
      },
 };
+const imageVariants = {
+  initial: {
+    x: 500,
+    opacity: 0,
+    scale: 0.5,
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    transition: {
+      duration: 1.4,
+      delay: 1,
+      ease: [0, 0.71, 0.2, 1.01],
+    },
+  },
+};
 
 
 
@@ -297,7 +314,10 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
       <Grid item xs={12} sm={5}>
         {Slide.imagePath && (
           <Box
-          data-aos="zoom-in"
+          component={motion.div}
+          variants={imageVariants}
+          initial="initial"
+          animate="animate"
             sx={{
               textAlign: "center",
               height: "100%",

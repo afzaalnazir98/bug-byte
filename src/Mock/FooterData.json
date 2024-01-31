@@ -17,7 +17,8 @@
         {"text": "Blockchain", "url": "/blockchain-games"},
         {"text": "VR", "url": "/vr-development"},
         {"text": "AR", "url": "/ar-development"},
-        {"text": "NFT And Metaverse", "url": "/nft-metaverse"}
+        {"text": "NFT And Metaverse", "url": "/nft-metaverse"},
+        {"text": "virtual Experience", "url": "/virtual-experience"}
       ]
     },
     {
