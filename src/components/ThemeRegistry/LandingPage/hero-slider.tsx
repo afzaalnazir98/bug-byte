@@ -5,16 +5,16 @@ import {Box, Button, styled} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {FreeMode, Thumbs, Autoplay, EffectFade} from "swiper/modules";
 import HeroSection from "@/components/hero-section";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
 import {slide} from "@/utils/types";
 import SlidesData from "@/Mock/SlidesData.json";
 import titleData from "@/Mock/title.json";
 
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
+
 export default function HeroSlider() {
-  
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   const Slides: slide[] = SlidesData;
@@ -48,7 +48,7 @@ export default function HeroSlider() {
         loop
         effect="fade"
         autoplay={{
-          delay: 6000,
+          delay: 10000,
           disableOnInteraction: false,
         }}
         thumbs={{swiper: thumbsSwiper}}

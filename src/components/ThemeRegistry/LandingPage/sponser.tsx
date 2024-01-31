@@ -86,8 +86,8 @@ export default function Sponsor() {
                 className="logo"
                 src={Logo5.src}
                 alt="Logo5"
-                height={60}
-                width={200}
+                height={58}
+                width={210}
               />
             </Box>
             <Box sx={logoStyles}>

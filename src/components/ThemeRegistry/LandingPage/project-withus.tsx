@@ -213,8 +213,8 @@ export default function ProjectWithUs() {
                   >
                     <Image
                       src={arrow.src}
-                      width={13}
-                      height={13}
+                      width={10}
+                      height={11}
                       alt="instagram-svg"
                     />
                     <Typography
@@ -236,9 +236,9 @@ export default function ProjectWithUs() {
                     }}
                   >
                     <Image
-                      src={arrow}
-                      width={13}
-                      height={13}
+                      src={arrow.src}
+                      width={10}
+                      height={11}
                       alt="instagram-svg"
                     />
                     <Typography
@@ -334,9 +334,9 @@ export default function ProjectWithUs() {
                     }}
                   >
                     <Image
-                      src={arrow}
-                      width={13}
-                      height={13}
+                      src={arrow.src}
+                      width={10}
+                      height={11}
                       alt="instagram-svg"
                     />
                     <Typography
@@ -358,9 +358,9 @@ export default function ProjectWithUs() {
                     }}
                   >
                     <Image
-                      src={arrow}
-                      width={13}
-                      height={13}
+                      src={arrow.src}
+                      width={10}
+                      height={11}
                       alt="instagram-svg"
                     />
                     <Typography
@@ -457,9 +457,9 @@ export default function ProjectWithUs() {
                     }}
                   >
                     <Image
-                      src={arrow}
-                      width={13}
-                      height={13}
+                      src={arrow.src}
+                      width={10}
+                      height={11}
                       alt="instagram-svg"
                     />
                     <Typography
@@ -481,9 +481,9 @@ export default function ProjectWithUs() {
                     }}
                   >
                     <Image
-                      src={arrow}
-                      width={13}
-                      height={13}
+                      src={arrow.src}
+                      width={10}
+                      height={11}
                       alt="instagram-svg"
                     />
                     <Typography

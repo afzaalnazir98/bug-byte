@@ -44,8 +44,9 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
             >
               <Box component={Link} href={"/"}>
                 <Image
+                  priority={true}
                   src="/assets/images/logo.png"
-                  alt="logo.png"
+                  alt="bugg byte"
                   width={257}
                   height={71}
                 />

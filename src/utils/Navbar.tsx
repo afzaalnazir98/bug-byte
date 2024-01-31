@@ -85,11 +85,12 @@ const Navbar = () => {
         <Box sx={{display: "flex", alignItems: "center"}}>
           <Box component={Link} href={"/"}>
             <Image
+              priority={true}
               className="brand-logo"
               src="/assets/images/logo.png"
               width={185}
               height={55}
-              alt="brand logo"
+              alt="bugg byte"
             />
           </Box>
         </Box>
