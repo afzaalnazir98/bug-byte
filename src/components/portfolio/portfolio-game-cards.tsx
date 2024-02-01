@@ -8,12 +8,12 @@ import dynamic from "next/dynamic";
 const ImageMasonry = dynamic(() => import("./layout"), {ssr: false});
 
 export default function PortfolioGameCards() {
-  const [portfolioNumber, setportfolioNumber] = useState(6);
 
   return (
     <Box
       sx={{
         background: "#FFF",
+        padding: { xs: "50px 0px", md: "100px 0px" },
       }}
     >
       <Box
@@ -31,7 +31,6 @@ export default function PortfolioGameCards() {
           sx={{
             fontSize: "20px",
             fontWeight: 500,
-            marginTop: "100px",
             letterSpacing: "0.4px",
             textTransform: "uppercase",
             color: "#030A12",
@@ -56,34 +55,8 @@ export default function PortfolioGameCards() {
           Our Games Are Vibrant Worlds <br /> With Charming Characters
         </Typography>
       </Box>
-      <ImageMasonry portfolioNumber={portfolioNumber} />
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          p: "0px 0 70px",
-        }}
-      >
-        <Button
-          sx={{
-            position: "relative",
-            marginTop: "40px",
-            borderRadius: "6px",
-            width: {xs: "150px", sm: "180px", md: "206px"},
-            height: {xs: "30px", sm: "38px", md: "48px"},
-            fontSize: {xs: "14px", md: "16px"},
-            fontWeight: {xs: 400, md: 600},
-            background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
-            boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
-            color: "#fff",
-          }}
-          onClick={() => setportfolioNumber(portfolioNumber + 6)}
-        >
-          View All Projects
-        </Button>
-      </Box>
+      <ImageMasonry />
+      
     </Box>
   );
 }

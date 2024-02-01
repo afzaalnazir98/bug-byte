@@ -26,7 +26,7 @@ export default function GameExperience() {
         data-aos="fade-down"
           variant="body1"
           sx={{
-            fontSize: "20px",
+            fontSize: "25px",
             fontWeight: 500,
             marginTop: "100px",
             letterSpacing: "0.4px",
@@ -40,7 +40,7 @@ export default function GameExperience() {
         data-aos="right-anime-rotate-fade"
           variant="h1"
           sx={{
-            fontSize: { xs: "26px", sm: "32px", md: "40px" },
+            fontSize: { xs: "26px", sm: "35px", md: "45px" },
             fontWeight: { xs: 500, sm: 700 },
             lineHeight: "41px",
             textTransform: "uppercase",

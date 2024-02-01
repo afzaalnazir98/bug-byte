@@ -40,7 +40,7 @@ export default function ProjectWithUs() {
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
         sx={{
-          background: "linear-gradient(91deg, #E95A29 6.55%, #F07325 98.79%)",
+          background: "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
           transform: "rotate(-1.545deg)",
           width: "calc(100% + 14px)",
           marginLeft: "-8px",

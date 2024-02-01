@@ -1,22 +1,33 @@
 "use client";
 
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../container";
-import {Box, Button, Tab, Tabs, Typography} from "@mui/material";
+import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
 import PortfolioData from "@/Mock/portfolio.json";
-import {portfolio} from "@/utils/types";
+import { portfolio } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const Portfolio: portfolio[] = PortfolioData;
 
-export default function ImageMasonry({
-  portfolioNumber,
-}: {
-  portfolioNumber: number;
-}) {
+export default function ImageMasonry() {
   const [activeTab, setActiveTab] = useState(0);
+  const [selectedValue, setSelectedValue] = useState("all");
+  const [filteredPortfolioLength, setFilteredPortfolioLength] = useState(0);
+  const [portfolioNumber, setportfolioNumber] = useState(6);
+
+  useEffect(() => {
+    const filteredPortfolio = Portfolio.filter(
+      (portfolio) =>
+        portfolio.categories.includes(selectedValue) || selectedValue === "all"
+    );
+    setFilteredPortfolioLength(filteredPortfolio.length);
+    setportfolioNumber(6);
+  }, [activeTab]);
+  const handleTabClick = (value: any) => {
+    setSelectedValue(value);
+  };
 
   const handleTabChange = (event: any, newValue: any) => {
     setActiveTab(newValue);
@@ -41,7 +52,7 @@ export default function ImageMasonry({
       <Box
         sx={{
           mt: "40px",
-          marginBottom: {xs: "30px", md: "50px", lg: "80px"},
+          marginBottom: { xs: "30px", md: "50px", lg: "80px" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -61,166 +72,231 @@ export default function ImageMasonry({
             "& .MuiTabs-indicator": indicatorStyles,
           }}
         >
-          <Tab sx={{...tabStyles}} label="All" />
-          <Tab sx={{...tabStyles, ml: 2}} label="Digital Twins" />
-          <Tab sx={{...tabStyles, ml: 2}} label="AR/VR" />
-          <Tab sx={{...tabStyles, ml: 2}} label="Unity Development" />
-          <Tab sx={{...tabStyles, ml: 2}} label="Metaverse" />
-          <Tab sx={{...tabStyles, ml: 2}} label="NFT" />
-          <Tab sx={{...tabStyles, ml: 2}} label="blockchain" />
+          <Tab
+            sx={{ ...tabStyles }}
+            label="All"
+            onClick={() => handleTabClick("all")}
+          />
+          <Tab
+            sx={{ ...tabStyles, ml: 2 }}
+            label="Digital Twins"
+            onClick={() => handleTabClick("digital-twins")}
+          />
+          <Tab
+            sx={{ ...tabStyles, ml: 2 }}
+            label="AR/VR"
+            onClick={() => handleTabClick("ar-vr")}
+          />
+          <Tab
+            sx={{ ...tabStyles, ml: 2 }}
+            label="Unity Development"
+            onClick={() => handleTabClick("unity")}
+          />
+          <Tab
+            sx={{ ...tabStyles, ml: 2 }}
+            label="Metaverse"
+            onClick={() => handleTabClick("metaverse")}
+          />
+          <Tab
+            sx={{ ...tabStyles, ml: 2 }}
+            label="NFT"
+            onClick={() => handleTabClick("nft")}
+          />
+          <Tab
+            sx={{ ...tabStyles, ml: 2 }}
+            label="Blockchain"
+            onClick={() => handleTabClick("blockchain")}
+          />
         </Tabs>
       </Box>
       <Box>
-        <ResponsiveMasonry columnsCountBreakPoints={{300: 1, 500: 2}}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 300: 1, 500: 2 }}>
           <Masonry gutter="20px">
-            {Portfolio.slice(0, portfolioNumber).map((item, index) => (
-              <Box
-                key={index}
-                sx={{
-                  position: "relative",
-                  overflowX: "hidden",
-                  // order: `${item.order} !important`,
-                  "&:hover": {
-                    ".hover-box": {
-                      visibility: "visible",
-                      opacity: 1,
-                      transition: "all 0.3s ease-in-out",
-                    },
-                  },
-                  "& .portfolio-image": {
-                    minHeight: "250px",
-                    "@media (max-width: 1100px)": {
-                      width: "100%",
-                      height: "auto",
-                    },
-                  },
-                }}
-              >
-                <Image
-                  className="portfolio-image"
-                  src={`${item.img}?w=162&auto=format`}
-                  alt="portfolio-item"
-                  loading="lazy"
-                  width={item.size.width}
-                  height={item.size.height}
-                  style={{
-                    borderBottomLeftRadius: 4,
-                    borderBottomRightRadius: 4,
-                    display: "block",
-                    width: "100%",
-                    backgroundSize: "cover",
-                  }}
-                />
+            {Portfolio.filter(
+              (portfolio) =>
+                portfolio.categories.includes(selectedValue) ||
+                selectedValue === "all"
+            )
+              .slice(0, portfolioNumber)
+              .map((item, index) => (
                 <Box
-                  className="hover-box"
+                  key={index}
                   sx={{
-                    visibility: "hidden",
-                    opacity: 0,
+                    position: "relative",
+                    overflowX: "hidden",
+                    "&:hover": {
+                      ".hover-box": {
+                        visibility: "visible",
+                        opacity: 1,
+                        transition: "all 0.3s ease-in-out",
+                      },
+                    },
+                    "& .portfolio-image": {
+                      minHeight: "250px",
+                      "@media (max-width: 1100px)": {
+                        width: "100%",
+                        height: "auto",
+                      },
+                    },
                   }}
                 >
-                  <Box
-                    sx={{
+                  <Image
+                    className="portfolio-image"
+                    src={item.img}
+                    alt="portfolio-item"
+                    loading="lazy"
+                    width={item.size.width}
+                    height={item.size.height}
+                    style={{
+                      borderBottomLeftRadius: 4,
+                      borderBottomRightRadius: 4,
+                      display: "block",
                       width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      position: "absolute",
-                      zIndex: 2,
-                      top: "0px",
+                      height:"auto",
+                      backgroundSize: "cover",
+                    }}
+                  />
+                  <Box
+                    className="hover-box"
+                    sx={{
+                      visibility: "hidden",
+                      opacity: 0,
                     }}
                   >
                     <Box
                       sx={{
-                        background:
-                          "linear-gradient(88deg, rgba(221, 44, 0, 0.7) -9.17%, rgba(255, 63, 0, 0.7) 67.35%, rgba(250, 157, 4, 0.7) 130.66%)",
-                        width: " 90%",
-                        height: "90%",
-                        display: "grid",
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
                         alignItems: "center",
+                        position: "absolute",
+                        zIndex: 2,
+                        top: "0px",
                       }}
                     >
                       <Box
                         sx={{
-                          textAlign: "center",
-                          margin: {sm: "0px 15px", md: "0px 30px"},
-                          opacity: 1,
+                          background:
+                            "linear-gradient(88deg, rgba(221, 44, 0, 0.7) -9.17%, rgba(255, 63, 0, 0.7) 67.35%, rgba(250, 157, 4, 0.7) 130.66%)",
+                          width: " 90%",
+                          height: "90%",
+                          display: "grid",
+                          alignItems: "center",
                         }}
                       >
-                        <Typography
+                        <Box
                           sx={{
-                            color: "#FFF",
-                            fontSize: {xs: "16px", md: "18px"},
-                            fontWeight: 600,
+                            textAlign: "center",
+                            margin: { sm: "0px 15px", md: "0px 30px" },
+                            opacity: 1,
                           }}
                         >
-                          {item.subHeading}
-                        </Typography>
-                        <Typography
-                          sx={{
-                            color: "#FFF",
-                            fontSize: {xs: "40px", md: "55px"},
-                            fontWeight: 600,
-                            textTransform: "capitalize",
-                            marginTop: "5px",
-                            lineHeight: {xs: "1", md: "1.5"},
-                          }}
-                        >
-                          {item.heading}
-                        </Typography>
-                        <Typography
-                          sx={{
-                            color: "#FFF",
-                            fontSize: {xs: "14px", sm: "16px", md: "18px"},
-                            fontWeight: 500,
-                            lineHeight: {sm: "1.2", md: "1.5"},
-                            textTransform: "capitalize",
-                            marginTop: {sm: "6px", md: "10px"},
-                          }}
-                        >
-                          {item.description}
-                        </Typography>
-                        <Box component={Link} href={`portfolio/${item.link}`}>
-                          <Button
+                          <Typography
                             sx={{
-                              marginTop: {xs: "10px", sm: "12px", md: "30px"},
-                              padding: {
-                                xs: "8px 20px",
-                                sm: "10px 30px",
-                                md: "16px 42px",
-                              },
-                              borderRadius: "5px",
-                              backgroundColor: "white",
-                              fontSize: {xs: "18px", md: "24px"},
+                              color: "#FFF",
+                              fontSize: { xs: "16px", md: "18px" },
                               fontWeight: 600,
-                              textTransform: "capitalize",
-                              color: "#F04B12",
-                              whiteSpace: "nowrap",
-                              maxWidth: "fit-content",
-                              "&:hover": {
-                                backgroundColor: "white",
-                                padding: {
-                                  xs: "10px 25px",
-                                  sm: "16px 42px",
-                                  lg: "17px 46px",
-                                },
-                                fontSize: {xs: "20px", md: "26px"},
-                                transition: "all .3s ease-in-out",
-                                whiteSpace: "nowrap",
-                              },
                             }}
                           >
-                            View Details
-                          </Button>
+                            {item.subHeading}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              color: "#FFF",
+                              fontSize: { xs: "40px", md: "55px" },
+                              fontWeight: 600,
+                              textTransform: "capitalize",
+                              marginTop: "5px",
+                              lineHeight: { xs: "1", md: "1.5" },
+                            }}
+                          >
+                            {item.heading}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              color: "#FFF",
+                              fontSize: { xs: "14px", sm: "16px", md: "18px" },
+                              fontWeight: 500,
+                              lineHeight: { sm: "1.2", md: "1.5" },
+                              textTransform: "capitalize",
+                              marginTop: { sm: "6px", md: "10px" },
+                            }}
+                          >
+                            {item.description}
+                          </Typography>
+                          <Box component={Link} href={`portfolio/${item.link}`}>
+                            <Button
+                              sx={{
+                                marginTop: {
+                                  xs: "10px",
+                                  sm: "12px",
+                                  md: "30px",
+                                },
+                                padding: {
+                                  xs: "8px 20px",
+                                  sm: "10px 30px",
+                                  md: "16px 42px",
+                                },
+                                borderRadius: "5px",
+                                backgroundColor: "white",
+                                fontSize: { xs: "18px", md: "24px" },
+                                fontWeight: 600,
+                                textTransform: "capitalize",
+                                color: "#F04B12",
+                                whiteSpace: "nowrap",
+                                maxWidth: "fit-content",
+                                "&:hover": {
+                                  backgroundColor: "white",
+                                  padding: {
+                                    xs: "10px 25px",
+                                    sm: "16px 42px",
+                                    lg: "17px 46px",
+                                  },
+                                  fontSize: { xs: "20px", md: "26px" },
+                                  transition: "all .3s ease-in-out",
+                                  whiteSpace: "nowrap",
+                                },
+                              }}
+                            >
+                              View Details
+                            </Button>
+                          </Box>
                         </Box>
                       </Box>
                     </Box>
                   </Box>
                 </Box>
-              </Box>
-            ))}
+              ))}
           </Masonry>
         </ResponsiveMasonry>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
+        <Button
+          sx={{
+            display: filteredPortfolioLength > 6 ? "block" : "none",
+            position: "relative",
+            marginTop: "40px",
+            borderRadius: "6px",
+            width: { xs: "150px", sm: "180px", md: "206px" },
+            height: { xs: "30px", sm: "38px", md: "48px" },
+            fontSize: { xs: "14px", md: "16px" },
+            fontWeight: { xs: 400, md: 600 },
+            background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
+            boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
+            color: "#fff",
+          }}
+          onClick={() => setportfolioNumber(portfolioNumber + 6)}
+        >
+          View All Projects
+        </Button>
       </Box>
     </Container>
   );

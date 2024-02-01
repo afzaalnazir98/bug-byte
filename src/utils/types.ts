@@ -97,6 +97,7 @@ interface progressData {
 }
 
 interface portfolio {
+  categories: string[],
   subHeading: string;
   heading: string;
   description: string;

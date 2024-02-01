@@ -12,9 +12,9 @@ import FooterData from "../Mock/FooterData.json";
 import {FooterSection} from "@/utils/types";
 
 export const metadata = {
-  title: "BUGG BYTE",
+  title: "bugg byte studios",
   description:
-    "Reinventing the way of developing games, we aim to Develop the most master-peaced Games available on the market.",
+    "BuggBytes Studio is your gaming hub for Unity, Unreal, AR, VR, Metaverse, Blockchain, NFTs, and Virtual Real Estate. Experience the next level of fun with our console gaming creations – where innovation meets playtime excitement!",
 };
 
 const footerData: FooterSection[] = FooterData;

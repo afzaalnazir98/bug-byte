@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "center", 
             flexDirection: { xs: "column", md: "row" },
             gap: { xs: "30px", md: "20px" },
           }}
@@ -29,6 +29,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
             sx={{
               flex: "30%",
               display: "flex",
+              marginTop:"25px",
               justifyContent: { xs: "center", md: "start" },
             }}
           >
@@ -36,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "20px",
+                gap: "40px",
                 maxWidth: "330px",
                 justifyContent: "start",
                 textAlign: { xs: "center", md: "left" },
@@ -120,7 +121,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                         {data.socialMedia && (
                           <Box
                             sx={{
-                              marginTop: "20px",
+                              marginTop: "40px",
                               marginLeft: { xs: "10px", sm: "-6px" },
                             }}
                           >

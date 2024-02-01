@@ -118,6 +118,15 @@ const Navbar = () => {
               sx={{
                 width: "auto",
                 p: 0,
+                "& .list-item-text:hover": {
+                  backgroundImage:
+                    "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                marginBottom:"10px",
+                transition: "marginBottom 2s",
+                },
               }}
             >
               <ListItemButton
@@ -128,15 +137,14 @@ const Navbar = () => {
                 }}
               >
                 <ListItemText
+                className="list-item-text"
                   primary={text}
                   sx={{
                     color: "#EAEAEA",
                     fontSize: "18px",
                     fontWeight: "400",
                     borderBottom: "1px solid transparent",
-                    "&:hover": {
-                      borderBottom: "1px solid white",
-                    },
+                    
                   }}
                 />
               </ListItemButton>
