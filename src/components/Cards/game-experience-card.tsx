@@ -55,7 +55,7 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
             width: "100%",
             borderRadius: "9.373px 9.373px 0px 0px",
           }}
-          image="/assets/images/card1.png"
+          image={gameExperience.imgUrl}
           component="img"
           loading="lazy"
           title="card-image"
@@ -103,13 +103,10 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
           >
             {gameExperience.description}
           </Typography>
-          <Box
-            component={Link}
-            href={gameExperience.btnLink}
-          >
+          <Box component={Link} href={gameExperience.btnLink}>
             <Button
-            component={motion.div}
-            variants={buttonMotion}
+              component={motion.div}
+              variants={buttonMotion}
               sx={{
                 borderRadius: "6px",
                 mt: { xs: 1, sm: 2 },

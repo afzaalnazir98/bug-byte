@@ -18,7 +18,7 @@ const arrowMotion = {
   },
   hover: {
     opacity: 1,
-    x: '90%',
+    x: "90%",
     transition: { type: "spring", stiffness: 300, damping: 20 },
   },
 };
@@ -45,9 +45,9 @@ const NextLevelServicesProvider = () => {
         }}
       >
         <Box
-        data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="500"
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="500"
           sx={{
             textAlign: "center",
             p: "90px 0 60px 0",
@@ -66,9 +66,9 @@ const NextLevelServicesProvider = () => {
             WE PROVIDE
           </Typography>
           <Typography
-        data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="200"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="200"
             variant="h3"
             sx={{
               fontSize: "48px",
@@ -175,7 +175,7 @@ const NextLevelServicesProvider = () => {
                         color: "#FFF",
                         display: "block",
                         fontSize: "16px",
-                        fontWeight: 700,
+                        fontWeight: 600,
                         lineHeight: "normal",
                         textTransform: "capitalize",
                         p: 0,
@@ -195,22 +195,28 @@ const NextLevelServicesProvider = () => {
                         <Typography className="service-title" variant="body1">
                           {service?.title}
                         </Typography>
-                        <Box sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                        }}>
                         <Box
-                          component={Link}
-                          href={service?.buttonLink ?? "/"}
-                          className="service-link"
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                          }}
                         >
-                          {service?.buttonText}
-                        </Box>
-                        <Box sx={{ display: "inline-block", margin: "7px 0px 0px 6px" }}>
+                          <Box
+                            component={Link}
+                            href={service?.buttonLink ?? "/"}
+                            className="service-link"
+                          >
+                            {service?.buttonText}
+                          </Box>
+                          <Box
+                            sx={{
+                              display: "inline-block",
+                              margin: "7px 0px 0px 6px",
+                            }}
+                          >
                             <ArrowForwardIcon />
                           </Box>
                         </Box>
-                        
                       </Box>
                     </Box>
                     <Box
@@ -237,27 +243,32 @@ const NextLevelServicesProvider = () => {
                         >
                           {service?.description}
                         </Typography>
-                        <Box sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          width:'100%'
-                        }}>
-                          <Box
-                          component={Link}
-                          href={service?.buttonLink ?? "/"}
-                          className="service-link"
-                          >
-                          {service?.buttonText}
-                        </Box>
                         <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            width: "100%",
+                          }}
+                        >
+                          <Box
+                            component={Link}
+                            href={service?.buttonLink ?? "/"}
+                            className="service-link"
+                          >
+                            {service?.buttonText}
+                          </Box>
+                          <Box
                             component={motion.div}
-                            sx={{ display: "inline-block", margin: "7px 0px 0px 6px" ,flexGrow:2}}
+                            sx={{
+                              display: "inline-block",
+                              margin: "7px 0px 0px 6px",
+                              flexGrow: 2,
+                            }}
                             variants={arrowMotion}
                           >
                             <ArrowForwardIcon />
                           </Box>
                         </Box>
-                        
                       </Box>
                     </Box>
                   </Box>

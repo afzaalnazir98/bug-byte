@@ -24,7 +24,7 @@ export default function ImageMasonry() {
     );
     setFilteredPortfolioLength(filteredPortfolio.length);
     setportfolioNumber(6);
-  }, [activeTab]);
+  }, [activeTab, selectedValue]);
   const handleTabClick = (value: any) => {
     setSelectedValue(value);
   };

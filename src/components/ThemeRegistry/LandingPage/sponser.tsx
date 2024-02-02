@@ -10,6 +10,7 @@ import Logo5 from "@/public/assets/social-media-icons/sponser5.png";
 import Logo6 from "@/public/assets/social-media-icons/sponser6.png";
 import Logo7 from "@/public/assets/social-media-icons/sponser7.png";
 import Star from "@/public/assets/social-media-icons/star.svg";
+import WhiteStar from "@/public/assets/social-media-icons/white-star.svg";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
@@ -24,7 +25,10 @@ export default function Sponsor() {
   };
 
   const textToReverse = "BUGG BYTE STUDIO";
-  const reflectedText = textToReverse.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+  const reflectedText = textToReverse
+    .split(" ")
+    .map((word) => word.split("").reverse().join(""))
+    .join(" ");
 
   return (
     <>
@@ -176,7 +180,12 @@ export default function Sponsor() {
                       >
                         BUGG BYTE STUDIO
                       </Typography>
-                      <Image src={Star.src} alt="star" width={38} height={38} />
+                      <Image
+                        src={WhiteStar.src}
+                        alt="star"
+                        width={38}
+                        height={38}
+                      />
                       <Typography
                         sx={{
                           color: "#EAEAEA",
@@ -222,7 +231,7 @@ export default function Sponsor() {
                 margin: "auto",
               }}
             >
-              <Marquee direction="right"> 
+              <Marquee>
                 <Box
                   sx={{
                     display: "inline-block",
@@ -249,7 +258,6 @@ export default function Sponsor() {
                         },
                         fontWeight: 600,
                         letterSpacing: "10.8px",
-                        
                       }}
                     >
                       {reflectedText}
@@ -268,7 +276,7 @@ export default function Sponsor() {
                         letterSpacing: "10.8px",
                       }}
                     >
-                       {reflectedText}
+                      {reflectedText}
                     </Typography>
                   </Box>
                 </Box>

@@ -83,6 +83,7 @@ export default function HeroSection(items: hero) {
             sx={{
               fontSize: { xs: "20px", sm: "28px" },
               fontWeight: { xs: 300, sm: 400 },
+              margin: 0,
               color: "white",
             }}
           >
@@ -95,7 +96,7 @@ export default function HeroSection(items: hero) {
               fontSize: { xs: "50px", sm: "60px", md: "64px", lg: "74px" },
               fontWeight: { xs: 600, sm: 700 },
               m: 0,
-              marginTop: "15px",
+              marginTop: "22px",
               textTransform: "capitalize",
               lineHeight: { xs: "1", lg: "1.16" },
               background:
@@ -112,6 +113,7 @@ export default function HeroSection(items: hero) {
             sx={{
               fontSize: { xs: "18px", sm: "20px", md: "22px", lg: "24px" },
               fontWeight: { xs: 300, sm: 400 },
+              mt: "15px",
               color: "#fff",
             }}
           >
@@ -150,10 +152,10 @@ export default function HeroSection(items: hero) {
           }}
         >
           <Box
-          component={motion.div}
-          variants={imageVariants}
-          initial="initial"
-          animate="animate"
+            component={motion.div}
+            variants={imageVariants}
+            initial="initial"
+            animate="animate"
             sx={{
               maxWidth: "550px",
               height: "100%",

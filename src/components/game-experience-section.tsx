@@ -4,6 +4,7 @@ import * as React from "react";
 import Typography from "@mui/material/Typography";
 import { Box, Button } from "@mui/material";
 import GameSlider from "@/components/Sliders/geme-experience-slider";
+import { motion } from "framer-motion";
 
 export default function GameExperience() {
   return (
@@ -23,7 +24,7 @@ export default function GameExperience() {
         }}
       >
         <Typography
-        data-aos="fade-down"
+          data-aos="fade-down"
           variant="body1"
           sx={{
             fontSize: "25px",
@@ -37,7 +38,7 @@ export default function GameExperience() {
           Crafting Unforgettable Gaming Experiences
         </Typography>
         <Typography
-        data-aos="right-anime-rotate-fade"
+          data-aos="right-anime-rotate-fade"
           variant="h1"
           sx={{
             fontSize: { xs: "26px", sm: "35px", md: "45px" },
@@ -56,12 +57,17 @@ export default function GameExperience() {
       </Box>
       <GameSlider />
       <Box
+        component={motion.a}
+        whileHover={{ scale: 1.1, y: -10 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        href="/portfolio"
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
           p: "0px 0 70px",
+          textDecoration: "none",
         }}
       >
         <Button

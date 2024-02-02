@@ -2,11 +2,7 @@ import { ReactNode } from "react";
 import { Box } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-export default function TimelineWrapper({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function TimelineWrapper({ children }: { children: ReactNode }) {
   const matchelg = useMediaQuery("(max-width:1280px)");
   const matchemd = useMediaQuery("(max-width:1180px)");
   const matcheTimeLine = useMediaQuery("(max-width:1028px)");
@@ -65,7 +61,7 @@ export default function TimelineWrapper({
           fontSize: matchemd ? "30px" : "40px",
           fontWeight: 600,
           backgroundImage:
-            " linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+            " linear-gradient(325deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
           textTransform: "uppercase",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -73,7 +69,7 @@ export default function TimelineWrapper({
         "& .card-content-wrapper.left header> h2  ": {
           textAlign: "right",
           backgroundImage:
-            " linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+            " linear-gradient(325deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
           textTransform: "uppercase",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -82,7 +78,9 @@ export default function TimelineWrapper({
           marginTop: "20px",
           marginLeft: "-9px",
         },
-
+        "& .left .card-description ": {
+          textAlign: "end",
+        },
         "& .card-content-wrapper.right > .rc-card": {
           minHeight: "fit-content",
           backgroundColor: "transparent",
@@ -98,7 +96,7 @@ export default function TimelineWrapper({
           WebkitTextFillColor: "transparent",
           marginLeft: "10px",
         },
-        "& .card-content-wrapper.right header> h2  ": {
+        "& .card-content-wrapper.right header> h2 ": {
           backgroundImage:
             " linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
           textTransform: "uppercase",

@@ -1,18 +1,17 @@
 "use client";
 
-import * as React from "react";
-import {Typography, Box} from "@mui/material";
+import React from "react";
+import { Typography, Box } from "@mui/material";
 import callSvg from "@/public/assets/images/call.svg";
 import magBoxSvg from "@/public/assets/images/message.svg";
 import Image from "next/image";
 import Container from "./container";
-
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
 const ContactForm = dynamic(() => import("./forms/contact-form"), {
-  ssr: false
-}) ;
+  ssr: false,
+});
 
 export default function QuestionForm() {
   return (
@@ -38,16 +37,16 @@ export default function QuestionForm() {
           <Box
             sx={{
               display: "flex",
-              flexDirection: {xs: "column", lg: "row"},
-              justifyContent: {xs: "center", lg: "space-between"},
+              flexDirection: { xs: "column", lg: "row" },
+              justifyContent: { xs: "center", lg: "space-between" },
               alignItems: "center",
-              gap: {xs: "3rem 0px", sm: "5rem 0px", md: "8rem 0px", lg: "0"},
+              gap: { xs: "3rem 0px", sm: "5rem 0px", md: "8rem 0px", lg: "0" },
             }}
           >
             <Box
               data-aos="fade-right"
               sx={{
-                paddingLeft: {xs: "15px", md: "30px", lg: "60px"},
+                paddingLeft: { xs: "15px", md: "30px", lg: "60px" },
                 alignSelf: "center",
               }}
             >
@@ -74,7 +73,9 @@ export default function QuestionForm() {
                     fontSize: "42px",
                     fontWeight: 700,
                     textTransform: "uppercase",
-                    marginTop: "15px",
+                    marginTop: "14px",
+                    letterSpacing: "0.84",
+                    lineHeight: "85%",
                   }}
                 >
                   We&apos;d Love To Hear From You
@@ -106,13 +107,13 @@ export default function QuestionForm() {
                   }}
                 >
                   <Box
-                  component={Link}
-                  href={"tel:+971542990227"}
+                    component={Link}
+                    href={"tel:+971542990227"}
                     sx={{
                       display: "flex",
                       gap: "10px",
                       alignItems: "center",
-                      textDecoration:"none"
+                      textDecoration: "none",
                     }}
                   >
                     <Image
@@ -138,8 +139,8 @@ export default function QuestionForm() {
                       display: "flex",
                       gap: "10px",
                       alignItems: "center",
-                      marginTop: "23px",
-                      textDecoration:"none"
+                      marginTop: "30px",
+                      textDecoration: "none",
                     }}
                   >
                     <Image

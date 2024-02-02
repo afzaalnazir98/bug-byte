@@ -72,7 +72,7 @@ export default function Company() {
               <Typography
                 sx={{
                   color: "rgba(0, 0, 0, 0.05)",
-                  fontSize: { xs: "40px", sm: "60px", md: "80px", xl: "100px" },
+                  fontSize: { xs: "40px", sm: "60px", md: "80px", lg: "100px" },
                   fontWeight: 600,
                   lineHeight: {
                     xs: "1.5",

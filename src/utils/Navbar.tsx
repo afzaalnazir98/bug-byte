@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import AppBar from "@mui/material/AppBar";
@@ -11,18 +11,18 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
-import {styled, useTheme} from "@mui/material";
+import { styled, useTheme } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import {useMediaQuery} from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const LINKS = [
-  {text: "About us", href: "/about-us"},
-  {text: "Services", href: "/services"},
-  {text: "Portfolio", href: "/portfolio"},
-  {text: "Contact Us", href: "/contact-us"},
+  { text: "About us", href: "/about-us" },
+  { text: "Services", href: "/services" },
+  { text: "Portfolio", href: "/portfolio" },
+  { text: "Contact Us", href: "/contact-us" },
 ];
 
 const Navbar = () => {
@@ -82,7 +82,7 @@ const Navbar = () => {
           },
         }}
       >
-        <Box sx={{display: "flex", alignItems: "center"}}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box component={Link} href={"/"}>
             <Image
               priority={true}
@@ -94,7 +94,7 @@ const Navbar = () => {
             />
           </Box>
         </Box>
-        <Box sx={{display: {xs: "block", md: "none"}}}>
+        <Box sx={{ display: { xs: "block", md: "none" } }}>
           <IconButton
             onClick={toggleDrawer}
             edge="start"
@@ -107,26 +107,17 @@ const Navbar = () => {
         </Box>
         <Box
           sx={{
-            display: {xs: "none", md: "flex"},
+            display: { xs: "none", md: "flex" },
             alignItems: "center",
             gap: "55px",
           }}
         >
-          {LINKS.map(({text, href}, index) => (
+          {LINKS.map(({ text, href }, index) => (
             <ListItem
               key={index}
               sx={{
                 width: "auto",
                 p: 0,
-                "& .list-item-text:hover": {
-                  backgroundImage:
-                    "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                marginBottom:"10px",
-                transition: "marginBottom 2s",
-                },
               }}
             >
               <ListItemButton
@@ -134,17 +125,25 @@ const Navbar = () => {
                 href={href}
                 sx={{
                   p: 0,
+                  "& span:hover": {
+                    backgroundImage:
+                      "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    marginBottom: "8px",
+                    transition: "0.3 all",
+                  },
                 }}
               >
                 <ListItemText
-                className="list-item-text"
+                  className="list-item-text"
                   primary={text}
                   sx={{
                     color: "#EAEAEA",
-                    fontSize: "18px",
-                    fontWeight: "400",
-                    borderBottom: "1px solid transparent",
-                    
+                    "& span": {
+                      fontSize: "20px",
+                    },
                   }}
                 />
               </ListItemButton>
@@ -165,7 +164,7 @@ const Navbar = () => {
             fontWeight: matchesSM ? 200 : 400,
             marginLeft: 2,
             ml: matchesMd ? "-7px" : 0,
-            display: {xs: "none", md: "flex"},
+            display: { xs: "none", md: "flex" },
             borderRadius: "6px",
             background:
               "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
@@ -183,7 +182,7 @@ const Navbar = () => {
         </Button>
       </NavToolbar>
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer}>
-        <Box sx={{width: "100%"}}>
+        <Box sx={{ width: "100%" }}>
           <Box
             sx={{
               textAlign: "right",
@@ -198,7 +197,7 @@ const Navbar = () => {
               onClick={toggleDrawer}
             />
           </Box>
-          {LINKS.map(({text, href}) => (
+          {LINKS.map(({ text, href }) => (
             <ListItem key={href}>
               <ListItemButton
                 component={Link}

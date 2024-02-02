@@ -15,10 +15,10 @@
         {"text": "Game Development", "url": "/game-development"},
         {"text": "Game Design", "url": "/game-design"},
         {"text": "Blockchain", "url": "/blockchain-games"},
-        {"text": "VR", "url": "/vr-development"},
-        {"text": "AR", "url": "/ar-development"},
         {"text": "NFT And Metaverse", "url": "/nft-metaverse"},
-        {"text": "virtual Experience", "url": "/virtual-experience"}
+        {"text": "virtual Experience", "url": "/virtual-experience"},
+        {"text": "VR", "url": "/vr-development"},
+        {"text": "AR", "url": "/ar-development"}
       ]
     },
     {

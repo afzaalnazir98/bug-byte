@@ -1,4 +1,3 @@
-
 import * as React from "react";
 
 export interface VerticalTimelineProps {
@@ -43,6 +42,7 @@ interface GameExperience {
   description: string;
   btnLink: string;
   btnTitle: string;
+  imgUrl: string;
 }
 
 interface ServiceDetail {
@@ -51,7 +51,7 @@ interface ServiceDetail {
   description: string;
   buttonLink: string;
   buttonText: string;
-  order?:number;
+  order?: number;
 }
 interface OtherProjectsDetail {
   category?: string;
@@ -71,7 +71,6 @@ type ProjectLifecycleItem = {
   phase: string;
   description: string;
 };
-
 
 interface FooterProps {
   footerData: {
@@ -97,7 +96,7 @@ interface progressData {
 }
 
 interface portfolio {
-  categories: string[],
+  categories: string[];
   subHeading: string;
   heading: string;
   description: string;
@@ -126,17 +125,17 @@ interface slide {
 }
 
 interface hero {
-  title: string;
   text?: string | undefined;
+  title: string;
   des: string;
   image?: string | undefined;
   buttonText?: string | undefined;
   btnLink?: string;
 }
 interface TimeLineType {
-  cardTitle: string,
-  cardSubtitle: string,
-  cardDetailedText: string
+  cardTitle: string;
+  cardSubtitle: string;
+  cardDetailedText: string;
 }
 
 interface gameArt {
@@ -189,7 +188,7 @@ interface projectInfo {
     appleStore?: boolean;
     playStore?: boolean;
   };
-};
+}
 
 export type {
   GameExperience,
@@ -208,5 +207,5 @@ export type {
   gameArt,
   projectInfo,
   ProjectLifecycleItem,
-  CircleItem
+  CircleItem,
 };

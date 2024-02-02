@@ -1,17 +1,81 @@
 [
     {
-      "title": "Super Jumper 3D Runs",
+      "title": "AR BAZAAR",
       "tags": ["Adventure", "Mobile", "Action RPG"],
-      "description": "Jump into the fun with 'Super Jumper 3D Runs,' a cool mobile adventure game! Explore 3D worlds, take on exciting challenges, and enjoy the thrill wherever you go. It's gaming excitement made easy!",
+      "description": "Immerse yourself in a world where products come to life before your eyes",
       "btnLink": "/",
-      "btnTitle": "View Details"
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-ar-bazar.png"
     },
     {
-      "title": "Angry Ted War Sold",
+      "title": "TINY TITANS",
       "tags": ["Adventure", "Mobile", "Action RPG"],
-      "description": "Get ready for super fun with Angry Ted War Sold! It's an awesome mobile game where you go on cool adventures and have big battles. Join Angry Ted now and let the excitement begin!",
+      "description": "Tiny Titans – AFK Auto Battles is a Role Playing game Clash steel with players from all around the world.",
       "btnLink": "/",
-      "btnTitle": "View Details"
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-mall.png"
+    },{
+      "title": "JASMINE GRAND MALL",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "Tiny Titans – AFK Auto Battles is a Role Playing game Clash steel with players from all around the world.",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-central-mall.png"
+    },
+    {
+      "title": "AR ESTATE",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "The largest shopping mall in Bahria Town Lahore.",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-ar-estate.png"
+    },
+    {
+      "title": "Q HIGH STREET",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "Every corner of this one million-wide modern street is the fusion of contemporary and neoclassical design",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-qstreet.png"
+    },
+    {
+      "title": "HEART CLASSIC CARD GAME",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "Every corner of this one million-wide modern street is the fusion of contemporary and neoclassical design",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-heart.png"
+    },
+    {
+      "title": "DARK TAVERNS",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "Dark Taverns is an open-world MMORPG set in a unique fantasy world filled with hidden secrets and magic.",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-dark-tarvens.png"
+    },
+    {
+      "title": "PIXEL DEBATES",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "Pixel Debates is an online multiplayer game in which players engage in debate matches against each other.",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/aboutus-header-img.png"
+    },
+    {
+      "title": "Q-CENTRAL MALL",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "Bahria Orchard and South Lahore's very first skyscraper.",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-central-mall.png"
+    },{
+      "title": "RIFTERS.IO",
+      "tags": ["Adventure", "Mobile", "Action RPG"],
+      "description": "Rifters is the first ever MOCERPG - Massive Online Community Event Role Playing Game",
+      "btnLink": "/",
+      "btnTitle": "View Details",
+      "imgUrl":"/assets/images/game-card-rifter.png"
     }
   ]
   
