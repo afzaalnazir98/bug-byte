@@ -103,6 +103,7 @@ export default function GameExperienceSlider() {
                 ...tabStyles,
                 "& .Mui-selected": activeTabStyles,
                 "& .MuiTabs-indicator": indicatorStyles,
+                borderBottom: "2px solid #DADADA",
               }}
             >
               <Tab sx={{ ...tabStyles }} label="All" />

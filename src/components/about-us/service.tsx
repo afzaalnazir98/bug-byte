@@ -7,7 +7,6 @@ const Title = styled(Typography)({
   backgroundImage:
     "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
   fontWeight: 700,
-  margin: "15px 0px",
   lineHeight: "30px",
   letterSpacing: "0.8px",
   textTransform: "uppercase",
@@ -25,7 +24,7 @@ export default function Service() {
             display: "flex",
             justifyContent: "center",
             flexDirection: matches ? "row" : "column",
-            gap: "4rem",
+            gap: { md: "2rem", lg: "4rem" },
             padding: { xs: "40px 0px", md: "60px 0px", lg: "90px 0px" },
             alignItems: "center",
           }}
@@ -62,6 +61,7 @@ export default function Service() {
               flex: "60%",
               display: "grid",
               alignContent: "center",
+              marginTop: { xs: "20px", sm: "auto" },
             }}
           >
             <Box>
@@ -71,7 +71,7 @@ export default function Service() {
                   fontSize: "30px",
                   fontWeight: 400,
                   textTransform: "uppercase",
-                  textAlign: { xs: "center", lg: "left" },
+                  textAlign: { xs: "center", sm: "left" },
                 }}
               >
                 Our Services
@@ -79,7 +79,8 @@ export default function Service() {
               <Title
                 sx={{
                   fontSize: { xs: "20px", sm: "30px", lg: "40px" },
-                  textAlign: { xs: "center", lg: "left" },
+                  textAlign: { xs: "center", sm: "left" },
+                  margin: { xs: "8px 0px", lg: "15px 0px" },
                 }}
               >
                 What we are serving?
@@ -88,14 +89,14 @@ export default function Service() {
             <Box
               sx={{
                 display: "grid",
-                gap: { xs: "40px", lg: "74px" },
-                marginTop: { xs: "20px", lg: "50px" },
+                gap: { xs: "40px", sm: "40px", md: "30px", lg: "74px" },
+                marginTop: { xs: "20px", sm: "10px", lg: "50px" },
               }}
             >
               <Box
                 sx={{
                   display: "flex",
-                  gap: { xs: "60px", lg: "80px" },
+                  gap: { xs: "50px", lg: "80px" },
                   flexDirection: { xs: "column", sm: "row" },
                 }}
               >
@@ -119,7 +120,7 @@ export default function Service() {
                       textTransform: "capitalize",
                     }}
                   >
-                    Year
+                    7+ Years{" "}
                     <Typography
                       sx={{
                         display: "inline",
@@ -145,8 +146,8 @@ export default function Service() {
                       fontWeight: 400,
                     }}
                   >
-                    Explore our world of experience! We&apos;re the best in creating
-                    3D games, Avatar experiences, and AR/VR wonders.
+                    Explore our world of experience! We&apos;re the best in
+                    creating 3D games, Avatar experiences, and AR/VR wonders.
                   </Typography>
                 </Box>
 
@@ -204,7 +205,7 @@ export default function Service() {
               <Box
                 sx={{
                   display: "flex",
-                  gap: { xs: "60px", lg: "80px" },
+                  gap: { xs: "50px", lg: "80px" },
                   flexDirection: { xs: "column", sm: "row" },
                 }}
               >
@@ -306,8 +307,8 @@ export default function Service() {
                     }}
                   >
                     You are at the center of our world! Our client-centric
-                    approach revolves around your satisfaction, whether you&apos;re
-                    diving into the Metaverse with excitement.
+                    approach revolves around your satisfaction, whether
+                    you&apos;re diving into the Metaverse with excitement.
                   </Typography>
                 </Box>
               </Box>

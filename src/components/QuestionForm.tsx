@@ -125,7 +125,7 @@ export default function QuestionForm() {
                     <Typography
                       sx={{
                         color: "#06111C",
-                        fontSize: "18px",
+                        fontSize: { xs: "15px", sm: "18px" },
                         fontWeight: 600,
                       }}
                     >
@@ -152,7 +152,7 @@ export default function QuestionForm() {
                     <Typography
                       sx={{
                         color: "#06111C",
-                        fontSize: "18px",
+                        fontSize: { xs: "15px", sm: "18px" },
                         fontWeight: 600,
                       }}
                     >

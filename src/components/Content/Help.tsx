@@ -9,7 +9,6 @@ import Container from "@/components/container";
 import { motion } from "framer-motion";
 
 export default function Help() {
-
   const HelpSection = styled(Box)({
     backgroundColor: "#F5F5F5",
     position: "relative",
@@ -56,7 +55,7 @@ export default function Help() {
       }}
     >
       <Cover
-      data-aos-once="true"
+        data-aos-once="true"
         data-aos="right-left-anime"
         data-aos-duration="3000"
         sx={{
@@ -75,7 +74,7 @@ export default function Help() {
           }}
         >
           <Box
-          data-aos-once="true"
+            data-aos-once="true"
             data-aos="right-anime-fast"
             data-aos-duration="1500"
             sx={{
@@ -104,11 +103,11 @@ export default function Help() {
               flexDirection: "column",
               alignSelf: "center",
               gap: { xs: "15px", lg: "17px" },
-              maxWidth: "548px",
+              maxWidth: "550px",
             }}
           >
             <SubTitle
-            data-aos-once="true"
+              data-aos-once="true"
               data-aos-delay="500"
               data-aos-duration="800"
               data-aos="left-anime-slow"
@@ -141,16 +140,17 @@ export default function Help() {
                 color: "#071421",
               }}
             >
-              Welcome to Buggbyte Studios! We create fun games using Unity and Unreal Engine. Have you ever heard of the Metaverse? It&apos;s a virtual world where our games come to life, and you can join in using AR and VR technology, which makes the experience even cooler. Your in-game items are extra special because of Blockchain and NFTs. They&apos;re like your own personal treasures! At Buggbyte Studios, we strive to make gaming easy, exciting, and filled with joy. Are you ready to play?
+              Welcome to Buggbyte Studios! We create fun games using Unity and
+              Unreal Engine. Have you ever heard of the Metaverse?
             </Description>
             <Box
               data-aos="fade-down-right"
               data-aos-offset="200"
               data-aos-duration="600"
               component={Link}
-              sx={{ 
-                maxWidth:"fit-content",
-                textDecoration:"none"
+              sx={{
+                maxWidth: "fit-content",
+                textDecoration: "none",
               }}
               href="/"
             >

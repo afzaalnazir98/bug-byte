@@ -63,8 +63,6 @@ export default function ContactForm() {
         }}
       ></Box>
       <Box
-        data-aos-delay="500"
-        data-aos-duration="300"
         data-aos="fade-up"
         sx={{
           position: "relative",

@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -120,19 +119,21 @@ const Navbar = () => {
                 p: 0,
               }}
             >
-              <ListItemButton
+              <Box
                 component={Link}
                 href={href}
                 sx={{
                   p: 0,
+                  textDecoration: "none !important",
                   "& span:hover": {
                     backgroundImage:
                       "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
+                    textDecoration: "none",
                     marginBottom: "8px",
-                    transition: "0.3 all",
+                    transition: "0.3s all",
                   },
                 }}
               >
@@ -146,7 +147,7 @@ const Navbar = () => {
                     },
                   }}
                 />
-              </ListItemButton>
+              </Box>
             </ListItem>
           ))}
         </Box>

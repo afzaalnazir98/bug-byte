@@ -3,18 +3,18 @@
     "text": "Get In Touch",
     "title": "Contact Us",
     "des": "Please fill out the form and let us know about your concerns.We will try our best to provide optimized solutions.",
-    "image": "/assets/images/contact-agent.png"
+    "image": "/assets/images/contact-us-hero.png"
   },
   {
     "title": "About US",
     "des": "your journey into the digital realm starts here!",
-    "image": "/assets/images/aboutus-header-img.png"
+    "image": "/assets/images/about-us-hero.png"
   },
   {
     "text": "Explore",
     "title": "Our Services",
     "des": "Our services combine smart ideas with creative  fun – that's what makes Buggbyte Studios unique!",
-    "image": "/assets/images/services-header-img.png"
+    "image": "/assets/images/our-services-hero.png"
   },
   {
     "text": "Explore",
@@ -33,13 +33,13 @@
     "text": "Explore",
     "title": "AR Development",
     "des": "Here it is AR dev",
-    "image": "/assets/images/ar-dev.png"
+    "image": "/assets/images/ar-development-hero.png"
   },
   {
     "text": "Explore",
     "title": "Blockchain Games",
     "des": "Beyond Transactions: Your Premier Partner in Blockchain Development!",
-    "image": "/assets/images/bc-games.png"
+    "image": "/assets/images/blockchain-development-hero.png"
   },
   {
     "text": "Explore",
@@ -51,30 +51,30 @@
     "text": "Explore",
     "title": "NFT AND Metaverse",
     "des": "Enter the metaverse realms where your art is your wealth.",
-    "image": "/assets/images/nft-and-metaverse.png"
+    "image": "/assets/images/nft-metaverse-hero.png"
   },
   {
     "text": "Explore",
     "title": "VR DEVELOPMENT",
     "des": "Beyond Imagination: Crafting Tomorrow's Virtual Experiences Today!",
-    "image": "/assets/images/vr-dev.png"
+    "image": "/assets/images/vr-development-hero.png"
   },
   {
     "text": "Explore",
     "title": "VIRTUAL EXPERIENCES",
     "des": "Beyond Boundaries: Crafting Digital Twins and Architectural Marvels for Tomorrow's Experiences!",
-    "image": "/assets/images/virtual-experience.png"
+    "image": "/assets/images/virtual-experience-hero.png"
   },
   {
     "text": "Explore",
     "title": "Unity and Unreal",
     "des": "Play, Thrive, Conquer: Where Every Move Defines Your Victory!",
-    "image": "/assets/images/unityDev.png"
+    "image": "/assets/images/unity&unreal-hero.png"
   },
   {
     "text": "Explore",
     "title": "Game Design and Animation",
     "des": "Crafting Worlds, Igniting Imaginations: Your Portal to Infinite Adventures!",
-    "image": "/assets/images/game-design-1.png"
+    "image": "/assets/images/game-development-hero.png"
   }
 ]

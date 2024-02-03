@@ -18,7 +18,6 @@ interface GameCardProps {
 const cardMotion = {
   rest: {},
   hover: {
-    opacity: 1,
     scale: 1,
     y: -50,
     transition: { type: "spring", stiffness: 400, damping: 10 },
@@ -28,7 +27,6 @@ const cardMotion = {
 const buttonMotion = {
   rest: {},
   hover: {
-    opacity: 1,
     scale: 1.1,
     transition: { type: "spring", stiffness: 400, damping: 10 },
   },
@@ -42,6 +40,7 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
         variants={cardMotion}
         sx={{
           background: "#071421",
+          border: "5px solid transparent",
           "&:hover": {
             borderRadius: "5px",
             border: "5px solid #F86910",
@@ -103,7 +102,14 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
           >
             {gameExperience.description}
           </Typography>
-          <Box component={Link} href={gameExperience.btnLink}>
+          <Box
+            component={Link}
+            href={gameExperience.btnLink}
+            sx={{
+              margin: "auto",
+              maxWidth: "fit-content",
+            }}
+          >
             <Button
               component={motion.div}
               variants={buttonMotion}

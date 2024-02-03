@@ -11,7 +11,7 @@ export default function TimelineWrapper({ children }: { children: ReactNode }) {
       sx={{
         maxWidth: "1440px",
         margin: "auto",
-        height: "942px",
+        maxHeight: { xs: "1500px", sm: "942px" },
         "& .timeline-controls.rc-controls": {
           display: "none",
         },
@@ -40,7 +40,7 @@ export default function TimelineWrapper({ children }: { children: ReactNode }) {
           WebkitTextFillColor: "transparent",
         },
         header: {
-          margin: " 0px 10px",
+          margin: "0px 10px",
         },
         "& .rc-card-subtitle": {
           marginTop: "10px",
@@ -94,7 +94,7 @@ export default function TimelineWrapper({ children }: { children: ReactNode }) {
           textTransform: "uppercase",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          marginLeft: "10px",
+          marginLeft: { xs: "0px", sm: "10px" },
         },
         "& .card-content-wrapper.right header> h2 ": {
           backgroundImage:
@@ -104,8 +104,8 @@ export default function TimelineWrapper({ children }: { children: ReactNode }) {
           WebkitTextFillColor: "transparent",
           fontSize: matchemd ? "18px" : "20px",
           fontWeight: 600,
-          marginTop: "20px",
-          marginLeft: "10px",
+          marginTop: { xs: "10px", sm: "20px" },
+          marginLeft: { xs: "0px", sm: "10px" },
         },
         "& p": {
           color: "#FFF",

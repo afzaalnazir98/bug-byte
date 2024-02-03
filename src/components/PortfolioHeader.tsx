@@ -1,11 +1,11 @@
 "use client";
 import * as React from "react";
-import HeroSection from "@/components/PortfolioHeaderSection";
+import HeroSectionPortfolio from "@/components/PortfolioHeaderSection";
 import Container from "@/components/container";
-import {hero} from "@/utils/types";
-import {Box} from "@mui/material";
+import { hero } from "@/utils/types";
+import { Box } from "@mui/material";
 
-export default function Header({headerData}: {headerData: hero}) {
+export default function Header({ headerData }: { headerData: hero }) {
   return (
     <Box
       sx={{
@@ -20,7 +20,7 @@ export default function Header({headerData}: {headerData: hero}) {
             color: "#fff",
           }}
         >
-          <HeroSection headerData={headerData} />
+          <HeroSectionPortfolio headerData={headerData} />
         </Box>
       </Container>
     </Box>

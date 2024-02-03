@@ -1,5 +1,4 @@
 "use client";
-
 import React, {useEffect, FC} from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,7 +45,6 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
         }
       },
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

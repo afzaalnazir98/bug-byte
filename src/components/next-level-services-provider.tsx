@@ -33,11 +33,7 @@ const NextLevelServicesProvider = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        background: "#071421",
-      }}
-    >
+    <Box>
       <Box
         sx={{
           maxWidth: "1440px",
@@ -102,6 +98,7 @@ const NextLevelServicesProvider = () => {
         ) : (
           <Box>
             <Swiper
+              loop
               autoplay={{
                 delay: 2000,
                 disableOnInteraction: true,
@@ -150,11 +147,6 @@ const NextLevelServicesProvider = () => {
                         display: "flex",
                         alignItems: "end",
                         transition: "all .2s ease-out",
-                      },
-                      "& .slide-overlay-1": {
-                        background:
-                          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%)",
-                        height: "100%",
                       },
                       "&:hover .slide-overlay-1": {
                         opacity: 0,

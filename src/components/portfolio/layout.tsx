@@ -70,6 +70,7 @@ export default function ImageMasonry() {
             ...tabStyles,
             "& .Mui-selected": activeTabStyles,
             "& .MuiTabs-indicator": indicatorStyles,
+            borderBottom: "2px solid #DADADA",
           }}
         >
           <Tab
@@ -152,7 +153,7 @@ export default function ImageMasonry() {
                       borderBottomRightRadius: 4,
                       display: "block",
                       width: "100%",
-                      height:"auto",
+                      height: "auto",
                       backgroundSize: "cover",
                     }}
                   />

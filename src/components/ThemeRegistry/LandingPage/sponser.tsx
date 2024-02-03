@@ -35,8 +35,8 @@ export default function Sponsor() {
       <Box
         sx={{
           background: {
-            xs: "linear-gradient(0deg, rgba(255,255, 255) 67%, rgba(0,0,0,0.1) 33%)",
-            sm: "linear-gradient(0deg, rgba(255,255, 255) 60%, rgba(0,0,0,0.1) 40%)",
+            xs: "linear-gradient(0deg, rgba(255,255, 255) 55%, rgba(0,0,0,0.1) 45%)",
+            sm: "linear-gradient(0deg, rgba(255,255, 255) 50%, rgba(0,0,0,0.1) 50%)",
           },
           paddingBottom: "55px",
           overflow: "hidden",

@@ -1,11 +1,11 @@
 "use client";
 
-import {useState} from "react";
-import {Box, Button, styled} from "@mui/material";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {FreeMode, Thumbs, Autoplay, EffectFade} from "swiper/modules";
+import { useState } from "react";
+import { Box, Button, styled } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Thumbs, Autoplay, EffectFade } from "swiper/modules";
 import HeroSection from "@/components/hero-section";
-import {slide} from "@/utils/types";
+import { slide } from "@/utils/types";
 import SlidesData from "@/Mock/SlidesData.json";
 import titleData from "@/Mock/title.json";
 
@@ -18,7 +18,7 @@ export default function HeroSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   const Slides: slide[] = SlidesData;
- 
+
   const titles: string[] = titleData;
 
   const swiperStyles = {
@@ -51,7 +51,7 @@ export default function HeroSlider() {
           delay: 10000,
           disableOnInteraction: false,
         }}
-        thumbs={{swiper: thumbsSwiper}}
+        thumbs={{ swiper: thumbsSwiper }}
         modules={[EffectFade, Autoplay, FreeMode, Thumbs]}
       >
         {Slides &&
@@ -88,7 +88,7 @@ export default function HeroSlider() {
             modules={[FreeMode, Thumbs]}
             breakpoints={{
               1350: {
-                slidesPerView: 5,
+                slidesPerView: 6,
               },
               1100: {
                 slidesPerView: 4,
@@ -105,8 +105,8 @@ export default function HeroSlider() {
               <SwiperSlide key={index}>
                 <SliderButton
                   sx={{
-                    fontSize: {xs: "18px", sm: "22px", md: "28px"},
-                    py: {xs: "18px", sm: "20px", md: "24px"},
+                    fontSize: { xs: "18px", sm: "22px", md: "28px" },
+                    py: { xs: "18px", sm: "20px", md: "24px" },
                   }}
                 >
                   {title}

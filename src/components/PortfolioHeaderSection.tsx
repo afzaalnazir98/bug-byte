@@ -1,13 +1,10 @@
 "use client";
 
 import React from "react";
-import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import {hero} from "../utils/types";
-import {Box, Button} from "@mui/material";
-import Link from "next/link";
+import { hero } from "../utils/types";
+import { Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
-
 
 const textVariants = {
   initial: {
@@ -41,16 +38,20 @@ const imageVariants = {
   },
 };
 
-export default function HeroSection({headerData}: {headerData: hero}) {
-  const {title, text, des, image, buttonText, btnLink} = headerData;
+export default function HeroSectionPortfolio({
+  headerData,
+}: {
+  headerData: hero;
+}) {
+  const { title, text, des, image, buttonText, btnLink } = headerData;
 
   return (
     <Box
       sx={{
-        minHeight: {xs: "620px", md: "720px"},
+        minHeight: { xs: "620px", md: "720px" },
         display: "flex",
         alignItems: "end",
-        paddingTop: {xs: "100px", md: "160px"},
+        paddingTop: { xs: "100px", md: "160px" },
       }}
     >
       <Box
@@ -58,88 +59,84 @@ export default function HeroSection({headerData}: {headerData: hero}) {
           minHeight: "550px",
           width: "100%",
           display: "flex",
-          justifyContent: {xs: "center", md: "space-between"},
+          justifyContent: { xs: "center", md: "space-between" },
           alignItems: "center",
-          gap: {xs: "30px"},
-          flexDirection: {xs: "column", md: "row"},
+          gap: { xs: "30px" },
+          flexDirection: { xs: "column", md: "row" },
         }}
       >
         <Box
-            
-            component={motion.div}
-            variants={textVariants}
-            initial="initial"
-            animate="animate"
-
+          component={motion.div}
+          variants={textVariants}
+          initial="initial"
+          animate="animate"
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: {xs: "center", md: "start"},
+            alignItems: { xs: "center", md: "start" },
             maxWidth: "600px",
-            textAlign: {xs: "center", md: "left"},
+            textAlign: { xs: "center", md: "left" },
           }}
         >
-             <Box
-              component={motion.p}
-                variants={textVariants}
+          <Box
+            component={motion.p}
+            variants={textVariants}
             sx={{
-              fontSize: {xs: "20px", sm: "28px"},
-              fontWeight: {xs: 300, sm: 400},
+              fontSize: { xs: "20px", sm: "28px" },
+              fontWeight: { xs: 300, sm: 400 },
               color: "white",
+              m: 0,
             }}
           >
             {text}
           </Box>
           <Box
-              component={motion.p}
-                variants={textVariants}
+            component={motion.p}
+            variants={textVariants}
             sx={{
-              fontSize: { xs: "50px", sm: "60px", md:"64px" ,lg: "74px" },
+              fontSize: { xs: "50px", sm: "60px", md: "64px", lg: "74px" },
               fontWeight: { xs: 600, sm: 700 },
-              m:0,
+              m: 0,
               marginTop: "15px",
-              lineHeight: {xs: "1", lg: "1.16"},
+              lineHeight: { xs: "1", lg: "1.16" },
               background:
                 "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
               backgroundClip: "text",
               color: "transparent",
-              textTransform: "uppercase"
+              textTransform: "uppercase",
             }}
           >
             {title}
           </Box>
           <Box
-              component={motion.p}
-                variants={textVariants}
+            component={motion.p}
+            variants={textVariants}
             sx={{
-              fontSize: {xs: "18px", sm: "20px", md: "22px", lg: "24px"},
-              fontWeight: {xs: 300, sm: 400},
+              fontSize: { xs: "18px", sm: "20px", md: "22px", lg: "24px" },
+              fontWeight: { xs: 300, sm: 400 },
+              m: 0,
+              marginTop: "25px",
               color: "#fff",
             }}
           >
             {des}
           </Box>
           {buttonText !== undefined && (
-            <Box
-              component={motion.a}
-              variants={textVariants}
-              href={"#"}
-              sx={{
-                padding: "20px 0px 100px 0px",
-              }}
-            >
+            <Box component={motion.a} variants={textVariants} href={"#"}>
               <Button
                 sx={{
-                  padding: {xs: " 7px 58px", md: "7px 80px"},
+                  padding: { xs: " 7px 58px", md: "7px 80px" },
                   borderRadius: "6px",
                   backgroundImage:
                     "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                  fontSize: {xs: "18px", md: "24px"},
+                  fontSize: { xs: "18px", md: "24px" },
                   fontWeight: 600,
                   textTransform: "capitalize",
                   color: "#fff",
                   maxWidth: "fit-content",
+                  marginTop: "25px",
+                  marginBottom: "100px",
                 }}
               >
                 {buttonText}
@@ -148,12 +145,12 @@ export default function HeroSection({headerData}: {headerData: hero}) {
           )}
         </Box>
         <Box
-        component={motion.div}
-        variants={imageVariants}
-        initial="initial"
-        animate="animate"
+          component={motion.div}
+          variants={imageVariants}
+          initial="initial"
+          animate="animate"
           sx={{
-            alignSelf: {xs: "auto", md: "end"},
+            alignSelf: { xs: "auto", md: "end" },
           }}
         >
           <Box

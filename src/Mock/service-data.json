@@ -1,20 +1,12 @@
 {
     "serviceDetail": [
       {
-        "image": "/assets/images/unity-pic1.png",
-        "title": "Crossplatform Games",
-        "description": "Experience the joy of cross-platform gaming and play on your phone or computer, wherever you like! Our games are fun and easy to play, making it simple to enjoy them on any device. Join in the excitement and let's have a great time together. Let the gaming adventure begin!",
-        "buttonText": "contact us",
-        "buttonLink": "contact-us",
-        "order": 0
-      },
-      {
         "image": "/assets/images/unity-pic2.png",
         "title": "Multiplayer Games",
         "description": "Explore multiplayer gaming: Team up with friends or join others for  online fun in our games. We're all about creating good times together. Feel the thrill of multiplayer gaming – it's social, interactive, and loads of joy. Be part of the gaming party and let's play together! Dive into the excitement and connect with others for a fantastic gaming experience.",
         "buttonText": "Multiplayer",
         "buttonLink": "contact-us",
-        "order": 1
+        "order": 0
       },
       {
         "image": "/assets/images/unity-pic3.png",
@@ -22,7 +14,7 @@
         "description": "Discover the world of hypercasual games: Quick, easy, and loads of fun, these games are perfect for instant entertainment. With simple controls and straightforward gameplay, they're made for everyone. Jump into a realm of easy enjoyment, whether you're a casual gamer or just want a quick break. It's gaming made simple, accessible, and seriously enjoyable. Come join the fun in hypercasual gaming!",
         "buttonText": "Hypercausal",
         "buttonLink": "contact-us",
-        "order": 0
+        "order": 1
       },
       {
         "image": "/assets/images/unity-pic4.png",
@@ -30,8 +22,16 @@
         "description": "Explore Buggbyte Simulation Games for a taste of realistic fun! From building cities to flying high, our games offer exciting adventures for everyone. Get ready for lifelike experiences that make you feel part of the action. Buggbyte brings you simple, enjoyable simulation gaming – the perfect way to dive into virtual worlds and have a blast",
         "buttonText": "Simulation",
         "buttonLink": "contact-us",
+        "order": 0
+      }, {
+        "image": "/assets/images/unity-pic1.png",
+        "title": "Crossplatform Games",
+        "description": "Experience the joy of cross-platform gaming and play on your phone or computer, wherever you like! Our games are fun and easy to play, making it simple to enjoy them on any device. Join in the excitement and let's have a great time together. Let the gaming adventure begin!",
+        "buttonText": "contact us",
+        "buttonLink": "contact-us",
         "order": 1
       }
+
     ],
     "nftMetaverse": [
         {

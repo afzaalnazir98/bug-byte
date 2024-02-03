@@ -30,9 +30,7 @@ export default function Company() {
               },
             }}
           >
-            <Box
-              sx={{ alignSelf: "self-start", flex: "30%", maxWidth: "400px" }}
-            >
+            <Box sx={{ alignSelf: "center", flex: "30%", maxWidth: "400px" }}>
               <Typography
                 sx={{
                   fontSize: { xs: "30px", sm: "40px", md: "50px", lg: "55px" },
