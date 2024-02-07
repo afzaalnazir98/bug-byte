@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView, useSpring } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import {
   Box,
   TextField,
@@ -74,6 +74,10 @@ export default function ContactForm() {
           padding: { xs: "8px 15px", sm: "10px 20px", md: "20px 32px" },
           borderRadius: "8px",
           "& .MuiInputBase-root": {
+            borderRadius: "10px",
+          },
+          "& .input-field:hover": {
+            border: "1px solid white",
             borderRadius: "10px",
           },
           "& .mui-sm7gn3-MuiInputBase-root-MuiOutlinedInput-root": {

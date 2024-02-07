@@ -111,7 +111,7 @@ export default function Service() {
                     width={41}
                     height={56}
                   />
-                  <Typography
+                  <Box
                     sx={{
                       marginTop: "8px",
                       fontSize: "20px",
@@ -136,7 +136,7 @@ export default function Service() {
                     >
                       Experience
                     </Typography>
-                  </Typography>
+                  </Box>
                   <Typography
                     sx={{
                       marginTop: "6px",
@@ -162,7 +162,7 @@ export default function Service() {
                     width={46}
                     height={60}
                   />
-                  <Typography
+                  <Box
                     sx={{
                       marginTop: "8px",
                       fontSize: "20px",
@@ -187,7 +187,7 @@ export default function Service() {
                     >
                       Solutions
                     </Typography>
-                  </Typography>
+                  </Box>
                   <Typography
                     sx={{
                       marginTop: "6px",
@@ -205,6 +205,7 @@ export default function Service() {
               <Box
                 sx={{
                   display: "flex",
+                  alignItems: "center",
                   gap: { xs: "50px", lg: "80px" },
                   flexDirection: { xs: "column", sm: "row" },
                 }}
@@ -220,7 +221,7 @@ export default function Service() {
                     width={53}
                     height={40}
                   />
-                  <Typography
+                  <Box
                     sx={{
                       marginTop: "8px",
                       fontSize: "20px",
@@ -245,7 +246,7 @@ export default function Service() {
                     >
                       Quality Results
                     </Typography>
-                  </Typography>
+                  </Box>
                   <Typography
                     sx={{
                       marginTop: "6px",
@@ -271,7 +272,7 @@ export default function Service() {
                     width={72}
                     height={45}
                   />
-                  <Typography
+                  <Box
                     sx={{
                       marginTop: "8px",
                       fontSize: "20px",
@@ -296,7 +297,7 @@ export default function Service() {
                     >
                       Approach
                     </Typography>
-                  </Typography>
+                  </Box>
                   <Typography
                     sx={{
                       marginTop: "6px",

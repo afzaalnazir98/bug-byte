@@ -97,7 +97,7 @@ export default function HeroSection(items: hero) {
               fontWeight: { xs: 600, sm: 700 },
               m: 0,
               marginTop: "22px",
-              textTransform: "capitalize",
+              textTransform: "uppercase",
               lineHeight: { xs: "1", lg: "1.16" },
               background:
                 "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",

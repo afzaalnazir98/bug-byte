@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Tab, Tabs } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -17,6 +17,21 @@ const GameCardData: GameExperience[] = GameExperenceData;
 export default function GameExperienceSlider() {
   const [activeTab, setActiveTab] = useState(0);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [filteredGameCardData, setFilteredGameCardData] =
+    useState(GameCardData);
+
+  const [selectedValue, setSelectedValue] = useState("all");
+
+  useEffect(() => {
+    const filteredCardData = GameCardData.filter(
+      (GameCardData) =>
+        GameCardData.tags.includes(selectedValue) || selectedValue === "all"
+    );
+    setFilteredGameCardData(filteredCardData);
+  }, [activeTab, selectedValue]);
+  const handleTabClick = (value: any) => {
+    setSelectedValue(value);
+  };
 
   const handleTabChange = (event: any, newValue: any) => {
     setActiveTab(newValue);
@@ -85,7 +100,7 @@ export default function GameExperienceSlider() {
           <Box
             data-aos="fade-down"
             sx={{
-              marginBottom: { xs: "30px", md: "50px", lg: "70px" },
+              marginBottom: { xs: "60px", lg: "70px" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -106,17 +121,44 @@ export default function GameExperienceSlider() {
                 borderBottom: "2px solid #DADADA",
               }}
             >
-              <Tab sx={{ ...tabStyles }} label="All" />
-              <Tab sx={{ ...tabStyles, ml: 2 }} label="Digital Twins" />
-              <Tab sx={{ ...tabStyles, ml: 2 }} label="AR/VR" />
-              <Tab sx={{ ...tabStyles, ml: 2 }} label="Unity Development" />
-              <Tab sx={{ ...tabStyles, ml: 2 }} label="Metaverse" />
-              <Tab sx={{ ...tabStyles, ml: 2 }} label="NFT" />
-              <Tab sx={{ ...tabStyles, ml: 2 }} label="blockchain" />
+              <Tab
+                sx={{ ...tabStyles }}
+                label="All"
+                onClick={() => handleTabClick("all")}
+              />
+              <Tab
+                sx={{ ...tabStyles, ml: 2 }}
+                label="Digital Twins"
+                onClick={() => handleTabClick("digital-twins")}
+              />
+              <Tab
+                sx={{ ...tabStyles, ml: 2 }}
+                label="AR/VR"
+                onClick={() => handleTabClick("ar-vr")}
+              />
+              <Tab
+                sx={{ ...tabStyles, ml: 2 }}
+                label="Unity Development"
+                onClick={() => handleTabClick("unity")}
+              />
+              <Tab
+                sx={{ ...tabStyles, ml: 2 }}
+                label="Metaverse"
+                onClick={() => handleTabClick("metaverse")}
+              />
+              <Tab
+                sx={{ ...tabStyles, ml: 2 }}
+                label="NFT"
+                onClick={() => handleTabClick("nft")}
+              />
+              <Tab
+                sx={{ ...tabStyles, ml: 2 }}
+                label="blockchain"
+                onClick={() => handleTabClick("blockchain")}
+              />
             </Tabs>
           </Box>
           <Swiper
-            loop
             navigation={navigationel}
             className="swiper-main"
             modules={[Autoplay, Navigation]}
@@ -134,7 +176,7 @@ export default function GameExperienceSlider() {
               },
             }}
           >
-            {GameCardData?.map((gameExp, index) => (
+            {filteredGameCardData?.map((gameExp, index) => (
               <SwiperSlide key={index}>
                 <GameCard gameExperience={gameExp} />
               </SwiperSlide>

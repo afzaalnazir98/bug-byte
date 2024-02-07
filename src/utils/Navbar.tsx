@@ -16,6 +16,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const LINKS = [
   { text: "About us", href: "/about-us" },
@@ -26,7 +28,7 @@ const LINKS = [
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
-
+  const pathname = usePathname();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMd = useMediaQuery(theme.breakpoints.down("md"));
@@ -108,7 +110,7 @@ const Navbar = () => {
           sx={{
             display: { xs: "none", md: "flex" },
             alignItems: "center",
-            gap: "55px",
+            gap: { md: "30px", lg: "55px" },
           }}
         >
           {LINKS.map(({ text, href }, index) => (
@@ -135,6 +137,15 @@ const Navbar = () => {
                     marginBottom: "8px",
                     transition: "0.3s all",
                   },
+                  ...(pathname === href && {
+                    backgroundImage:
+                      "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    marginBottom: "8px",
+                    transition: "0.3s all",
+                  }),
                 }}
               >
                 <ListItemText
@@ -151,36 +162,45 @@ const Navbar = () => {
             </ListItem>
           ))}
         </Box>
-        <Button
-          variant="contained"
-          color="primary"
-          component={Link}
+        <Box
+          component={motion.a}
+          whileHover={{ scale: 1.1, y: -10 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
           href="/contact-us"
           sx={{
-            p: {
-              md: "7px 32px",
-              xs: "7px 28px",
-            },
-            fontSize: matchesMd ? "14px" : "18px",
-            fontWeight: matchesSM ? 200 : 400,
-            marginLeft: 2,
-            ml: matchesMd ? "-7px" : 0,
-            display: { xs: "none", md: "flex" },
-            borderRadius: "6px",
-            background:
-              "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-            textTransform: "capitalize",
+            textDecoration: "none",
+            display: { xs: "none", md: "block" },
           }}
-          endIcon={
-            <ArrowOutwardIcon
-              sx={{
-                ml: "10px",
-              }}
-            />
-          }
         >
-          Get Started
-        </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              p: {
+                md: "7px 32px",
+                xs: "7px 28px",
+              },
+              fontSize: matchesMd ? "14px" : "18px",
+              fontWeight: matchesSM ? 200 : 400,
+              marginLeft: 2,
+              ml: matchesMd ? "-7px" : 0,
+              display: { xs: "none", md: "flex" },
+              borderRadius: "6px",
+              background:
+                "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+              textTransform: "capitalize",
+            }}
+            endIcon={
+              <ArrowOutwardIcon
+                sx={{
+                  ml: "10px",
+                }}
+              />
+            }
+          >
+            Get Started
+          </Button>
+        </Box>
       </NavToolbar>
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer}>
         <Box sx={{ width: "100%" }}>

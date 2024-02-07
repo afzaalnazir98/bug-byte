@@ -16,10 +16,9 @@ import "aos/dist/aos.css";
 export default function HomePage() {
   React.useEffect(() => {
     AOS.init({
-      once: true
+      once: true,
     });
   }, []);
-
 
   return (
     <>
@@ -29,7 +28,7 @@ export default function HomePage() {
       <Sponser />
       <GameExperience />
       <NextLevelServicesProvider />
-      <CompanyProgress/>
+      <CompanyProgress />
       {/* <TestimonialSection /> */}
       <QuestionForm />
     </>

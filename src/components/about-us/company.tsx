@@ -31,7 +31,7 @@ export default function Company() {
             }}
           >
             <Box sx={{ alignSelf: "center", flex: "30%", maxWidth: "400px" }}>
-              <Typography
+              <Box
                 sx={{
                   fontSize: { xs: "30px", sm: "40px", md: "50px", lg: "55px" },
                   fontWeight: 700,
@@ -66,7 +66,7 @@ export default function Company() {
                   bEST GAMEs DEVELOPMENT
                 </Typography>{" "}
                 Company
-              </Typography>
+              </Box>
               <Typography
                 sx={{
                   color: "rgba(0, 0, 0, 0.05)",

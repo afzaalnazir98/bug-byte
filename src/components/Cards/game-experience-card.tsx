@@ -96,6 +96,7 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
               fontWeight: { xs: 300, md: 400 },
               mt: { xs: 0, sm: 2 },
               color: "white",
+              minHeight: "42px",
             }}
             variant="body1"
             color="text.secondary"

@@ -11,6 +11,7 @@ import Image from "next/image";
 import Container from "../container";
 import ServiceOffer from "../../Mock/ServiceOffer.json";
 import { ServiceOfferType } from "@/utils/types";
+import { motion } from "framer-motion";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -176,7 +177,12 @@ export default function Offering() {
             }}
           >
             {TabPanelData.map((item, i) => (
-              <Label label={item.title} {...a11yProps(i)} className="label"  key={i}/>
+              <Label
+                label={item.title}
+                {...a11yProps(i)}
+                className="label"
+                key={i}
+              />
             ))}
           </Tabs>
           {TabPanelData.map((item, i) => (
@@ -217,9 +223,15 @@ export default function Offering() {
                 >
                   {item.desc}
                 </Description>
-                <Box component={Link} href={item.btnLink} sx={{
-                  maxWidth:"fit-content"
-                }}>
+                <Box
+                  component={motion.a}
+                  whileHover={{ scale: 1.1, y: -10 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  href={item.btnLink}
+                  sx={{
+                    maxWidth: "fit-content",
+                  }}
+                >
                   <StyleButton
                     sx={{
                       fontSize: { xs: "18px", md: "20px" },

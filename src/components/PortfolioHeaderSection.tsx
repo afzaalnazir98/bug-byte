@@ -43,7 +43,7 @@ export default function HeroSectionPortfolio({
 }: {
   headerData: hero;
 }) {
-  const { title, text, des, image, buttonText, btnLink } = headerData;
+  const { title, text, des, image, buttonText } = headerData;
 
   return (
     <Box
@@ -123,7 +123,17 @@ export default function HeroSectionPortfolio({
             {des}
           </Box>
           {buttonText !== undefined && (
-            <Box component={motion.a} variants={textVariants} href={"#"}>
+            <Box
+              component={motion.a}
+              whileHover={{ scale: 1.1, y: -10 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+              variants={textVariants}
+              href={"#"}
+            >
               <Button
                 sx={{
                   padding: { xs: " 7px 58px", md: "7px 80px" },

@@ -8,6 +8,7 @@ import { portfolio } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { motion } from "framer-motion";
 
 const Portfolio: portfolio[] = PortfolioData;
 
@@ -280,24 +281,35 @@ export default function ImageMasonry() {
           textAlign: "center",
         }}
       >
-        <Button
-          sx={{
-            display: filteredPortfolioLength > 6 ? "block" : "none",
-            position: "relative",
-            marginTop: "40px",
-            borderRadius: "6px",
-            width: { xs: "150px", sm: "180px", md: "206px" },
-            height: { xs: "30px", sm: "38px", md: "48px" },
-            fontSize: { xs: "14px", md: "16px" },
-            fontWeight: { xs: 400, md: 600 },
-            background: "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
-            boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
-            color: "#fff",
+        <Box
+          component={motion.div}
+          whileHover={{ scale: 1.1, y: -10 }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 10,
           }}
-          onClick={() => setportfolioNumber(portfolioNumber + 6)}
         >
-          View All Projects
-        </Button>
+          <Button
+            sx={{
+              display: filteredPortfolioLength > 6 ? "block" : "none",
+              position: "relative",
+              marginTop: "40px",
+              borderRadius: "6px",
+              width: { xs: "150px", sm: "180px", md: "206px" },
+              height: { xs: "30px", sm: "38px", md: "48px" },
+              fontSize: { xs: "14px", md: "16px" },
+              fontWeight: { xs: 400, md: 600 },
+              background:
+                "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
+              boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",
+              color: "#fff",
+            }}
+            onClick={() => setportfolioNumber(portfolioNumber + 6)}
+          >
+            View All Projects
+          </Button>
+        </Box>
       </Box>
     </Container>
   );

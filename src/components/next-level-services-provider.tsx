@@ -46,7 +46,11 @@ const NextLevelServicesProvider = () => {
           data-aos-duration="500"
           sx={{
             textAlign: "center",
-            p: "90px 0 60px 0",
+            p: {
+              xs: "70px 0 30px 0",
+              md: "80px 0 50px 0",
+              lg: "90px 0 60px 0",
+            },
           }}
         >
           <Typography

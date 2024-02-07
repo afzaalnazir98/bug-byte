@@ -1,22 +1,11 @@
 "use client";
 
 import { CircleItem, ProjectLifecycleItem } from "@/utils/types";
-import { Box, Button, Typography, styled } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import projectLifecycleData from "../../Mock/projectLifecycleData.json";
 import circleData from "../../Mock/circleData.json";
-
-const StyleButton = styled(Button)({
-  borderRadius: "6px",
-  backgroundImage:
-    "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-  fontWeight: 600,
-  textTransform: "capitalize",
-  color: "#fff",
-  maxWidth: "fit-content",
-});
 
 export default function Work() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -236,16 +225,6 @@ export default function Work() {
               </Box>
             </Box>
           </Box>
-        </Box>
-        <Box component={Link} href="#">
-          <StyleButton
-            sx={{
-              fontSize: { xs: "18px", md: "20px" },
-              padding: { xs: " 6px 28px", md: "7px 30px" },
-            }}
-          >
-            Explore More
-          </StyleButton>
         </Box>
       </Box>
     </>

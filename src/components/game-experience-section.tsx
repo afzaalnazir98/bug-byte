@@ -11,6 +11,7 @@ export default function GameExperience() {
     <Box
       sx={{
         background: "#FFF",
+        paddingBottom: { xs: "20px", sm: "30px", md: "40px" },
       }}
     >
       <Box
@@ -29,7 +30,7 @@ export default function GameExperience() {
           sx={{
             fontSize: "25px",
             fontWeight: 500,
-            marginTop: "100px",
+            marginTop: { xs: "30px", sm: "50px", md: "80px", lg: "100px" },
             letterSpacing: "0.4px",
             textTransform: "uppercase",
             color: "#030A12",
@@ -66,8 +67,9 @@ export default function GameExperience() {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          p: "0px 0 70px",
           textDecoration: "none",
+          maxWidth: "fit-content",
+          margin: "auto",
         }}
       >
         <Button

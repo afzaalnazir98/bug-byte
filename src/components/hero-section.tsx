@@ -1,20 +1,19 @@
 "use client";
-import React, {useEffect, FC} from "react";
+import React, { useEffect, FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {Box, Button, Grid} from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import {motion, useMotionValue, useTransform, animate} from "framer-motion";
-import {slide} from "@/utils/types";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { slide } from "@/utils/types";
 
 interface HeroSectionProps {
   Slide: slide;
 }
 
-const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
+const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
   const textIndex = useMotionValue(0);
   const texts = [Slide?.title?.t2];
-
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -22,9 +21,8 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
     baseText.get().slice(0, latest)
   );
   const updatedThisRound = useMotionValue(true);
-
   useEffect(() => {
-    animate(count, 60, {
+    const animation = animate(count, 60, {
       type: "tween",
       delay: 1,
       duration: 4,
@@ -45,7 +43,8 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
         }
       },
     });
-  }, []);
+    return () => animation.stop();
+  }, [count, textIndex, texts.length, updatedThisRound]);
 
   return (
     <Grid
@@ -55,9 +54,10 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
         maxWidth: "1370px",
         width: "100%",
         p: {
-          xs: "7rem 2rem 2rem",
-          md: "10rem 4rem 2rem",
-          lg: "12rem 4rem 2rem",
+          xs: "6rem 2rem 2rem",
+          sm: "5rem 2rem 2rem",
+          md: "8rem 4rem 2rem",
+          lg: "8rem 4rem 0.5rem",
         },
         mb: "auto",
       }}
@@ -71,7 +71,6 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
             sm: 0,
             xs: 2,
           },
-          mt: {xs: 6, md: 0},
         }}
       >
         <Box
@@ -94,8 +93,8 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                   variants={textVariants}
                   sx={{
                     color: "#D9D9D9",
-                    mb: {md: "22px", xs: "12px"},
-                    fontSize: {md: "28px", sm: "24px", xs: "18px"},
+                    mb: { lg: "22px", md: "18px", sm: "14px", xs: "8px" },
+                    fontSize: { md: "28px", sm: "20px", xs: "18px" },
                     fontWeight: "400",
                     lineHeight: "normal",
                   }}
@@ -127,8 +126,9 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                   <Box
                     sx={{
                       minHeight: {
-                        lg: "85.73px",
-                        xs: "52.25px",
+                        lg: "85px",
+                        sm: "52px",
+                        xs: "35px",
                       },
                     }}
                   >
@@ -136,17 +136,17 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                       component={motion.span}
                       variants={textVariants}
                       sx={{
-                        mb: {md: "22px", xs: "12px"},
+                        mb: { lg: "22px", md: "18px", sm: "14px", xs: "8px" },
                         background:
                           "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                         backgroundClip: "text",
                         color: "transparent",
                         textTransform: "uppercase",
                         fontSize: {
-                          lg: "82.045px",
+                          lg: "82px",
                           md: "56px",
-                          sm: "50px",
-                          xs: "46px",
+                          sm: "40px",
+                          xs: "32px",
                         },
                         fontWeight: 700,
                         lineHeight: 1.045,
@@ -162,11 +162,11 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
               {Slide.description && (
                 <Box
                   sx={{
-                    mb: {md: "22px", xs: "12px"},
+                    mb: { lg: "22px", md: "18px", sm: "14px", xs: "8px" },
                     color: "#D9D9D9",
-                    fontSize: {xs: "18px", sm: "22px", lg: "24px"},
+                    fontSize: { md: "24px", sm: "18px", xs: "18px" },
                     fontWeight: 400,
-                    lineHeight: {xs: "1.5", sm: "1.7", md: "normal"},
+                    lineHeight: { xs: "1.5", sm: "1.7", md: "normal" },
                   }}
                 >
                   {Slide.description}
@@ -176,9 +176,9 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
 
             <Box
               sx={{
-                marginTop: "30px",
+                marginTop: { xs: "20px", sm: "20px", md: "30px" },
                 display: "flex",
-                gap: {lg: "32px", md: "26px", sm: "18px", xs: "8px"},
+                gap: { lg: "32px", md: "26px", sm: "18px", xs: "8px" },
               }}
             >
               {Slide.btns.map((btn, index) => (
@@ -188,7 +188,7 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                       component={motion.div}
                       variants={buttonVariants}
                       initial="initial"
-                      whileHover={{scale: 1, y: -10, x: -10}}
+                      whileHover={{ scale: 1, y: -10, x: -10 }}
                       animate="animate"
                     >
                       <Button
@@ -200,15 +200,19 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                           background:
                             "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                           boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.50)",
-                          fontSize: {md: "20px", xs: "15px"},
+                          fontSize: { md: "20px", xs: "15px" },
                           width: "100%",
                           textTransform: "capitalize",
                           whiteSpace: "nowrap",
-                          p: {md: "16px 34px", sm: "14px 20px", xs: "8px 16px"},
+                          p: {
+                            md: "16px 34px",
+                            sm: "10px 16px",
+                            xs: "8px 14px",
+                          },
                         }}
                         endIcon={
                           <ArrowOutwardIcon
-                            sx={{ml: {md: "37px", sm: "18px", xs: "8px"}}}
+                            sx={{ ml: { md: "37px", sm: "12px", xs: "2px" } }}
                           />
                         }
                       >
@@ -229,16 +233,16 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
                           lineHeight: 1.2,
                           p: {
                             md: "16px 34px",
-                            sm: "14px 20px",
-                            xs: "10px 20px",
+                            sm: "10px 16px",
+                            xs: "10px 14px",
                           },
                           whiteSpace: "nowrap",
                           borderRadius: "6px",
                           background: "#262626",
-                          fontSize: {md: "20px", sm: "18px", xs: "14px"},
+                          fontSize: { md: "20px", sm: "18px", xs: "14px" },
                           width: "100%",
                           textTransform: "capitalize",
-                          ":hover": {color: "#262626", background: "#fff"},
+                          ":hover": { color: "#262626", background: "#fff" },
                         }}
                       >
                         {btn.text}
@@ -254,17 +258,21 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
       <Grid item xs={12} sm={5}>
         {Slide.imagePath && (
           <Box
-          component={motion.div}
-          variants={imageVariants}
-          initial="initial"
-          animate="animate"
+            component={motion.div}
+            variants={imageVariants}
+            initial="initial"
+            animate="animate"
             sx={{
               textAlign: "center",
               height: "100%",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              "& .main-image": {width: "100%", height: "auto", px: "15px"},
+              "& .main-image": {
+                width: "100%",
+                height: "auto",
+                px: { xs: "0px", lg: "15px" },
+              },
             }}
           >
             <Image
@@ -283,17 +291,17 @@ const HeroSection: FC<HeroSectionProps> = ({Slide}): JSX.Element => {
 };
 
 const textVariants = {
-  initial: {x: -500, opacity: 0},
+  initial: { x: -500, opacity: 0 },
   animate: {
     x: 0,
     opacity: 1,
     y: 0,
-    transition: {duration: 1, staggerChildren: 0.1},
+    transition: { duration: 1, staggerChildren: 0.1 },
   },
 };
 
 const buttonVariants = {
-  initial: {opacity: 0, x: -500, scale: 0.2, duration: 1},
+  initial: { opacity: 0, x: -500, scale: 0.2, duration: 1 },
   animate: {
     opacity: 1,
     x: 0,
@@ -301,20 +309,20 @@ const buttonVariants = {
     transition: {
       duration: 1,
       ease: [0, 0.71, 0.2, 1.01],
-      scale: {type: "spring", damping: 10, stiffness: 100, restDelta: 0.001},
+      scale: { type: "spring", damping: 10, stiffness: 100, restDelta: 0.001 },
     },
   },
 };
 
 const buttonVariantsProfile = {
-  initial: {opacity: 0, x: -500, scale: 1.9},
+  initial: { opacity: 0, x: -500, scale: 1.9 },
   animate: {
     opacity: 1,
     x: 0,
     scale: 1,
     transition: {
       duration: 0.3,
-      scale: {type: "spring", damping: 5, stiffness: 500},
+      scale: { type: "spring", damping: 5, stiffness: 500 },
     },
   },
 };

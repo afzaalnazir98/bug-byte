@@ -152,7 +152,7 @@ export default function Help() {
                 maxWidth: "fit-content",
                 textDecoration: "none",
               }}
-              href="/"
+              href="/about-us"
             >
               <Box
                 component={motion.div}
