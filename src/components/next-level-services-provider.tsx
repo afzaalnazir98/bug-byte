@@ -10,7 +10,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ServiceDetail } from "@/utils/types";
 import "swiper/css";
-import ServiceDetailsDsta from "../Mock/services-detail.json";
+import ServiceDetailsData from "../Mock/services-detail.json";
 
 const arrowMotion = {
   rest: {
@@ -26,7 +26,7 @@ const arrowMotion = {
 const NextLevelServicesProvider = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const serviceDetails: ServiceDetail[] = ServiceDetailsDsta;
+  const serviceDetails: ServiceDetail[] = ServiceDetailsData;
 
   useEffect(() => {
     setIsLoading(false);
@@ -100,7 +100,11 @@ const NextLevelServicesProvider = () => {
             />
           </Box>
         ) : (
-          <Box>
+          <Box
+            sx={{
+              marginBottom: "-7px",
+            }}
+          >
             <Swiper
               loop
               autoplay={{
@@ -113,8 +117,14 @@ const NextLevelServicesProvider = () => {
                 0: {
                   slidesPerView: 1.2,
                 },
+                410: {
+                  slidesPerView: 1.5,
+                },
+                550: {
+                  slidesPerView: 2,
+                },
                 700: {
-                  slidesPerView: 2.5,
+                  slidesPerView: 2.3,
                 },
                 850: {
                   slidesPerView: 3,
@@ -129,11 +139,11 @@ const NextLevelServicesProvider = () => {
                   <Box
                     className="slide-wrapper"
                     sx={{
-                      width: "100%",
                       float: "left",
                       position: "relative",
                       overflow: "hidden",
                       color: "white",
+                      width: "100%",
                       "& .service-title": {
                         color: "#EAEAEA",
                         fontSize: "28px",
@@ -143,7 +153,7 @@ const NextLevelServicesProvider = () => {
                       },
                       "& .slide-content-overlay": {
                         position: "absolute",
-                        bottom: 0,
+                        bottom: "1.5%",
                         left: 0,
                         width: "-webkit-fill-available",
                         overflow: "hidden",
@@ -154,10 +164,6 @@ const NextLevelServicesProvider = () => {
                       },
                       "&:hover .slide-overlay-1": {
                         opacity: 0,
-                      },
-                      "& .slide-image": {
-                        width: "100%",
-                        height: "auto",
                       },
                       "& .slide-overlay-2": {
                         height: "0",
@@ -178,13 +184,16 @@ const NextLevelServicesProvider = () => {
                       },
                     }}
                   >
-                    <Image
-                      className="slide-image"
+                    <Box
+                      component="img"
+                      sx={{
+                        height: "468px",
+                        width: "100%",
+                        maxWidth: "400px",
+                        minWidth: "360px",
+                      }}
                       src={service.image}
                       alt={service.title}
-                      height={100}
-                      width={100}
-                      loading="lazy"
                     />
                     <Box className="slide-content-overlay slide-overlay-1">
                       <Box>

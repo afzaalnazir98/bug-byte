@@ -166,9 +166,21 @@ export default function GameExperienceSlider() {
               setActiveSlideIndex(swiper.activeIndex);
             }}
             breakpoints={{
-              700: {
+              1100: {
                 slidesPerView: 2,
                 spaceBetween: 50,
+              },
+              900: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              600: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              500: {
+                slidesPerView: 2,
+                spaceBetween: 10,
               },
               0: {
                 slidesPerView: 1,

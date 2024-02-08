@@ -1,8 +1,9 @@
-import {Box, Typography, styled} from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import Container from "../container";
 import Image from "next/image";
-import {projectInfo} from "@/utils/types";
+import { projectInfo } from "@/utils/types";
 import ProjectTechnologies from "./project-tech";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const projectInfoImage = {
   "@media (max-width: 600px)": {
@@ -26,13 +27,14 @@ const SubTitle = styled(Typography)({
   fontWeight: 600,
   lineHeight: "45.5px",
   textTransform: "uppercase",
-  maxWidth: "800px"
+  maxWidth: "800px",
 });
 export default function ProjectInfo({
   portfolioData,
 }: {
   portfolioData: projectInfo;
 }) {
+  const matchelg = useMediaQuery("(max-width:1050px)");
   return (
     <Box
       sx={{
@@ -43,7 +45,6 @@ export default function ProjectInfo({
         <Box
           sx={{
             display: "grid",
-            // justifyItems: "center",
             gap: "100px",
           }}
         >
@@ -56,15 +57,15 @@ export default function ProjectInfo({
           >
             <Title
               sx={{
-                fontSize: {xs: "20px", sm: "30px", lg: "40px"},
-                textAlign: {xs: "center", lg: "left"},
+                fontSize: { xs: "20px", sm: "30px", lg: "40px" },
+                textAlign: { xs: "center", lg: "left" },
               }}
             >
               {portfolioData.title}
             </Title>
             <SubTitle
               sx={{
-                fontSize: {xs: "20px", lg: "25px"},
+                fontSize: { xs: "20px", lg: "25px" },
                 textAlign: "center",
               }}
             >
@@ -74,13 +75,11 @@ export default function ProjectInfo({
           <Box
             sx={{
               display: "flex",
-              flexDirection: {
-                md: "row",
-                xs: "column",
-              },
+              flexDirection: matchelg ? "column" : "row",
               alignItems: "center",
               gap: {
-                md: "58px",
+                lg: "58px",
+                md: "25px",
                 xs: "0px",
               },
             }}

@@ -1,5 +1,5 @@
-import {projectInfo} from "@/utils/types";
-import {Box, Typography} from "@mui/material";
+import { projectInfo } from "@/utils/types";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import ProjectTypeItem from "./ProjectTypeItem";
 
@@ -29,10 +29,10 @@ export default function ProjectTechnologies({
               border: "1px solid  #DD2C00",
               backgroundColor: "#071626",
               display: "flex",
-              flexDirection: {xs: "column", sm: "row"},
+              flexDirection: { xs: "column", sm: "row" },
               alignItems: "flex-start",
               padding: "18px",
-              gap: {xs: "20px", sm: "0px"},
+              gap: { xs: "20px", sm: "0px" },
             }}
           >
             {portfolioData?.projectType?.videoGame && (
@@ -82,10 +82,11 @@ export default function ProjectTechnologies({
               border: "1px solid  #DD2C00",
               backgroundColor: "#071626",
               display: "flex",
-              flexDirection: {xs: "column", sm: "row"},
+              flexDirection: { xs: "column", sm: "row" },
               alignItems: "flex-start",
+              justifyContent: "space-between",
               padding: "18px",
-              gap: {xs: "20px", sm: "0px"},
+              gap: { xs: "20px", sm: "0px" },
             }}
           >
             {portfolioData?.technologyStacks?.unity && (
@@ -215,10 +216,10 @@ export default function ProjectTechnologies({
               border: "1px solid  #DD2C00",
               backgroundColor: "#071626",
               display: "flex",
-              flexDirection: {xs: "column", sm: "row"},
+              flexDirection: { xs: "column", sm: "row" },
               alignItems: "flex-start",
               padding: "18px",
-              gap: {xs: "20px", sm: "0px"},
+              gap: { xs: "20px", sm: "0px" },
             }}
           >
             {portfolioData?.availableAt?.appleStore && (

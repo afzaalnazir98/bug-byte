@@ -1,11 +1,11 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {Box, Button, CircularProgress, Typography} from "@mui/material";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay} from "swiper/modules";
-import {OtherProjectsDetail} from "@/utils/types";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import { OtherProjectsDetail } from "@/utils/types";
 import Link from "next/link";
 import FeaturedProjects from "@/Mock/featured-projects.json";
 import "swiper/css";
@@ -53,7 +53,7 @@ export default function OtherProject() {
           >
             Other Projects
           </Typography>
-          <Typography
+          {/* <Typography
             variant="body1"
             sx={{
               color: "#FFF",
@@ -64,7 +64,7 @@ export default function OtherProject() {
             }}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </Typography>
+          </Typography> */}
         </Box>
 
         {isLoading ? (
@@ -136,13 +136,16 @@ export default function OtherProject() {
                           },
                         }}
                       >
-                        <Image
-                          className="slide-image"
+                        <Box
+                          component="img"
+                          sx={{
+                            height: "440px",
+                            width: "100%",
+                            maxWidth: "400px",
+                            minWidth: "360px",
+                          }}
                           src={`${service?.imageUrl}`}
                           alt={service?.title ?? ""}
-                          height={100}
-                          width={100}
-                          loading="lazy"
                         />
                         <Box
                           className="hover-box"
@@ -228,7 +231,7 @@ export default function OtherProject() {
                                   >
                                     <Button
                                       sx={{
-                                        marginTop: {xs: "14px", lg: "16px"},
+                                        marginTop: { xs: "14px", lg: "16px" },
                                         padding: {
                                           xs: "10px 28px",
                                           sm: "12px 38px",
@@ -284,10 +287,10 @@ export default function OtherProject() {
               position: "relative",
               marginTop: "25px",
               borderRadius: "6px",
-              width: {xs: "150px", sm: "180px", md: "206px"},
-              height: {xs: "30px", sm: "38px", md: "48px"},
-              fontSize: {xs: "14px", md: "16px"},
-              fontWeight: {xs: 400, md: 600},
+              width: { xs: "150px", sm: "180px", md: "206px" },
+              height: { xs: "30px", sm: "38px", md: "48px" },
+              fontSize: { xs: "14px", md: "16px" },
+              fontWeight: { xs: 400, md: 600 },
               background:
                 "linear-gradient(94deg, #C73300 10.11%, #F86910 89.7%)",
               boxShadow: "20px 25px 50px 0px rgba(0, 0, 0, 0.30)",

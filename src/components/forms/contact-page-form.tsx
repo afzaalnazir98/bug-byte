@@ -1,7 +1,6 @@
 "use client";
 
-import * as React from "react";
-import { useRef } from "react";
+import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import {
@@ -79,14 +78,12 @@ const cardVariants = {
 };
 
 export default function ContactFormSection(): JSX.Element {
-  const [formData, setFormData] = React.useState<FormData>({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     service: "",
     message: "",
   });
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -149,24 +146,18 @@ export default function ContactFormSection(): JSX.Element {
           }}
         >
           <Grid
-           ref={ref}
             item
-            component={motion.div}
-            variants={formVariants}
-            initial="initial"
-            animate={isInView?"animate":undefined} 
             sx={{
               display: "flex",
               alignItems: "start",
               flexDirection: "column",
               background: "#0B1D30",
-              paddingInline: { xs: "1rem", sm: "2rem" },
-              height: { sm: "700px", md: "760.371px" },
+              padding: { xs: "1.5rem 1rem", sm: "1.5rem 2rem" },
+              minHeight: { sm: "700px", md: "760.371px" },
               marginTop: { xs: "2rem", sm: "2rem", md: "5rem" },
               mb: 3,
-              marginLeft: { xs: "20px", sm: "50px", md: 0 },
-              marginRight: { xs: "20px", sm: "50px", md: 0 },
               borderRadius: "10px",
+              maxWidth: "675px",
               "& .MuiFormLabel-root": {
                 color: "#FFFFFF",
               },
@@ -193,9 +184,6 @@ export default function ContactFormSection(): JSX.Element {
                 color: "white", // Set your desired color for the icon
               },
             }}
-            xs={12}
-            sm={12}
-            md={6.3}
           >
             <FormLabel
               component={motion.form}
@@ -337,16 +325,12 @@ export default function ContactFormSection(): JSX.Element {
           </Grid>
           <Grid
             item
-            component={motion.div}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView?"animate":undefined} 
             sx={{
               display: "flex",
               alignItems: "start",
               flexDirection: "column",
               background: "#0B1D30",
-              paddingInline: { xs: "1rem", sm: "2rem" },
+              padding: { xs: "1.5rem 1rem", sm: "1.5rem 2rem" },
               marginTop: { xs: "1rem", sm: "2rem", md: "5rem" },
               mb: 3,
               height: { sm: "700px", md: "760.371px" },
@@ -354,10 +338,8 @@ export default function ContactFormSection(): JSX.Element {
               color: "#fff",
               marginLeft: { xs: "20px", sm: "50px", md: 0 },
               marginRight: { xs: "20px", sm: "50px", md: 0 },
+              maxWidth: "545px",
             }}
-            xs={12}
-            sm={12}
-            md={5.3}
           >
             <Typography
               component={motion.p}

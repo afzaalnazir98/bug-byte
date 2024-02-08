@@ -7,7 +7,6 @@ import { Box, Grid, Typography } from "@mui/material";
 
 import { FooterProps } from "@/utils/types";
 
-
 const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
   return (
     <Container>
@@ -20,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center", 
+            justifyContent: "center",
             flexDirection: { xs: "column", md: "row" },
             gap: { xs: "30px", md: "20px" },
           }}
@@ -29,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
             sx={{
               flex: "30%",
               display: "flex",
-              marginTop:"25px",
+              marginTop: "25px",
               justifyContent: { xs: "center", md: "start" },
             }}
           >
@@ -45,7 +44,6 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
             >
               <Box component={Link} href={"/"}>
                 <Image
-                  priority={true}
                   src="/assets/images/logo.png"
                   alt="bugg byte"
                   width={257}

@@ -50,7 +50,7 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
       >
         <CardMedia
           sx={{
-            height: { xs: 170, sm: 210, md: 317 },
+            height: { xs: 170, sm: 210, md: 280, lg: 317 },
             width: "100%",
             borderRadius: "9.373px 9.373px 0px 0px",
           }}
@@ -62,7 +62,12 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
 
         <CardContent
           sx={{
-            paddingInline: { xs: "0.5rem", md: "2rem" },
+            paddingInline: {
+              xs: "0.5rem",
+              sm: "0.8rem",
+              md: "1rem",
+              lg: "2rem",
+            },
             mt: { xs: 0, md: 2 },
             color: "white",
           }}
@@ -83,6 +88,7 @@ const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
               fontSize: { xs: "12px", sm: "14px" },
               fontWeight: { xs: 300, sm: 400 },
               color: "white",
+              textTransform: "uppercase",
             }}
             variant="body1"
             gutterBottom

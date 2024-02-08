@@ -206,8 +206,6 @@
         "text": "DIGITAL TWINS",
         "title": "JASMINE GRAND MALL",
         "des": "The largest shopping mall in Bahria Town Lahore.",
-        "btnLink": "/",
-        "buttonText": "Request to play",
         "image": "/assets/images/jasmin-grand-header.png"
       },
       "GameArt": {
@@ -270,8 +268,6 @@
         "text": "DIGITAL TWINS",
         "title": "Q HIGH STREET",
         "des": "Every corner of this one million-wide modern street is the fusion of contemporary and neoclassical design dedicatedly designed by the Hiline architecture and 3D designing team with the perfect blend of luxury, growth, and lifestyle.",
-        "btnLink": "/",
-        "buttonText": "Request to play",
         "image": "/assets/images/q-high-header.png"
       },
       "GameArt": {
@@ -367,8 +363,6 @@
         "text": "DIGITAL TWINS",
         "title": "Q-CENTRAL MALL & RESIDENCES",
         "des": "Bahria Orchard and South Lahore's very first skyscraper.",
-        "btnLink": "/",
-        "buttonText": "Request to play",
         "image": "/assets/images/q-central-mall.png"
       },
       "GameArt": {
@@ -389,10 +383,6 @@
           "unity": true,
           "autoDesk": true,
           "blender": true
-        },
-        "availableAt": {
-          "appleStore": true,
-          "playStore": true
         }
       }
     }

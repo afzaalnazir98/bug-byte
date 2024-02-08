@@ -128,7 +128,8 @@ export default function Help() {
                 letterSpacing: { xs: "1.2", md: "1.8" },
               }}
             >
-              Bringing People Together Through The Power Of Play
+              we design and craft the best games and experiences Using Unity &
+              Unreal Engine For Mobile, P.C ,Web, and Console
             </Title>
             <Description
               data-aos-delay="500"
