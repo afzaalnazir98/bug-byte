@@ -159,6 +159,7 @@ export default function GameExperienceSlider() {
             </Tabs>
           </Box>
           <Swiper
+            loop
             navigation={navigationel}
             className="swiper-main"
             modules={[Autoplay, Navigation]}

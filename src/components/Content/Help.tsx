@@ -128,8 +128,7 @@ export default function Help() {
                 letterSpacing: { xs: "1.2", md: "1.8" },
               }}
             >
-              we design and craft the best games and experiences Using Unity &
-              Unreal Engine For Mobile, P.C ,Web, and Console
+              Bringing People Together Through The Power Of Play
             </Title>
             <Description
               data-aos-delay="500"
@@ -141,8 +140,8 @@ export default function Help() {
                 color: "#071421",
               }}
             >
-              Welcome to Buggbyte Studios! We create fun games using Unity and
-              Unreal Engine. Have you ever heard of the Metaverse?
+              we design and craft the best games and experiences Using Unity &
+              Unreal Engine For Mobile, P.C ,Web, and Console
             </Description>
             <Box
               data-aos="fade-down-right"
