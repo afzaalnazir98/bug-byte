@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from 'resend';
 
-
 const resend = new Resend('re_KqVWH73h_63VsoPEJhPFPv1AMPyxJCk8p');
 
 export async function POST(req: any, res: any) {
@@ -19,15 +18,11 @@ export async function POST(req: any, res: any) {
           `
         });
 
-        // Check if there's an error while sending email
         if (error) {
             console.error("Error sending email:", error);
             return NextResponse.json({ error: "Error sending email" }, { status: 400 });
         }
-
         console.log("Email sent successfully:", data);
-
-        // Return a response indicating successful email sending
         return NextResponse.json("Email sent successfully");
     } catch (error) {
         console.error("Error handling form submission:", error);
