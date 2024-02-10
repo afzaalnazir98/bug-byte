@@ -14,6 +14,7 @@ interface HeroSectionProps {
 const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
   const textIndex = useMotionValue(0);
   const texts = [Slide?.title?.t2];
+
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -21,8 +22,9 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
     baseText.get().slice(0, latest)
   );
   const updatedThisRound = useMotionValue(true);
+
   useEffect(() => {
-    const animation = animate(count, 60, {
+    animate(count, 60, {
       type: "tween",
       delay: 1,
       duration: 4,
@@ -43,8 +45,7 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
         }
       },
     });
-    return () => animation.stop();
-  }, [count, textIndex, texts.length, updatedThisRound]);
+  }, []);
 
   return (
     <Grid
@@ -54,10 +55,9 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
         maxWidth: "1370px",
         width: "100%",
         p: {
-          xs: "6rem 2rem 2rem",
-          sm: "5rem 2rem 2rem",
-          md: "8rem 4rem 2rem",
-          lg: "8rem 4rem 0.5rem",
+          xs: "7rem 2rem 2rem",
+          md: "10rem 4rem 2rem",
+          lg: "12rem 4rem 2rem",
         },
         mb: "auto",
       }}
@@ -71,6 +71,7 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
             sm: 0,
             xs: 2,
           },
+          mt: { xs: 6, md: 0 },
         }}
       >
         <Box
@@ -93,8 +94,8 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
                   variants={textVariants}
                   sx={{
                     color: "#D9D9D9",
-                    mb: { lg: "22px", md: "18px", sm: "14px", xs: "8px" },
-                    fontSize: { md: "28px", sm: "20px", xs: "18px" },
+                    mb: { md: "22px", xs: "12px" },
+                    fontSize: { md: "28px", sm: "24px", xs: "18px" },
                     fontWeight: "400",
                     lineHeight: "normal",
                   }}
@@ -126,9 +127,8 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
                   <Box
                     sx={{
                       minHeight: {
-                        lg: "85px",
-                        sm: "52px",
-                        xs: "35px",
+                        lg: "85.73px",
+                        xs: "52.25px",
                       },
                     }}
                   >
@@ -136,17 +136,17 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
                       component={motion.span}
                       variants={textVariants}
                       sx={{
-                        mb: { lg: "22px", md: "18px", sm: "14px", xs: "8px" },
+                        mb: { md: "22px", xs: "12px" },
                         background:
                           "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                         backgroundClip: "text",
                         color: "transparent",
                         textTransform: "uppercase",
                         fontSize: {
-                          lg: "82px",
+                          lg: "82.045px",
                           md: "56px",
-                          sm: "40px",
-                          xs: "32px",
+                          sm: "50px",
+                          xs: "46px",
                         },
                         fontWeight: 700,
                         lineHeight: 1.045,
@@ -162,9 +162,9 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
               {Slide.description && (
                 <Box
                   sx={{
-                    mb: { lg: "22px", md: "18px", sm: "14px", xs: "8px" },
+                    mb: { md: "22px", xs: "12px" },
                     color: "#D9D9D9",
-                    fontSize: { md: "24px", sm: "18px", xs: "18px" },
+                    fontSize: { xs: "18px", sm: "22px", lg: "24px" },
                     fontWeight: 400,
                     lineHeight: { xs: "1.5", sm: "1.7", md: "normal" },
                   }}
@@ -176,7 +176,7 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
 
             <Box
               sx={{
-                marginTop: { xs: "20px", sm: "20px", md: "30px" },
+                marginTop: "30px",
                 display: "flex",
                 gap: { lg: "32px", md: "26px", sm: "18px", xs: "8px" },
               }}
@@ -206,13 +206,13 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
                           whiteSpace: "nowrap",
                           p: {
                             md: "16px 34px",
-                            sm: "10px 16px",
-                            xs: "8px 14px",
+                            sm: "14px 20px",
+                            xs: "8px 16px",
                           },
                         }}
                         endIcon={
                           <ArrowOutwardIcon
-                            sx={{ ml: { md: "37px", sm: "12px", xs: "2px" } }}
+                            sx={{ ml: { md: "37px", sm: "18px", xs: "8px" } }}
                           />
                         }
                       >
@@ -233,8 +233,8 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
                           lineHeight: 1.2,
                           p: {
                             md: "16px 34px",
-                            sm: "10px 16px",
-                            xs: "10px 14px",
+                            sm: "14px 20px",
+                            xs: "10px 20px",
                           },
                           whiteSpace: "nowrap",
                           borderRadius: "6px",
@@ -268,11 +268,7 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              "& .main-image": {
-                width: "100%",
-                height: "auto",
-                px: { xs: "0px", lg: "15px" },
-              },
+              "& .main-image": { width: "100%", height: "auto", px: "15px" },
             }}
           >
             <Image

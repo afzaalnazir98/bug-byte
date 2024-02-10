@@ -1,7 +1,8 @@
-"use client";
 
-import React, { useRef } from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import axios from "axios";
 import {
   Box,
   TextField,
@@ -11,7 +12,6 @@ import {
   FormControl,
   InputLabel,
 } from "@mui/material";
-import { FormData } from "@/utils/types";
 
 const cartoonMotion = {
   rest: {
@@ -28,15 +28,26 @@ const cartoonMotion = {
 export default function ContactForm() {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
-  const [formData, setFormData] = React.useState<FormData>({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     service: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    try {
+      const response = await axios.post("/api/send", formData); 
+
+      if (response.status === 200) {
+        console.log("Email sent successfully!");
+      } else {
+        console.error("Failed to send email");      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
   };
 
   return (
@@ -119,7 +130,7 @@ export default function ContactForm() {
               marginBottom: { xs: "4px", sm: "8px" },
             },
           }}
-          onSubmit={(e: any) => handleSubmit(e)}
+          onSubmit={handleSubmit}
         >
           <TextField
             className="input-field"
@@ -128,7 +139,7 @@ export default function ContactForm() {
             fullWidth
             margin="normal"
             required
-            onChange={(e: any) =>
+            onChange={(e) =>
               setFormData({ ...formData, name: e.target.value })
             }
           />
@@ -140,7 +151,7 @@ export default function ContactForm() {
             margin="normal"
             required
             type="email"
-            onChange={(e: any) =>
+            onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
           />
