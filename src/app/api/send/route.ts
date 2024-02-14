@@ -1,31 +1,62 @@
 import { NextResponse } from "next/server";
-import { Resend } from 'resend';
+import { Resend } from "resend";
+import { BuggByteEmail } from "../../../components/email/buggbyte-email";
+import { ClientEmail } from "../../../components/email/client-email";
 
-const resend = new Resend('re_KqVWH73h_63VsoPEJhPFPv1AMPyxJCk8p');
+const resend = new Resend(process.env.RESEND_API_URL);
 
 export async function POST(req: any, res: any) {
-    try {
-       const { name, email,service, message } = await req.json();
-       const { data, error } = await resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'iamafzaalnazir@gmail.com',
-          subject: 'New Message from Contact Form',
-          html: `
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Email:</strong> ${service}</p>
-            <p><strong>Message:</strong> ${message}</p>
-          `
+  try {
+    const { name, email, service, message } = await req.json();
+    const { data, error } = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "hashirmughal1000@gmail.com", // for buugByte
+      subject: "BuggByte Studios",
+      react: BuggByteEmail({
+        name,
+        email,
+        service,
+        message,
+      }) as React.ReactElement,
+    });
+
+    if (data) {
+      try {
+        const { data, error } = await resend.emails.send({
+          from: "onboarding@resend.dev",
+          to: `${email}`, // for client message
+          subject: "BuggByte Studios",
+          react: ClientEmail({ name }) as React.ReactElement,
         });
 
-        if (error) {
-            console.error("Error sending email:", error);
-            return NextResponse.json({ error: "Error sending email" }, { status: 400 });
+        if (data) {
+          return NextResponse.json("Both Email sent successfully");
+        } else {
+          console.error("Client Error sending email:", error);
+          return NextResponse.json(
+            { error: " Client Error sending email" },
+            { status: 400 }
+          );
         }
-        console.log("Email sent successfully:", data);
-        return NextResponse.json("Email sent successfully");
-    } catch (error) {
-        console.error("Error handling form submission:", error);
-        return NextResponse.json({ error: "Error handling form submission" }, { status: 500 });
+      } catch (error) {
+        console.error(" Client Error handling form submission:", error);
+        return NextResponse.json(
+          { error: "Error handling form submission" },
+          { status: 500 }
+        );
+      }
+    } else {
+      console.error("Buggbyte Error sending email:", error);
+      return NextResponse.json(
+        { error: "Error sending email" },
+        { status: 400 }
+      );
     }
+  } catch (error) {
+    console.error("Buggbyte Error handling form submission:", error);
+    return NextResponse.json(
+      { error: "Error handling form submission" },
+      { status: 500 }
+    );
+  }
 }

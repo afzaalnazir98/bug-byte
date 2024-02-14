@@ -1,6 +1,5 @@
-
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import axios from "axios";
 import {
@@ -11,7 +10,11 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  CircularProgress,
 } from "@mui/material";
+import titleData from "../../Mock/title.json";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const cartoonMotion = {
   rest: {
@@ -25,7 +28,11 @@ const cartoonMotion = {
   },
 };
 
+const Services: string[] = titleData;
+
 export default function ContactForm() {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
   const [formData, setFormData] = useState({
@@ -34,19 +41,32 @@ export default function ContactForm() {
     service: "",
     message: "",
   });
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("formData", formData);
 
     try {
-      const response = await axios.post("/api/send", formData); 
+      setIsLoading(true);
+
+      const response = await axios.post("/api/send", formData);
 
       if (response.status === 200) {
+        setIsSuccess(true);
+        toast.success("Email sent successfully!", {
+          position: "bottom-right",
+        });
         console.log("Email sent successfully!");
       } else {
-        console.error("Failed to send email");      }
+        toast.error("Failed to send email", {
+          position: "bottom-right",
+        });
+        console.error("Failed to send email");
+      }
     } catch (error) {
+      toast.error("Error sending email");
       console.error("Error sending email:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -59,6 +79,7 @@ export default function ContactForm() {
         minHeight: { xs: "100%", sm: "655px" },
       }}
     >
+      <ToastContainer />
       <Box
         component={motion.div}
         initial="rest"
@@ -86,10 +107,7 @@ export default function ContactForm() {
           borderRadius: "8px",
           "& .MuiInputBase-root": {
             borderRadius: "10px",
-          },
-          "& .input-field:hover": {
-            border: "1px solid white",
-            borderRadius: "10px",
+            borderColor: "red",
           },
           "& .mui-sm7gn3-MuiInputBase-root-MuiOutlinedInput-root": {
             padding: {
@@ -98,10 +116,13 @@ export default function ContactForm() {
               md: "16.5px 14px",
             },
           },
+
+          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline ": {
+            borderColor: "white !important",
+          },
           "& .MuiOutlinedInput-root": {
             "&.Mui-focused fieldset": {
               borderColor: "white",
-              color: "white",
             },
           },
           "& .MuiInputBase-input": {
@@ -117,6 +138,9 @@ export default function ContactForm() {
           "& label.Mui-focused": {
             color: "white",
           },
+          "& .MuiSvgIcon-root": {
+            color: "white",
+          },
         }}
       >
         <Box
@@ -125,6 +149,7 @@ export default function ContactForm() {
             display: "grid",
             borderRadius: "8px",
             paddingBottom: "10px",
+
             "& .input-field": {
               marginTop: { xs: "9px", sm: "16px" },
               marginBottom: { xs: "4px", sm: "8px" },
@@ -139,9 +164,7 @@ export default function ContactForm() {
             fullWidth
             margin="normal"
             required
-            onChange={(e) =>
-              setFormData({ ...formData, name: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
           <TextField
             className="input-field"
@@ -175,8 +198,11 @@ export default function ContactForm() {
                 })
               }
             >
-              <MenuItem value="service1">Service 1</MenuItem>
-              <MenuItem value="service2">Service 2</MenuItem>
+              {Services.map((service, index) => (
+                <MenuItem value={service} key={index}>
+                  {service}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
           <TextField
@@ -192,25 +218,36 @@ export default function ContactForm() {
               setFormData({ ...formData, message: e.target.value })
             }
           />
-          <Button
-            sx={{
-              borderRadius: "10px",
-              background:
-                "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-              marginTop: { xs: "10px", sm: "15px" },
-              height: "50.955px",
-              fontSize: "18px",
-              fontWeight: 600,
-              "&:hover": {
-                backgroundColor: "#F86910",
-              },
-            }}
-            type="submit"
-            variant="contained"
-            fullWidth
-          >
-            Send
-          </Button>
+          {isLoading ? (
+            <Button
+              sx={{
+                borderRadius: "10px",
+                background:
+                  "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+                marginTop: { xs: "10px", sm: "15px" },
+                height: "50.955px",
+                fontSize: "18px",
+                fontWeight: 600,
+                "&:hover": {
+                  backgroundColor: "#F86910",
+                },
+              }}
+              type="submit"
+              variant="contained"
+              fullWidth
+            >
+              Send
+            </Button>
+          ) : (
+            <Box sx={{ mt: 2, mb: { xs: 2, sm: 4 }, ml: 2 }}>
+              <CircularProgress
+                variant="indeterminate"
+                sx={{
+                  color: "white",
+                }}
+              />
+            </Box>
+          )}
         </Box>
       </Box>
     </Box>

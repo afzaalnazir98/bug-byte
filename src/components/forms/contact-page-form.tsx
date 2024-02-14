@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
+import React, { useState, useEffect } from "react";
 import {
   Box,
+  Typography,
+  Grid,
   TextField,
   Button,
   Select,
@@ -12,15 +12,19 @@ import {
   FormControl,
   FormLabel,
   Divider,
+  CircularProgress,
 } from "@mui/material";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import axios from "axios";
+import titleData from "../../Mock/title.json";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import watch from "@/public/assets/images/watch.svg";
 import phone from "@/public/assets/images/phone.svg";
 import message from "@/public/assets/images/msgSmall.svg";
-import Image from "next/image";
-import { FormData } from "@/utils/types";
 import Container from "../container";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
 
 const socialMediaLinks = [
   {
@@ -38,65 +42,78 @@ const socialMediaLinks = [
     icon: "/assets/social-media-icons/linkdin.svg",
     url: "https://www.linkedin.com/company/buggbyte-studios/about/",
   },
-  // {
-  //   platform: "twitter",
-  //   icon: "/assets/social-media-icons/X.svg",
-  //   url: "https://twitter.com/",
-  // },
 ];
 
 const formVariants = {
-  initial: {
-    x: -500,
-    opacity: 0,
-  },
+  initial: { x: -500, opacity: 0 },
   animate: {
     x: 0,
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.1,
-    },
+    transition: { duration: 1, staggerChildren: 0.1 },
   },
 };
 
 const cardVariants = {
-  initial: {
-    x: 500,
-    opacity: 0,
-  },
+  initial: { x: 500, opacity: 0 },
   animate: {
     x: 0,
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.1,
-    },
+    transition: { duration: 1, staggerChildren: 0.1 },
   },
 };
 
+const Services: string[] = titleData;
+
 export default function ContactFormSection(): JSX.Element {
-  const [formData, setFormData] = useState<FormData>({
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     service: "",
     message: "",
   });
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Success Notification !", {
+        position: "bottom-right",
+      });
+    }
+  }, [isSuccess]);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    try {
+      setIsLoading(true); // Set isLoading to true before making the request
+
+      const response = await axios.post("/api/send", formData);
+
+      if (response.status === 200) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", service: "", message: "" });
+        console.log("Email sent successfully!");
+      } else {
+        console.error("Failed to send email");
+        toast.error("Error sending email");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Error sending email", {
+        position: "bottom-right",
+      });
+    } finally {
+      setIsLoading(false); // Set isLoading to false after receiving the response, whether success or failure
+    }
   };
 
   return (
-    <Box
-      sx={{
-        background: "#fff",
-        width: "100%",
-      }}
-    >
+    <Box sx={{ background: "#fff", width: "100%" }}>
       <Container>
+        <ToastContainer />
         <Box
           sx={{
             display: "flex",
@@ -181,7 +198,7 @@ export default function ContactFormSection(): JSX.Element {
                 color: "white",
               },
               "& .MuiSelect-icon": {
-                color: "white", // Set your desired color for the icon
+                color: "white",
               },
             }}
           >
@@ -216,7 +233,6 @@ export default function ContactFormSection(): JSX.Element {
                   lineHeight: { xs: "20px", sm: "24px" },
                 }}
               >
-                {" "}
                 Name
               </FormLabel>
               <TextField
@@ -227,6 +243,7 @@ export default function ContactFormSection(): JSX.Element {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
+                value={formData.name}
               />
               <FormLabel
                 sx={{
@@ -235,7 +252,6 @@ export default function ContactFormSection(): JSX.Element {
                   lineHeight: "24px",
                 }}
               >
-                {" "}
                 Email
               </FormLabel>
               <TextField
@@ -247,6 +263,7 @@ export default function ContactFormSection(): JSX.Element {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
+                value={formData.email}
               />
 
               <FormLabel
@@ -256,7 +273,6 @@ export default function ContactFormSection(): JSX.Element {
                   lineHeight: "24px",
                 }}
               >
-                {" "}
                 Service
               </FormLabel>
               <FormControl
@@ -277,8 +293,11 @@ export default function ContactFormSection(): JSX.Element {
                     })
                   }
                 >
-                  <MenuItem value="service1">Service 1</MenuItem>
-                  <MenuItem value="service2">Service 2</MenuItem>
+                  {Services.map((service, index) => (
+                    <MenuItem value={service} key={index}>
+                      {service}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
 
@@ -303,24 +322,37 @@ export default function ContactFormSection(): JSX.Element {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
+                value={formData.message}
               />
-              <Button
-                sx={{
-                  mt: 2,
-                  mb: { xs: 2, sm: 4 },
-                  borderRadius: "5px",
-                  width: { xs: "100%", sm: "167px" },
-                  height: "48px",
-                  fontSize: "18px",
-                  fontWeight: 600,
-                  background:
-                    "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
-                }}
-                type="submit"
-                variant="contained"
-              >
-                Send Message
-              </Button>
+
+              {isLoading ? (
+                <Button
+                  sx={{
+                    mt: 2,
+                    mb: { xs: 2, sm: 4 },
+                    borderRadius: "5px",
+                    width: { xs: "100%", sm: "167px" },
+                    height: "48px",
+                    fontSize: "18px",
+                    fontWeight: 600,
+                    background:
+                      "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
+                  }}
+                  type="submit"
+                  variant="contained"
+                >
+                  Send Message
+                </Button>
+              ) : (
+                <Box sx={{ mt: 2, mb: { xs: 2, sm: 4 }, ml: 2 }}>
+                  <CircularProgress
+                    variant="indeterminate"
+                    sx={{
+                      color: "white",
+                    }}
+                  />
+                </Box>
+              )}
             </form>
           </Grid>
           <Grid
