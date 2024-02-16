@@ -173,6 +173,7 @@ export default function Offering() {
                 fontWeight: 600,
                 alignItems: "flex-start",
                 maxWidth: { xs: "max-content", sm: "370px" },
+                transition: "all 0.8s ease-in-out, color 0.3s ease-in-out",
               },
             }}
           >
@@ -188,6 +189,14 @@ export default function Offering() {
           {TabPanelData.map((item, i) => (
             <TabPanel value={value} index={i} key={i}>
               <Box
+                component={motion.div}
+                initial={{ opacity: 0, scale: 0.5, y: 200 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
                 sx={{
                   maxWidth: "858px",
                   display: "grid",

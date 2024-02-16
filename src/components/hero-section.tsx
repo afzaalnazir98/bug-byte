@@ -45,7 +45,7 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
         }
       },
     });
-  }, []);
+  }, [count]);
 
   return (
     <Grid

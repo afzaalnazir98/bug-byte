@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import {
   Box,
@@ -67,7 +66,7 @@ const cardVariants = {
 const Services: string[] = titleData;
 
 export default function ContactFormSection(): JSX.Element {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -88,8 +87,7 @@ export default function ContactFormSection(): JSX.Element {
     e.preventDefault();
 
     try {
-      setIsLoading(true); // Set isLoading to true before making the request
-
+      setIsLoading(true);
       const response = await axios.post("/api/send", formData);
 
       if (response.status === 200) {
@@ -106,7 +104,7 @@ export default function ContactFormSection(): JSX.Element {
         position: "bottom-right",
       });
     } finally {
-      setIsLoading(false); // Set isLoading to false after receiving the response, whether success or failure
+      setIsLoading(false);
     }
   };
 
@@ -324,35 +322,34 @@ export default function ContactFormSection(): JSX.Element {
                 }
                 value={formData.message}
               />
-
-              {isLoading ? (
-                <Button
-                  sx={{
-                    mt: 2,
-                    mb: { xs: 2, sm: 4 },
-                    borderRadius: "5px",
-                    width: { xs: "100%", sm: "167px" },
-                    height: "48px",
-                    fontSize: "18px",
-                    fontWeight: 600,
-                    background:
-                      "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
-                  }}
-                  type="submit"
-                  variant="contained"
-                >
-                  Send Message
-                </Button>
-              ) : (
-                <Box sx={{ mt: 2, mb: { xs: 2, sm: 4 }, ml: 2 }}>
+              <Button
+                sx={{
+                  mt: 2,
+                  mb: { xs: 2, sm: 4 },
+                  borderRadius: "5px",
+                  width: { xs: "100%", sm: "167px" },
+                  height: "48px",
+                  fontSize: "18px",
+                  fontWeight: 600,
+                  background:
+                    "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
+                }}
+                type="submit"
+                variant="contained"
+                disabled={isLoading}
+              >
+                {!isLoading ? (
+                  "Send Message"
+                ) : (
                   <CircularProgress
                     variant="indeterminate"
+                    size={25}
                     sx={{
                       color: "white",
                     }}
                   />
-                </Box>
-              )}
+                )}
+              </Button>
             </form>
           </Grid>
           <Grid

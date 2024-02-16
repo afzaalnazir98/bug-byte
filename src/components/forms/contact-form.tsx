@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import axios from "axios";
 import {
@@ -31,7 +31,7 @@ const cartoonMotion = {
 const Services: string[] = titleData;
 
 export default function ContactForm() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -218,36 +218,36 @@ export default function ContactForm() {
               setFormData({ ...formData, message: e.target.value })
             }
           />
-          {isLoading ? (
-            <Button
-              sx={{
-                borderRadius: "10px",
-                background:
-                  "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
-                marginTop: { xs: "10px", sm: "15px" },
-                height: "50.955px",
-                fontSize: "18px",
-                fontWeight: 600,
-                "&:hover": {
-                  backgroundColor: "#F86910",
-                },
-              }}
-              type="submit"
-              variant="contained"
-              fullWidth
-            >
-              Send
-            </Button>
-          ) : (
-            <Box sx={{ mt: 2, mb: { xs: 2, sm: 4 }, ml: 2 }}>
+          <Button
+            sx={{
+              borderRadius: "10px",
+              background:
+                "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
+              marginTop: { xs: "10px", sm: "15px" },
+              height: "50.955px",
+              fontSize: "18px",
+              fontWeight: 600,
+              "&:hover": {
+                backgroundColor: "#F86910",
+              },
+            }}
+            type="submit"
+            variant="contained"
+            fullWidth
+            disabled={isLoading}
+          >
+            {!isLoading ? (
+              "Send"
+            ) : (
               <CircularProgress
                 variant="indeterminate"
+                size={25}
                 sx={{
                   color: "white",
                 }}
               />
-            </Box>
-          )}
+            )}
+          </Button>
         </Box>
       </Box>
     </Box>

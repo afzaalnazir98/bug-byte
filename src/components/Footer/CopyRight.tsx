@@ -1,5 +1,6 @@
 "use client";
 import Container from "@/components/container";
+import currentYear from "@/utils/CurrentYear";
 import { Box, Divider } from "@mui/material";
 import React from "react";
 
@@ -16,7 +17,7 @@ export default function CopyRight() {
             fontSize: { xs: "14px", md: "18px" },
           }}
         >
-          Copyright ©2024. All rights reserved.
+          Copyright ©{currentYear()}. All rights reserved.
         </Box>
       </Container>
     </>

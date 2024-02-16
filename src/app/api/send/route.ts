@@ -3,14 +3,14 @@ import { Resend } from "resend";
 import { BuggByteEmail } from "../../../components/email/buggbyte-email";
 import { ClientEmail } from "../../../components/email/client-email";
 
-const resend = new Resend(process.env.RESEND_API_URL);
+const resend = new Resend(process.env.RESEND_API);
 
 export async function POST(req: any, res: any) {
   try {
     const { name, email, service, message } = await req.json();
     const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "hashirmughal1000@gmail.com", // for buugByte
+      from: `${process.env.COMPANY_EMAIL}`,
+      to: `${process.env.MEMBER_EMAIL}`,
       subject: "BuggByte Studios",
       react: BuggByteEmail({
         name,
@@ -23,8 +23,8 @@ export async function POST(req: any, res: any) {
     if (data) {
       try {
         const { data, error } = await resend.emails.send({
-          from: "onboarding@resend.dev",
-          to: `${email}`, // for client message
+          from: `${process.env.COMPANY_EMAIL}`,
+          to: `${email}`,
           subject: "BuggByte Studios",
           react: ClientEmail({ name }) as React.ReactElement,
         });

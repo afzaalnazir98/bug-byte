@@ -1,7 +1,6 @@
+import currentYear from "@/utils/CurrentYear";
 import {
   Body,
-  Button,
-  Column,
   Container,
   Head,
   Heading,
@@ -19,9 +18,20 @@ import * as React from "react";
 interface EmailTemplateProps {
   name: string;
 }
+const links = [
+  {
+    link: "https://www.buggbytestudios.com/about-us",
+    name: "About",
+  },
+  {
+    link: "https://www.buggbytestudios.com/portfolio",
+    name: "Portfolio",
+  },
+];
 export const ClientEmail: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
 }) => {
+
   return (
     <Html>
       <Head />
@@ -43,17 +53,19 @@ export const ClientEmail: React.FC<Readonly<EmailTemplateProps>> = ({
           },
         }}
       >
-        <Body className="bg-offwhite text-base font-sans mt-20 mb-20">
+        <Body className="bg-offwhite text-base font-sans mt-20">
           <Container
-            className="bg-black p-45 mt-20 mb-20 text-center"
+            className="bg-black p-45  mt-20 mb-20 text-center"
             style={{
+              border: "2px solid white",
+              borderRadius: "10px",
               background:
                 "linear-gradient(112deg, rgba(23, 69, 113, 0.30) -13.12%, rgba(0, 0, 0, 0.30) 123.07%)",
             }}
           >
             <Link
               href="https://www.buggbytestudios.com/"
-              className="mx-auto my-20 w-auto inline-block "
+              className="mx-auto w-auto inline-block "
             >
               <Img
                 src="https://www.buggbytestudios.com/_next/image?url=/assets/images/logo.png&w=256&q=75"
@@ -66,11 +78,17 @@ export const ClientEmail: React.FC<Readonly<EmailTemplateProps>> = ({
                 alt="BuggByte logo"
               />
             </Link>
-            <Heading className="text-center my-0 leading-8 text-white mt-5">
-              Hi! {name}
-              <br /> Welcome to Buggbyte
+            <Heading className="text-center my-5 leading-10 text-white">
+              <span
+                style={{
+                  textTransform: "capitalize",
+                }}
+              >
+                hi {name}!
+              </span>
+              <br /> 
+              Welcome to Buggbyte
             </Heading>
-
             <Section>
               <Row>
                 <Text className="text-base text-center text-white">
@@ -79,31 +97,22 @@ export const ClientEmail: React.FC<Readonly<EmailTemplateProps>> = ({
                 </Text>
               </Row>
             </Section>
+            <Section className="mt-45">
+              {links?.map((data, index) => (
+                <Link
+                  key={index}
+                  className="text-white underline font-bold mx-4"
+                  href={data.link}
+                >
+                  {data.name}
+                </Link>
+              ))}
+            </Section>
           </Container>
 
           <Container className="mt-20 mb-20">
-            <Section>
-              <Row>
-                <Column className="text-center ">
-                  <Link
-                    href="https://www.buggbytestudios.com/about-us"
-                    className="text-dark"
-                  >
-                    About
-                  </Link>
-                </Column>
-                <Column className="text-center text-white">
-                  <Link
-                    href="https://www.buggbytestudios.com/portfolio"
-                    className="text-dark"
-                  >
-                    Portfolio
-                  </Link>
-                </Column>
-              </Row>
-            </Section>
             <Text className="text-center text-gray-400 mb-45">
-              Copyright ©2024. All rights reserved.
+              Copyright ©{currentYear()}. All rights reserved.
             </Text>
           </Container>
         </Body>

@@ -1,7 +1,6 @@
+import currentYear from "@/utils/CurrentYear";
 import {
   Body,
-  Button,
-  Column,
   Container,
   Head,
   Heading,
@@ -22,6 +21,12 @@ interface EmailTemplateProps {
   service: string;
   message: string;
 }
+
+const paragraph = {
+  fontSize: "16px",
+  lineHeight: "26px",
+};
+
 export const BuggByteEmail: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
   email,
@@ -31,7 +36,7 @@ export const BuggByteEmail: React.FC<Readonly<EmailTemplateProps>> = ({
   return (
     <Html>
       <Head />
-      <Preview>BuggByte Studios </Preview>
+      <Preview>BuggByte Studios</Preview>
       <Tailwind
         config={{
           theme: {
@@ -53,13 +58,15 @@ export const BuggByteEmail: React.FC<Readonly<EmailTemplateProps>> = ({
           <Container
             className="bg-black p-45 mt-20 mb-20 text-center"
             style={{
+              border: "2px solid white",
+              borderRadius: "10px",
               background:
                 "linear-gradient(112deg, rgba(23, 69, 113, 0.30) -13.12%, rgba(0, 0, 0, 0.30) 123.07%)",
             }}
           >
             <Link
               href="https://www.buggbytestudios.com/"
-              className="mx-auto my-20 w-auto inline-block "
+              className="mx-auto my-20 w-auto inline-block"
             >
               <Img
                 src="https://www.buggbytestudios.com/_next/image?url=/assets/images/logo.png&w=256&q=75"
@@ -72,35 +79,56 @@ export const BuggByteEmail: React.FC<Readonly<EmailTemplateProps>> = ({
                 alt="BuggByte logo"
               />
             </Link>
-            <Heading className="text-center my-0 leading-8 text-white mt-5">
-              Client Information
-            </Heading>
-            <Heading className="text-center my-1 leading-8 text-white">
-              {name}
-            </Heading>
-
+            <Text className="text-base text-left text-white" style={paragraph}>
+              You&apos;ve received a new form submission from a user. Here are the
+              details:
+            </Text>
             <Section>
               <Row>
-                <Text className="text-base text-center text-white">
-                  <Link href={`mailto:${email}`}>{email}</Link>
+                <Text className="text-base text-left text-white">
+                  <b>Name: </b>
+                  <span
+                    className="mx-4 text-left"
+                    style={{
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {name}
+                  </span>
                 </Text>
-              </Row>
-              <Row>
-                <Text className="text-base text-center text-white">
-                  {service}
+                <Text className="text-base text-left text-white">
+                  <b>Email: </b>
+                  <span className="mx-4 text-left">
+                    <Link href={`mailto:${email}`}>{email}</Link>
+                  </span>
                 </Text>
-              </Row>
-              <Row>
-                <Text className="text-base text-center text-white">
-                  {message}
+                <Text className="text-base text-left text-white">
+                  <b>Service: </b>
+                  <span
+                    className="mx-4 text-left"
+                    style={{
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {service}
+                  </span>
+                </Text>
+                <Text className="text-base text-left text-white">
+                  <b>Message: </b>
+                  <span className="mx-4 text-left">{message}</span>
                 </Text>
               </Row>
             </Section>
+            <Text className="text-base text-left text-white" style={paragraph}>
+              Best regards,
+              <br />
+              Buggbyte studios
+            </Text>
           </Container>
 
           <Container className="mt-20 mb-20">
             <Text className="text-center text-gray-400 mb-45">
-              Copyright ©2024. All rights reserved.
+              Copyright ©{currentYear()}. All rights reserved.
             </Text>
           </Container>
         </Body>

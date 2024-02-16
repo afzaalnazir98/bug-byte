@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
@@ -11,11 +12,12 @@ import "./globals.css";
 import FooterData from "../Mock/FooterData.json";
 import { FooterSection } from "@/utils/types";
 import Loading from "./Loading";
+import Providers from "./providers";
 
 const metadata = {
-  title: "bugg byte studios",
+  title: "Buggbyte studios",
   description:
-    "BuggBytes Studio is your gaming hub for Unity, Unreal, AR, VR, Metaverse, Blockchain, NFTs, and Virtual Real Estate. Experience the next level of fun with our console gaming creations – where innovation meets playtime excitement!",
+    "BuggByte Studio is your gaming hub for Unity, Unreal, AR, VR, Metaverse, Blockchain, NFTs, and Virtual Real Estate. Experience the next level of fun with our console gaming creations – where innovation meets playtime excitement!",
 };
 
 const footerData: FooterSection[] = FooterData;
@@ -51,7 +53,9 @@ export default function RootLayout({
             ) : (
               <>
                 <Navbar />
-                <Box component="main">{children}</Box>
+                <Box component="main">
+                  <Providers>{children}</Providers>
+                </Box>
                 <FooterLayout>
                   <Footer footerData={footerData} />
                   <CopyRight />
