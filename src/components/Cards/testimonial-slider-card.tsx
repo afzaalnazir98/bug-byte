@@ -43,7 +43,7 @@ export default function MediaCard() {
               width: "194.221px",
               mt: 3,
             }}
-            image="/assets/images/game-development-agency-logo-with-faeture-image-623505743 1.png"
+            image="/assets/images/game-development-agency-logo.png"
             component="img"
             loading="lazy"
             title="card-image"

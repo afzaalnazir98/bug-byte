@@ -241,7 +241,8 @@ const Navbar = () => {
               height: "56px",
               display: "flex",
               borderRadius: "6px",
-              background: "linear-gradient(95deg, #F04B12 1.59%, #FC8C46 100%)",
+              background:
+                "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
               mb: 2,
             }}
             onClick={toggleDrawer}

@@ -141,7 +141,7 @@ export default function ContentComponent({
                   fontSize: { xs: "38px", md: "48px" },
                   lineHeight: { xs: "1.1", sm: "1.2", md: "1.3", lg: "1.5" },
                   backgroundImage:
-                    "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
+                    "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -169,7 +169,7 @@ export default function ContentComponent({
                     padding: { xs: " 7px 58px", md: "7px 80px" },
                     borderRadius: "6px",
                     backgroundImage:
-                      "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
+                      "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                     fontSize: { xs: "18px", md: "24px" },
                     fontWeight: 600,
                     textTransform: "capitalize",
