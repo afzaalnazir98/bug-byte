@@ -139,7 +139,7 @@ export default function ContactFormSection(): JSX.Element {
               fontWeight: { xs: 500, sm: 700 },
               lineHeight: "41px",
               background:
-                "var(--Main-Color, linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%))",
+                "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -332,7 +332,7 @@ export default function ContactFormSection(): JSX.Element {
                   fontSize: "18px",
                   fontWeight: 600,
                   background:
-                    "linear-gradient(90deg, #F04B12 0%, #FB8843 100%)",
+                    "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
                 }}
                 type="submit"
                 variant="contained"
