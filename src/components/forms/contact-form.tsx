@@ -1,5 +1,5 @@
 "use client";
-import React, {  useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import axios from "axios";
 import {
@@ -11,6 +11,7 @@ import {
   FormControl,
   InputLabel,
   CircularProgress,
+  useMediaQuery,
 } from "@mui/material";
 import titleData from "../../Mock/title.json";
 import { toast, ToastContainer } from "react-toastify";
@@ -33,6 +34,7 @@ const Services: string[] = titleData;
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const matchemd = useMediaQuery("(max-width:650px)");
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
   const [formData, setFormData] = useState({
@@ -87,9 +89,11 @@ export default function ContactForm() {
         animate={isInView ? "animate" : undefined}
         sx={{
           position: "absolute",
-          minWidth: { xs: "100%", md: "687px" },
+          minWidth: { sm: "100%", md: "687px" },
           minHeight: { xs: "100%", sm: "655px" },
-          backgroundImage: `url(${"/assets/images/question-form-bg.png"})`,
+          backgroundImage: matchemd
+            ? "none"
+            : `url(${"/assets/images/question-form-bg.png"})`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
         }}
@@ -98,9 +102,10 @@ export default function ContactForm() {
         data-aos="fade-up"
         sx={{
           position: "relative",
-          marginLeft: "13%",
-          marginTop: "22%",
-          maxWidth: { xs: "66%", sm: "420px", lg: "450px" },
+          marginLeft: { xs: "auto", sm: "13%" },
+          marginTop: { xs: "0%", sm: "22%" },
+          marginRight: "auto",
+          maxWidth: { xs: "420px", lg: "450px" },
           height: "100%",
           backgroundColor: "#0B1D30",
           padding: { xs: "8px 15px", sm: "10px 20px", md: "20px 32px" },

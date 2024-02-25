@@ -66,9 +66,11 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
               flex: "70%",
             }}
           >
-            <Grid container rowSpacing={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid container rowSpacing={{ xs: 4, sm: 8, md: 12 }} sx={{
+              marginLeft:{xs:"auto",md:"35px"}
+            }}>
               {footerData.map((data: any, index: any) => (
-                <Grid item xs={12} sm={4} key={index}>
+                <Grid item xs={12} sm={4} key={index} >
                   <Box
                     sx={{
                       display: "flex",
@@ -78,6 +80,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                     <Box
                       sx={{
                         textAlign: { xs: "center", sm: "left" },
+                        marginLeft:{xs:"0px",md:`${index===0 ?"40px":"0px"}`}
                       }}
                     >
                       <Typography
@@ -116,6 +119,41 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                             </Typography>
                           </Box>
                         ))}
+                        {data.arVr && (
+                          <Box
+                            sx={{
+                              display: "flex",
+                              justifyContent: { xs: "center", sm: "left" },
+                            }}
+                          >
+                            {data?.arVr?.map((val: any, linkIndex: any) => (
+                              <Box
+                                key={linkIndex}
+                                component={Link}
+                                href={val.url}
+                                sx={{
+                                  color: "#EAEAEA",
+                                  textDecoration: "none",
+                                }}
+                              >
+                                <Typography
+                                  sx={{
+                                    fontSize: { xs: "18px", md: "14px" },
+                                    fontWeight: 400,
+                                    marginTop: "20px",
+                                    marginRight: "5px",
+                                  }}
+                                >
+                                  {val.text}{" "}
+                                  {data.arVr.length - 1 === linkIndex
+                                    ? ""
+                                    : "/"}
+                                </Typography>
+                              </Box>
+                            ))}
+                          </Box>
+                        )}
+
                         {data.socialMedia && (
                           <Box
                             sx={{
@@ -128,6 +166,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }: any) => {
                                 <Box
                                   key={socialIndex}
                                   component={Link}
+                                  target="_blank"
                                   href={social.url}
                                   sx={{ marginRight: "30px" }}
                                 >

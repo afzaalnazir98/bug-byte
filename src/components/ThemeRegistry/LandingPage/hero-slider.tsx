@@ -63,7 +63,7 @@ export default function HeroSlider() {
       </Swiper>
       <Box
         sx={{
-          bg: "#051223",
+          bg: "#FF3F00",
         }}
       >
         <Box
@@ -71,11 +71,11 @@ export default function HeroSlider() {
             maxWidth: "1440px",
             m: "auto",
             "& .swiper-slide button": {
-              borderBottomColor: "#051223",
+              borderBottomColor: "#DD2C00",
             },
             "& .swiper-slide.swiper-slide-thumb-active button": {
-              color: "#FE7624",
-              borderBottomColor: "#FE7624",
+              color: "#FF3F00",
+              borderBottomColor: "#DD2C00", 
               background: "#040D15",
             },
           }}

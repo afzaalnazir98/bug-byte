@@ -133,13 +133,13 @@ export default function GameExperienceSlider() {
               />
               <Tab
                 sx={{ ...tabStyles, ml: 2 }}
-                label="AR/VR"
-                onClick={() => handleTabClick("ar-vr")}
+                label="Unity Development"
+                onClick={() => handleTabClick("unity")}
               />
               <Tab
                 sx={{ ...tabStyles, ml: 2 }}
-                label="Unity Development"
-                onClick={() => handleTabClick("unity")}
+                label="AR/VR"
+                onClick={() => handleTabClick("ar-vr")}
               />
               <Tab
                 sx={{ ...tabStyles, ml: 2 }}

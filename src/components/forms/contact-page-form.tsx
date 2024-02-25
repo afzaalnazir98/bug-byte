@@ -516,7 +516,7 @@ export default function ContactFormSection(): JSX.Element {
               }}
             >
               {socialMediaLinks.map((link, index) => (
-                <Link key={index} href={link.url} passHref>
+                <Link key={index} target="_blank" href={link.url} passHref>
                   <Image
                     src={link.icon}
                     width={35}

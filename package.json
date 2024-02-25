@@ -18,7 +18,7 @@
     "@react-email/button": "0.0.13",
     "@react-email/html": "0.0.7",
     "@react-email/img": "0.0.7",
-    "@vercel/speed-insights": "^1.0.2",
+    "@vercel/speed-insights": "^1.0.10",
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "framer-motion": "^10.17.9",

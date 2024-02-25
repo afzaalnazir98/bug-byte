@@ -24,18 +24,6 @@
     }
   },
   {
-    "categories": ["unity"],
-    "subHeading": "Metaverse",
-    "heading": "Tiny Titans",
-    "description": "Tiny Titans – AFK Auto Battles is a Role Playing game Clash steel with players from all around the world in this epic PvP strategy autobattler for Android! Collect and deploy a team of powerful titans, each with their own skills and abilities.",
-    "link": "tiny-titans",
-    "img": "/assets/images/tiny-titans.png",
-    "size": {
-      "width": 500,
-      "height": 620
-    }
-  },
-  {
     "categories": ["blockchain", "unity"],
     "subHeading": "Unity",
     "heading": "pixels debates",
@@ -45,6 +33,19 @@
     "size": {
       "width": 500,
       "height": 480
+    }
+  },
+
+  {
+    "categories": ["unity"],
+    "subHeading": "Metaverse",
+    "heading": "Tiny Titans",
+    "description": "Tiny Titans – AFK Auto Battles is a Role Playing game Clash steel with players from all around the world in this epic PvP strategy autobattler for Android! Collect and deploy a team of powerful titans, each with their own skills and abilities.",
+    "link": "tiny-titans",
+    "img": "/assets/images/tiny-titans.png",
+    "size": {
+      "width": 500,
+      "height": 620
     }
   },
   {
@@ -59,6 +60,7 @@
       "height": 500
     }
   },
+
   {
     "categories": ["ar-vr", "unity"],
     "subHeading": "AR",
@@ -69,18 +71,6 @@
     "size": {
       "width": 500,
       "height": 550
-    }
-  },
-  {
-    "categories": ["digital-twins"],
-    "subHeading": "Unity",
-    "heading": "JASMINE GRAND MALL",
-    "description": "The largest shopping mall in Bahria Town Lahore.",
-    "link": "jasmine-grand-mall",
-    "img": "/assets/images/portfolio7.png",
-    "size": {
-      "width": 500,
-      "height": 600
     }
   },
   {
@@ -95,16 +85,17 @@
       "height": 600
     }
   },
+
   {
     "categories": ["digital-twins"],
-    "subHeading": "Virtual Experiences",
-    "heading": "Q HIGH STREET",
-    "description": "Join Thousands Of Players Who Are Fighting Tiny But Winning BIG.",
-    "link": "q-high-street",
-    "img": "/assets/images/high-street.png",
+    "subHeading": "Unity",
+    "heading": "JASMINE GRAND MALL",
+    "description": "The largest shopping mall in Bahria Town Lahore.",
+    "link": "jasmine-mall",
+    "img": "/assets/images/jasmine-mall.png",
     "size": {
       "width": 500,
-      "height": 600
+      "height": 500
     }
   },
   {
@@ -117,6 +108,18 @@
     "size": {
       "width": 500,
       "height": 450
+    }
+  },
+  {
+    "categories": ["digital-twins"],
+    "subHeading": "Virtual Experiences",
+    "heading": "Q HIGH STREET",
+    "description": "Join Thousands Of Players Who Are Fighting Tiny But Winning BIG.",
+    "link": "q-high-street",
+    "img": "/assets/images/high-street.png",
+    "size": {
+      "width": 500,
+      "height": 600
     }
   },
   {

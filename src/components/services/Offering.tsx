@@ -145,7 +145,7 @@ export default function Offering() {
             }
             sx={{
               "& [role='tablist']": {
-                gap: "10px",
+                gap: { xs: "10px", md: "15px", lg: "20px" },
                 flexDirection: { xs: "row", sm: "column" },
               },
               "& .MuiTabs-scroller": {
