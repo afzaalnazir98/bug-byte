@@ -146,11 +146,11 @@ export default function GameExperienceSlider() {
                 label="Metaverse"
                 onClick={() => handleTabClick("metaverse")}
               />
-              <Tab
+              {/* <Tab
                 sx={{ ...tabStyles, ml: 2 }}
                 label="NFT"
                 onClick={() => handleTabClick("nft")}
-              />
+              /> */}
               <Tab
                 sx={{ ...tabStyles, ml: 2 }}
                 label="blockchain"
