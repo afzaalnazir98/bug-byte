@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Box, Button, styled } from "@mui/material";
+import { Box, Button, styled, useMediaQuery } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Thumbs, Autoplay, EffectFade } from "swiper/modules";
+import {
+  FreeMode,
+  Thumbs,
+  Autoplay,
+  EffectFade,
+  Pagination,
+  Navigation,
+} from "swiper/modules";
 import HeroSection from "@/components/hero-section";
 import { slide } from "@/utils/types";
 import SlidesData from "@/Mock/SlidesData.json";
@@ -16,6 +23,7 @@ import "swiper/css/thumbs";
 
 export default function HeroSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const mobile = useMediaQuery("(max-width:600px)");
 
   const Slides: slide[] = SlidesData;
 
@@ -27,6 +35,15 @@ export default function HeroSlider() {
     },
     "& .swiper-fade .swiper-slide-active": {
       opacity: "1 !important",
+    },
+    "& .swiper-button-next,.swiper-button-prev": {
+      color: "#FF3F00",
+    },
+    "& .swiper-button-next:after": {
+      fontSize: "30px",
+    },
+    "& .swiper-button-prev:after": {
+      fontSize: "30px",
     },
   };
 
@@ -51,8 +68,16 @@ export default function HeroSlider() {
           delay: 10000,
           disableOnInteraction: false,
         }}
+        navigation={mobile === true}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[EffectFade, Autoplay, FreeMode, Thumbs]}
+        modules={[
+          EffectFade,
+          Autoplay,
+          FreeMode,
+          Thumbs,
+          Pagination,
+          Navigation,
+        ]}
       >
         {Slides &&
           Slides.map((Slide, index) => (
@@ -64,6 +89,7 @@ export default function HeroSlider() {
       <Box
         sx={{
           bg: "#FF3F00",
+          display: mobile ? "none" : "block",
         }}
       >
         <Box
@@ -75,7 +101,7 @@ export default function HeroSlider() {
             },
             "& .swiper-slide.swiper-slide-thumb-active button": {
               color: "#FF3F00",
-              borderBottomColor: "#DD2C00", 
+              borderBottomColor: "#DD2C00",
               background: "#040D15",
             },
           }}

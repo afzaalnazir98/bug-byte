@@ -28,7 +28,7 @@ export default function GameExperience() {
           data-aos="fade-down"
           variant="body1"
           sx={{
-            fontSize: "25px",
+            fontSize: {xs:"15px",sm:"20px",md:"22px",lg:"25px"},
             fontWeight: 500,
             marginTop: { xs: "30px", sm: "50px", md: "80px", lg: "100px" },
             letterSpacing: "0.4px",
@@ -43,10 +43,9 @@ export default function GameExperience() {
           variant="h1"
           sx={{
             fontSize: { xs: "26px", sm: "35px", md: "45px" },
-            fontWeight: { xs: 500, sm: 700 },
-            lineHeight: "41px",
+            fontWeight: { xs: 600, sm: 700 },
             textTransform: "uppercase",
-            mt: { xs: 1, md: 3 },
+            mt: { xs: "10px",sm:"20px", md: "20px",lg:"30px" },
             background:
               "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
             WebkitBackgroundClip: "text",

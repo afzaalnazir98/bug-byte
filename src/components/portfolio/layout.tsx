@@ -52,8 +52,8 @@ export default function ImageMasonry() {
     <Container>
       <Box
         sx={{
-          mt: "40px",
-          marginBottom: { xs: "30px", md: "50px", lg: "80px" },
+          marginTop: { xs: "15px", sm: "25px", md: "30px", lg: "40px" },
+          marginBottom: { xs: "20px", md: "50px", lg: "80px" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -66,12 +66,15 @@ export default function ImageMasonry() {
           indicatorColor="primary"
           textColor="primary"
           variant="scrollable"
-          scrollButtons="auto"
+          scrollButtons
+          allowScrollButtonsMobile
           sx={{
             ...tabStyles,
+            "& .MuiTabs-scroller":{
+              borderBottom: "1px solid #DADADA",
+            },
             "& .Mui-selected": activeTabStyles,
             "& .MuiTabs-indicator": indicatorStyles,
-            borderBottom: "2px solid #DADADA",
           }}
         >
           <Tab
@@ -112,7 +115,7 @@ export default function ImageMasonry() {
         </Tabs>
       </Box>
       <Box>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 300: 1, 500: 2 }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 200: 1, 700: 2 }}>
           <Masonry gutter="20px">
             {Portfolio.filter(
               (portfolio) =>
@@ -197,7 +200,7 @@ export default function ImageMasonry() {
                           <Typography
                             sx={{
                               color: "#FFF",
-                              fontSize: { xs: "16px", md: "18px" },
+                              fontSize: { xs: "20px",sm:"18px" },
                               fontWeight: 600,
                             }}
                           >
@@ -206,11 +209,11 @@ export default function ImageMasonry() {
                           <Typography
                             sx={{
                               color: "#FFF",
-                              fontSize: { xs: "40px", md: "55px" },
+                              fontSize: { xs: "30px",sm:"30px",md:"40px", lg: "55px" },
                               fontWeight: 600,
                               textTransform: "capitalize",
-                              marginTop: "5px",
-                              lineHeight: { xs: "1", md: "1.5" },
+                              marginTop: {xs:"3px",sm:"5px"},
+                              lineHeight: {xs:"1.3",sm:"1"},
                             }}
                           >
                             {item.heading}
@@ -218,9 +221,9 @@ export default function ImageMasonry() {
                           <Typography
                             sx={{
                               color: "#FFF",
-                              fontSize: { xs: "14px", sm: "16px", md: "18px" },
+                              fontSize: { xs: "16px", sm: "16px", md: "18px" },
                               fontWeight: 500,
-                              lineHeight: { sm: "1.2", md: "1.5" },
+                              lineHeight: {xs:"1.2",sm:"1"},
                               textTransform: "capitalize",
                               marginTop: { sm: "6px", md: "10px" },
                             }}
@@ -230,15 +233,12 @@ export default function ImageMasonry() {
                           <Box component={Link} href={`portfolio/${item.link}`}>
                             <Button
                               sx={{
-                                marginTop: {
-                                  xs: "10px",
-                                  sm: "12px",
-                                  md: "30px",
-                                },
+                                marginTop: {xs:"8px",md:"10px"},
                                 padding: {
-                                  xs: "8px 20px",
+                                  xs: "5px 15px",
                                   sm: "10px 30px",
-                                  md: "16px 42px",
+                                  md: "13px 35px",
+                                  lg: "16px 42px",
                                 },
                                 borderRadius: "5px",
                                 backgroundColor: "white",
@@ -251,8 +251,9 @@ export default function ImageMasonry() {
                                 "&:hover": {
                                   backgroundColor: "white",
                                   padding: {
-                                    xs: "10px 25px",
-                                    sm: "16px 42px",
+                                    xs: "8px 20px",
+                                    sm: "12px 40px",
+                                    md: "14px 37px",
                                     lg: "17px 46px",
                                   },
                                   fontSize: { xs: "20px", md: "26px" },
@@ -294,10 +295,10 @@ export default function ImageMasonry() {
             sx={{
               display: filteredPortfolioLength > 6 ? "block" : "none",
               position: "relative",
-              marginTop: "40px",
+              marginTop: {xs:"20px",md:"25px",lg:"40px"},
               borderRadius: "6px",
               width: { xs: "150px", sm: "180px", md: "206px" },
-              height: { xs: "30px", sm: "38px", md: "48px" },
+              height: { xs: "35px", sm: "38px", md: "48px" },
               fontSize: { xs: "14px", md: "16px" },
               fontWeight: { xs: 400, md: 600 },
               background:

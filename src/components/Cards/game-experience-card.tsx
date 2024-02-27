@@ -19,7 +19,7 @@ const cardMotion = {
   rest: {},
   hover: {
     scale: 1,
-    y: -50,
+    y: -20,
     transition: { type: "spring", stiffness: 400, damping: 10 },
   },
 };
@@ -34,7 +34,7 @@ const buttonMotion = {
 
 const GameCard: React.FC<GameCardProps> = ({ gameExperience }) => {
   return (
-    <Box component={motion.div} initial="rest" whileHover="hover">
+    <Box component={motion.div} initial="rest" whileHover="hover" >
       <Card
         component={motion.div}
         variants={cardMotion}

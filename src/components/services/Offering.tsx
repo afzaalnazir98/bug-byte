@@ -140,6 +140,7 @@ export default function Offering() {
             onChange={handleChange}
             variant="scrollable"
             scrollButtons="auto"
+            allowScrollButtonsMobile
             aria-label={
               matches ? "scrollable auto tabs example" : "Vertical tabs example"
             }
@@ -153,10 +154,10 @@ export default function Offering() {
                 overflowY: "visible",
               },
               "& .MuiTabs-scrollButtons ": {
-                display: "none",
+                display: { xs: "flex", sm: "none" },
               },
               "& .MuiTouchRipple-root": {
-                backgroundColor: "#06121F",
+                backgroundColor: { xs: "white", sm: "#06121F" },
                 zIndex: -1,
               },
               "& [role='tablist'] + .MuiTabs-indicator": {
@@ -165,6 +166,7 @@ export default function Offering() {
               "& .label.Mui-selected": {
                 color: "#FF3F00",
                 zIndex: 2,
+                borderBottom: { xs: "2px solid #FF3F00", sm: "none" },
               },
               "& .label": {
                 whiteSpace: "pre-line",

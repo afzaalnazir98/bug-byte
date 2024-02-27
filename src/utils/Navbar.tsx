@@ -219,28 +219,35 @@ const Navbar = () => {
             />
           </Box>
           {LINKS.map(({ text, href }) => (
-            <ListItem key={href}>
+            <ListItem key={href} sx={{ maxWidth: "fit-content" }}>
               <ListItemButton
-                component={Link}
+                component={motion.a}
+                whileHover={{ scale: 1, y: -10 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 href={href}
                 onClick={toggleDrawer}
+                sx={{
+                  borderRadius: "8px",
+                }}
               >
                 <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
           ))}
           <Button
-            variant="contained"
+            component={motion.a}
+            whileHover={{ y: -10 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
             color="primary"
-            component={Link}
             href="/contact-us"
             sx={{
               marginTop: 2,
-              marginLeft: 2,
+              marginLeft: 4,
               width: "194px",
               height: "56px",
               display: "flex",
               borderRadius: "6px",
+              color: "white",
               background:
                 "linear-gradient(88deg, #DD2C00 -9.17%, #FF3F00 67.35%, #FA9D04 130.66%)",
               mb: 2,

@@ -55,8 +55,9 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
         maxWidth: "1370px",
         width: "100%",
         p: {
-          xs: "7rem 2rem 2rem",
-          md: "10rem 4rem 2rem",
+          xs: "7rem 1rem 2rem",
+          sm: "10rem 2rem 2rem",
+          md: "10rem 3rem 2rem",
           lg: "12rem 4rem 2rem",
         },
         mb: "auto",
@@ -71,7 +72,6 @@ const HeroSection: FC<HeroSectionProps> = ({ Slide }): JSX.Element => {
             sm: 0,
             xs: 2,
           },
-          mt: { xs: 6, md: 0 },
         }}
       >
         <Box

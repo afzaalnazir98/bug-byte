@@ -89,18 +89,14 @@ export default function GameExperienceSlider() {
       <Container>
         <Box
           sx={{
-            p: {
-              xs: "20px 40px 60px 40px",
-              sm: "35px 80px 47px 80px",
-              md: "50px 80px 57px 80px",
-            },
             overflow: "hidden",
           }}
         >
           <Box
             data-aos="fade-down"
             sx={{
-              marginBottom: { xs: "60px", lg: "70px" },
+              marginBottom: { xs: "30px", sm: "30px", lg: "40px" },
+              marginTop: { xs: "20px", sm: "30px", lg: "30px" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -113,12 +109,15 @@ export default function GameExperienceSlider() {
               indicatorColor="primary"
               textColor="primary"
               variant="scrollable"
-              scrollButtons="auto"
+              scrollButtons
+              allowScrollButtonsMobile
               sx={{
                 ...tabStyles,
+                "& .MuiTabs-scroller": {
+                  borderBottom: "1px solid #DADADA",
+                },
                 "& .Mui-selected": activeTabStyles,
                 "& .MuiTabs-indicator": indicatorStyles,
-                borderBottom: "2px solid #DADADA",
               }}
             >
               <Tab
@@ -158,75 +157,85 @@ export default function GameExperienceSlider() {
               />
             </Tabs>
           </Box>
-          <Swiper
-            loop
-            navigation={navigationel}
-            className="swiper-main"
-            modules={[Autoplay, Navigation]}
-            onSwiper={(swiper) => {
-              setActiveSlideIndex(swiper.activeIndex);
-            }}
-            breakpoints={{
-              1100: {
-                slidesPerView: 2,
-                spaceBetween: 50,
-              },
-              900: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              600: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              500: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 100,
+          <Box
+            sx={{
+              p: {
+                xs: "0px 40px 0px 40px",
+                sm: "0px 80px 0px 80px",
+                md: "0px 80px 0px 80px",
               },
             }}
           >
-            {filteredGameCardData?.map((gameExp, index) => (
-              <SwiperSlide key={index}>
-                <GameCard gameExperience={gameExp} />
-              </SwiperSlide>
-            ))}
-            <Box
-              sx={{
-                display: "flex",
-                gap: "30px",
-                justifyContent: "space-between",
-                width: { xs: "fit-content", sm: "auto" },
-                margin: "auto",
-                position: "relative",
-                top: { xs: "60px", sm: "-190px", md: "-300px" },
+            <Swiper
+              loop
+              navigation={navigationel}
+              className="swiper-main"
+              modules={[Autoplay, Navigation]}
+              onSwiper={(swiper) => {
+                setActiveSlideIndex(swiper.activeIndex);
+              }}
+              breakpoints={{
+                1100: {
+                  slidesPerView: 2,
+                  spaceBetween: 50,
+                },
+                900: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                600: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                500: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 100,
+                },
               }}
             >
+              {filteredGameCardData?.map((gameExp, index) => (
+                <SwiperSlide key={index}>
+                  <GameCard gameExperience={gameExp} />
+                </SwiperSlide>
+              ))}
               <Box
-                className="swiper-button-prev"
                 sx={{
-                  position: { xs: "unset", sm: "relative" },
-                  left: "-80px",
-                  width: { xs: "30px", sm: "40px" },
-                  height: { xs: "30px", sm: "40px" },
-                  ...hollowArrowStyles,
+                  display: "flex",
+                  gap: "30px",
+                  justifyContent: "space-between",
+                  width: { xs: "fit-content", sm: "auto" },
+                  margin: "auto",
+                  position: "relative",
+                  top: { xs: "60px", sm: "-190px", md: "-300px" },
                 }}
-              ></Box>
-              <Box
-                className="swiper-button-next"
-                sx={{
-                  position: { xs: "unset", sm: "relative" },
-                  right: "-70px",
-                  width: { xs: "30px", sm: "40px" },
-                  height: { xs: "30px", sm: "40px" },
-                  ...hollowArrowStyles,
-                }}
-              ></Box>
-            </Box>
-          </Swiper>
+              >
+                <Box
+                  className="swiper-button-prev"
+                  sx={{
+                    position: { xs: "unset", sm: "relative" },
+                    left: "-80px",
+                    width: { xs: "30px", sm: "40px" },
+                    height: { xs: "30px", sm: "40px" },
+                    ...hollowArrowStyles,
+                  }}
+                ></Box>
+                <Box
+                  className="swiper-button-next"
+                  sx={{
+                    position: { xs: "unset", sm: "relative" },
+                    right: "-70px",
+                    width: { xs: "30px", sm: "40px" },
+                    height: { xs: "30px", sm: "40px" },
+                    ...hollowArrowStyles,
+                  }}
+                ></Box>
+              </Box>
+            </Swiper>
+          </Box>
         </Box>
       </Container>
     </Box>
